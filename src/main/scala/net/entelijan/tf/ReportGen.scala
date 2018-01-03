@@ -22,7 +22,7 @@ case class ReportGen(producers: List[Producer]) {
   private def genProdList(pw: PrintWriter): Unit = {
     for (p <- producers) {
       for ((m, i) <- p.models.zipWithIndex) {
-        val formatStr = s"%s${sepa}%s${sepa}%s${sepa}${sepa}%s${sepa}%s${sepa}%s${sepa}%s%n"
+        val formatStr = s"%s$sepa%s$sepa%s$sepa$sepa%s$sepa%s$sepa%s$sepa%s%n"
         if (i == 0) pw.printf(formatStr format (p.id, p.name, m.id, m.name, m.equipment.getOrElse(""), m.size.getOrElse(""), convPrize(m.prize.getOrElse("?"))))
         else pw.printf(formatStr format ("", "", m.id, m.name, m.equipment.getOrElse(""), m.size.getOrElse(""), convPrize(m.prize.getOrElse("?"))))
       }
@@ -40,11 +40,11 @@ case class ReportGen(producers: List[Producer]) {
   }
 
   def images(prod: Producer): List[String] = {
-    T.imagesFileList(prod).map(_.getName())
+    T.imagesFileList(prod).map(_.getName)
   }
 
   def images(prod: Producer, m: Model): List[File] = {
-    T.imagesFileList(prod).filter(_.getName().contains(m.id))
+    T.imagesFileList(prod).filter(_.getName.contains(m.id))
   }
 
   def imageFileNames(prod: Producer, m: Model): List[String] = {

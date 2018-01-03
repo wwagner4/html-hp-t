@@ -9,7 +9,7 @@ object ImageCounter {
   
   def count(prodId: String, modelId: String): Int = {
     val prodDir = new File(imageDir, prodId)
-    prodDir.list().filter(_.startsWith(modelId)).length
+    prodDir.list().count(_.startsWith(modelId))
   }
   
 }

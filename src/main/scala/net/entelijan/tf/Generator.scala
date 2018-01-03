@@ -6,8 +6,6 @@ import java.nio.file.Files
 import java.nio.file.attribute.BasicFileAttributes
 import java.nio.file.Path
 import java.nio.file.FileSystems
-import java.util.Date
-import java.text.SimpleDateFormat
 
 trait ImageProvider {
   def id: String
@@ -136,7 +134,7 @@ object T {
     val d = new File("src/main/web/%s" format imagesDirPath(p))
     require(d.exists(), "directory %s must exist" format d)
     val l = d.listFiles().filter(_.getName.toUpperCase().contains("LOGO")).toList
-    require(l.size > 0, "no logo found for page '%s' in %s" format (p.id, d))
+    require(l.nonEmpty, "no logo found for page '%s' in %s" format (p.id, d))
     require(l.size == 1, "more than one logo found for page '%s' in %s" format (p.id, d))
     l(0)
   }
@@ -886,11 +884,9 @@ object G {
   }
 
   def genReport(outDir: File): Unit = {
-    val ts = timestamp(new Date())
     val file = new File(outDir, s"taschenfahrrad-report.csv")
     val rg = ReportGen(DP.producers)
     val pw = new PrintWriter(file, "UTF-8")
-    //pw.print('\ufeff');
     rg.genReport(pw)
     pw.close()
 
@@ -906,11 +902,6 @@ object G {
     }
 
     prod.models.foreach(printImageAnomalyModel)
-  }
-
-  private def timestamp(dat: Date): String = {
-    val sdf = new SimpleDateFormat("yyyyMMdd_HHmmssSSS")
-    sdf.format(dat)
   }
 
   private def genPage(p: Page, outDir: File): Unit = {
