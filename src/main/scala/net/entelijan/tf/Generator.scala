@@ -876,18 +876,16 @@ Von der italienischen Traditionsmarke sind einige Rahmensets erhältlich:
   }
 }
 
-case class G(outDirName: String) {
+object G {
 
-  def gen: Unit = {
-    val outDir = initOutDir
+  def gen(outDir: File): Unit = {
     ResCopy.copy(new File("src/main/web"), outDir)
     D.pages.foreach(genPage(_, outDir))
     DP.producers.foreach { printImageAnomaly }
     println("finished generation of taschenfahrrad in %s" format outDir.getCanonicalPath())
   }
 
-  def genReport: Unit = {
-    val outDir = initOutDir
+  def genReport(outDir: File): Unit = {
     val ts = timestamp(new Date())
     val file = new File(outDir, s"taschenfahrrad-report.csv")
     val rg = ReportGen(DP.producers)
@@ -913,12 +911,6 @@ case class G(outDirName: String) {
   private def timestamp(dat: Date): String = {
     val sdf = new SimpleDateFormat("yyyyMMdd_HHmmssSSS")
     sdf.format(dat)
-  }
-
-  private def initOutDir: File = {
-    val outDir = new File(outDirName)
-    if (!outDir.exists()) outDir.mkdirs()
-    outDir
   }
 
   private def genPage(p: Page, outDir: File): Unit = {

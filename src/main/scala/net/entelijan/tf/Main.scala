@@ -2,12 +2,12 @@ package net.entelijan.tf
 
 object TaschenfahrradGenHomepage extends App {
   
-  G("../gen").gen
+  G.gen(TfUtil.genDir)
 
 }
 
 object TaschenfahrradGenProductlist extends App {
   
-  G("../gen_report").genReport
+  G.genReport(TfUtil.genReportDir)
 
 }

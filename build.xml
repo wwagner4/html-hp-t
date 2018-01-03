@@ -3,7 +3,9 @@
 <project name="taschenfahrrad">
 	<property name="version" value="2017.2" />
 	<target name="clean">
-		<delete dir="gen" includes="**/*"></delete>
+		<delete dir="gen" >
+			<include name="**/*" />
+		</delete>
 	</target>
 	<target name="zip">
 		<zip destfile="gen_report/hp-taschenfahrrad-${version}.zip" basedir="gen" includes="**/*" />

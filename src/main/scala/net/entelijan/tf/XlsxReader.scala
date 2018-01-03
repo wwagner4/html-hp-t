@@ -12,6 +12,8 @@ case class XlsxReader(file: File) {
 
   def rows: List[List[String]] = {
 
+    println(s"reading products from $file")
+
     def cellToString(cell: Cell): String = {
       cell.getCellTypeEnum match {
         case CellType.STRING => cell.getStringCellValue
