@@ -55,8 +55,8 @@ object T {
 
   val IMAGES_DIR = "images"
 
-  def htmlImageList(p: Page) = {
-    val l = imagesFileList(p).zipWithIndex.map {case (f, i) => p.imageText(f.getName()) match {
+  def htmlImageList(p: Page): String = {
+    val l = imagesFileList(p).zipWithIndex.map {case (f, i) => p.imageText(f.getName) match {
       case None =>
         if (i == 0) 
         """    
@@ -64,14 +64,14 @@ object T {
           <img src="%s/%s" />
           <p class="flex-caption"></p>
       </li>
-      """ format (imagesDirPath(p), f.getName())
+      """ format (imagesDirPath(p), f.getName)
         else
         """    
       <li>
           <img class="lazy" data-src="%s/%s" />
           <p class="flex-caption"></p>
       </li>
-      """ format (imagesDirPath(p), f.getName())
+      """ format (imagesDirPath(p), f.getName)
       
       case Some(txt) =>
         if (i == 0) 
@@ -80,14 +80,14 @@ object T {
           <img src="%s/%s" />
           <p class="flex-caption">%s</p>
       </li>
-      """ format (imagesDirPath(p), f.getName(), txt)
+      """ format (imagesDirPath(p), f.getName, txt)
       else
         """    
       <li>
           <img class="lazy" data-src="%s/%s" />
           <p class="flex-caption">%s</p>
       </li>
-      """ format (imagesDirPath(p), f.getName(), txt)
+      """ format (imagesDirPath(p), f.getName, txt)
 
     }}
     l.mkString("\n")
@@ -95,7 +95,7 @@ object T {
 
   def logoName(p: ImageProvider): String = {
     val f = logoFile(p)
-    """%s/%s""" format (imagesDirPath(p), f.getName())
+    """%s/%s""" format (imagesDirPath(p), f.getName)
   }
 
   def imagesDirPath(p: ImageProvider): String = "%s/%s" format (IMAGES_DIR, p.imageFolder)
@@ -108,7 +108,7 @@ object T {
       l match {
         case Nil => None
         case (id, idx) :: rest =>
-          if (f.getName().contains(id)) Some(F(idx, f)) else order(rest, f)
+          if (f.getName.contains(id)) Some(F(idx, f)) else order(rest, f)
       }
     }
 
@@ -128,21 +128,21 @@ object T {
 
     val d = new File("src/main/web/%s" format imagesDirPath(p))
     require(d.exists(), "directory %s must exist" format d)
-    val s = d.listFiles().filter(f => acceptName(f.getName())).toList
+    val s = d.listFiles().filter(f => acceptName(f.getName)).toList
     sort(s)
   }
 
   def logoFile(p: ImageProvider): File = {
     val d = new File("src/main/web/%s" format imagesDirPath(p))
     require(d.exists(), "directory %s must exist" format d)
-    val l = d.listFiles().filter(_.getName().toUpperCase().contains("LOGO")).toList
+    val l = d.listFiles().filter(_.getName.toUpperCase().contains("LOGO")).toList
     require(l.size > 0, "no logo found for page '%s' in %s" format (p.id, d))
     require(l.size == 1, "more than one logo found for page '%s' in %s" format (p.id, d))
     l(0)
   }
 
   def htmlPageLinks(pages: List[Page]): String = {
-    pages.map(htmlPageLink(_)).mkString("\n")
+    pages.map(htmlPageLink).mkString("\n")
   }
 
   def htmlPageLink(p: Page): String = {
@@ -223,8 +223,8 @@ $$(window).load(function() {
   }
 
   def toSinglePage(pr: Producer): Page = new Page {
-    def id = pr.id
-    def name = pr.name
+    override def id: String = pr.id
+    override def name: String = pr.name
     override def imageText(fnam: String): Option[String] = {
       findModel(pr.models, fnam).map(_.name)
     }
@@ -287,11 +287,11 @@ object D {
   
   import MyMarkdown._
 
-  val startPage = new Page {
+  val startPage: Page = new Page {
     def id = "index"
     def name = "start"
     
-    val text = md("""
+    val text: String = md("""
 Aufgrund meiner 30 Jahre Erfahrung in der Fahrradbranche und den vielen Kilometern als Fahrradkurier 
 bevorzuge ich für die im 'taschenfahrrad' angebotenen Räder bewährte Technik. 
 Das Rad ist eine äußerst effektive und faszinierende Maschine, es erweitert die Welt, 
@@ -329,13 +329,13 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val teamPage = new Page {
+  val teamPage: Page = new Page {
     def id = "team"
     def name = "team"
     def htmlContent = s"""
 <div id="left">
 	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="index.html">start</a> &#62; ${name}<p>
+	<p><a href="index.html">start</a> &#62; $name<p>
 	<p id="sepa3"/>
 	<p>
 Hans Pöllhuber<br/>
@@ -367,13 +367,13 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val selfPage = new Page {
+  val selfPage: Page = new Page {
     def id = "self"
     def name = "eigenbau"
     def htmlContent = s"""
 <div id="left">
 	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="index.html">start</a> &#62; ${name}<p>
+	<p><a href="index.html">start</a> &#62; $name<p>
 	<p id="sepa3"/>
   <p>
 Was ich am Fahrradmarkt nicht finde, baue ich unbeirrt von Moden selber.
@@ -394,13 +394,13 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val selfPageSurly = new Page {
+  val selfPageSurly: Page = new Page {
     def id = "selfsurly"
     def name = "surly"
     def htmlContent = s"""
 <div id="left">
 	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; ${name}<p>
+	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; $name<p>
 	<p id="sepa3"/>
 <a target="_blank" href="http://surlybikes.com/bikes/cross_check"><img src="${T.IMAGES_DIR}/selfsurly/surly-logo.jpg" /></a>
 	<p id="sepa"/>
@@ -422,13 +422,13 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val selfPageRaco = new Page {
+  val selfPageRaco: Page = new Page {
     def id = "selfraco"
     def name = "Intec"
     def htmlContent = s"""
 <div id="left">
 	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; ${name}<p>
+	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; $name<p>
 	<p id="sepa3"/>
 <a target="_blank" href="http://www.ra-co.de/"><img src="${T.IMAGES_DIR}/logos/intec-logo.png" /></a>
 	<p id="sepa"/>
@@ -447,13 +447,13 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val selfPageParipa = new Page {
+  val selfPageParipa: Page = new Page {
     def id = "selfparipa"
     def name = "paripa"
     def htmlContent = s"""
 <div id="left">
 	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; ${name}<p>
+	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; $name<p>
 	<p id="sepa3"/>
 <a target="_blank" href="http://paripa.de/?page_id=40"><img src="${T.IMAGES_DIR}/logos/logo-paripa.jpg" /></a>
 	<p id="sepa"/>
@@ -474,13 +474,13 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val selfPageSalerno = new Page {
+  val selfPageSalerno: Page = new Page {
     def id = "selfsalerno"
     def name = "Salerno/das taschenfahrrad"
     def htmlContent = s"""
 <div id="left">
 	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; ${name}<p>
+	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; $name<p>
 	<p id="sepa3"/>
     <a target="_blank" href="http://hartje-manufaktur.de/"><img src="${T.IMAGES_DIR}/${this.id}/logo-hartje.png" /></a>
 	<p id="sepa"/>
@@ -496,13 +496,13 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val selfPageRakete = new Page {
+  val selfPageRakete: Page = new Page {
     def id = "selfrakete"
     def name = "rakete"
     def htmlContent = s"""
 <div id="left">
 	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; ${name}<p>
+	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; $name<p>
 	<p id="sepa3"/>
     <a target="_blank" href="http://raketerad.de"><img src="${T.IMAGES_DIR}/logos/logo_rakete.png" /></a>
 	<p id="sepa"/>
@@ -519,13 +519,13 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val selfPagePelago = new Page {
+  val selfPagePelago: Page = new Page {
     def id = "selfpelago"
     def name = "pelago"
     def htmlContent = s"""
 <div id="left">
 	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; ${name}<p>
+	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; $name<p>
 	<p id="sepa3"/>
     <a target="_blank" href="https://www.pelagobicycles.com"><img src="${T.IMAGES_DIR}/selfpelago/pelago-logo.png" /></a>
 	<p id="sepa"/>
@@ -537,13 +537,13 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val servicePage = new Page {
+  val servicePage: Page = new Page {
     def id = "service"
     def name = "service"
     def htmlContent = s"""
 <div id="left">
 <h1><a href="index.html">das taschenfahrrad</a></h1>
-<p><a href="index.html">start</a> &#62; ${name}</p>
+<p><a href="index.html">start</a> &#62; $name</p>
 <p id="sepa3"/>
 <p>
 Radservice
@@ -564,13 +564,13 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val serviceChecklistPage = new Page {
+  val serviceChecklistPage: Page = new Page {
     def id = "serviceChecklist"
     def name = "service checklist"
     def htmlContent = s"""
 <div id="left-checklist">
 <h1><a href="index.html">das taschenfahrrad</a></h1>
-<p><a href="index.html">start</a> &#62; <a href="service.html">service</a> &#62; ${name}</p>
+<p><a href="index.html">start</a> &#62; <a href="service.html">service</a> &#62; $name</p>
 <p id="sepa3"/>
 <p>
 Checkliste Service:
@@ -608,13 +608,13 @@ PROBEFAHRT</p>
   """
   }
 
-  val accessoriesPage = new Page {
+  val accessoriesPage: Page = new Page {
     def id = "accessories"
     def name = "zubehör"
     def htmlContent = s"""
 <div id="left">
 <h1><a href="index.html">das taschenfahrrad</a></h1>
-<p><a href="index.html">start</a> &#62; ${name}</p>
+<p><a href="index.html">start</a> &#62; $name</p>
 <p id="sepa3"/>
 <p>
 'das taschenfahrrad' führt ein reichhaltiges Angebot
@@ -647,11 +647,11 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val producerPage = new OverviewPage {
+  val producerPage: Page = new OverviewPage {
     def id = "producer"
     def name = "fahrräder"
 
-    val pages = DP.producers.map(T.toPage(_))
+    val pages: List[Page] = DP.producers.map(T.toPage)
     val (top, bottom) = pages.splitAt(13)
 
     def htmlContent = s"""
@@ -882,7 +882,7 @@ object G {
     ResCopy.copy(new File("src/main/web"), outDir)
     D.pages.foreach(genPage(_, outDir))
     DP.producers.foreach { printImageAnomaly }
-    println("finished generation of taschenfahrrad in %s" format outDir.getCanonicalPath())
+    println("finished generation of taschenfahrrad in %s" format outDir.getCanonicalPath)
   }
 
   def genReport(outDir: File): Unit = {
@@ -894,7 +894,7 @@ object G {
     rg.genReport(pw)
     pw.close()
 
-    println("finished generation of report: %s" format file.getCanonicalPath())
+    println("finished generation of report: %s" format file.getCanonicalPath)
   }
 
   private def printImageAnomaly(prod: Producer): Unit = {
@@ -926,7 +926,7 @@ object G {
     val f = new File(outDir, fnam)
     val pw = new PrintWriter(f, "UTF-8")
     pw.print(T.htmlTemplate(p).trim())
-    pw.close
+    pw.close()
     println("wrote to %s" format f)
   }
 
@@ -935,20 +935,20 @@ object G {
 object ResCopy {
 
   def copy(from: File, to: File) {
-    require(from.isDirectory(), "%s is not a directory" format from)
-    require(to.isDirectory(), "%s is not a directory" format to)
+    require(from.isDirectory, "%s is not a directory" format from)
+    require(to.isDirectory, "%s is not a directory" format to)
     val toFiles = to.listFiles().toList
     for (fromFile <- from.listFiles()) {
-      if (fromFile.isDirectory()) {
-        findFile(fromFile.getName(), toFiles) match {
+      if (fromFile.isDirectory) {
+        findFile(fromFile.getName, toFiles) match {
           case None =>
-            val newDir = new File(to, fromFile.getName())
+            val newDir = new File(to, fromFile.getName)
             newDir.mkdirs()
             copy(fromFile, newDir)
           case Some(toFile) => copy(fromFile, toFile)
         }
       } else {
-        findFile(fromFile.getName(), toFiles) match {
+        findFile(fromFile.getName, toFiles) match {
           case None => copyFile(fromFile, to)
           case Some(toFile) => if (leftIsYounger(fromFile, toFile)) copyFile(fromFile, to)
           //else println("no copy of %s to %s because younger exists" format (fromFile, to))
@@ -960,8 +960,8 @@ object ResCopy {
 
   def copyFile(f: File, dir: File): Unit = {
     import java.io.{ File, FileInputStream, FileOutputStream }
-    require(dir.isDirectory(), "%s is not a directory" format dir)
-    val newFile = new File(dir, f.getName())
+    require(dir.isDirectory, "%s is not a directory" format dir)
+    val newFile = new File(dir, f.getName)
     new FileOutputStream(newFile) getChannel () transferFrom (
       new FileInputStream(f).getChannel, 0, Long.MaxValue)
     println("copied %s to %s" format (f, dir))
@@ -969,9 +969,9 @@ object ResCopy {
 
   def leftIsYounger(left: File, right: File): Boolean = {
     def time(f: File): Long = {
-      val p: Path = FileSystems.getDefault().getPath(f.getAbsolutePath())
+      val p: Path = FileSystems.getDefault.getPath(f.getAbsolutePath)
       val attr = Files.readAttributes(p, classOf[BasicFileAttributes])
-      attr.lastModifiedTime().toMillis()
+      attr.lastModifiedTime().toMillis
     }
     time(left) > time(right)
   }
@@ -979,7 +979,7 @@ object ResCopy {
   def findFile(name: String, files: List[File]): Option[File] = {
     files match {
       case Nil => None
-      case f :: rest => if (f.getName() == name) Some(f)
+      case f :: rest => if (f.getName == name) Some(f)
       else findFile(name, rest)
     }
   }
