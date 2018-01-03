@@ -1,0 +1,125 @@
+@font-face {
+ font-family: isonormd;
+ src: url("font/IsonormD.eot") /* EOT file for IE */
+}
+@font-face {
+ font-family: isonormd;
+ src: url("font/IsonormD.ttf") /* TTF file for CSS3 browsers */
+}
+body {
+	margin-top: 0px;
+	font-family: 'isonormd', sans-serif;
+	background-color: white;
+}
+h1 {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	padding: 0px;
+}
+p {
+	font-family: inherit;
+	margin: 0px;
+	padding: 0px;
+}
+img {
+	margin: 0px;
+	padding: 0px;
+}
+a, img {
+    border:none;
+}
+a {
+	text-decoration: none;
+	color: #000000;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+a:active {
+	text-decoration: underline;
+	color: #000000;
+}
+#all {
+	width: 1200px;
+	height: 700px;
+	margin:0 auto;
+}
+
+#left {
+	background-color: white;
+	width: 300px;
+	height: 100%;
+	float: left;
+}
+
+#left-checklist {
+	background-color: white;
+	width: 800px;
+	height: 100%;
+	float: left;
+}
+
+#right {
+	background-color: white;
+	width: 900px;
+	height: 100%;
+	float: right;
+}
+#sepa {
+	margin-left: 0px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+#sepa1 {
+	margin-left: 0px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+#sepa2 {
+	margin-left: 0px;
+	margin-top: 40px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+#sepa3 {
+	margin-left: 0px;
+	margin-top: 60px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+#sepa4 {
+	margin-left: 0px;
+	margin-top: 80px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+#sepa-logos {
+	margin-left: 0px;
+	margin-top: 150px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+.flex-caption {
+	width: 100%;
+	text-align: center;
+	height: 25px;	
+} 
+#models {
+	height: 300px;
+    overflow-y: auto;
+}

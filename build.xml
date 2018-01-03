@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project name="taschenfahrrad">
+	<property name="version" value="2017.2" />
+	<target name="clean">
+		<delete dir="gen" includes="**/*"></delete>
+	</target>
+	<target name="zip">
+		<zip destfile="gen_report/hp-taschenfahrrad-${version}.zip" basedir="gen" includes="**/*" />
+	</target>
+</project>
