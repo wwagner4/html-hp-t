@@ -220,46 +220,7 @@ sei es bei den alltäglichen Fahrten oder bei einer Reise um die Welt.
     <p id="sepa"/>
     <p><a href="producer.html">fahrräder...</a></p>
     <p><a href="accessories.html">zubehör...</a></p>
-    <p><a href="team.html">team...</a></p>
     <p><a href="service.html">service...</a></p>
-</div>
-${T.htmlContetntRight(this)}  
-  """
-  }
-
-  val teamPage: Page = new Page {
-    def id = "team"
-    def name = "team"
-    def htmlContent = s"""
-<div id="left">
-	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="index.html">start</a> &#62; $name<p>
-	<p id="sepa3"/>
-	<p>
-Hans Pöllhuber<br/>
-Inhaber<br/>
-<br/>
-seit nunmehr 30 Jahren in der Branche beheimatet kennt er das Fahrradhandwerk
-aus verschiedensten Perspektiven.
-Absolvent HTL (Motoren und Maschinenbau) und u.a. als Fahrradkurier der ersten Stunden
-hat er unglaublich viele Kilometer auf Wiens Straßen er- und überlebt.
-<br/>
-<br/>
-Dorian Vavti<br/>
-junior expert<br/>
-<br/>
-Absolvent HTL (Umwelttechnik) studiert Kulturtechnik und Wasserwirtschaft und verdient
-sein Studium im 'taschenfahrrad'.
-Begeisteter Radtourer, war zuletzt im stürmischen Island mit Rad und Zelt unterwegs
-und erlernt mit Siebenmeilenstiefeln das Fahrradhandwerk.	
-
-<br/>
-<br/>
-Roman Schickermüller<br/>
-<br/>
-ehemaliger Sportstudent der sich nach langen Jahren in der Gastronomie nun seiner Liebe für Fahrräder zuwendet und sich als Fahrradmechaniker verdienen möchte.
-'Do More Of What Makes You Happy!'
-  </p>
 </div>
 ${T.htmlContetntRight(this)}  
   """
@@ -357,7 +318,7 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val pages: List[Page] = List(startPage, producerPage, accessoriesPage, teamPage, servicePage)
+  val pages: List[Page] = List(startPage, producerPage, accessoriesPage, servicePage)
 
 }
 
