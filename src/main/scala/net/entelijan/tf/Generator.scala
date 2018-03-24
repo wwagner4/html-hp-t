@@ -1,21 +1,12 @@
 package net.entelijan.tf
 
-import java.io.File
-import java.io.PrintWriter
-import java.nio.file.Files
+import java.io.{File, PrintWriter}
+import java.nio.file.{FileSystems, Files, Path}
 import java.nio.file.attribute.BasicFileAttributes
-import java.nio.file.Path
-import java.nio.file.FileSystems
 
 trait ImageProvider {
   def id: String
   def imageFolder: String = id
-  /**
-   * List of models that can (but must not) be
-   * associated with images.
-   * Used to sort images according to the models
-   */
-  def imageProviderModels: List[Model] = List.empty[Model]
 }
 
 trait Page extends ImageProvider {
@@ -28,28 +19,11 @@ trait Page extends ImageProvider {
   def imageText(fnam: String): Option[String] = None
 }
 
-trait Model {
-  def id: String
-  def name: String
-  def equipment: Option[String]
-  def prize: Option[String]
-  def size: Option[String]
-}
-
-trait Producer extends ImageProvider {
-  def name: String
-  def homepage: String
-  def htmlText: Option[String]
-  def models: List[Model]
-}
-
 trait OverviewPage extends Page {
   def pages: List[Page]
 }
 
 object T {
-
-  import MyMarkdown._
 
   val IMAGES_DIR = "images"
 
@@ -110,15 +84,6 @@ object T {
       }
     }
 
-    def sort(files: List[File]): List[File] = {
-      if (p.imageProviderModels.isEmpty) files
-      else {
-        val ids = p.imageProviderModels.map(_.id).zipWithIndex
-        val fs = files.flatMap(f => order(ids, f))
-        fs.sortBy(_.o).map(_.f)
-      }
-    }
-
     def acceptName(nam: String): Boolean = {
       !nam.toUpperCase().contains("LOGO") &&
         !nam.startsWith(".")
@@ -126,8 +91,7 @@ object T {
 
     val d = new File("src/main/web/%s" format imagesDirPath(p))
     require(d.exists(), "directory %s must exist" format d)
-    val s = d.listFiles().filter(f => acceptName(f.getName)).toList
-    sort(s)
+    d.listFiles().filter(f => acceptName(f.getName)).toList
   }
 
   def logoFile(p: ImageProvider): File = {
@@ -215,69 +179,6 @@ $$(window).load(function() {
     """
 
   def fileName(p: Page): String = "%s.html" format p.id
-
-  def toPage(pr: Producer): Page = {
-    toSinglePage(pr)
-  }
-
-  def toSinglePage(pr: Producer): Page = new Page {
-    override def id: String = pr.id
-    override def name: String = pr.name
-    override def imageText(fnam: String): Option[String] = {
-      findModel(pr.models, fnam).map(_.name)
-    }
-    override def imageProviderModels: List[Model] = pr.models
-    def htmlContent = s"""
-<div id="left">
-    <h1><a href="index.html">das taschenfahrrad</a></h1> 
-	<p><a href="index.html">start</a> &#62; <a href="producer.html">fahrräder</a> &#62; ${pr.name}<p>
-	<p id="sepa3"/>
-    <a target="_blank" href="${pr.homepage}"><img src="${T.logoName(this)}" /></a>
-${htmlText(pr)}    
-    <p id="sepa"/>
-    <div id="models">
-${htmlModels(pr.models)}
-    </div>
-</div>
-${T.htmlContetntRight(this)}   
-    """
-  }
-
-  private def findModel(models: List[Model], imgNam: String): Option[Model] = {
-    models match {
-      case Nil => None
-      case a :: rest =>
-        if (imgNam.contains(a.id)) Some(a)
-        else findModel(rest, imgNam)
-    }
-
-  }
-
-  private def htmlText(pr: Producer): String = pr.htmlText match {
-    case None => ""
-    case Some(t) => t
-  }
-
-  private def htmlModels(models: List[Model]): String = {
-    models.map(m => htmlModel(m)).mkString("\n")
-  }
-
-  private def htmlModel(m: Model): String = {
-    val sb = new StringBuilder
-    sb.append("<p>%s</p>" format m.name)
-    if (m.equipment.isDefined) {
-      val e = md(m.equipment.get)
-      sb.append(s"<p>$e</p>")
-    }
-    if (m.size.isDefined) sb.append("<p>Größen: %s</p>" format m.size.get)
-    if (m.prize.isDefined) {
-      val p = md(m.prize.get)
-      sb.append(s"<p>$p</p>")
-    } else println("*** missing prize for model '%s'" format m.name)
-
-    sb.append("""<p id="sepa"/>""")
-    sb.toString
-  }
 
 }
 
@@ -645,233 +546,8 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val producerPage: Page = new OverviewPage {
-    def id = "producer"
-    def name = "fahrräder"
+  val pages: List[Page] = List(startPage, accessoriesPage, teamPage, servicePage, serviceChecklistPage, selfPage, selfPageSurly, selfPageRaco, selfPageParipa, selfPageRakete, selfPagePelago, selfPageSalerno)
 
-    val pages: List[Page] = DP.producers.map(T.toPage)
-    val (top, bottom) = pages.splitAt(13)
-
-    def htmlContent = s"""
-<div id="left">
-<h1><a href="index.html">das taschenfahrrad</a></h1>
-<p><a href="index.html">start</a> &#62; fahrräder<p>
-<p id="sepa2"/>
-<p>
-Das sind die Marken, die im taschenfahrrad gehegt und gepflegt werden, wir treffen eine Auswahl die uns gefällt.
-</p>
-<p id="sepa"/>
-${T.htmlPageLinks(top)}
-<p id="sepa"/>
-<p>
-Aus Platzgründen nur mehr eingeschränkt und zu Abverkaufspreisen:</p>
-<p id="sepa"/>
-${T.htmlPageLinks(bottom)}
-</div>
-${T.htmlContetntRight(this)}  
-    """
-  }
-
-  val pages: List[Page] = List(startPage, producerPage, accessoriesPage, teamPage, servicePage, serviceChecklistPage, selfPage, selfPageSurly, selfPageRaco, selfPageParipa, selfPageRakete, selfPagePelago, selfPageSalerno)
-
-}
-
-object DP {
-
-  def producers: List[Producer] = {
-    val file = new File("src/main/data/Products.xlsx")
-    val rows = XlsxReader(file).rows
-    val modelsMap = ModelReader.readModels(rows)
-
-    val re = List(
-      new Producer {
-        def id = "gazelle"
-        def name = "Gazelle"
-        def homepage = "http://www.gazelle.de/"
-        def htmlText = Some("""<p>
-Auch nach mehr als 100 Jahren werden diese Räder mit Leidenschaft gebaut, millionenfach leidenschaftlich gefahren und leidenschaftlich geliebt. 
-Style, Geometrie und alltägliche Praxistauglichkeit ist noch immer Maßstab an dem sich viele Fahrradbauer orientieren und vielfach kopieren, 
-was oft nur auf den ersten Blick einem 'Hollandrad ' ähnelt. Gazelle ist das Original, unbestritten.
-</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "linus"
-        def name = "linus"
-        def homepage = "http://www.linusbike.com/"
-        def htmlText = Some("""<p>
-Adam McDermott und Chad Kushner aus Venice/LA/Californien haben sich von den französischen Räder der 50er und 60er inspirieren lassen. 
-Im Nu findet man sich in einem alten französischen Film wieder. Die Räder sind beeindruckend schön, natürlich in den Farben der 60er, 
-einfach, aber optimiert für den alltäglichen Einsatz der kleinen Fahrten und Ausfahrten.
-</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "bobbin16"
-        def name = "Bobbin"
-        def homepage = "http://www.bobbinbikes.co.uk/"
-        def htmlText = Some("""<p>
-Tom Morris & Sian Emmison gründeten 2007 einen kleinen Shop in London und begannen schöne und unkonventionelle Räder zu bauen, die Bobbin Bikes. 
-Inspiriert von Mode, Malerei und der Fahrradkultur Amsterdams wird das Fahrrad als lässiger Begleiter für viele Alltagssituationen neu erfunden. 
-Glücksgefühle soll es auslösen beim Fahren und eines sollte es auf gar keinen Fall,
-das modisch geschulte Auge verletzen.
-</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "tokyobike"
-        def name = "tokyobike"
-        def homepage = "http://www.tokyobike.de/"
-        def htmlText = Some("""<p>
-Ichiro Kanai hat in Yanaka, einem Suburb von Tokio, 2002 'tokyobike' gegründet. Es sollten Räder sein, die sich perfekt in den Lebensraum einer der 
-größten und beeindruckendsten Metropole der Welt einfügen. Räder, die sich schnell, leicht und unkompliziert in der Stadt bewegen. 
-Stahlrahmen, schlank und robust. Kleinere Laufräder für eine bessere Beschleunigung im typischen Stop and Go Verkehr der Großstadt.</br>
-Durch die Reduktion auf das Wesentliche, das klare Design und die schönen Farben sind es richtig coole Räder, die auch gut in die europäischen Metropolen passen.
-Jetzt auch in Wien.
-</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "creme16"
-        def name = "creme cycles"
-        def homepage = "http://cremecycles.com/"
-        def htmlText = Some("""<p>
-Urbane Räder aus Danzig/Polen. Geburtsort der Solidarnosc und Produktionsstätte cleverer
-und schöner Räder für die Stadt.        
-</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "kona16"
-        def name = "Kona"
-        def homepage = "http://www.konaworld.com/"
-        def htmlText = Some("""<p>
-Die Fahrradbauer aus Ferndale in Washington und Vancouver in British Columbia bauen viele
-Räder für Offroad, aber wenn sie so richtig schön eine Radtour unternehmen wollen oder schnell in die Arbeit müssen, dann nehmen sie das Honky Tonk.        
-</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "viva"
-        def name = "Viva"
-        def homepage = "http://www.vivabikes.com/bikes/juliett/"
-        def htmlText = Some("""<p>
-Puristisches Design aus Copenhagen/Denmark, der gekrönten Fahrradhauptstadt Europas.   
-</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "erenpreiss"
-        def name = "Erenpreiss"
-        def homepage = "http://erenpreiss.com/en/"
-        def htmlText = Some("""<p>
-Bikemarke aus Riga/Lettland. Tom Erenpreiss knüpft wieder an die Tradition an, 
-nachdem durch die Sowjetverstaatlichung die Fahrradproduktion eingeschläfert wurde.
-</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "fuji"
-        def name = "Fuji"
-        def homepage = "http://www.fujibikes.com/bikes"
-        def htmlText = Some("""<p>
-Die Traditionsmarke, seit 1899, baut Räder für Weltmeister und Olympiasieger, aber auch 2 schöne
-Lifestyle Räder, die gut ins 'taschenfahrrad' passen.        
-</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "breezer17"
-        def name = "Breezer 2017"
-        def homepage = "http://www.breezerbikes.com/eu/"
-        def htmlText = Some("""<p>
-Joe Breeze lebt in Fairfax/California, präsentierte 1977 das erste Mountainbike 
-und hat damit am Mt. Tamalpais die nicht minder legendären Mitstreiter abgehängt. 
-Eine Auswahl seiner Stadt- und Tourenräder gibt es im taschenfahrrad.</p>""")
-        def models = modelsMap(this.id)
-      },
-
-      new Producer {
-        def id = "cooper"
-        def name = "Cooper"
-        def homepage = "http://www.cooperbikes.com/"
-        def htmlText = Some("""<p>
-Tolles Design & Qualität, vom legendärem Cooper-Rennfieber infizierte Fahrräder für urbane Mobilität. 
-John Cooper hätte nichts dagegen, würde er noch leben.
-</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "pelago"
-        def name = "Pelago"
-        def homepage = "https://www.pelagobicycles.com/"
-        def htmlText = Some("""<p>
-„wir machen gute Räder für ein besseres Leben“
-</br>
-</br>
-2009 in Helsinki gegründet, verbindet Pelago schönes Design mit kompromissloser Qualität und Funktionalität. 
-Verlässlich jeden Tag selbst unter den Bedingungen des Nordens von Europa. 
-Die Modelle San Sebastian und Capri sind auch als Rahmensets erhältlich.
-</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "salerno"
-        def name = "Manufaktur/Salerno"
-        def homepage = "http://hartje-manufaktur.de/"
-        def htmlText = Some("""<p>
-Made in Germany, verschiedene Rahmenformen, perfekte Geometrien, viele Größen, 
-viele Farben, robuste Pulverbeschichtung, wählbare Ausstattungsvarianten.
-und wem das nicht genug ist, im 'taschenfahrrad' gibt es auch die Rahmensets für individuellere Aufbauten.</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "breezer16"
-        def name = "Breezer"
-        def homepage = "http://www.breezerbikes.com/eu/"
-        def htmlText = Some("""<p>
-Die Lifestyle Modelle werden aus Platzgründen abverkauft
-</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "marin"
-        def name = "Marin"
-        def homepage = "http://www.marinbikes.com/de/"
-        def htmlText = Some("""
-<p>
-Marin
-Die legendären Räder aus Marin County, Californien. In ihnen schlägt noch das Mountainbikeherz der ersten Stunden. Wenige noch lagernde Modelle.
-</p>        
-        """)
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "hercules"
-        def name = "Hercules"
-        def homepage = "http://www.hercules-bikes.de/"
-        def htmlText = Some("""
-<p>
-populärer, deutscher Fahrradhersteller.
-</p>""")
-        def models = modelsMap(this.id)
-      },
-      new Producer {
-        def id = "gios"
-        def name = "Gios"
-        def homepage = "http://www.gios.it"
-        def htmlText = Some("""
-<p>
-Von der italienischen Traditionsmarke sind einige Rahmensets erhältlich: 
-<br/>tricolore 52, 56 
-</br>weiß 50, 58
-</br>Rahmenset 749€ Komplettrad 1199€
-</p>""")
-        def models = modelsMap(this.id)
-      })
-
-    re
-  }
 }
 
 object G {
@@ -879,29 +555,7 @@ object G {
   def gen(outDir: File): Unit = {
     ResCopy.copy(new File("src/main/web"), outDir)
     D.pages.foreach(genPage(_, outDir))
-    DP.producers.foreach { printImageAnomaly }
     println("finished generation of taschenfahrrad in %s" format outDir.getCanonicalPath)
-  }
-
-  def genReport(outDir: File): Unit = {
-    val file = new File(outDir, s"taschenfahrrad-report.csv")
-    val rg = ReportGen(DP.producers)
-    val pw = new PrintWriter(file, "UTF-8")
-    rg.genReport(pw)
-    pw.close()
-
-    println("finished generation of report: %s" format file.getCanonicalPath)
-  }
-
-  private def printImageAnomaly(prod: Producer): Unit = {
-
-    def printImageAnomalyModel(model: Model): Unit = {
-      val cnt = ImageCounter.count(prod.id, model.id)
-      if (cnt == 0) println(s"*** No image defined for: '${prod.name}' '${model.name}'")
-      if (cnt > 3) println(s"*** More than 3 images ($cnt) defined for: '${prod.name}' '${model.name}'")
-    }
-
-    prod.models.foreach(printImageAnomalyModel)
   }
 
   private def genPage(p: Page, outDir: File): Unit = {
@@ -950,7 +604,7 @@ object ResCopy {
   }
 
   def copyFile(f: File, dir: File): Unit = {
-    import java.io.{ File, FileInputStream, FileOutputStream }
+    import java.io.{File, FileInputStream, FileOutputStream}
     require(dir.isDirectory, "%s is not a directory" format dir)
     val newFile = new File(dir, f.getName)
     new FileOutputStream(newFile) getChannel () transferFrom (
