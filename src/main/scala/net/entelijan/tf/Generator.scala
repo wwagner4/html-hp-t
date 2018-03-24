@@ -6,16 +6,19 @@ import java.nio.file.{FileSystems, Files, Path}
 
 trait ImageProvider {
   def id: String
+
   def imageFolder: String = id
 }
 
 trait Page extends ImageProvider {
   def name: String
+
   def htmlContent: String
+
   /**
-   * Defines a text to an image.
-   * Filename of the image can be used to identify the image
-   */
+    * Defines a text to an image.
+    * Filename of the image can be used to identify the image
+    */
   def imageText(fnam: String): Option[String] = None
 }
 
@@ -28,49 +31,50 @@ object T {
   val IMAGES_DIR = "images"
 
   def htmlImageList(p: Page): String = {
-    val l = imagesFileList(p).zipWithIndex.map {case (f, i) => p.imageText(f.getName) match {
+    val l = imagesFileList(p).zipWithIndex.map { case (f, i) => p.imageText(f.getName) match {
       case None =>
-        if (i == 0) 
-        """    
+        if (i == 0)
+          """
       <li>
           <img src="%s/%s" />
           <p class="flex-caption"></p>
       </li>
-      """ format (imagesDirPath(p), f.getName)
+      """ format(imagesDirPath(p), f.getName)
         else
-        """    
+          """
       <li>
           <img class="lazy" data-src="%s/%s" />
           <p class="flex-caption"></p>
       </li>
-      """ format (imagesDirPath(p), f.getName)
-      
+      """ format(imagesDirPath(p), f.getName)
+
       case Some(txt) =>
-        if (i == 0) 
-        """    
+        if (i == 0)
+          """
       <li>
           <img src="%s/%s" />
           <p class="flex-caption">%s</p>
       </li>
-      """ format (imagesDirPath(p), f.getName, txt)
-      else
-        """    
+      """ format(imagesDirPath(p), f.getName, txt)
+        else
+          """
       <li>
           <img class="lazy" data-src="%s/%s" />
           <p class="flex-caption">%s</p>
       </li>
-      """ format (imagesDirPath(p), f.getName, txt)
+      """ format(imagesDirPath(p), f.getName, txt)
 
-    }}
+    }
+    }
     l.mkString("\n")
   }
 
   def logoName(p: ImageProvider): String = {
     val f = logoFile(p)
-    """%s/%s""" format (imagesDirPath(p), f.getName)
+    """%s/%s""" format(imagesDirPath(p), f.getName)
   }
 
-  def imagesDirPath(p: ImageProvider): String = "%s/%s" format (IMAGES_DIR, p.imageFolder)
+  def imagesDirPath(p: ImageProvider): String = "%s/%s" format(IMAGES_DIR, p.imageFolder)
 
   def imagesFileList(p: ImageProvider): List[File] = {
 
@@ -98,8 +102,8 @@ object T {
     val d = new File("src/main/web/%s" format imagesDirPath(p))
     require(d.exists(), "directory %s must exist" format d)
     val l = d.listFiles().filter(_.getName.toUpperCase().contains("LOGO")).toList
-    require(l.nonEmpty, "no logo found for page '%s' in %s" format (p.id, d))
-    require(l.size == 1, "more than one logo found for page '%s' in %s" format (p.id, d))
+    require(l.nonEmpty, "no logo found for page '%s' in %s" format(p.id, d))
+    require(l.size == 1, "more than one logo found for page '%s' in %s" format(p.id, d))
     l(0)
   }
 
@@ -110,20 +114,22 @@ object T {
   def htmlPageLink(p: Page): String = {
     s"""
     <p><a href="%s">%s...</a></p>
-    """ format (T.fileName(p), p.name)
+    """ format(T.fileName(p), p.name)
   }
 
-  def htmlContetntRight(p: Page): String = s"""
+  def htmlContetntRight(p: Page): String =
+    s"""
 <div id="right">
     <div class="flexslider">
     <ul class="slides">
-${htmlImageList(p)}  
+${htmlImageList(p)}
     </ul>
     </div>		
 </div>
 """
 
-  def htmlTemplate(p: Page): String = s"""
+  def htmlTemplate(p: Page): String =
+    s"""
 <!DOCTYPE html>
 <html class="no-js">
 <head>
@@ -183,25 +189,24 @@ $$(window).load(function() {
 }
 
 object D {
-  
+
   import MyMarkdown._
 
   val startPage: Page = new Page {
     def id = "index"
-    def name = "start"
-    
-    val text: String = md("""
-Aufgrund meiner 30 Jahre Erfahrung in der Fahrradbranche und den vielen Kilometern als Fahrradkurier 
-bevorzuge ich für die im 'taschenfahrrad' angebotenen Räder bewährte Technik. 
-Das Rad ist eine äußerst effektive und faszinierende Maschine, es erweitert die Welt, 
-das Bewußtsein und das Glück seines Fahrers.
 
-Die Implementierung von Elementen aus der motorisierten Fahrzeugtechnik sehen wir kritisch. 
-Das Fahrrad soll leicht, schön und so genial einfach bleiben und ein verläßlicher Freund sein, 
-sei es bei den alltäglichen Fahrten oder bei einer Reise um die Welt.
-""")
-    
-    def htmlContent = s"""
+    def name = "start"
+
+    val text: String = md(
+      """Wir bieten Räder für alltäglichen Stadtfahrten und Überlandfahrten bis Weltreisen.
+        |Genial einfach, schön und leicht sollen sie sein, haltbar und kostengünstig in der Wartung.
+        |Es sind Räder mit schlanken Stahlrahmen und bewährten Komponenten.
+        |
+        |SURLY 'serious steel bikes for people who don't take them too seriously' Pelago 'gute Räder für ein besseres Leben'
+        |""".stripMargin)
+
+    def htmlContent =
+      s"""
 <div id="left">
     <h1>das taschenfahrrad</h1>
     <p>stadt-, tourenräder und fahrradtaschen<p>
@@ -211,10 +216,11 @@ sei es bei den alltäglichen Fahrten oder bei einer Reise um die Welt.
     <p id="sepa"/>
     <p><a target="_blank" href="http://www.openstreetmap.org/?lat=48.218173500000006&amp;lon=16.377131&amp;zoom=17&amp;layers=M&amp;mlat=48.21819&amp;mlon=16.37711">Leopoldsgasse 28 1020 Wien...</a></p>
     <p><a target="_blank" href="https://www.facebook.com/das-taschenfahrrad-108130579232304">facebook...</a></p>
+    <p><a target="_blank" href="https://www.instagram.com/taschenfahrrad/">instagram...</a></p>
     <p id="sepa"/>
     <p>kontakt</p>
     <p><a href="mailto:hans.poellhuber@chello.at">hans.poellhuber@chello.at</a></p>
-    <p>0043 699 10431886</p>
+    <p>0043 699 1043 1886</p>
     <p id="sepa"/>
     $text
     <p id="sepa"/>
@@ -228,8 +234,11 @@ ${T.htmlContetntRight(this)}
 
   val servicePage: Page = new Page {
     def id = "service"
+
     def name = "service"
-    def htmlContent = s"""
+
+    def htmlContent =
+      s"""
 <div id="left">
 <h1><a href="index.html">das taschenfahrrad</a></h1>
 <p><a href="index.html">start</a> &#62; $name</p>
@@ -239,7 +248,7 @@ Radservice
 <p id="sepa1"/>
 Ein regelmäßiges Service dient der Sicherheit und der Werterhaltung des geliebten Fahrzeuges und erspart teure Reparaturen.
 <br/>
-Für alle ‘taschenfahrrad’-Räder wird nach Kauf innerhalb der ersten 3 Monate ein Gratis/Garantie-Service angeboten und innerhalb der nächsten 3 Jahre gilt ein Pauschalpreis von maximal 49€. Ansonsten wird der tatsächliche Arbeitsaufwand berechnet nach Kostenvoranschlag und Leistungsumfang … 1€ pro Minute.
+Für alle ‘taschenfahrrad’-Räder wird nach Kauf innerhalb der ersten 3 Monate ein Gratis/Garantie-Service angeboten und innerhalb der nächsten 3 Jahre gilt ein Pauschalpreis von maximal 49EUR. Ansonsten wird der tatsächliche Arbeitsaufwand berechnet nach Kostenvoranschlag und Leistungsumfang … 1EUR pro Minute.
 Wir empfehlen Radservice immer dort machen zu lassen, wo das Rad gekauft wurde. Nur dort sind immer alle Ersatzteile verfügbar, ausgenommen Tausch gängiger Verschleißteile (Reifen, Schlauch, Bremsgummis…).
 <br/>
 Bitte immer Termin ausmachen, sonst platzt unsere Werkstatt. Das Rad ist in der Regel immer am darauffolgenden Tag abholbereit. Der Kunde wird nach Fertigstellung per sms oder mail benachrichtigt.
@@ -255,8 +264,11 @@ ${T.htmlContetntRight(this)}
 
   val accessoriesPage: Page = new Page {
     def id = "accessories"
+
     def name = "zubehör"
-    def htmlContent = s"""
+
+    def htmlContent =
+      s"""
 <div id="left">
 <h1><a href="index.html">das taschenfahrrad</a></h1>
 <p><a href="index.html">start</a> &#62; $name</p>
@@ -294,26 +306,80 @@ ${T.htmlContetntRight(this)}
 
   val producerPage: Page = new Page {
     def id = "producer"
+
     def name = "fahrräder"
-    def htmlContent = s"""
+
+    private val txtFahrraeder = md(
+      """#### stadträder
+        |
+        |
+        |[tokyobike classic, classic26, bisou](http://www.tokyobike.de)
+        |
+        |[linus dutchi,mixte, roadster](https://www.linusbike.eu/)
+        |
+        |[Pelago Brooklyn, Bristol](https://www.pelagobicycles.com)
+        |
+        |
+        |#### tourenräder
+        |
+        |
+        |[SURLY Long Haul Trucker, Disc Trucker, Pack rat, Pacer, Cross Check, Troll](https://surlybikes.com)
+        |
+        |[Kona Sutra, Rove ST](https://www.konaworld.com)
+        |
+        |[Fuji Touring](http://www.fujibikes.com)
+        |
+        |[Pelago Airisto, Hanko](https://www.pelagobicycles.com)
+        |
+        |[paripa K-Serie, meral, JWD](http://paripa.de)
+        |
+        |[Contoura Manufaktur Salerno](https://www.contoura.de)
+        |
+        |
+        |#### beliebt für sowohl Stadt- als auch Tour, zb:
+        |
+        |
+        |[SURLY Pack rat, Cross Check](https://surlybikes.com)
+        |
+        |[paripa meral, K-Serie](http://paripa.de)
+        |
+        |[Contoura Salerno](https://www.contoura.de)
+        |
+        |
+        |#### weiters Räder von
+        |
+        |
+        |[creme](http://cremecycles.com), [Gazelle](https://www.gazelle.de),
+        |[Kona](https://www.konaworld.com), [Bobbin](https://bobbinbikes.com),
+        |[Breezer](http://www.breezerbikes.com/eu/), [Marin](https://www.marinbikes.com/de/),
+        |[Cooper](https://cooperbikes.com)
+        |
+        |und andere,
+        |
+        |
+        |#### aus Platzgründen nicht mehr alle Farben, Größen, Modelle lagernd und teilweise zu Abverkaufspreisen:
+        |
+        |
+        |[creme caferacer](http://cremecycles.com)
+        |
+        |[Gazelle van stael, classic](https://www.gazelle.de)
+        |
+        |[Bobbin Brownie, Birdie, Bramble, Noodle, Blackbird](https://bobbinbikes.com)
+        |
+        |[Breezer Liberty, Downtown](http://www.breezerbikes.com/eu/)
+        |
+        |
+        |und andere.
+      """.stripMargin)
+
+    def htmlContent =
+      s"""
 <div id="left">
 <h1><a href="index.html">das taschenfahrrad</a></h1>
 <p><a href="index.html">start</a> &#62; $name</p>
 <p id="sepa3"/>
-<p>
-Text Fahrräder TODO
-</p>
-<p id="sepa"/>
-			<p><a target="_blank" href="http://www.ortlieb.com/p-liste.php?ptyp=radtasche&lang=de">Ortlieb...</a></p>
-			<p><a target="_blank" href="http://www.bernunlimited.com/">Bern...</a></p>
-			<p><a target="_blank" href="http://www.tubus.com/">Tubus...</a></p>
-			<p><a target="_blank" href="http://www.racktime.com/">Racktime...</a></p>
-			<p><a target="_blank" href="http://www.brooksengland.com/">Brooks...</a></p>
-			<p><a target="_blank" href="http://www.infini.tw/">Infini...</a></p>
-			<p><a target="_blank" href="http://www.sellebassano.com/">selle bassano...</a></p>
-			<p><a target="_blank" href="http://www.abus.com/at/Sicherheit-Unterwegs/Fahrraeder">Abus...</a></p>
-			<p><a target="_blank" href="http://www.basil.nl/">Basil...</a></p>
-		</div>
+$txtFahrraeder
+</div>
 ${T.htmlContetntRight(this)}
   """
   }
@@ -338,6 +404,7 @@ object G {
       case p1: Page => genSinglePage(p1, outDir)
     }
   }
+
   private def genSinglePage(p: Page, outDir: File): Unit = {
     val fnam = T.fileName(p)
     val f = new File(outDir, fnam)
@@ -379,9 +446,9 @@ object ResCopy {
     import java.io.{File, FileInputStream, FileOutputStream}
     require(dir.isDirectory, "%s is not a directory" format dir)
     val newFile = new File(dir, f.getName)
-    new FileOutputStream(newFile) getChannel () transferFrom (
+    new FileOutputStream(newFile) getChannel() transferFrom(
       new FileInputStream(f).getChannel, 0, Long.MaxValue)
-    println("copied %s to %s" format (f, dir))
+    println("copied %s to %s" format(f, dir))
   }
 
   def leftIsYounger(left: File, right: File): Boolean = {
@@ -390,6 +457,7 @@ object ResCopy {
       val attr = Files.readAttributes(p, classOf[BasicFileAttributes])
       attr.lastModifiedTime().toMillis
     }
+
     time(left) > time(right)
   }
 
