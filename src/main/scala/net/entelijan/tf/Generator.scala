@@ -1,8 +1,8 @@
 package net.entelijan.tf
 
 import java.io.{File, PrintWriter}
-import java.nio.file.{FileSystems, Files, Path}
 import java.nio.file.attribute.BasicFileAttributes
+import java.nio.file.{FileSystems, Files, Path}
 
 trait ImageProvider {
   def id: String
@@ -219,7 +219,6 @@ sei es bei den alltäglichen Fahrten oder bei einer Reise um die Welt.
     $text
     <p id="sepa"/>
     <p><a href="producer.html">fahrräder...</a></p>
-    <p><a href="self.html">eigenbau...</a></p>
     <p><a href="accessories.html">zubehör...</a></p>
     <p><a href="team.html">team...</a></p>
     <p><a href="service.html">service...</a></p>
@@ -266,176 +265,6 @@ ${T.htmlContetntRight(this)}
   """
   }
 
-  val selfPage: Page = new Page {
-    def id = "self"
-    def name = "eigenbau"
-    def htmlContent = s"""
-<div id="left">
-	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="index.html">start</a> &#62; $name<p>
-	<p id="sepa3"/>
-  <p>
-Was ich am Fahrradmarkt nicht finde, baue ich unbeirrt von Moden selber.
-Ab ca. 1200€ realisiere ich individuelle Fahrräder für Stadtfahrten bis Weltreise mit
-verschiedenen Ausstattungsoptionen.
-Basis dafür sind hochwertige CrMo Stahlrahmen folgender Firmen.</p>
-<br/>
-<p><a href="selfsurly.html">Surly...</a></p>
-<p><a href="selfparipa.html">Paripa...</a></p>
-<p><a href="selfrakete.html">Rakete...</a></p>
-<p><a href="selfraco.html">Intec...</a></p>
-<p><a href="selfpelago.html">Pelago...</a></p>
-<p><a href="selfsalerno.html">Salerno/das taschenfahrrad...</a></p>
-
-
-</div>
-${T.htmlContetntRight(this)}  
-  """
-  }
-
-  val selfPageSurly: Page = new Page {
-    def id = "selfsurly"
-    def name = "surly"
-    def htmlContent = s"""
-<div id="left">
-	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; $name<p>
-	<p id="sepa3"/>
-<a target="_blank" href="http://surlybikes.com/bikes/cross_check"><img src="${T.IMAGES_DIR}/selfsurly/surly-logo.jpg" /></a>
-	<p id="sepa"/>
-<p>
-Vielseitige Designer von Fahrradrahmen aus Stahl und cleveren Fahrradkomponenten aus Bloomington, Minnesota, USA. 1. Adresse für Fahrradkuriere und 
-Weltumradler und die bevorzugten Rahmen für Eigenbauten im 'taschenfahrrad'. Erprobte Qualität und dennoch leistbar. 
-Während andere Hersteller noch damit beschäftigt zu kopieren arbeitet Surly schon wieder an neuen Projekten. <br/>
-Bei Surly glaubt man, dass es die Taten sind, die einen Menschen definieren, nicht die Summe der Habseligkeiten, 
-die Räder sind eine praktische Erweiterung seines Fahrrers. <br/>
-Lagernd im 'taschenfahrrad', alle Größen:
-<br/>
-<br/>
-Pacer 549€<br/>
-Cross Check 579€<br/>
-Long Haul Trucker 569€<br/>
-</p>
-</div>
-${T.htmlContetntRight(this)}  
-  """
-  }
-
-  val selfPageRaco: Page = new Page {
-    def id = "selfraco"
-    def name = "Intec"
-    def htmlContent = s"""
-<div id="left">
-	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; $name<p>
-	<p id="sepa3"/>
-<a target="_blank" href="http://www.ra-co.de/"><img src="${T.IMAGES_DIR}/logos/intec-logo.png" /></a>
-	<p id="sepa"/>
-<p>
-Die Firma Raco aus Erfurt/Deutschland läßt bei Fort/Tschechien hochwertige Stahlrahmen
-fertigen, die dann bei Brandes in Gifhorn/Deutschland 2fach kunststoffbeschichtet werden.<br/>
-Wir haben den F5 Rennradrahmen, F10 Crossrahmen, T6,7 Trekkingrahmen und M1
-ATB/Reiseradrahmen im Programm.<br/>
-Rahmengrößen: F5 52 55 58 61, F10 51 54 57 60 63,
-T6 49 53 57 61 64,5 T7 42 47 52 57 und M1 42 46 50 54 58<br/>
-Rahmenfarben: schwarz, tannengrün, melonengelb, rubinrot, nachtblaumetallic und
-anthrazitgraumetallic<br/>
-</p>
-</div>
-${T.htmlContetntRight(this)}  
-  """
-  }
-
-  val selfPageParipa: Page = new Page {
-    def id = "selfparipa"
-    def name = "paripa"
-    def htmlContent = s"""
-<div id="left">
-	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; $name<p>
-	<p id="sepa3"/>
-<a target="_blank" href="http://paripa.de/?page_id=40"><img src="${T.IMAGES_DIR}/logos/logo-paripa.jpg" /></a>
-	<p id="sepa"/>
-<p>
-Paripa ist eine Marke der Radspannerei in Berlin. Die Rahmen werden in Europa gefertigt.
-Die Idee: schnelle, sportliche und dennoch alltagstaugliche Räder für die Stadt. Die Sitzposition kann auch entspannter gestaltet werden. 
-Grazil sind die Rahmen, aber dennoch robust, weil aus hochfestem Stahl. Die Rahmen sind bereits ideal vorkonfiguriert für das, was ein Rad im 
-Ganzjahres einsatz dann doch braucht: Schutzbleche, Gepäckträger, Lichtverkabelung innen etc. 
-Zur bewährten K-Serie gesellt sich ab Frühjahr das JWD (auf berlinerisch: „jans weit draussen“)ein Crosser für Radreisen.
-<br/>
-<br/>
-K-Serie: 529€<br/>
-JWD 599€<br/>
-in der gewünschte RAL Farbe pulverbeschichtet
-</p>
-</div>
-${T.htmlContetntRight(this)}  
-  """
-  }
-
-  val selfPageSalerno: Page = new Page {
-    def id = "selfsalerno"
-    def name = "Salerno/das taschenfahrrad"
-    def htmlContent = s"""
-<div id="left">
-	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; $name<p>
-	<p id="sepa3"/>
-    <a target="_blank" href="http://hartje-manufaktur.de/"><img src="${T.IMAGES_DIR}/${this.id}/logo-hartje.png" /></a>
-	<p id="sepa"/>
-<p>
-Das Manufakturmodell Salerno gibt es auch als Rahmenset um 339€ für ein taschenfahrrad/Salerno.<br/>
-3 Rahmenformen: Diamant, Mixte/Anglaise, Swiss Curve. 
-12 Rahmengrößen und 20 (RAL) Farben.<br/>
-So sind auch ‘weniger ist mehr’ Salernos machbar,
-zB mit Nexus3, 1x8, 2x8 Schaltung. Fixe Lichtanlage oder ohne.....etc.
-</p>
-</div>
-${T.htmlContetntRight(this)}  
-  """
-  }
-
-  val selfPageRakete: Page = new Page {
-    def id = "selfrakete"
-    def name = "rakete"
-    def htmlContent = s"""
-<div id="left">
-	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; $name<p>
-	<p id="sepa3"/>
-    <a target="_blank" href="http://raketerad.de"><img src="${T.IMAGES_DIR}/logos/logo_rakete.png" /></a>
-	<p id="sepa"/>
-<p>
-Die Raketebauer aus Berlin/Prenzlauerberg haben Fahrräder mit Stahlrahmen überzeugend wiederbelebt 
-und nicht nur das, auch die klassischen Rahmenformen:
-Diamant, Mixte, Meral, Anglaise und Corniche.
-Wir holen uns Raketenteile nach Wien und bauen uns eine 'taschenfahrrad'-Rakete:<br/>
-Ein ‘Mixte’ in perlrot fand bald eine Besitzerin, lagernd ist ein ‘Corniche’ in racinggreen-metallic in Rahmenhöhe 52. 
-Andere auf Anfrage 1-2 Monate Vorlaufzeit für die Rahmen.
-</p>
-</div>
-${T.htmlContetntRight(this)}  
-  """
-  }
-
-  val selfPagePelago: Page = new Page {
-    def id = "selfpelago"
-    def name = "pelago"
-    def htmlContent = s"""
-<div id="left">
-	<h1><a href="index.html">das taschenfahrrad</a></h1>
-	<p><a href="${startPage.id}.html">${startPage.name}</a> &#62; <a href="${selfPage.id}.html">${selfPage.name}</a> &#62; $name<p>
-	<p id="sepa3"/>
-    <a target="_blank" href="https://www.pelagobicycles.com"><img src="${T.IMAGES_DIR}/selfpelago/pelago-logo.png" /></a>
-	<p id="sepa"/>
-<p>
-Die Modelle Capri und San Sebastian gibt es auch als Rahmensets für indiviuellen Aufbau.
-</p>
-</div>
-${T.htmlContetntRight(this)}  
-  """
-  }
-
   val servicePage: Page = new Page {
     def id = "service"
     def name = "service"
@@ -457,55 +286,11 @@ Bitte immer Termin ausmachen, sonst platzt unsere Werkstatt. Das Rad ist in der 
 Kleinere Reparaturen werden auch ‘en passant’ erledigt.
 </p>
 <p id="sepa3"/>
-<p><a href="serviceChecklist.html">service checklist...</a></p>
 </div>
 ${T.htmlContetntRight(this)}  
   """
   }
 
-  val serviceChecklistPage: Page = new Page {
-    def id = "serviceChecklist"
-    def name = "service checklist"
-    def htmlContent = s"""
-<div id="left-checklist">
-<h1><a href="index.html">das taschenfahrrad</a></h1>
-<p><a href="index.html">start</a> &#62; <a href="service.html">service</a> &#62; $name</p>
-<p id="sepa3"/>
-<p>
-Checkliste Service:
-<br/>
-<br/>
-Sichtkontrolle
--Rahmen, Gabel auf Beschädigungen, Korrosion, Risse.
-<br/>
-<br/>
-Kontrolle der ..<br/>
--Montagen, Vorbau, Sattelstütze auf festen Sitz, ggf. fetten.<br/>
--Lagereinstellungen, Naben- und Steuerlager überprüfen, ggf. fetten,
-Achsgewinde und Schnellspanner fetten.<br/>
--Einstellungen von Schaltnaben überprüfen ggf. nachjustieren,
-Achssitz überprüfen, Kette spannen.<br/>
--Laufräder auf Rundlauf, Speichenspannung, Einbaulage, Mittigkeit, Befestigung,
-ggf. nachzentrieren, Austausch von beschädigten/verschlissenen Reifen.<br/>
--Verschleißteile und ggf. Austausch von Bremsbacken, Kette, Bowdenzüge, Seile.<br/>
--Einstellungen von Bremsen, Schaltwerk, Umwerfer, ggf. reinigen, bewegliche Teile,
-Gelenkverbindungen ölen und nachjustieren.<br/>
--Anbauteile, Schutzbleche, Gepäckträger, Ständer, Lichthalter, Seitenläufer auf festen Sitz.
-<br/>
-<br/>
-
-Kontrolle von<br/>
--Tretlager auf Spiel.<br/>
--Kurbel-, Kettenblatt-, Pedalverschraubung auf festen Sitz, ggf. fetten.<br/>
--Lenker, Vorbau, Griffe, Bremshebel, Schalthebel auf Einstellung, Funktion und Befestigung.<br/>
--Lichtanlage auf Funktion, Befestigung, Kabelverlegung<br/>
--STVO- Ausstattung,
-<br/>
-<br/>
-PROBEFAHRT</p>
-</div>
-  """
-  }
 
   val accessoriesPage: Page = new Page {
     def id = "accessories"
@@ -530,7 +315,7 @@ z.B. :
 und  vieles mehr.     
 </p>       
 <p id="sepa"/>
-            
+
 			<p><a target="_blank" href="http://www.ortlieb.com/p-liste.php?ptyp=radtasche&lang=de">Ortlieb...</a></p>
 			<p><a target="_blank" href="http://www.bernunlimited.com/">Bern...</a></p>
 			<p><a target="_blank" href="http://www.tubus.com/">Tubus...</a></p>
@@ -540,13 +325,39 @@ und  vieles mehr.
 			<p><a target="_blank" href="http://www.sellebassano.com/">selle bassano...</a></p>
 			<p><a target="_blank" href="http://www.abus.com/at/Sicherheit-Unterwegs/Fahrraeder">Abus...</a></p>
 			<p><a target="_blank" href="http://www.basil.nl/">Basil...</a></p>
-    	
+
 		</div>
 ${T.htmlContetntRight(this)}  
   """
   }
 
-  val pages: List[Page] = List(startPage, accessoriesPage, teamPage, servicePage, serviceChecklistPage, selfPage, selfPageSurly, selfPageRaco, selfPageParipa, selfPageRakete, selfPagePelago, selfPageSalerno)
+  val producerPage: Page = new Page {
+    def id = "producer"
+    def name = "fahrräder"
+    def htmlContent = s"""
+<div id="left">
+<h1><a href="index.html">das taschenfahrrad</a></h1>
+<p><a href="index.html">start</a> &#62; $name</p>
+<p id="sepa3"/>
+<p>
+Text Fahrräder TODO
+</p>
+<p id="sepa"/>
+			<p><a target="_blank" href="http://www.ortlieb.com/p-liste.php?ptyp=radtasche&lang=de">Ortlieb...</a></p>
+			<p><a target="_blank" href="http://www.bernunlimited.com/">Bern...</a></p>
+			<p><a target="_blank" href="http://www.tubus.com/">Tubus...</a></p>
+			<p><a target="_blank" href="http://www.racktime.com/">Racktime...</a></p>
+			<p><a target="_blank" href="http://www.brooksengland.com/">Brooks...</a></p>
+			<p><a target="_blank" href="http://www.infini.tw/">Infini...</a></p>
+			<p><a target="_blank" href="http://www.sellebassano.com/">selle bassano...</a></p>
+			<p><a target="_blank" href="http://www.abus.com/at/Sicherheit-Unterwegs/Fahrraeder">Abus...</a></p>
+			<p><a target="_blank" href="http://www.basil.nl/">Basil...</a></p>
+		</div>
+${T.htmlContetntRight(this)}
+  """
+  }
+
+  val pages: List[Page] = List(startPage, producerPage, accessoriesPage, teamPage, servicePage)
 
 }
 
