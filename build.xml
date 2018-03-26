@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project>
+
 <project name="taschenfahrrad">
-	<property name="version" value="2017.2" />
+
+    <property name="work">/Users/wwagner4/work/work-html-hp-t</property>
+
+	<property name="version" value="2018.1" />
 	<target name="clean">
-		<delete dir="gen" >
+		<delete dir="${work}/gen" >
 			<include name="**/*" />
 		</delete>
 	</target>
 	<target name="zip">
-		<zip destfile="gen_report/hp-taschenfahrrad-${version}.zip" basedir="gen" includes="**/*" />
+		<zip destfile="${work}/hp-taschenfahrrad-${version}.zip" basedir="${work}/gen" includes="**/*" />
 	</target>
 </project>

@@ -216,9 +216,11 @@ object D {
       s"""
          |<div id="left">
          |<h1>das taschenfahrrad</h1>
+         |<p id="sepa2" />
          |<p>stadt-, tourenräder und fahrradtaschen<p>
+         |<p id="sepa2" />
          |<p>verkauf / werkstatt<p>
-         |<p>di-fr: 12:00 - 18:00</p>
+         |<p>di-fr: 13:00 - 18:00</p>
          |<p>sa: 9:00 - 15:00</p>
          |<p id="sepa"/>
          |<p><a target="_blank" href="http://www.openstreetmap.org/?lat=48.218173500000006&amp;lon=16.377131&amp;zoom=17&amp;layers=M&amp;mlat=48.21819&amp;mlon=16.37711">Leopoldsgasse 28 1020 Wien...</a></p>
@@ -228,11 +230,11 @@ object D {
          |<p>kontakt</p>
          |<p><a href="mailto:hans.poellhuber@chello.at">hans.poellhuber@chello.at</a></p>
          |<p>0043 699 1043 1886</p>
-         |<p id="sepa"/>
+         |<p id="sepa2"/>
          |<p>Wir bieten Räder für alltäglichen Stadtfahrten und Überlandfahrten bis Weltreisen.
          |Genial einfach, schön und leicht sollen sie sein, haltbar und kostengünstig in der Wartung.
          |Es sind Räder mit schlanken Stahlrahmen und bewährten Komponenten.</p>
-         |<p id="sepa"/>
+         |<p id="sepa2"/>
          |<p>SURLY<br>
          |'serious steel bikes for people who don't take them too seriously'</p>
          |<p id="sepa"/>
