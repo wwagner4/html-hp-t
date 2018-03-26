@@ -328,62 +328,55 @@ ${T.htmlContetntRight(this)}
 
     def name = "fahrräder"
 
-    private val txtFahrraeder =
-      """<p>stadträder</p>
-        |<p id="sepa"/>
-        |<p><a href="http://www.tokyobike.de" target="_blank">tokyobike classic, classic26, bisou]</a></p>
-        |<p><a href="https://www.linusbike.eu" target="_blank">linus dutchi,mixte, roadster]</a></p>
-        |<p><a href="https://www.pelagobicycles.com" target="_blank">Pelago Brooklyn, Bristol]</a></p>
-        |<p id="sepa2"/>
-        |
-        |<p>tourenräder</p>
-        |<p id="sepa"/>
-        |<p><a href="https://surlybikes.com" target="_blank">SURLY Long Haul Trucker, Disc Trucker, Pack rat, Pacer, Cross Check, Troll</a></p>
-        |<p><a href="https://www.konaworld.com" target="_blank">Kona Sutra, Rove ST</a></p>
-        |<p><a href="http://www.fujibikes.com" target="_blank">Fuji Touring</a></p>
-        |<p><a href="https://www.pelagobicycles.com" target="_blank">Pelago Airisto, Hanko</a></p>
-        |<p><a href="http://paripa.de" target="_blank">paripa K-Serie, meral, JWD</a></p>
-        |<p><a href="https://www.contoura.de" target="_blank">Contoura Manufaktur Salerno</a></p>
-        |<p id="sepa2"/>
-        |
-        |<p>beliebt für sowohl Stadt- als auch Tour, zb:</p>
-        |<p id="sepa"/>
-        |<p><a href="https://surlybikes.com" target="_blank">SURLY Pack rat, Cross Check</a></p>
-        |<p><a href="http://paripa.de" target="_blank">paripa meral, K-Serie</a></p>
-        |<p><a href="https://www.contoura.de" target="_blank">Contoura Salerno</a></p>
-        |<p id="sepa2"/>
-        |
-        |<p>weiters Räder von</p>
-        |<p id="sepa"/>
-        |<p><a href="http://cremecycles.com" target="_blank">creme</a>,
-        |<a href="https://www.gazelle.de" target="_blank">Gazelle</a>,
-        |<a href="https://www.konaworld.com" target="_blank">Kona</a>,
-        |<a href="https://bobbinbikes.com" target="_blank">Bobbin</a>,
-        |<a href="http://www.breezerbikes.com/eu/" target="_blank">Breezer</a>,
-        |<a href="https://www.marinbikes.com/de/" target="_blank">Marin</a>,
-        |<a href="https://cooperbikes.com" target="_blank">Cooper</a>
-        |und andere,</p>
-        |<p id="sepa2"/>
-        |
-        |<p>aus Platzgründen nicht mehr alle Farben, Größen, Modelle lagernd und teilweise zu Abverkaufspreisen:</p>
-        |<p id="sepa"/>
-        |<p><a href="http://cremecycles.com" target="_blank">creme caferacer</a></p>
-        |<p><a href="https://www.gazelle.de" target="_blank">Gazelle van stael, classic</a></p>
-        |<p><a href="https://bobbinbikes.com" target="_blank">Bobbin Brownie, Birdie, Bramble, Noodle, Blackbird</a></p>
-        |<p><a href="http://www.breezerbikes.com/eu/" target="_blank">Breezer Liberty, Downtown</a></p>
-        |<p>und andere.</p>
-      """.stripMargin
-
-    def htmlContent =
-      s"""
-<div id="left">
-<h1><a href="index.html">das taschenfahrrad</a></h1>
-<p><a href="index.html">start</a> &#62; $name</p>
-<p id="sepa2"/>
-$txtFahrraeder
-</div>
-${T.htmlContetntRight(this)}
-  """
+    def htmlContent: String =
+      s"""|<div id="left">
+          |<h1><a href="index.html">das taschenfahrrad</a></h1>
+          |<p><a href="index.html">start</a> &#62; $name</p>
+          |<p id="sepa3"/>
+          |<p>stadträder</p>
+          |<p id="sepa"/>
+          |<p><a href="http://www.tokyobike.de" target="_blank">tokyobike classic, classic26, bisou]</a></p>
+          |<p><a href="https://www.linusbike.eu" target="_blank">linus dutchi,mixte, roadster]</a></p>
+          |<p><a href="https://www.pelagobicycles.com" target="_blank">Pelago Brooklyn, Bristol]</a></p>
+          |<p id="sepa2"/>
+          |
+          |<p>tourenräder</p>
+          |<p id="sepa"/>
+          |<p><a href="https://surlybikes.com/bikes/" target="_blank">SURLY Long Haul Trucker, Disc Trucker, Pack rat, Pacer, Cross Check, Troll</a></p>
+          |<p><a href="https://www.konaworld.com/platform_sutra.cfm" target="_blank">Kona Sutra, Rove ST</a></p>
+          |<p><a href="http://www.fujibikes.com/usa/bikes/road/adventure-and-touring/touring" target="_blank">Fuji Touring</a></p>
+          |<p><a href="https://www.pelagobicycles.com/bicycles/airisto-outback.html" target="_blank">Pelago Airisto, Hanko</a></p>
+          |<p><a href="http://paripa.de" target="_blank">paripa K-Serie, meral, JWD</a></p>
+          |<p><a href="https://www.contoura.de/modelle/salerno/" target="_blank">Contoura Manufaktur Salerno</a></p>
+          |<p id="sepa2"/>
+          |
+          |<p>beliebt für sowohl Stadt- als auch Tour, zb:</p>
+          |<p id="sepa"/>
+          |<p><a href="https://surlybikes.com/bikes/pack_rat" target="_blank">SURLY Pack rat, Cross Check</a></p>
+          |<p><a href="http://paripa.de" target="_blank">paripa meral, K-Serie</a></p>
+          |<p><a href="https://www.contoura.de/modelle/salerno/" target="_blank">Contoura Salerno</a></p>
+          |<p id="sepa2"/>
+          |
+          |<p>weiters Räder von</p>
+          |<p id="sepa"/>
+          |<p>
+          |<a href="http://cremecycles.com/lady-caferacer-lady-series,18,pl.html" target="_blank">creme</a>,
+          |<a href="https://www.gazelle.de/van-stael-v3" target="_blank">Gazelle</a>,
+          |<a href="https://www.konaworld.com/platform_steel_road.cfm" target="_blank">Kona</a>,
+          |</p>
+          |<p id="sepa2"/>
+          |
+          |<p>Abverkaufsmodelle</p>
+          |<p id="sepa"/>
+          |<p>
+          |<a href="https://bobbinbikes.com/collections/adult-bikes" target="_blank">Bobbin</a>,
+          |<a href="http://www.breezerbikes.com/eu/bikes/transportation/liberty" target="_blank">Breezer</a>,
+          |<a href="https://www.marinbikes.com/de/" target="_blank">Marin</a>,
+          |<a href="https://cooperbikes.com" target="_blank">Cooper</a>
+          |</p>
+          |</div>
+          |${T.htmlContetntRight(this)}
+          """.stripMargin
   }
 
   val pages: List[Page] = List(startPage, producerPage, accessoriesPage, servicePage)
