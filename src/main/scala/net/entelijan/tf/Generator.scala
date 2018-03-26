@@ -95,7 +95,10 @@ object T {
 
     val d = new File("src/main/web/%s" format imagesDirPath(p))
     require(d.exists(), "directory %s must exist" format d)
-    d.listFiles().filter(f => acceptName(f.getName)).toList
+    d.listFiles()
+      .filter(f => acceptName(f.getName))
+      .toList
+      .sortBy(f => f.getName)
   }
 
   def logoFile(p: ImageProvider): File = {
