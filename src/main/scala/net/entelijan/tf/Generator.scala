@@ -202,34 +202,48 @@ object D {
         |Genial einfach, schön und leicht sollen sie sein, haltbar und kostengünstig in der Wartung.
         |Es sind Räder mit schlanken Stahlrahmen und bewährten Komponenten.
         |
-        |SURLY 'serious steel bikes for people who don't take them too seriously' Pelago 'gute Räder für ein besseres Leben'
+        |SURLY
+        |'serious steel bikes for people who don't take them too seriously'
+        |
+        |Pelago
+        |'gute Räder für ein besseres Leben'
         |""".stripMargin)
 
-    def htmlContent =
+    def htmlContent: String =
       s"""
-<div id="left">
-    <h1>das taschenfahrrad</h1>
-    <p>stadt-, tourenräder und fahrradtaschen<p>
-    <p>verkauf / werkstatt<p>
-    <p>di-fr: 12:00 - 18:00</p>
-    <p>sa: 9:00 - 15:00</p>
-    <p id="sepa"/>
-    <p><a target="_blank" href="http://www.openstreetmap.org/?lat=48.218173500000006&amp;lon=16.377131&amp;zoom=17&amp;layers=M&amp;mlat=48.21819&amp;mlon=16.37711">Leopoldsgasse 28 1020 Wien...</a></p>
-    <p><a target="_blank" href="https://www.facebook.com/das-taschenfahrrad-108130579232304">facebook...</a></p>
-    <p><a target="_blank" href="https://www.instagram.com/taschenfahrrad/">instagram...</a></p>
-    <p id="sepa"/>
-    <p>kontakt</p>
-    <p><a href="mailto:hans.poellhuber@chello.at">hans.poellhuber@chello.at</a></p>
-    <p>0043 699 1043 1886</p>
-    <p id="sepa"/>
-    $text
-    <p id="sepa"/>
-    <p><a href="producer.html">fahrräder...</a></p>
-    <p><a href="accessories.html">zubehör...</a></p>
-    <p><a href="service.html">service...</a></p>
-</div>
-${T.htmlContetntRight(this)}  
-  """
+         |<div id="left">
+         |<h1>das taschenfahrrad</h1>
+         |<p>stadt-, tourenräder und fahrradtaschen<p>
+         |<p>verkauf / werkstatt<p>
+         |<p>di-fr: 12:00 - 18:00</p>
+         |<p>sa: 9:00 - 15:00</p>
+         |<p id="sepa"/>
+         |<p><a target="_blank" href="http://www.openstreetmap.org/?lat=48.218173500000006&amp;lon=16.377131&amp;zoom=17&amp;layers=M&amp;mlat=48.21819&amp;mlon=16.37711">Leopoldsgasse 28 1020 Wien...</a></p>
+         |<p><a target="_blank" href="https://www.facebook.com/das-taschenfahrrad-108130579232304">facebook...</a></p>
+         |<p><a target="_blank" href="https://www.instagram.com/taschenfahrrad/">instagram...</a></p>
+         |<p id="sepa"/>
+         |<p>kontakt</p>
+         |<p><a href="mailto:hans.poellhuber@chello.at">hans.poellhuber@chello.at</a></p>
+         |<p>0043 699 1043 1886</p>
+         |<p id="sepa"/>
+         |<p>Wir bieten Räder für alltäglichen Stadtfahrten und Überlandfahrten bis Weltreisen.
+         |Genial einfach, schön und leicht sollen sie sein, haltbar und kostengünstig in der Wartung.
+         |Es sind Räder mit schlanken Stahlrahmen und bewährten Komponenten.</p>
+         |<p id="sepa"/>
+         |<p>SURLY<br>
+         |'serious steel bikes for people who don't take them too seriously'</p>
+         |<p id="sepa"/>
+         |<p>Pelago<br>
+         |'gute Räder für ein besseres Leben'</p>
+         |<p id="sepa2"/>
+         |<p><a href="producer.html">fahrräder...</a></p>
+         |<p id="sepa"/>
+         |<p><a href="accessories.html">zubehör...</a></p>
+         |<p id="sepa"/>
+         |<p><a href="service.html">service...</a></p>
+         |</div>
+         |${T.htmlContetntRight(this)}
+         |""".stripMargin
   }
 
   val servicePage: Page = new Page {
@@ -246,14 +260,19 @@ ${T.htmlContetntRight(this)}
 <p>
 Radservice
 <p id="sepa1"/>
-Ein regelmäßiges Service dient der Sicherheit und der Werterhaltung des geliebten Fahrzeuges und erspart teure Reparaturen.
+Ein regelmäßiges Service dient der Sicherheit und der Werterhaltung des geliebten Fahrzeuges
+und erspart teure Reparaturen.
 <br/>
-Für alle ‘taschenfahrrad’-Räder wird nach Kauf innerhalb der ersten 3 Monate ein Gratis/Garantie-Service angeboten und innerhalb der nächsten 3 Jahre gilt ein Pauschalpreis von maximal 49EUR. Ansonsten wird der tatsächliche Arbeitsaufwand berechnet nach Kostenvoranschlag und Leistungsumfang … 1EUR pro Minute.
-Wir empfehlen Radservice immer dort machen zu lassen, wo das Rad gekauft wurde. Nur dort sind immer alle Ersatzteile verfügbar, ausgenommen Tausch gängiger Verschleißteile (Reifen, Schlauch, Bremsgummis…).
+Für alle 'taschenfahrrad'-Räder wird nach Kauf innerhalb der ersten 3 Monate ein Gratis/Garantie-Service
+angeboten und innerhalb der nächsten 3 Jahre gilt ein Pauschalpreis von maximal 59 EUR. Ansonsten wird der
+tatsächliche Arbeitsaufwand berechnet nach Kostenvoranschlag und Leistungsumfang … 1 EUR pro Minute.
+Wir empfehlen Radservice immer dort machen zu lassen, wo das Rad gekauft wurde. Nur dort sind immer
+alle Ersatzteile verfügbar, ausgenommen Tausch gängiger Verschleißteile (Reifen, Schlauch, Bremsgummis…).
 <br/>
-Bitte immer Termin ausmachen, sonst platzt unsere Werkstatt. Das Rad ist in der Regel immer am darauffolgenden Tag abholbereit. Der Kunde wird nach Fertigstellung per sms oder mail benachrichtigt.
+Bitte immer Termin ausmachen, sonst platzt unsere Werkstatt. Das Rad ist in der Regel immer
+am darauffolgenden Tag abholbereit. Der Kunde wird nach Fertigstellung per sms oder mail benachrichtigt.
 <p id="sepa1"/>
-Kleinere Reparaturen werden auch ‘en passant’ erledigt.
+Kleinere Reparaturen werden auch 'en passant' erledigt.
 </p>
 <p id="sepa3"/>
 </div>
@@ -309,75 +328,58 @@ ${T.htmlContetntRight(this)}
 
     def name = "fahrräder"
 
-    private val txtFahrraeder = md(
-      """#### stadträder
+    private val txtFahrraeder =
+      """<p>stadträder</p>
+        |<p id="sepa"/>
+        |<p><a href="http://www.tokyobike.de" target="_blank">tokyobike classic, classic26, bisou]</a></p>
+        |<p><a href="https://www.linusbike.eu" target="_blank">linus dutchi,mixte, roadster]</a></p>
+        |<p><a href="https://www.pelagobicycles.com" target="_blank">Pelago Brooklyn, Bristol]</a></p>
+        |<p id="sepa2"/>
         |
+        |<p>tourenräder</p>
+        |<p id="sepa"/>
+        |<p><a href="https://surlybikes.com" target="_blank">SURLY Long Haul Trucker, Disc Trucker, Pack rat, Pacer, Cross Check, Troll</a></p>
+        |<p><a href="https://www.konaworld.com" target="_blank">Kona Sutra, Rove ST</a></p>
+        |<p><a href="http://www.fujibikes.com" target="_blank">Fuji Touring</a></p>
+        |<p><a href="https://www.pelagobicycles.com" target="_blank">Pelago Airisto, Hanko</a></p>
+        |<p><a href="http://paripa.de" target="_blank">paripa K-Serie, meral, JWD</a></p>
+        |<p><a href="https://www.contoura.de" target="_blank">Contoura Manufaktur Salerno</a></p>
+        |<p id="sepa2"/>
         |
-        |[tokyobike classic, classic26, bisou](http://www.tokyobike.de)
+        |<p>beliebt für sowohl Stadt- als auch Tour, zb:</p>
+        |<p id="sepa"/>
+        |<p><a href="https://surlybikes.com" target="_blank">SURLY Pack rat, Cross Check</a></p>
+        |<p><a href="http://paripa.de" target="_blank">paripa meral, K-Serie</a></p>
+        |<p><a href="https://www.contoura.de" target="_blank">Contoura Salerno</a></p>
+        |<p id="sepa2"/>
         |
-        |[linus dutchi,mixte, roadster](https://www.linusbike.eu/)
+        |<p>weiters Räder von</p>
+        |<p id="sepa"/>
+        |<p><a href="http://cremecycles.com" target="_blank">creme</a>,
+        |<a href="https://www.gazelle.de" target="_blank">Gazelle</a>,
+        |<a href="https://www.konaworld.com" target="_blank">Kona</a>,
+        |<a href="https://bobbinbikes.com" target="_blank">Bobbin</a>,
+        |<a href="http://www.breezerbikes.com/eu/" target="_blank">Breezer</a>,
+        |<a href="https://www.marinbikes.com/de/" target="_blank">Marin</a>,
+        |<a href="https://cooperbikes.com" target="_blank">Cooper</a>
+        |und andere,</p>
+        |<p id="sepa2"/>
         |
-        |[Pelago Brooklyn, Bristol](https://www.pelagobicycles.com)
-        |
-        |
-        |#### tourenräder
-        |
-        |
-        |[SURLY Long Haul Trucker, Disc Trucker, Pack rat, Pacer, Cross Check, Troll](https://surlybikes.com)
-        |
-        |[Kona Sutra, Rove ST](https://www.konaworld.com)
-        |
-        |[Fuji Touring](http://www.fujibikes.com)
-        |
-        |[Pelago Airisto, Hanko](https://www.pelagobicycles.com)
-        |
-        |[paripa K-Serie, meral, JWD](http://paripa.de)
-        |
-        |[Contoura Manufaktur Salerno](https://www.contoura.de)
-        |
-        |
-        |#### beliebt für sowohl Stadt- als auch Tour, zb:
-        |
-        |
-        |[SURLY Pack rat, Cross Check](https://surlybikes.com)
-        |
-        |[paripa meral, K-Serie](http://paripa.de)
-        |
-        |[Contoura Salerno](https://www.contoura.de)
-        |
-        |
-        |#### weiters Räder von
-        |
-        |
-        |[creme](http://cremecycles.com), [Gazelle](https://www.gazelle.de),
-        |[Kona](https://www.konaworld.com), [Bobbin](https://bobbinbikes.com),
-        |[Breezer](http://www.breezerbikes.com/eu/), [Marin](https://www.marinbikes.com/de/),
-        |[Cooper](https://cooperbikes.com)
-        |
-        |und andere,
-        |
-        |
-        |#### aus Platzgründen nicht mehr alle Farben, Größen, Modelle lagernd und teilweise zu Abverkaufspreisen:
-        |
-        |
-        |[creme caferacer](http://cremecycles.com)
-        |
-        |[Gazelle van stael, classic](https://www.gazelle.de)
-        |
-        |[Bobbin Brownie, Birdie, Bramble, Noodle, Blackbird](https://bobbinbikes.com)
-        |
-        |[Breezer Liberty, Downtown](http://www.breezerbikes.com/eu/)
-        |
-        |
-        |und andere.
-      """.stripMargin)
+        |<p>aus Platzgründen nicht mehr alle Farben, Größen, Modelle lagernd und teilweise zu Abverkaufspreisen:</p>
+        |<p id="sepa"/>
+        |<p><a href="http://cremecycles.com" target="_blank">creme caferacer</a></p>
+        |<p><a href="https://www.gazelle.de" target="_blank">Gazelle van stael, classic</a></p>
+        |<p><a href="https://bobbinbikes.com" target="_blank">Bobbin Brownie, Birdie, Bramble, Noodle, Blackbird</a></p>
+        |<p><a href="http://www.breezerbikes.com/eu/" target="_blank">Breezer Liberty, Downtown</a></p>
+        |<p>und andere.</p>
+      """.stripMargin
 
     def htmlContent =
       s"""
 <div id="left">
 <h1><a href="index.html">das taschenfahrrad</a></h1>
 <p><a href="index.html">start</a> &#62; $name</p>
-<p id="sepa3"/>
+<p id="sepa2"/>
 $txtFahrraeder
 </div>
 ${T.htmlContetntRight(this)}
