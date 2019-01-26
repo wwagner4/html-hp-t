@@ -1,0 +1,7 @@
+
+
+# create thumbnails
+mogrify  -format jpg -path thumbs -thumbnail 200x200 *.jpg
+
+# create a collage (montage)
+montage *.jpg -geometry +0+0   montage/montage_geom_3.jpg         
