@@ -236,9 +236,13 @@ object D {
          |</p>
          |
          |<p id="sepa2"/>
-         |<p><a href="producer.html">fahrräder...</a></p>
+         |<p><a href="producer.html">unsere Markenräder...</a></p>
          |<p id="sepa"/>
-         |<p><a href="service.html">service...</a></p>
+         |<p><a href="selfmade.html">unsere Eigenbauräder...</a></p>
+         |<p id="sepa"/>
+         |<p><a href="service.html">unser Service...</a></p>
+         |<p id="sepa"/>
+         |<p><a href="jobs.html">unser Jobangebot...</a></p>
          |</div>
          |${T.htmlContetntRight(this)}
          |""".stripMargin
