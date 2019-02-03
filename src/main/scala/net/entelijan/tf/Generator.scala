@@ -228,7 +228,12 @@ object D {
          |die sowohl komfortabel als auch robust sind, mit möglichst einfacher lang-
          |lebiger Technik. Räder, die sich schnell, unkompliziert und
          |günstig servicieren lassen. Wenn der Markt uns das nicht bieten
-         |kann, bauen wir die Räder selbst.<br>
+         |kann, bauen wir die Räder selbst.
+         |</p>
+         |<p id="sepa2"/>
+         |
+         |
+         |<p>
          |Wir lieben schnelle Räder, die auch praktisch sind und wir wollen
          |schöne Räder, weil wir gerne und mit Stolz radfahren.
          |</p>
@@ -279,7 +284,7 @@ object D {
           |    <tbody>
           |
           |    <tr>
-          |        <th>tokyobike</th>
+          |        <th><a href="http://www.tokyobike.de" target="_blank">tokyobike</a></th>
           |        <th>classic26</th>
           |        <th>47, 53, 57, 61</th>
           |        <th class="col-prize">759€</th>
@@ -291,7 +296,7 @@ object D {
           |        <th>659€</th>
           |    </tr>
           |    <tr>
-          |        <th>FUJI</th>
+          |        <th><a href="http://www.fujibikes.com/usa/bikes/road/adventure-and-touring/touring" target="_blank">FUJI</a></th>
           |        <th>touring</th>
           |        <th>49, 52, 54, 56, 58, 61, 64 black, blue</th>
           |        <th>899€</th>
@@ -309,7 +314,7 @@ object D {
           |        <th></th>
           |    </tr>
           |    <tr>
-          |        <th>KONA</th>
+          |        <th><a href="https://www.konaworld.com/platform_steel_road.cfm" target="_blank">KONA</a></th>
           |        <th>sutra</th>
           |        <th>54, 56, 58 blue</th>
           |        <th>1399€ statt 1499€</th>
@@ -320,7 +325,7 @@ object D {
           |        <th></th>
           |    </tr>
           |    <tr>
-          |        <th>Pelago</th>
+          |        <th><a href="https://www.pelagobicycles.com/bicycles/airisto-outback.html" target="_blank">PELAGO</a></th>
           |        <th>Airisto Outback</th>
           |        <th>57 metallic sand</th>
           |        <th>1335€</th>
@@ -355,7 +360,7 @@ object D {
           |        <th></th>
           |    </tr>
           |    <tr>
-          |        <th>LINUS</th>
+          |        <th><a href="https://www.linusbike.eu" target="_blank">LINUS</a></th>
           |        <th>scout</th>
           |        <th>46 cream, mustard</th>
           |        <th>499€</th>
@@ -379,7 +384,7 @@ object D {
           |        <th>599€</th>
           |    </tr>
           |    <tr>
-          |        <th>CREME</th>
+          |        <th><a href="http://cremecycles.com/lady-caferacer-lady-series,18,pl.html" target="_blank">CREME</a></th>
           |        <th>Caferacer Lady solo</th>
           |        <th>48 green, red</th>
           |        <th>749€ statt  849€</th>
@@ -421,13 +426,13 @@ object D {
           |        <th>999€ statt 1259€</th>
           |    </tr>
           |    <tr>
-          |        <th>Bobbin</th>
+          |        <th><a href="https://bobbinbikes.com/collections/adult-bikes" target="_blank">BOBBIN</a></th>
           |        <th>Noodle</th>
           |        <th>52, 56, 60 oliv, light teal</th>
           |        <th>499€</th>
           |    </tr>
           |    <tr>
-          |        <th>CONTOURA</th>
+          |        <th><a href="https://www.contoura.de/modelle/salerno/" target="_blank">CONTOURA</a></th>
           |        <th colspan="3">Manufactur Salerno</th>
           |    </tr>
           |    <tr>
@@ -449,7 +454,7 @@ object D {
           |        <th>899€</th>
           |    </tr>
           |    <tr>
-          |        <th>NALOO</th>
+          |        <th><a href="https://www.naloobikes.com/" target="_blank">NALOO</a></th>
           |        <th>Chameleon</th>
           |        <th>16“, 20“, 24“ Kinderräder</th>
           |        <th>ab 349€</th>
