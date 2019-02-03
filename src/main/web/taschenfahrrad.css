@@ -27,6 +27,14 @@ img {
 	margin: 0px;
 	padding: 0px;
 }
+th {
+    text-align: left;
+    vertical-align: top;
+    font-weight: unset;
+}
+.col-prize {
+    min-width: 140px;
+}
 a, img {
     border:none;
 }

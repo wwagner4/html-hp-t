@@ -262,7 +262,201 @@ object D {
           |   <p><a href="index.html">start</a> &#62; $name</p>
           |   <p id="sepa3"/>
           |
-          |   <p>TODO</p>
+          |<p>
+          |    Wir haben im Laufe der Jahre viele Marken geführt, erprobt und schätzen gelernt.
+          |    Veränderungen gibt es, weil sich Bezugsquellen ändern und das
+          |    Platzangebot im taschenfahrrad beschränkt ist.
+          |</p>
+          |<p>
+          |    Einige clicks führen jeweils zur Hersteller- oder Importeurseite
+          |    für detaillierte und bebilderte Infos. Die reale Welt des taschen-
+          |    fahrrads ist in 1020 Leopoldsg. 28,
+          |</p>
+          |<p>
+          |    come and see, die Auswahl:
+          |</p>
+          |<table>
+          |    <tbody>
+          |
+          |    <tr>
+          |        <th>tokyobike</th>
+          |        <th>classic26</th>
+          |        <th>47, 53, 57, 61</th>
+          |        <th class="col-prize">759€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>bisou</th>
+          |        <th>42, 50, 55 alle Farben</th>
+          |        <th>659€</th>
+          |    </tr>
+          |    <tr>
+          |        <th>FUJI</th>
+          |        <th>touring</th>
+          |        <th>49, 52, 54, 56, 58, 61, 64 black, blue</th>
+          |        <th>899€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>feather</th>
+          |        <th>singlespeed</th>
+          |        <th>499€ statt 599€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th></th>
+          |        <th>Größen und Farben auf Anfrage</th>
+          |        <th></th>
+          |    </tr>
+          |    <tr>
+          |        <th>KONA</th>
+          |        <th>sutra</th>
+          |        <th>54, 56, 58 blue</th>
+          |        <th>1399€ statt 1499€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th colspan="2">penthouse, penthouse flat, Honky Tonk und paddy wagon auf Anfrage</th>
+          |        <th></th>
+          |    </tr>
+          |    <tr>
+          |        <th>Pelago</th>
+          |        <th>Airisto Outback</th>
+          |        <th>57 metallic sand</th>
+          |        <th>1335€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>Hanko Outback</th>
+          |        <th>56 moss green</th>
+          |        <th>1335€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>Brooklyn3</th>
+          |        <th>52 black, dapper red, helene grey</th>
+          |        <th>825€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>Bristol3</th>
+          |        <th>57,61 black, traffic grey</th>
+          |        <th>825€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>Capri3</th>
+          |        <th>47,52,57  black, salmon, turquoise</th>
+          |        <th>995€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th colspan="2">Nexus8-Versionen jeweils auf Anfrage</th>
+          |        <th></th>
+          |    </tr>
+          |    <tr>
+          |        <th>LINUS</th>
+          |        <th>scout</th>
+          |        <th>46 cream, mustard</th>
+          |        <th>499€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>dutchi</th>
+          |        <th>46 black, cream, sage</th>
+          |        <th>599€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>mixte</th>
+          |        <th>49, 56  black, sky blue</th>
+          |        <th>599€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>roadster</th>
+          |        <th>59 oliv, black</th>
+          |        <th>599€</th>
+          |    </tr>
+          |    <tr>
+          |        <th>CREME</th>
+          |        <th>Caferacer Lady solo</th>
+          |        <th>48 green, red</th>
+          |        <th>749€ statt  849€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>Caferacer Men solo</th>
+          |        <th>50, 55, 60 blue</th>
+          |        <th>749€ statt  849€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>Caferacer Men uno</th>
+          |        <th>60,5 gree</th>
+          |        <th>599€ statt  699€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>Echo solo</th>
+          |        <th>55 white</th>
+          |        <th>699€ statt  869€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>Echo Doppio</th>
+          |        <th>57 deep blue</th>
+          |        <th>799€ statt 1199€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>Echo solo Mixte</th>
+          |        <th>51 sky blue</th>
+          |        <th>699€ statt 869€</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>Echo Lungo</th>
+          |        <th>55 dark green</th>
+          |        <th>999€ statt 1259€</th>
+          |    </tr>
+          |    <tr>
+          |        <th>Bobbin</th>
+          |        <th>Noodle</th>
+          |        <th>52, 56, 60 oliv, light teal</th>
+          |        <th>499€</th>
+          |    </tr>
+          |    <tr>
+          |        <th>CONTOURA</th>
+          |        <th colspan="3">Manufactur Salerno</th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>Diamant</th>
+          |        <th>50, 54, 58, 66, 70</th>
+          |        <th></th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>Mixte Anglaise</th>
+          |        <th>48, 52, 56, 60</th>
+          |        <th></th>
+          |    </tr>
+          |    <tr>
+          |        <th></th>
+          |        <th>Swiss Curve</th>
+          |        <th>49, 54</th>
+          |        <th>899€</th>
+          |    </tr>
+          |    <tr>
+          |        <th>NALOO</th>
+          |        <th>Chameleon</th>
+          |        <th>16“, 20“, 24“ Kinderräder</th>
+          |        <th>ab 349€</th>
+          |    </tr>
+          |    </tbody>
+          |</table>
+          |
           |
           |</div>
           |${T.htmlContetntRight(this)}
@@ -280,7 +474,88 @@ object D {
           |   <p><a href="index.html">start</a> &#62; $name</p>
           |   <p id="sepa3"/>
           |
-          |   <p>TODO</p>
+          |   <p>
+          |    für spezielle Anforderungen oder weil es individueller sein soll und das gewünschte Rad am Markt
+          |    so nicht zu finden ist. Wir bauen Räder
+          |    mit bewährten Komponenten, die wir gut
+          |    kennen und die gut aufeinander  abgestimmt
+          |    sind. Wir vermeiden komplexe wartungsintensive
+          |    Komponenten und lassen uns nicht von den
+          |    jeweils neuesten Trends hypnotisieren,
+          |    'the proof of the pudding is in the eating'.
+          |</p>
+          |<p>
+          |    Unsere Erfahrung, welches Rad passt und
+          |    welche Komponenten ihren Job schlicht,
+          |    einfach und gut machen, ist die Basis fürs
+          |    Gelingen. Wir verwenden die auf allen Wegen
+          |    der Erde erprobten Stahlrahmen von SURLY,
+          |    die gibt es ab Rahmenhöhe 38 bis 64.
+          |    Körpermaße von 150cm oder 200cm bringen
+          |    uns nicht in Verlegenheit.
+          |    Alle Größen und Farben lagernd,
+          |    Geometriedaten siehe Herstellerseite.
+          |</p>
+          |<table>
+          |    <tbody>
+          |    <tr>
+          |        <td>SURLY</td>
+          |        <td>
+          |            Long Haul Trucker, Cross Check,
+          |            Pack rat, Pacer, Troll u. a.
+          |        </td>
+          |        <td class="col-prize">ab 1650€</td>
+          |    </tr>
+          |    <tr>
+          |        <td>paripa</td>
+          |        <td>K und meral</td>
+          |        <td class="col-prize">ab 1500€</td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td>J W D</td>
+          |        <td class="col-prize">ab 1650€</td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td>alle RAL Farben</td>
+          |        <td class="col-prize"></td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td>Lieferzeit auf Anfrage</td>
+          |        <td class="col-prize"></td>
+          |    </tr>
+          |    <tr>
+          |        <td>BLB</td>
+          |        <td>Hichhiker auf Anfrage</td>
+          |        <td class="col-prize">ab 1500€</td>
+          |    </tr>
+          |    <tr>
+          |        <td>taschenfahrrad</td>
+          |        <td>only</td>
+          |        <td class="col-prize">ab 850€</td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td>Schlanker CrMo- Rahmen für
+          |            Stadt- & Trekkingaufbauten,
+          |        </td>
+          |        <td class="col-prize"></td>
+          |    </tr>
+          |    <tr>
+          |        <td>Diamant</td>
+          |        <td>52, 55, 59, 62</td>
+          |        <td class="col-prize"></td>
+          |    </tr>
+          |    <tr>
+          |        <td>Mixte</td>
+          |        <td>48, 55 schwarz glänzend</td>
+          |        <td class="col-prize"></td>
+          |    </tr>
+          |    </tbody>
+          |</table>
+          |
           |
           |</div>
           |${T.htmlContetntRight(this)}
@@ -294,11 +569,27 @@ object D {
 
     def htmlContent: String =
       s"""|<div id="left">
-          |   <h1><a href="index.html">das taschenfahrrad</a></h1>
-          |   <p><a href="index.html">start</a> &#62; $name</p>
-          |   <p id="sepa3"/>
+          |<h1><a href="index.html">das taschenfahrrad</a></h1>
+          |<p><a href="index.html">start</a> &#62; $name</p>
+          |<p id="sepa3"/>
           |
-          |   <p>TODO</p>
+          |<p>
+          |    In den Monaten März bis Oktober sucht das taschenfahrrad
+          |    Aushilfen für Verkauf, leichtere Reparaturen und für alles,
+          |    was das Geschäft in Schwung hält.
+          |</p>
+          |
+          |<p>
+          |    Bis 40 Std./Monat, 400€/Monat an vereinbarten Tagen,
+          |    für Fahrradtechniker die einen Zusatzverdienst suchen,
+          |    für Personen, die in Ausbildung zum Fahrradtechniker
+          |    Praxiserfahrung erwerben wollen und für Studenten mit
+          |    Interesse für Fahrradtechnik.
+          |</p>
+          |<p>
+          |    Bewirb dich, wir freuen uns.
+          |</p>
+          |
           |
           |</div>
           |${T.htmlContetntRight(this)}
@@ -317,7 +608,24 @@ object D {
          |<p><a href="index.html">start</a> &#62; $name</p>
          |<p id="sepa3"/>
          |
-         |<p>TODO</p>
+         |<p>
+         |    Ein regelmäßiges Service dient der Sicherheit und Wert-
+         |    erhaltung des geliebten Fahrzeuges und erspart spätere
+         |    teure Reparaturen.
+         |</p>
+         |<p>
+         |    Wir machen Pannendienst und schnelle Reparaturen für
+         |    alle Räder, immer wird der tatsächliche Arbeitsaufwand
+         |    verrechnet 1€/min.
+         |</p>
+         |<p>
+         |    Für taschenfahrrad- Räder wird innerhalb der ersten 3 Monate
+         |    ein Gratis/Garantie-Service angeboten und innerhalb der
+         |    ersten 3 Jahre gilt max. 59€ für ein umfassendes Service.
+         |    Grundsätzlich empfiehlt es sich, das Radservice dort machen
+         |    zu lassen, wo das Rad gekauft wurde, denn dort sollten alle
+         |    Ersatzteile verfügbar sein.
+         |</p>
          |
          |</div>
          |${T.htmlContetntRight(this)}
