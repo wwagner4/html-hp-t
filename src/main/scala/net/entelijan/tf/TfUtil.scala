@@ -4,11 +4,13 @@ import java.io.File
 
 object TfUtil {
 
-  def genDir: File = getCreateDir(Some(workDir), "gen")
+  def genDir: File = getCreateDir(Some(targetDir), "gen")
 
   def genReportDir: File = getCreateDir(Some(workDir), "gen-report")
 
   private def workDir: File = getCreateDir(Some(workDirGeneral), "work-html-hp-t")
+
+  private def targetDir: File = getCreateDir(None, "target")
 
   private def homeDir = getCreateDir(None, System.getProperty("user.home"))
 
