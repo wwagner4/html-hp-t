@@ -280,11 +280,12 @@ object D {
           |<p>
           |    come and see, die Auswahl:
           |</p>
+          |<p id="sepa"/>
           |<table>
           |    <tbody>
           |
           |    <tr>
-          |        <th><a href="http://www.tokyobike.de" target="_blank">tokyobike</a></th>
+          |        <th><a href="http://www.tokyobike.de" target="_blank">TOKYOBIKE</a></th>
           |        <th>classic26</th>
           |        <th>47, 53, 57, 61</th>
           |        <th class="col-prize">759€</th>
@@ -504,7 +505,7 @@ object D {
           |<table>
           |    <tbody>
           |    <tr>
-          |        <td>SURLY</td>
+          |        <td><a href="https://surlybikes.com/bikes/" target="_blank">SURLY</a></td>
           |        <td>
           |            Long Haul Trucker, Cross Check,
           |            Pack rat, Pacer, Troll u. a.
@@ -512,7 +513,7 @@ object D {
           |        <td class="col-prize">ab 1650€</td>
           |    </tr>
           |    <tr>
-          |        <td>paripa</td>
+          |        <td><a href="http://paripa.de" target="_blank">PARIPA</a></td>
           |        <td>K und meral</td>
           |        <td class="col-prize">ab 1500€</td>
           |    </tr>
@@ -532,7 +533,7 @@ object D {
           |        <td class="col-prize"></td>
           |    </tr>
           |    <tr>
-          |        <td>BLB</td>
+          |        <td><a href="https://www.bricklanebikes.co.uk/frames" target="_blank">BLB</a></td>
           |        <td>Hichhiker auf Anfrage</td>
           |        <td class="col-prize">ab 1500€</td>
           |    </tr>
@@ -583,7 +584,7 @@ object D {
           |    Aushilfen für Verkauf, leichtere Reparaturen und für alles,
           |    was das Geschäft in Schwung hält.
           |</p>
-          |
+          |<p id="sepa"/>
           |<p>
           |    Bis 40 Std./Monat, 400€/Monat an vereinbarten Tagen,
           |    für Fahrradtechniker die einen Zusatzverdienst suchen,
@@ -591,6 +592,7 @@ object D {
           |    Praxiserfahrung erwerben wollen und für Studenten mit
           |    Interesse für Fahrradtechnik.
           |</p>
+          |<p id="sepa"/>
           |<p>
           |    Bewirb dich, wir freuen uns.
           |</p>
@@ -618,11 +620,13 @@ object D {
          |    erhaltung des geliebten Fahrzeuges und erspart spätere
          |    teure Reparaturen.
          |</p>
+         |<p id="sepa"/>
          |<p>
          |    Wir machen Pannendienst und schnelle Reparaturen für
          |    alle Räder, immer wird der tatsächliche Arbeitsaufwand
          |    verrechnet 1€/min.
          |</p>
+         |<p id="sepa"/>
          |<p>
          |    Für taschenfahrrad- Räder wird innerhalb der ersten 3 Monate
          |    ein Gratis/Garantie-Service angeboten und innerhalb der
