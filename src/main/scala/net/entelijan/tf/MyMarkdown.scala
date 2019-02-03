@@ -1,10 +1,9 @@
 package net.entelijan.tf
 
-import laika.parse.markdown.Markdown
 import laika.api.Render
 import laika.api.Parse
+import laika.format._
 import scala.io.Codec
-import laika.render.HTML
 
 object MyMarkdown {
 
