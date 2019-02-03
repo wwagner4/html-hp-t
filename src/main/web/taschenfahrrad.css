@@ -52,28 +52,19 @@ a:active {
 }
 #all {
 	width: 1200px;
-	height: 700px;
 	margin:0 auto;
 }
 
 #left {
 	background-color: white;
-	width: 300px;
-	height: 100%;
+	width: 400px;
 	float: left;
-}
-
-#left-checklist {
-	background-color: white;
-	width: 800px;
-	height: 100%;
-	float: left;
+	padding-bottom: 30px;
 }
 
 #right {
 	background-color: white;
-	width: 900px;
-	height: 100%;
+	width: 800px;
 	float: right;
 }
 #sepa {
