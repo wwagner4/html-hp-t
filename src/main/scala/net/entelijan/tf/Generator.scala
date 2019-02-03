@@ -127,7 +127,7 @@ object T {
     <ul class="slides">
 ${htmlImageList(p)}
     </ul>
-    </div>		
+    </div>
 </div>
 """
 
@@ -140,7 +140,7 @@ ${htmlImageList(p)}
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <link href='taschenfahrrad.css'	rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="flexslider.css" type="text/css" media="screen" />
-<script src="js/modernizr.js"></script>	
+<script src="js/modernizr.js"></script>
 <style type="text/css">
 </style>
 </head>
@@ -193,8 +193,6 @@ $$(window).load(function() {
 
 object D {
 
-  import MyMarkdown._
-
   val startPage: Page = new Page {
     def id = "index"
 
@@ -237,93 +235,21 @@ object D {
          |
          |<p id="sepa2"/>
          |<p><a href="producer.html">unsere Markenräder...</a></p>
+         |
          |<p id="sepa"/>
          |<p><a href="selfmade.html">unsere Eigenbauräder...</a></p>
+         |
          |<p id="sepa"/>
          |<p><a href="service.html">unser Service...</a></p>
+         |
          |<p id="sepa"/>
          |<p><a href="jobs.html">unser Jobangebot...</a></p>
+         |
          |</div>
          |${T.htmlContetntRight(this)}
          |""".stripMargin
   }
 
-  val servicePage: Page = new Page {
-    def id = "service"
-
-    def name = "service"
-
-    def htmlContent =
-      s"""
-<div id="left">
-<h1><a href="index.html">das taschenfahrrad</a></h1>
-<p><a href="index.html">start</a> &#62; $name</p>
-<p id="sepa3"/>
-<p>
-Radservice
-<p id="sepa1"/>
-Ein regelmäßiges Service dient der Sicherheit und der Werterhaltung des geliebten Fahrzeuges
-und erspart teure Reparaturen.
-<br/>
-Für alle 'taschenfahrrad'-Räder wird nach Kauf innerhalb der ersten 3 Monate ein Gratis/Garantie-Service
-angeboten und innerhalb der nächsten 3 Jahre gilt ein Pauschalpreis von maximal 59 EUR. Ansonsten wird der
-tatsächliche Arbeitsaufwand berechnet nach Kostenvoranschlag und Leistungsumfang … 1 EUR pro Minute.
-Wir empfehlen Radservice immer dort machen zu lassen, wo das Rad gekauft wurde. Nur dort sind immer
-alle Ersatzteile verfügbar, ausgenommen Tausch gängiger Verschleißteile (Reifen, Schlauch, Bremsgummis…).
-<br/>
-Bitte immer Termin ausmachen, sonst platzt unsere Werkstatt. Das Rad ist in der Regel immer
-am darauffolgenden Tag abholbereit. Der Kunde wird nach Fertigstellung per sms oder mail benachrichtigt.
-<p id="sepa1"/>
-Kleinere Reparaturen werden auch 'en passant' erledigt.
-</p>
-<p id="sepa3"/>
-</div>
-${T.htmlContetntRight(this)}  
-  """
-  }
-
-
-  val accessoriesPage: Page = new Page {
-    def id = "accessories"
-
-    def name = "zubehör"
-
-    def htmlContent =
-      s"""
-<div id="left">
-<h1><a href="index.html">das taschenfahrrad</a></h1>
-<p><a href="index.html">start</a> &#62; $name</p>
-<p id="sepa3"/>
-<p>
-'das taschenfahrrad' führt ein reichhaltiges Angebot
-an ausgewähltem Zubehör für Stadt- Tourenradler,
-z.B. :
-</p>
-<p id="sepa"/>
-<p>Fahrradtaschen von Ortlieb, Vaude, Abus...</p>
-<p>Ledersättel von Brooks, Lepper, Yak ...</p>
-<p>Gepäckträger von Tubus, Racktime, Steco...</p>
-<p>Helme von Bern, Nutcase, Abus....</p>
-<p>Lichter von Knog, Infini, Axa, Reelight.....</p>
-<p>
-und  vieles mehr.     
-</p>       
-<p id="sepa"/>
-
-			<p><a target="_blank" href="http://www.ortlieb.com/p-liste.php?ptyp=radtasche&lang=de">Ortlieb...</a></p>
-			<p><a target="_blank" href="http://www.bernunlimited.com/">Bern...</a></p>
-			<p><a target="_blank" href="http://www.tubus.com/">Tubus...</a></p>
-			<p><a target="_blank" href="http://www.racktime.com/">Racktime...</a></p>
-			<p><a target="_blank" href="http://www.brooksengland.com/">Brooks...</a></p>
-			<p><a target="_blank" href="http://www.infini.tw/">Infini...</a></p>
-			<p><a target="_blank" href="http://www.sellebassano.com/">selle bassano...</a></p>
-			<p><a target="_blank" href="http://www.abus.com/at/Sicherheit-Unterwegs/Fahrraeder">Abus...</a></p>
-			<p><a target="_blank" href="http://www.basil.nl/">Basil...</a></p>
-
-		</div>
-${T.htmlContetntRight(this)}  
-  """
-  }
 
   val producerPage: Page = new Page {
     def id = "producer"
@@ -332,56 +258,73 @@ ${T.htmlContetntRight(this)}
 
     def htmlContent: String =
       s"""|<div id="left">
-          |<h1><a href="index.html">das taschenfahrrad</a></h1>
-          |<p><a href="index.html">start</a> &#62; $name</p>
-          |<p id="sepa3"/>
-          |<p>stadträder</p>
-          |<p id="sepa"/>
-          |<p><a href="http://www.tokyobike.de" target="_blank">tokyobike classic, classic26, bisou]</a></p>
-          |<p><a href="https://www.linusbike.eu" target="_blank">linus dutchi,mixte, roadster]</a></p>
-          |<p><a href="https://www.pelagobicycles.com" target="_blank">Pelago Brooklyn, Bristol]</a></p>
-          |<p id="sepa2"/>
+          |   <h1><a href="index.html">das taschenfahrrad</a></h1>
+          |   <p><a href="index.html">start</a> &#62; $name</p>
+          |   <p id="sepa3"/>
           |
-          |<p>tourenräder</p>
-          |<p id="sepa"/>
-          |<p><a href="https://surlybikes.com/bikes/" target="_blank">SURLY Long Haul Trucker, Disc Trucker, Pack rat, Pacer, Cross Check, Troll</a></p>
-          |<p><a href="https://www.konaworld.com/platform_sutra.cfm" target="_blank">Kona Sutra, Rove ST</a></p>
-          |<p><a href="http://www.fujibikes.com/usa/bikes/road/adventure-and-touring/touring" target="_blank">Fuji Touring</a></p>
-          |<p><a href="https://www.pelagobicycles.com/bicycles/airisto-outback.html" target="_blank">Pelago Airisto, Hanko</a></p>
-          |<p><a href="http://paripa.de" target="_blank">paripa K-Serie, meral, JWD</a></p>
-          |<p><a href="https://www.contoura.de/modelle/salerno/" target="_blank">Contoura Manufaktur Salerno</a></p>
-          |<p id="sepa2"/>
+          |   <p>TODO</p>
           |
-          |<p>beliebt für sowohl Stadt- als auch Tour, zb:</p>
-          |<p id="sepa"/>
-          |<p><a href="https://surlybikes.com/bikes/pack_rat" target="_blank">SURLY Pack rat, Cross Check</a></p>
-          |<p><a href="http://paripa.de" target="_blank">paripa meral, K-Serie</a></p>
-          |<p><a href="https://www.contoura.de/modelle/salerno/" target="_blank">Contoura Salerno</a></p>
-          |<p id="sepa2"/>
-          |
-          |<p>weiters Räder von</p>
-          |<p id="sepa"/>
-          |<p>
-          |<a href="http://cremecycles.com/lady-caferacer-lady-series,18,pl.html" target="_blank">creme</a>,
-          |<a href="https://www.gazelle.de/van-stael-v3" target="_blank">Gazelle</a>,
-          |<a href="https://www.konaworld.com/platform_steel_road.cfm" target="_blank">Kona</a>,
-          |</p>
-          |<p id="sepa2"/>
-          |
-          |<p>Abverkaufsmodelle</p>
-          |<p id="sepa"/>
-          |<p>
-          |<a href="https://bobbinbikes.com/collections/adult-bikes" target="_blank">Bobbin</a>,
-          |<a href="http://www.breezerbikes.com/eu/bikes/transportation/liberty" target="_blank">Breezer</a>,
-          |<a href="https://www.marinbikes.com/de/" target="_blank">Marin</a>,
-          |<a href="https://cooperbikes.com" target="_blank">Cooper</a>
-          |</p>
           |</div>
           |${T.htmlContetntRight(this)}
           """.stripMargin
   }
 
-  val pages: List[Page] = List(startPage, producerPage, accessoriesPage, servicePage)
+  val selfmadePage: Page = new Page {
+    def id = "selfmade"
+
+    def name = "eigenbau"
+
+    def htmlContent: String =
+      s"""|<div id="left">
+          |   <h1><a href="index.html">das taschenfahrrad</a></h1>
+          |   <p><a href="index.html">start</a> &#62; $name</p>
+          |   <p id="sepa3"/>
+          |
+          |   <p>TODO</p>
+          |
+          |</div>
+          |${T.htmlContetntRight(this)}
+          """.stripMargin
+  }
+
+  val jobsPage: Page = new Page {
+    def id = "jobs"
+
+    def name = "jobs"
+
+    def htmlContent: String =
+      s"""|<div id="left">
+          |   <h1><a href="index.html">das taschenfahrrad</a></h1>
+          |   <p><a href="index.html">start</a> &#62; $name</p>
+          |   <p id="sepa3"/>
+          |
+          |   <p>TODO</p>
+          |
+          |</div>
+          |${T.htmlContetntRight(this)}
+          """.stripMargin
+  }
+
+  val servicePage: Page = new Page {
+    def id = "service"
+
+    def name = "service"
+
+    def htmlContent: String =
+      s"""
+         |<div id="left">
+         |<h1><a href="index.html">das taschenfahrrad</a></h1>
+         |<p><a href="index.html">start</a> &#62; $name</p>
+         |<p id="sepa3"/>
+         |
+         |<p>TODO</p>
+         |
+         |</div>
+         |${T.htmlContetntRight(this)}
+         |""".stripMargin
+  }
+
+  val pages: List[Page] = List(startPage, producerPage, selfmadePage, jobsPage, servicePage)
 
 }
 
