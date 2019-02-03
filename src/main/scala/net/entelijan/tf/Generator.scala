@@ -335,14 +335,14 @@ ${T.htmlContetntRight(this)}
           |<h1><a href="index.html">das taschenfahrrad</a></h1>
           |<p><a href="index.html">start</a> &#62; $name</p>
           |<p id="sepa3"/>
-          |<p>stadträder</p>
+          |<p>stadträder</p>
           |<p id="sepa"/>
           |<p><a href="http://www.tokyobike.de" target="_blank">tokyobike classic, classic26, bisou]</a></p>
           |<p><a href="https://www.linusbike.eu" target="_blank">linus dutchi,mixte, roadster]</a></p>
           |<p><a href="https://www.pelagobicycles.com" target="_blank">Pelago Brooklyn, Bristol]</a></p>
           |<p id="sepa2"/>
           |
-          |<p>tourenräder</p>
+          |<p>tourenräder</p>
           |<p id="sepa"/>
           |<p><a href="https://surlybikes.com/bikes/" target="_blank">SURLY Long Haul Trucker, Disc Trucker, Pack rat, Pacer, Cross Check, Troll</a></p>
           |<p><a href="https://www.konaworld.com/platform_sutra.cfm" target="_blank">Kona Sutra, Rove ST</a></p>
@@ -352,14 +352,14 @@ ${T.htmlContetntRight(this)}
           |<p><a href="https://www.contoura.de/modelle/salerno/" target="_blank">Contoura Manufaktur Salerno</a></p>
           |<p id="sepa2"/>
           |
-          |<p>beliebt für sowohl Stadt- als auch Tour, zb:</p>
+          |<p>beliebt für sowohl Stadt- als auch Tour, zb:</p>
           |<p id="sepa"/>
           |<p><a href="https://surlybikes.com/bikes/pack_rat" target="_blank">SURLY Pack rat, Cross Check</a></p>
           |<p><a href="http://paripa.de" target="_blank">paripa meral, K-Serie</a></p>
           |<p><a href="https://www.contoura.de/modelle/salerno/" target="_blank">Contoura Salerno</a></p>
           |<p id="sepa2"/>
           |
-          |<p>weiters Räder von</p>
+          |<p>weiters Räder von</p>
           |<p id="sepa"/>
           |<p>
           |<a href="http://cremecycles.com/lady-caferacer-lady-series,18,pl.html" target="_blank">creme</a>,
