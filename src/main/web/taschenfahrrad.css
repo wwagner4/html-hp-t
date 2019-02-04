@@ -1,6 +1,6 @@
 @font-face {
  font-family: isonormd;
- src: url("font/Isonormd.ttf") /* TTF file for CSS3 browsers */
+ src: url("font/isonormd.ttf") /* TTF file for CSS3 browsers */
 }
 body {
 	margin-top: 0px;

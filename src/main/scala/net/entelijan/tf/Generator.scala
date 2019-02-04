@@ -137,11 +137,6 @@ ${htmlImageList(p)}
 <html class="no-js">
 <head>
 <title>das taschenfahrrad</title>
-<FilesMatch "\.(ttf|otf|eot) $$">
-<IfModule mod_headers.c>
-Header set Access-Control-Allow-Origin "*"
-</IfModule>
-</FilesMatch>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <link href='taschenfahrrad.css'	rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="flexslider.css" type="text/css" media="screen" />
