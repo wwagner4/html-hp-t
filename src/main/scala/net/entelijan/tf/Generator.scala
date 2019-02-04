@@ -137,6 +137,11 @@ ${htmlImageList(p)}
 <html class="no-js">
 <head>
 <title>das taschenfahrrad</title>
+<FilesMatch "\.(ttf|otf|eot) $$">
+<IfModule mod_headers.c>
+Header set Access-Control-Allow-Origin "*"
+</IfModule>
+</FilesMatch>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <link href='taschenfahrrad.css'	rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="flexslider.css" type="text/css" media="screen" />
@@ -215,7 +220,7 @@ object D {
          |<p>0043 699 1043 1886</p>
          |<p id="sepa2"/>
          |
-         |<p>Wer radlos, ist kann im taschenfahrrad eine treffende Beratung
+         |<p>Wer radlos ist, kann im taschenfahrrad eine treffende Beratung
          |und mit etwas Glück gleich das passende Rad finden.
          |Wir haben uns das Knowhow in vielen Jahren als Rennradler,
          |Reiseradler, Fahrradkurier er-fahren, wissen, wo es zwicken
@@ -225,7 +230,7 @@ object D {
          |Das 2010 gegründete 'taschenfahrrad' bietet Räder für alltägliche
          |Stadtfahrten und Überlandfahrten bis Weltreisen.
          |Wir bevorzugen Räder mit schlankem Stahlrahmen,
-         |die sowohl komfortabel als auch robust sind, mit möglichst einfacher lang-
+         |die sowohl komfortabel als auch robust sind, mit möglichst einfacher, lang-
          |lebiger Technik. Räder, die sich schnell, unkompliziert und
          |günstig servicieren lassen. Wenn der Markt uns das nicht bieten
          |kann, bauen wir die Räder selbst.
@@ -274,8 +279,8 @@ object D {
           |</p>
           |<p>
           |    Einige clicks führen jeweils zur Hersteller- oder Importeurseite
-          |    für detaillierte und bebilderte Infos. Die reale Welt des taschen-
-          |    fahrrads ist in 1020 Leopoldsg. 28,
+          |    für detaillierte und bebilderte Infos. Die reale Welt des
+          |    taschenfahrrads ist in 1020 Leopoldsg. 28,
           |</p>
           |<p>
           |    come and see, die Auswahl:
@@ -285,7 +290,7 @@ object D {
           |    <tbody>
           |
           |    <tr>
-          |        <th><a href="http://www.tokyobike.de" target="_blank">TOKYOBIKE</a></th>
+          |        <th><a href="http://www.tokyobike.de" target="_blank">tokyobike</a></th>
           |        <th>classic26</th>
           |        <th>47, 53, 57, 61</th>
           |        <th class="col-prize">759€</th>
@@ -315,7 +320,7 @@ object D {
           |        <th></th>
           |    </tr>
           |    <tr>
-          |        <th><a href="https://www.konaworld.com/platform_steel_road.cfm" target="_blank">KONA</a></th>
+          |        <th><a href="https://www.konaworld.com" target="_blank">KONA</a></th>
           |        <th>sutra</th>
           |        <th>54, 56, 58 blue</th>
           |        <th>1399€ statt 1499€</th>
@@ -326,7 +331,7 @@ object D {
           |        <th></th>
           |    </tr>
           |    <tr>
-          |        <th><a href="https://www.pelagobicycles.com/bicycles/airisto-outback.html" target="_blank">PELAGO</a></th>
+          |        <th><a href="https://www.pelagobicycles.com/" target="_blank">PELAGO</a></th>
           |        <th>Airisto Outback</th>
           |        <th>57 metallic sand</th>
           |        <th>1335€</th>
@@ -385,7 +390,7 @@ object D {
           |        <th>599€</th>
           |    </tr>
           |    <tr>
-          |        <th><a href="http://cremecycles.com/lady-caferacer-lady-series,18,pl.html" target="_blank">CREME</a></th>
+          |        <th><a href="http://cremecycles.com/" target="_blank">CREME</a></th>
           |        <th>Caferacer Lady solo</th>
           |        <th>48 green, red</th>
           |        <th>749€ statt  849€</th>
@@ -427,31 +432,27 @@ object D {
           |        <th>999€ statt 1259€</th>
           |    </tr>
           |    <tr>
-          |        <th><a href="https://bobbinbikes.com/collections/adult-bikes" target="_blank">BOBBIN</a></th>
+          |        <th><a href="https://bobbinbikes.com/" target="_blank">Bobbin</a></th>
           |        <th>Noodle</th>
           |        <th>52, 56, 60 oliv, light teal</th>
           |        <th>499€</th>
           |    </tr>
           |    <tr>
           |        <th><a href="https://www.contoura.de/modelle/salerno/" target="_blank">CONTOURA</a></th>
-          |        <th colspan="3">Manufactur Salerno</th>
+          |        <th>Salerno</th>
+          |        <th>Diamant 50, 54, 58, 66, 70</th>
+          |        <th>899€</th>
           |    </tr>
           |    <tr>
           |        <th></th>
-          |        <th>Diamant</th>
-          |        <th>50, 54, 58, 66, 70</th>
           |        <th></th>
+          |        <th>Mixte Anglaise 48, 52, 56, 60</th>
+          |        <th>899€</th>
           |    </tr>
           |    <tr>
           |        <th></th>
-          |        <th>Mixte Anglaise</th>
-          |        <th>48, 52, 56, 60</th>
           |        <th></th>
-          |    </tr>
-          |    <tr>
-          |        <th></th>
-          |        <th>Swiss Curve</th>
-          |        <th>49, 54</th>
+          |        <th>Swiss Curve 49, 54</th>
           |        <th>899€</th>
           |    </tr>
           |    <tr>
@@ -485,7 +486,7 @@ object D {
           |    so nicht zu finden ist. Wir bauen Räder
           |    mit bewährten Komponenten, die wir gut
           |    kennen und die gut aufeinander  abgestimmt
-          |    sind. Wir vermeiden komplexe wartungsintensive
+          |    sind. Wir vermeiden komplexe, wartungsintensive
           |    Komponenten und lassen uns nicht von den
           |    jeweils neuesten Trends hypnotisieren,
           |    'the proof of the pudding is in the eating'.
