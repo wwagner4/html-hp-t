@@ -139,6 +139,7 @@ object T {
        |<head>
        |<title>das taschenfahrrad</title>
        |<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+       |<meta name="viewport" content="width=device-width, initial-scale=1.0">
        |<link href='taschenfahrrad.css'	rel='stylesheet' type='text/css'>
        |<link rel="stylesheet" href="flexslider.css" type="text/css" media="screen" />
        |<script src="js/modernizr.js"></script>
