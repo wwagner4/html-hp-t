@@ -35,35 +35,35 @@ object T {
       case (f, i) => p.imageText(f.getName) match {
         case None =>
           if (i == 0)
-            """
-      <li>
-          <img src="%s/%s" />
-          <p class="flex-caption"></p>
-      </li>
-      """ format(imagesDirPath(p), f.getName)
+            s"""
+               |<li>
+               |<img src="${imagesDirPath(p)}/${f.getName}" />
+               |<p class="flex-caption"></p>
+               |</li>
+               |""" stripMargin
           else
-            """
-      <li>
-          <img class="lazy" data-src="%s/%s" />
-          <p class="flex-caption"></p>
-      </li>
-      """ format(imagesDirPath(p), f.getName)
+            s"""
+               |<li>
+               |<img class="lazy" data-src="${imagesDirPath(p)}/${f.getName}" />
+               |<p class="flex-caption"></p>
+               |</li>
+               |""" stripMargin
 
         case Some(txt) =>
           if (i == 0)
-            """
-      <li>
-          <img src="%s/%s" />
-          <p class="flex-caption">%s</p>
-      </li>
-      """ format(imagesDirPath(p), f.getName, txt)
+            s"""
+               |<li>
+               |<img src="${imagesDirPath(p)}/${f.getName}" />
+               |<p class="flex-caption">%s</p>
+               |</li>
+               |""" stripMargin
           else
-            """
-      <li>
-          <img class="lazy" data-src="%s/%s" />
-          <p class="flex-caption">%s</p>
-      </li>
-      """ format(imagesDirPath(p), f.getName, txt)
+            s"""
+               |<li>
+               |<img class="lazy" data-src="${imagesDirPath(p)}/${f.getName}" />
+               |<p class="flex-caption">%s</p>
+               |</li>
+               |""" stripMargin
 
       }
     }
