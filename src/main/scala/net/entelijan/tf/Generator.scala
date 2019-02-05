@@ -116,8 +116,8 @@ object T {
 
   def htmlPageLink(p: Page): String = {
     s"""
-    <p><a href="%s">%s...</a></p>
-    """ format(T.fileName(p), p.name)
+       |<p><a href="${T.fileName(p)}">${p.name}...</a></p>
+       |""" stripMargin
   }
 
   def htmlContetntRight(p: Page): String =
