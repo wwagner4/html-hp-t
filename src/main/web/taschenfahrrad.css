@@ -6,6 +6,8 @@ body {
 	margin-top: 0px;
 	font-family: 'isonormd', sans-serif;
 	background-color: white;
+	font-size: 15px;
+	font-weight: normal;
 }
 h1 {
 	margin-left: 0px;
@@ -14,24 +16,39 @@ h1 {
 	margin-bottom: 5px;
 	padding: 0px;
 }
-p {
+p .p1 {
 	font-family: inherit;
 	margin: 0px;
 	padding: 0px;
+}
+.p1 {
+	max-width: 700px;
 }
 img {
 	margin: 0px;
 	padding: 0px;
 }
+table {
+	border-collapse: collapse;
+	font-size: inherit;
+}
+tbody {
+	font-size: inherit;
+}
+tr {
+	font-size: inherit;
+}
 td {
-    text-align: left;
-    vertical-align: top;
-    font-weight: unset;
+	text-align: left;
+	vertical-align: top;
+	font-size: inherit;
+	font-weight: normal;
 }
 .col-prize {
-    text-align: left;
-    vertical-align: top;
-    font-weight: unset;
+	text-align: left;
+	vertical-align: top;
+	font-size: inherit;
+	font-weight: normal;
     min-width: 140px;
 }
 a, img {

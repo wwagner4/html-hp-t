@@ -203,7 +203,6 @@ object D {
       s"""
          |<div id="left">
          |<h1>das taschenfahrrad</h1>
-         |<p id="sepa2" />
          |<p>stadt-, tourenräder und fahrradtaschen<p>
          |<p id="sepa2" />
          |<p>Verkauf / Werkstatt<p>
@@ -263,28 +262,28 @@ object D {
     def name = "fahrräder"
 
     def htmlContent: String =
-      s"""|<div id="left">
-          |   <h1><a href="index.html">das taschenfahrrad</a></h1>
-          |   <p><a href="index.html">start</a> &#62; $name</p>
-          |   <p id="sepa3"/>
-          |
-          |<p>
+      s"""|<h1><a href="index.html">das taschenfahrrad</a></h1>
+          |<p><a href="index.html">start</a> &#62; $name</p>
+          |<p id="sepa3"/>
+          |<p class="p1">
           |    Wir haben im Laufe der Jahre viele Marken geführt, erprobt und schätzen gelernt.
           |    Veränderungen gibt es, weil sich Bezugsquellen ändern und das
           |    Platzangebot im taschenfahrrad beschränkt ist.
           |</p>
-          |<p>
+          |<p id="sepa"/>
+          |<p class="p1">
           |    Einige clicks führen jeweils zur Hersteller- oder Importeurseite
           |    für detaillierte und bebilderte Infos. Die reale Welt des
           |    taschenfahrrads ist in 1020 Leopoldsg. 28,
           |</p>
+          |<p id="sepa"/>
           |<p>
           |    come and see, die Auswahl:
           |</p>
           |<p id="sepa"/>
+          |
           |<table>
           |    <tbody>
-          |
           |    <tr>
           |        <td><a href="http://www.tokyobike.de" target="_blank">tokyobike</a></td>
           |        <td>classic26</td>
@@ -295,174 +294,171 @@ object D {
           |        <td></td>
           |        <td>bisou</td>
           |        <td>42, 50, 55 alle Farben</td>
-          |        <td>659€</td>
+          |        <td class="col-prize">659€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="http://www.fujibikes.com/usa/bikes/road/adventure-and-touring/touring" target="_blank">FUJI</a></td>
           |        <td>touring</td>
           |        <td>49, 52, 54, 56, 58, 61, 64 black, blue</td>
-          |        <td>899€</td>
+          |        <td class="col-prize">899€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>feather</td>
           |        <td>singlespeed</td>
-          |        <td>499€ statt 599€</td>
+          |        <td class="col-prize">499€ statt 599€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td></td>
           |        <td>Größen und Farben auf Anfrage</td>
-          |        <td></td>
+          |        <td class="col-prize"></td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.konaworld.com" target="_blank">KONA</a></td>
           |        <td>sutra</td>
           |        <td>54, 56, 58 blue</td>
-          |        <td>1399€ statt 1499€</td>
+          |        <td class="col-prize">1399€ statt 1499€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td colspan="2">penthouse, penthouse flat, Honky Tonk und paddy wagon auf Anfrage</td>
-          |        <td></td>
+          |        <td class="col-prize"></td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.pelagobicycles.com/" target="_blank">PELAGO</a></td>
           |        <td>Airisto Outback</td>
           |        <td>57 metallic sand</td>
-          |        <td>1335€</td>
+          |        <td class="col-prize">1335€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>Hanko Outback</td>
           |        <td>56 moss green</td>
-          |        <td>1335€</td>
+          |        <td class="col-prize">1335€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>Brooklyn3</td>
           |        <td>52 black, dapper red, helene grey</td>
-          |        <td>825€</td>
+          |        <td class="col-prize">825€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>Bristol3</td>
           |        <td>57,61 black, traffic grey</td>
-          |        <td>825€</td>
+          |        <td class="col-prize">825€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>Capri3</td>
           |        <td>47,52,57  black, salmon, turquoise</td>
-          |        <td>995€</td>
+          |        <td class="col-prize">995€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td colspan="2">Nexus8-Versionen jeweils auf Anfrage</td>
-          |        <td></td>
+          |        <td class="col-prize"></td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.linusbike.eu" target="_blank">LINUS</a></td>
           |        <td>scout</td>
           |        <td>46 cream, mustard</td>
-          |        <td>499€</td>
+          |        <td class="col-prize">499€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>dutchi</td>
           |        <td>46 black, cream, sage</td>
-          |        <td>599€</td>
+          |        <td class="col-prize">599€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>mixte</td>
           |        <td>49, 56  black, sky blue</td>
-          |        <td>599€</td>
+          |        <td class="col-prize">599€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>roadster</td>
           |        <td>59 oliv, black</td>
-          |        <td>599€</td>
+          |        <td class="col-prize">599€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="http://cremecycles.com/" target="_blank">CREME</a></td>
           |        <td>Caferacer Lady solo</td>
           |        <td>48 green, red</td>
-          |        <td>749€ statt  849€</td>
+          |        <td class="col-prize">749€ statt  849€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>Caferacer Men solo</td>
           |        <td>50, 55, 60 blue</td>
-          |        <td>749€ statt  849€</td>
+          |        <td class="col-prize">749€ statt  849€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>Caferacer Men uno</td>
           |        <td>60,5 gree</td>
-          |        <td>599€ statt  699€</td>
+          |        <td class="col-prize">599€ statt  699€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>Echo solo</td>
           |        <td>55 white</td>
-          |        <td>699€ statt  869€</td>
+          |        <td class="col-prize">699€ statt  869€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>Echo Doppio</td>
           |        <td>57 deep blue</td>
-          |        <td>799€ statt 1199€</td>
+          |        <td class="col-prize">799€ statt 1199€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>Echo solo Mixte</td>
           |        <td>51 sky blue</td>
-          |        <td>699€ statt 869€</td>
+          |        <td class="col-prize">699€ statt 869€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>Echo Lungo</td>
           |        <td>55 dark green</td>
-          |        <td>999€ statt 1259€</td>
+          |        <td class="col-prize">999€ statt 1259€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://bobbinbikes.com/" target="_blank">Bobbin</a></td>
           |        <td>Noodle</td>
           |        <td>52, 56, 60 oliv, light teal</td>
-          |        <td>499€</td>
+          |        <td class="col-prize">499€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.contoura.de/modelle/salerno/" target="_blank">CONTOURA</a></td>
           |        <td>Salerno</td>
           |        <td>Diamant 50, 54, 58, 66, 70</td>
-          |        <td>899€</td>
+          |        <td class="col-prize">899€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td></td>
           |        <td>Mixte Anglaise 48, 52, 56, 60</td>
-          |        <td>899€</td>
+          |        <td class="col-prize">899€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td></td>
           |        <td>Swiss Curve 49, 54</td>
-          |        <td>899€</td>
+          |        <td class="col-prize">899€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.naloobikes.com/" target="_blank">NALOO</a></td>
           |        <td>Chameleon</td>
           |        <td>16“, 20“, 24“ Kinderräder</td>
-          |        <td>ab 349€</td>
+          |        <td class="col-prize">ab 349€</td>
           |    </tr>
+          |
           |    </tbody>
           |</table>
-          |
-          |
-          |</div>
-          |${T.htmlContetntRight(this)}
           """.stripMargin
   }
 
@@ -478,7 +474,8 @@ object D {
           |   <p id="sepa3"/>
           |
           |   <p>
-          |    für spezielle Anforderungen oder weil es individueller sein soll und das gewünschte Rad am Markt
+          |    für spezielle Anforderungen oder weil es individueller
+          |    sein soll und das gewünschte Rad am Markt
           |    so nicht zu finden ist. Wir bauen Räder
           |    mit bewährten Komponenten, die wir gut
           |    kennen und die gut aufeinander  abgestimmt
