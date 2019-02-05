@@ -72,7 +72,7 @@ object T {
 
   def logoName(p: ImageProvider): String = {
     val f = logoFile(p)
-    """%s/%s""" format(imagesDirPath(p), f.getName)
+    s"${imagesDirPath(p)}/${f.getName}"
   }
 
   def imagesDirPath(p: ImageProvider): String = s"$IMAGES_DIR/${p.imageFolder}"
@@ -103,8 +103,8 @@ object T {
   }
 
   def logoFile(p: ImageProvider): File = {
-    val d = new File("src/main/web/%s" format imagesDirPath(p))
-    require(d.exists(), "directory %s must exist" format d)
+    val d = new File(s"src/main/web/${imagesDirPath(p)}")
+    require(d.exists(), s"directory $d must exist")
     val l = d.listFiles().filter(_.getName.toUpperCase().contains("LOGO")).toList
     require(l.nonEmpty, s"no logo found for page '${p.id}' in $d")
     require(l.size == 1, s"more than one logo found for page '${p.id}' in $d")
@@ -173,7 +173,7 @@ object T {
        |	          nxt_slide  = current + 1,
        |	          prev_slide = current - 1;
        |
-|	      $$slide
+       |	      $$slide
        |	        .parent()
        |	        .find('img.lazy:eq(' + current + '), img.lazy:eq(' + prev_slide + '), img.lazy:eq(' + nxt_slide + ')')
        |	        .each(function() {
@@ -689,7 +689,6 @@ object ResCopy {
         findFile(fromFile.getName, toFiles) match {
           case None => copyFile(fromFile, to)
           case Some(toFile) => if (leftIsYounger(fromFile, toFile)) copyFile(fromFile, to)
-          //else println("no copy of %s to %s because younger exists" format (fromFile, to))
         }
       }
     }
