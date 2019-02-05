@@ -31,40 +31,41 @@ object T {
   val IMAGES_DIR = "images"
 
   def htmlImageList(p: Page): String = {
-    val l = imagesFileList(p).zipWithIndex.map { case (f, i) => p.imageText(f.getName) match {
-      case None =>
-        if (i == 0)
-          """
+    val l = imagesFileList(p).zipWithIndex.map {
+      case (f, i) => p.imageText(f.getName) match {
+        case None =>
+          if (i == 0)
+            """
       <li>
           <img src="%s/%s" />
           <p class="flex-caption"></p>
       </li>
       """ format(imagesDirPath(p), f.getName)
-        else
-          """
+          else
+            """
       <li>
           <img class="lazy" data-src="%s/%s" />
           <p class="flex-caption"></p>
       </li>
       """ format(imagesDirPath(p), f.getName)
 
-      case Some(txt) =>
-        if (i == 0)
-          """
+        case Some(txt) =>
+          if (i == 0)
+            """
       <li>
           <img src="%s/%s" />
           <p class="flex-caption">%s</p>
       </li>
       """ format(imagesDirPath(p), f.getName, txt)
-        else
-          """
+          else
+            """
       <li>
           <img class="lazy" data-src="%s/%s" />
           <p class="flex-caption">%s</p>
       </li>
       """ format(imagesDirPath(p), f.getName, txt)
 
-    }
+      }
     }
     l.mkString("\n")
   }
@@ -74,7 +75,7 @@ object T {
     """%s/%s""" format(imagesDirPath(p), f.getName)
   }
 
-  def imagesDirPath(p: ImageProvider): String = "%s/%s" format(IMAGES_DIR, p.imageFolder)
+  def imagesDirPath(p: ImageProvider): String = s"$IMAGES_DIR/${p.imageFolder}"
 
   def imagesFileList(p: ImageProvider): List[File] = {
 
@@ -93,8 +94,8 @@ object T {
         !nam.startsWith(".")
     }
 
-    val d = new File("src/main/web/%s" format imagesDirPath(p))
-    require(d.exists(), "directory %s must exist" format d)
+    val d = new File(s"src/main/web/${imagesDirPath(p)}")
+    require(d.exists(), s"directory $d must exist")
     d.listFiles()
       .filter(f => acceptName(f.getName))
       .toList
@@ -105,8 +106,8 @@ object T {
     val d = new File("src/main/web/%s" format imagesDirPath(p))
     require(d.exists(), "directory %s must exist" format d)
     val l = d.listFiles().filter(_.getName.toUpperCase().contains("LOGO")).toList
-    require(l.nonEmpty, "no logo found for page '%s' in %s" format(p.id, d))
-    require(l.size == 1, "more than one logo found for page '%s' in %s" format(p.id, d))
+    require(l.nonEmpty, s"no logo found for page '${p.id}' in $d")
+    require(l.size == 1, s"more than one logo found for page '${p.id}' in $d")
     l.head
   }
 
