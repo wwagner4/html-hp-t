@@ -37,14 +37,14 @@ object T {
           if (i == 0)
             s"""
                |<li>
-               |<img src="${imagesDirPath(p)}/${f.getName}" />
+               |<img alt="taschenfahrrad" src="${imagesDirPath(p)}/${f.getName}" />
                |<p class="flex-caption"></p>
                |</li>
                |""" stripMargin
           else
             s"""
                |<li>
-               |<img class="lazy" data-src="${imagesDirPath(p)}/${f.getName}" />
+               |<img alt="taschenfahrrad" class="lazy" data-src="${imagesDirPath(p)}/${f.getName}" />
                |<p class="flex-caption"></p>
                |</li>
                |""" stripMargin
@@ -53,7 +53,7 @@ object T {
           if (i == 0)
             s"""
                |<li>
-               |<img src="${imagesDirPath(p)}/${f.getName}" />
+               |<img alt="taschenfahrrad" src="${imagesDirPath(p)}/${f.getName}" />
                |<p class="flex-caption">%s</p>
                |</li>
                |""" stripMargin
@@ -135,7 +135,7 @@ object T {
   def htmlTemplate(p: Page): String =
     s"""
        |<!DOCTYPE html>
-       |<html class="no-js">
+       |<html class="no-js" lang="de">
        |<head>
        |<title>das taschenfahrrad</title>
        |<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -289,7 +289,7 @@ object D {
           |        <td><a href="http://www.tokyobike.de" target="_blank">tokyobike</a></td>
           |        <td><a href="http://www.tokyobike.de/?area=bikes" target="_blank">classic26</a></td>
           |        <td>47, 53, 57, 61</td>
-          |        <th class="col-prize">759€</td>
+          |        <td class="col-prize">759€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
@@ -365,7 +365,7 @@ object D {
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td<a href="https://www.pelagobicycles.com/bicycles/bristol.html" target="_blank">Bristol3</a></td>
+          |        <td><a href="https://www.pelagobicycles.com/bicycles/bristol.html" target="_blank">Bristol3</a></td>
           |        <td>57,61 black, traffic grey</td>
           |        <td class="col-prize">825€</td>
           |    </tr>
