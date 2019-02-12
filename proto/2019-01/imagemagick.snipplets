@@ -38,3 +38,5 @@ convert "natur/*.jpeg" \
 -set filename:area "tfh_%p" converted/'%[filename:area].jpg'
 
 
+mkdir -p converted
+convert *.jpg" -resize 933x
