@@ -335,7 +335,7 @@ object D {
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>Honky Tonk</td>
+          |        <td><a href="http://2016.konaworld.com/honky_tonk.cfm" target="_blank">Honky Tonk</a></td>
           |        <td></td>
           |        <td class="col-prize">auf Anfrage</td>
           |    </tr>
@@ -519,7 +519,7 @@ object D {
           |<table>
           |    <tbody>
           |    <tr>
-          |        <td><a href="https://surlybikes.com/bikes/" target="_blank">SURLY</a></td>
+          |        <td><a href="https://surlybikes.com/bikes/long_haul_trucker" target="_blank">SURLY</a></td>
           |        <td>
           |            Long Haul Trucker, Cross Check,
           |            Pack rat, Pacer, Troll u. a.
@@ -547,7 +547,7 @@ object D {
           |        <td class="col-prize"></td>
           |    </tr>
           |    <tr>
-          |        <td><a href="https://www.bricklanebikes.co.uk/frames" target="_blank">BLB</a></td>
+          |        <td><a href="https://www.bricklanebikes.co.uk/2018-blb-hitchhiker-frameset-blackgrey" target="_blank">BLB</a></td>
           |        <td>Hichhiker auf Anfrage</td>
           |        <td class="col-prize">ab 1500€</td>
           |    </tr>
