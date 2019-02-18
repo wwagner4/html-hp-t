@@ -31,50 +31,51 @@ object T {
   val IMAGES_DIR = "images"
 
   def htmlImageList(p: Page): String = {
-    val l = imagesFileList(p).zipWithIndex.map { case (f, i) => p.imageText(f.getName) match {
-      case None =>
-        if (i == 0)
-          """
-      <li>
-          <img src="%s/%s" />
-          <p class="flex-caption"></p>
-      </li>
-      """ format(imagesDirPath(p), f.getName)
-        else
-          """
-      <li>
-          <img class="lazy" data-src="%s/%s" />
-          <p class="flex-caption"></p>
-      </li>
-      """ format(imagesDirPath(p), f.getName)
+    val l = imagesFileList(p).zipWithIndex.map {
+      case (f, i) => p.imageText(f.getName) match {
+        case None =>
+          if (i == 0)
+            s"""
+               |<li>
+               |<img alt="taschenfahrrad" src="${imagesDirPath(p)}/${f.getName}" />
+               |<p class="flex-caption"></p>
+               |</li>
+               |""" stripMargin
+          else
+            s"""
+               |<li>
+               |<img alt="taschenfahrrad" class="lazy" data-src="${imagesDirPath(p)}/${f.getName}" />
+               |<p class="flex-caption"></p>
+               |</li>
+               |""" stripMargin
 
-      case Some(txt) =>
-        if (i == 0)
-          """
-      <li>
-          <img src="%s/%s" />
-          <p class="flex-caption">%s</p>
-      </li>
-      """ format(imagesDirPath(p), f.getName, txt)
-        else
-          """
-      <li>
-          <img class="lazy" data-src="%s/%s" />
-          <p class="flex-caption">%s</p>
-      </li>
-      """ format(imagesDirPath(p), f.getName, txt)
+        case Some(txt) =>
+          if (i == 0)
+            s"""
+               |<li>
+               |<img alt="taschenfahrrad" src="${imagesDirPath(p)}/${f.getName}" />
+               |<p class="flex-caption">%s</p>
+               |</li>
+               |""" stripMargin
+          else
+            s"""
+               |<li>
+               |<img class="lazy" data-src="${imagesDirPath(p)}/${f.getName}" />
+               |<p class="flex-caption">%s</p>
+               |</li>
+               |""" stripMargin
 
-    }
+      }
     }
     l.mkString("\n")
   }
 
   def logoName(p: ImageProvider): String = {
     val f = logoFile(p)
-    """%s/%s""" format(imagesDirPath(p), f.getName)
+    s"${imagesDirPath(p)}/${f.getName}"
   }
 
-  def imagesDirPath(p: ImageProvider): String = "%s/%s" format(IMAGES_DIR, p.imageFolder)
+  def imagesDirPath(p: ImageProvider): String = s"$IMAGES_DIR/${p.imageFolder}"
 
   def imagesFileList(p: ImageProvider): List[File] = {
 
@@ -93,8 +94,8 @@ object T {
         !nam.startsWith(".")
     }
 
-    val d = new File("src/main/web/%s" format imagesDirPath(p))
-    require(d.exists(), "directory %s must exist" format d)
+    val d = new File(s"src/main/web/${imagesDirPath(p)}")
+    require(d.exists(), s"directory $d must exist")
     d.listFiles()
       .filter(f => acceptName(f.getName))
       .toList
@@ -102,11 +103,11 @@ object T {
   }
 
   def logoFile(p: ImageProvider): File = {
-    val d = new File("src/main/web/%s" format imagesDirPath(p))
-    require(d.exists(), "directory %s must exist" format d)
+    val d = new File(s"src/main/web/${imagesDirPath(p)}")
+    require(d.exists(), s"directory $d must exist")
     val l = d.listFiles().filter(_.getName.toUpperCase().contains("LOGO")).toList
-    require(l.nonEmpty, "no logo found for page '%s' in %s" format(p.id, d))
-    require(l.size == 1, "more than one logo found for page '%s' in %s" format(p.id, d))
+    require(l.nonEmpty, s"no logo found for page '${p.id}' in $d")
+    require(l.size == 1, s"more than one logo found for page '${p.id}' in $d")
     l.head
   }
 
@@ -116,28 +117,29 @@ object T {
 
   def htmlPageLink(p: Page): String = {
     s"""
-    <p><a href="%s">%s...</a></p>
-    """ format(T.fileName(p), p.name)
+       |<p><a href="${T.fileName(p)}">${p.name}...</a></p>
+       |""" stripMargin
   }
 
   def htmlContetntRight(p: Page): String =
     s"""
        |<div id="right">
-       |<div class="flexslider">
-       |<ul class="slides">
+       |    <div class="flexslider">
+       |    <ul class="slides">
        |${htmlImageList(p)}
-       |</ul>
-       |</div>
+       |    </ul>
+       |    </div>
        |</div>
        |""".stripMargin
 
   def htmlTemplate(p: Page): String =
     s"""
        |<!DOCTYPE html>
-       |<html class="no-js">
+       |<html class="no-js" lang="de">
        |<head>
        |<title>das taschenfahrrad</title>
        |<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+       |<meta name="viewport" content="width=device-width, initial-scale=1.0">
        |<link href='taschenfahrrad.css'	rel='stylesheet' type='text/css'>
        |<link rel="stylesheet" href="flexslider.css" type="text/css" media="screen" />
        |<script src="js/modernizr.js"></script>
@@ -202,7 +204,6 @@ object D {
       s"""
          |<div id="left">
          |<h1>das taschenfahrrad</h1>
-         |<p id="sepa2" />
          |<p>stadt-, tourenräder und fahrradtaschen<p>
          |<p id="sepa2" />
          |<p>Verkauf / Werkstatt<p>
@@ -262,206 +263,222 @@ object D {
     def name = "fahrräder"
 
     def htmlContent: String =
-      s"""|<div id="left">
-          |   <h1><a href="index.html">das taschenfahrrad</a></h1>
-          |   <p><a href="index.html">start</a> &#62; $name</p>
-          |   <p id="sepa3"/>
-          |
-          |<p>
+      s"""|<h1><a href="index.html">das taschenfahrrad</a></h1>
+          |<p><a href="index.html">start</a> &#62; $name</p>
+          |<p id="sepa3"/>
+          |<p class="p1">
           |    Wir haben im Laufe der Jahre viele Marken geführt, erprobt und schätzen gelernt.
           |    Veränderungen gibt es, weil sich Bezugsquellen ändern und das
           |    Platzangebot im taschenfahrrad beschränkt ist.
           |</p>
-          |<p>
+          |<p id="sepa"/>
+          |<p class="p1">
           |    Einige clicks führen jeweils zur Hersteller- oder Importeurseite
           |    für detaillierte und bebilderte Infos. Die reale Welt des
           |    taschenfahrrads ist in 1020 Leopoldsg. 28,
           |</p>
+          |<p id="sepa"/>
           |<p>
           |    come and see, die Auswahl:
           |</p>
           |<p id="sepa"/>
+          |
           |<table>
           |    <tbody>
-          |
           |    <tr>
           |        <td><a href="http://www.tokyobike.de" target="_blank">tokyobike</a></td>
-          |        <td>classic26</td>
+          |        <td><a href="http://www.tokyobike.de/?area=bikes" target="_blank">classic26</a></td>
           |        <td>47, 53, 57, 61</td>
-          |        <th class="col-prize">759€</td>
+          |        <td class="col-prize">759€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>bisou</td>
+          |        <td><a href="http://www.tokyobike.de/?area=bikes" target="_blank">bisou</a></td>
           |        <td>42, 50, 55 alle Farben</td>
-          |        <td>659€</td>
+          |        <td class="col-prize">659€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="http://www.fujibikes.com/usa/bikes/road/adventure-and-touring/touring" target="_blank">FUJI</a></td>
-          |        <td>touring</td>
+          |        <td><a href="http://www.fujibikes.com/usa/bikes/road/adventure-and-touring/touring" target="_blank">touring</a></td>
           |        <td>49, 52, 54, 56, 58, 61, 64 black, blue</td>
-          |        <td>899€</td>
+          |        <td class="col-prize">899€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>feather</td>
+          |        <td><a href="http://www.fujibikes.com/usa/bikes/city/urban/feather/feather" target="_blank">feather</a></td>
           |        <td>singlespeed</td>
-          |        <td>499€ statt 599€</td>
+          |        <td class="col-prize">499€ statt 599€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td></td>
           |        <td>Größen und Farben auf Anfrage</td>
-          |        <td></td>
+          |        <td class="col-prize"></td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.konaworld.com" target="_blank">KONA</a></td>
-          |        <td>sutra</td>
+          |        <td><a href="http://2018.konaworld.com/sutra.cfm" target="_blank">sutra</a></td>
           |        <td>54, 56, 58 blue</td>
-          |        <td>1399€ statt 1499€</td>
+          |        <td class="col-prize">1399€ statt 1499€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td colspan="2">penthouse, penthouse flat, Honky Tonk und paddy wagon auf Anfrage</td>
+          |        <td><a href="http://2017.konaworld.com/penthouse.cfm" target="_blank">penthouse</a></td>
           |        <td></td>
+          |        <td class="col-prize">auf Anfrage</td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td><a href="http://2017.konaworld.com/penthouse_flat.cfm" target="_blank">penthouse flat</a></td>
+          |        <td></td>
+          |        <td class="col-prize">auf Anfrage</td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td><a href="http://2016.konaworld.com/honky_tonk.cfm" target="_blank">Honky Tonk</a></td>
+          |        <td></td>
+          |        <td class="col-prize">auf Anfrage</td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td><a href="http://2017.konaworld.com/paddy_wagon_3.cfm" target="_blank">paddy wagon</a></td>
+          |        <td></td>
+          |        <td class="col-prize">auf Anfrage</td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.pelagobicycles.com/" target="_blank">PELAGO</a></td>
-          |        <td>Airisto Outback</td>
+          |        <td><a href="https://www.pelagobicycles.com/bicycles/airisto-outback.html" target="_blank">Airisto Outback</a></td>
           |        <td>57 metallic sand</td>
-          |        <td>1335€</td>
+          |        <td class="col-prize">1335€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>Hanko Outback</td>
+          |        <td><a href="https://www.pelagobicycles.com/bicycles/hanko-outback.html" target="_blank">Hanko Outback</a></td>
           |        <td>56 moss green</td>
-          |        <td>1335€</td>
+          |        <td class="col-prize">1335€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>Brooklyn3</td>
+          |        <td><a href="https://www.pelagobicycles.com/bicycles/brooklyn.html" target="_blank">Brooklyn3</a></td>
           |        <td>52 black, dapper red, helene grey</td>
-          |        <td>825€</td>
+          |        <td class="col-prize">825€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>Bristol3</td>
+          |        <td><a href="https://www.pelagobicycles.com/bicycles/bristol.html" target="_blank">Bristol3</a></td>
           |        <td>57,61 black, traffic grey</td>
-          |        <td>825€</td>
+          |        <td class="col-prize">825€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>Capri3</td>
+          |        <td><a href="https://www.pelagobicycles.com/bicycles/capri.html" target="_blank">Capri3</a></td>
           |        <td>47,52,57  black, salmon, turquoise</td>
-          |        <td>995€</td>
+          |        <td class="col-prize">995€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td colspan="2">Nexus8-Versionen jeweils auf Anfrage</td>
-          |        <td></td>
+          |        <td class="col-prize"></td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.linusbike.eu" target="_blank">LINUS</a></td>
-          |        <td>scout</td>
+          |        <td><a href="https://www.linusbike.eu/products/scout-7" target="_blank">scout</a></td>
           |        <td>46 cream, mustard</td>
-          |        <td>499€</td>
+          |        <td class="col-prize">499€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>dutchi</td>
+          |        <td><a href="https://www.linusbike.eu/products/dutchi-3" target="_blank">dutchi</a></td>
           |        <td>46 black, cream, sage</td>
-          |        <td>599€</td>
+          |        <td class="col-prize">599€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>mixte</td>
+          |        <td><a href="https://www.linusbike.eu/products/mixte-3" target="_blank">mixte</a></td>
           |        <td>49, 56  black, sky blue</td>
-          |        <td>599€</td>
+          |        <td class="col-prize">599€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>roadster</td>
+          |        <td><a href="https://www.linusbike.eu/products/roadster3" target="_blank">roadster</a></td>
           |        <td>59 oliv, black</td>
-          |        <td>599€</td>
+          |        <td class="col-prize">599€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="http://cremecycles.com/" target="_blank">CREME</a></td>
-          |        <td>Caferacer Lady solo</td>
+          |        <td><a href="http://cremecycles.com/caferecer-lady-solo,453,de.html" target="_blank">Caferacer Lady solo</a></td>
           |        <td>48 green, red</td>
-          |        <td>749€ statt  849€</td>
+          |        <td class="col-prize">749€ statt  849€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>Caferacer Men solo</td>
+          |        <td><a href="http://cremecycles.com/de/caferacer-man-solo-deep-blue,62,pl.html" target="_blank">Caferacer Men solo</a></td>
           |        <td>50, 55, 60 blue</td>
-          |        <td>749€ statt  849€</td>
+          |        <td class="col-prize">749€ statt  849€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>Caferacer Men uno</td>
+          |        <td><a href="http://cremecycles.com/caferacer-man-uno-classic,406,de.html" target="_blank">Caferacer Men uno</a></td>
           |        <td>60,5 gree</td>
-          |        <td>599€ statt  699€</td>
+          |        <td class="col-prize">599€ statt  699€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>Echo solo</td>
+          |        <td><a href="http://cremecycles.com/de/echo-solo-white,73,pl.html" target="_blank">Echo solo</a></td>
           |        <td>55 white</td>
-          |        <td>699€ statt  869€</td>
+          |        <td class="col-prize">699€ statt  869€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>Echo Doppio</td>
+          |        <td><a href="http://cremecycles.com/de/echo-doppio-deep-blue,74,pl.html" target="_blank">Echo Doppio</a></td>
           |        <td>57 deep blue</td>
-          |        <td>799€ statt 1199€</td>
+          |        <td class="col-prize">799€ statt 1199€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>Echo solo Mixte</td>
+          |        <td><a href="http://cremecycles.com/de/echo-solo-mixte-sky-blue,95,pl.html" target="_blank">Echo solo Mixte</a></td>
           |        <td>51 sky blue</td>
-          |        <td>699€ statt 869€</td>
+          |        <td class="col-prize">699€ statt 869€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>Echo Lungo</td>
+          |        <td><a href="http://cremecycles.com/echo-lungo-dark-green,70,de.html" target="_blank">Echo Lungo</a></td>
           |        <td>55 dark green</td>
-          |        <td>999€ statt 1259€</td>
+          |        <td class="col-prize">999€ statt 1259€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://bobbinbikes.com/" target="_blank">Bobbin</a></td>
           |        <td>Noodle</td>
           |        <td>52, 56, 60 oliv, light teal</td>
-          |        <td>499€</td>
+          |        <td class="col-prize">499€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.contoura.de/modelle/salerno/" target="_blank">CONTOURA</a></td>
-          |        <td>Salerno</td>
+          |        <td><a href="https://www.contoura.de/modelle/salerno/" target="_blank">Salerno</a></td>
           |        <td>Diamant 50, 54, 58, 66, 70</td>
-          |        <td>899€</td>
+          |        <td class="col-prize">899€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td></td>
           |        <td>Mixte Anglaise 48, 52, 56, 60</td>
-          |        <td>899€</td>
+          |        <td class="col-prize">899€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td></td>
           |        <td>Swiss Curve 49, 54</td>
-          |        <td>899€</td>
+          |        <td class="col-prize">899€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.naloobikes.com/" target="_blank">NALOO</a></td>
-          |        <td>Chameleon</td>
+          |        <td><a href="https://www.naloobikes.com/" target="_blank">Chameleon</a></td>
           |        <td>16“, 20“, 24“ Kinderräder</td>
-          |        <td>ab 349€</td>
+          |        <td class="col-prize">ab 349€</td>
           |    </tr>
+          |
           |    </tbody>
           |</table>
-          |
-          |
-          |</div>
-          |${T.htmlContetntRight(this)}
           """.stripMargin
   }
 
@@ -477,7 +494,8 @@ object D {
           |   <p id="sepa3"/>
           |
           |   <p>
-          |    für spezielle Anforderungen oder weil es individueller sein soll und das gewünschte Rad am Markt
+          |    für spezielle Anforderungen oder weil es individueller
+          |    sein soll und das gewünschte Rad am Markt
           |    so nicht zu finden ist. Wir bauen Räder
           |    mit bewährten Komponenten, die wir gut
           |    kennen und die gut aufeinander  abgestimmt
@@ -501,7 +519,7 @@ object D {
           |<table>
           |    <tbody>
           |    <tr>
-          |        <td><a href="https://surlybikes.com/bikes/" target="_blank">SURLY</a></td>
+          |        <td><a href="https://surlybikes.com/bikes/long_haul_trucker" target="_blank">SURLY</a></td>
           |        <td>
           |            Long Haul Trucker, Cross Check,
           |            Pack rat, Pacer, Troll u. a.
@@ -529,7 +547,7 @@ object D {
           |        <td class="col-prize"></td>
           |    </tr>
           |    <tr>
-          |        <td><a href="https://www.bricklanebikes.co.uk/frames" target="_blank">BLB</a></td>
+          |        <td><a href="https://www.bricklanebikes.co.uk/2018-blb-hitchhiker-frameset-blackgrey" target="_blank">BLB</a></td>
           |        <td>Hichhiker auf Anfrage</td>
           |        <td class="col-prize">ab 1500€</td>
           |    </tr>
@@ -688,7 +706,6 @@ object ResCopy {
         findFile(fromFile.getName, toFiles) match {
           case None => copyFile(fromFile, to)
           case Some(toFile) => if (leftIsYounger(fromFile, toFile)) copyFile(fromFile, to)
-          //else println("no copy of %s to %s because younger exists" format (fromFile, to))
         }
       }
     }
