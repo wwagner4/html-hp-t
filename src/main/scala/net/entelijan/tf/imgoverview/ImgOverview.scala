@@ -2,10 +2,8 @@ package net.entelijan.tf.imgoverview
 
 import java.io.PrintWriter
 import java.nio.file.{Files, Path, Paths}
-import java.util.stream.Collectors
 
-import collection.JavaConverters._
-
+import scala.collection.JavaConverters._
 import scala.util.control.NonFatal
 
 object ImgOverview extends App {
@@ -13,22 +11,22 @@ object ImgOverview extends App {
   Seq("index", "jobs", "selfmade", "service").foreach(n => page(n))
 
   def page(name: String): Unit = {
-    val outPath = Paths.get("target", s"Bilder_$name.html")
+    val outPath = Paths.get("target/gen", s"Bilder_$name.html")
     val inPath = Paths.get(s"src/main/web/images/$name")
 
 
     def createTableRow(index: Int, path: Path): String = {
-      val spath = "../" + path.toString
-      val name = path.getFileName.toString
-      return row(spath, index, name)
+      val fname = path.getFileName.toString
+      val spath = s"images/$name/$fname"
+      return row(spath, index, fname)
     }
 
-    def createRows(inPath: Path):String = {
+    def createRows(inPath: Path): String = {
       Files.list(inPath).iterator()
         .asScala
         .toSeq
         .zipWithIndex
-        .map{case (path, idx) => createTableRow(idx, path)}
+        .map { case (path, idx) => createTableRow(idx, path) }
         .mkString("\n")
     }
 
@@ -38,6 +36,9 @@ object ImgOverview extends App {
         pw.print(
           s"""
              |<html>
+             |<head>
+             |<link href='taschenfahrrad.css'	rel='stylesheet' type='text/css'>
+             |</head>
              |<body>
              |<h1>$name</h1>
              |<table>
@@ -47,12 +48,13 @@ object ImgOverview extends App {
              |</html>
         """.stripMargin)
     }
-    def row(path: String, nr: Int, name: String): String = {
+
+    def row(path: String, nr: Int, imgName: String): String = {
       s"""
          |<tr>
          |<td><img width="300" height="190" src="$path"><td>
          |<td>$nr<td>
-         |<td>$name<td>
+         |<td>$imgName<td>
          |</tr>
     """.stripMargin
     }
@@ -73,7 +75,7 @@ object ImgOverview extends App {
     }
 
     def closeAndAddSuppressed(e: Throwable,
-                                      resource: AutoCloseable): Unit = {
+                              resource: AutoCloseable): Unit = {
       if (e != null) {
         try {
           resource.close()
