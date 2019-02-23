@@ -6,6 +6,8 @@ import java.nio.file.{Files, Path, Paths}
 import scala.collection.JavaConverters._
 import scala.util.control.NonFatal
 
+case class Img(path: String, nr: Int, imgName: String)
+
 object ImgOverview extends App {
 
   Seq("index", "jobs", "selfmade", "service").foreach(n => page(n))
@@ -15,18 +17,22 @@ object ImgOverview extends App {
     val inPath = Paths.get(s"src/main/web/images/$name")
 
 
-    def createTableRow(index: Int, path: Path): String = {
+    def toImg(index: Int, path: Path): Img = {
       val fname = path.getFileName.toString
       val spath = s"images/$name/$fname"
-      return row(spath, index, fname)
+      Img(spath, index + 1, fname)
     }
 
     def createRows(inPath: Path): String = {
       Files.list(inPath).iterator()
         .asScala
         .toSeq
+        .filter(p => !p.getFileName.toString.startsWith("."))
+        .sortBy(p => p.getFileName.toString)
         .zipWithIndex
-        .map { case (path, idx) => createTableRow(idx, path) }
+        .map { case (path, idx) => toImg(idx, path) }
+        .grouped(3)
+        .map(imgs => row(imgs))
         .mkString("\n")
     }
 
@@ -40,8 +46,8 @@ object ImgOverview extends App {
              |<link href='taschenfahrrad.css'	rel='stylesheet' type='text/css'>
              |</head>
              |<body>
-             |<h1>$name</h1>
-             |<table>
+             |<p class="imov_title">$name</p>
+             |<table class="imov_table">
              |$rows
              |</table>
              |</body>
@@ -49,14 +55,21 @@ object ImgOverview extends App {
         """.stripMargin)
     }
 
-    def row(path: String, nr: Int, imgName: String): String = {
+    def row(imgs: Seq[Img]): String = {
+      val tds = imgs.map(img => createTd(img)).mkString("\n")
       s"""
-         |<tr>
-         |<td><img width="300" height="190" src="$path"><td>
-         |<td>$nr<td>
-         |<td>$imgName<td>
+         |<tr class="imov_tr">
+         |$tds
          |</tr>
-    """.stripMargin
+      """.stripMargin
+    }
+
+
+    def createTd(img: Img): String = {
+      s"""
+         |<td><img width="300" height="225" src="${img.path}">
+         |<p class="imov_txt">${img.nr} -- ${img.imgName}</p><td>
+       """.stripMargin
     }
 
     def withResources[T <: AutoCloseable, V](r: => T)(f: T => V): V = {
