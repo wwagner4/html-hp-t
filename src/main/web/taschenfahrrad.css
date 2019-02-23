@@ -149,8 +149,14 @@ a:active {
     font-size: 100px;
 }
 .imov_txt {
-font-size: 15px;
+    font-size: 15px;
     margin-bottom: 26px;
     margin-top: 2px;
 
-}}
+}
+.imov_img {
+    width: 300px; /* you can use % */
+    height: auto;
+}
+
+}
