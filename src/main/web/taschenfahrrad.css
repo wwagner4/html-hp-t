@@ -138,3 +138,19 @@ a:active {
 	height: 300px;
     overflow-y: auto;
 }
+
+.imov_tr {
+}
+
+.imov_table {
+    width: 100%;
+}
+.imov_title {
+    font-size: 100px;
+}
+.imov_txt {
+font-size: 15px;
+    margin-bottom: 26px;
+    margin-top: 2px;
+
+}}
