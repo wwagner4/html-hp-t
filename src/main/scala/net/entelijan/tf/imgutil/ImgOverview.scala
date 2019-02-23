@@ -1,4 +1,4 @@
-package net.entelijan.tf.imgoverview
+package net.entelijan.tf.imgutil
 
 import java.io.PrintWriter
 import java.nio.file.{Files, Path, Paths}
@@ -10,7 +10,7 @@ case class Img(path: String, nr: Int, imgName: String)
 
 object ImgOverview extends App {
 
-  Seq("index", "jobs", "selfmade", "service").foreach(n => page(n))
+  Seq("index", "jobs", "selfmade", "service", "0223").foreach(n => page(n))
 
   def page(name: String): Unit = {
     val outPath = Paths.get("target/gen", s"Bilder_$name.html")
@@ -31,7 +31,7 @@ object ImgOverview extends App {
         .sortBy(p => p.getFileName.toString)
         .zipWithIndex
         .map { case (path, idx) => toImg(idx, path) }
-        .grouped(3)
+        .grouped(4)
         .map(imgs => row(imgs))
         .mkString("\n")
     }
@@ -67,7 +67,7 @@ object ImgOverview extends App {
 
     def createTd(img: Img): String = {
       s"""
-         |<td><img width="300" height="225" src="${img.path}">
+         |<td><img class="imov_img" src="${img.path}">
          |<p class="imov_txt">${img.nr} -- ${img.imgName}</p><td>
        """.stripMargin
     }
