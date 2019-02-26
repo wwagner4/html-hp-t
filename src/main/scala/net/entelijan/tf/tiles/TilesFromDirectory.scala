@@ -31,7 +31,7 @@ object TilesFromDirectory {
 
     Thumbnails.of(files:_*)
       .scale(0.3)
-      .rotate(10.2)
+      .outputQuality(1.0)
       .toFiles(destDir.toFile, Rename.NO_CHANGE)
   }
 
