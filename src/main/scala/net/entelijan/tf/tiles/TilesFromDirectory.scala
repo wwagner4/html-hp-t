@@ -8,10 +8,32 @@ import javax.imageio.ImageIO
 import java.awt.geom.AffineTransform
 import java.awt.AlphaComposite
 import java.awt.RenderingHints
+import java.io.File
+import java.util.stream
+
+import net.coobird.thumbnailator.name.Rename
+import net.coobird.thumbnailator.{Thumbnailator, Thumbnails}
 
 import scala.collection.JavaConverters._
 
 object TilesFromDirectory {
+
+  def thumbnails(p: Path, destDir: Path): Unit = {
+    if (!Files.exists(destDir)) {
+      Files.createDirectories(destDir)
+    }
+    val files = Files.list(p)
+      .filter(p => isImageFile(p))
+      .iterator()
+      .asScala
+      .toArray
+      .map(p => p.toFile)
+
+    Thumbnails.of(files:_*)
+      .scale(0.3)
+      .toFiles(destDir.toFile, Rename.NO_CHANGE)
+  }
+
 
   def isImageFile(p: Path): Boolean =
     Files.isRegularFile(p) &&
@@ -40,18 +62,18 @@ object TilesFromDirectory {
     val bimagesMap = bimages.toMap
 
     val gr = Geometry.tiles(1200, 3)(images)
-    val outImg = new BufferedImage(gr.width, gr.height,BufferedImage.TYPE_INT_RGB)
+    val outImg = new BufferedImage(gr.width, gr.height, BufferedImage.TYPE_INT_RGB)
     val grOutImg = outImg.getGraphics
-    gr.tiles.foreach{tile =>
+    gr.tiles.foreach { tile =>
       val src = bimagesMap(tile.id)
       val at = new AffineTransform
       at.scale(tile.scale.x, tile.scale.y)
-      val grdest = src.createGraphics().asInstanceOf[Graphics2D]
+      val grdest = src.createGraphics()
       grdest.setComposite(AlphaComposite.Src)
       grdest.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC)
       grdest.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY)
       grdest.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)
-      grdest.transform(at);
+      grdest.transform(at)
       grOutImg.drawImage(src, tile.xoff, tile.yoff, gr.tileWidth, gr.tileHeight, null)
     }
     if (!Files.exists(outdir)) {
