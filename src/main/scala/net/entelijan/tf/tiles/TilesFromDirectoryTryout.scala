@@ -4,7 +4,9 @@ import java.nio.file.Paths
 
 object TilesFromDirectoryTryout extends App {
 
-  val indir = Paths.get("/home/wwagner4/prj/taschenfahrrad-2019/html-hp-t/src/main/web/images/index")
+  // val prjDir = Paths.get("/home/wwagner4/prj/taschenfahrrad-2019/html-hp-t")
+  val prjDir = Paths.get("C:/ta30/entw1/html-hp-t")
+  val indir = prjDir.resolve("src/main/web/images/index")
   val outdir = Paths.get("target/tiles")
   TilesFromDirectory.create("index-tiles", indir, outdir)
 

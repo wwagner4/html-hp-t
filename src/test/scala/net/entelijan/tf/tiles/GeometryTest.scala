@@ -28,10 +28,13 @@ class GeometryTest extends FunSuite with MustMatchers {
       Image("a", Size(200, 150)),
       Image("s", Size(200, 150)),
     )
-    val r: Seq[TileResult] = t(images)
+    val ti = t(images)
+    ti.width mustBe 400
+    ti.height mustBe 150
+    val r: Seq[Tile] = ti.tiles
     r must contain inOrder (
-      TileResult("a", ScaleFactors(1, 1), 0, 0),
-      TileResult("s", ScaleFactors(1, 1), 200, 0),
+      Tile("a", ScaleFactors(1, 1), 0, 0),
+      Tile("s", ScaleFactors(1, 1), 200, 0),
     )
   }
 
@@ -41,10 +44,15 @@ class GeometryTest extends FunSuite with MustMatchers {
       Image("a", Size(200, 150)),
       Image("s", Size(400, 300)),
     )
-    val r: Seq[TileResult] = t(images)
+    val ti = t(images)
+    ti.width mustBe 400
+    ti.height mustBe 150
+    ti.tileHeight mustBe 150
+    ti.tileWidth mustBe 200
+    val r: Seq[Tile] = ti.tiles
     r must contain inOrder (
-      TileResult("a", ScaleFactors(1, 1), 0, 0),
-      TileResult("s", ScaleFactors(0.5, 0.5), 200, 0),
+      Tile("a", ScaleFactors(1, 1), 0, 0),
+      Tile("s", ScaleFactors(0.5, 0.5), 200, 0),
     )
   }
 
@@ -56,12 +64,15 @@ class GeometryTest extends FunSuite with MustMatchers {
       Image("d", Size(200, 150)),
       Image("f", Size(200, 150)),
     )
-    val r: Seq[TileResult] = t(images)
+    val ti = t(images)
+    ti.width mustBe 400
+    ti.height mustBe 300
+    val r: Seq[Tile] = ti.tiles
     r must contain inOrder (
-      TileResult("a", ScaleFactors(1, 1), 0, 0),
-      TileResult("s", ScaleFactors(1, 1), 200, 0),
-      TileResult("d", ScaleFactors(1, 1), 0, 150),
-      TileResult("f", ScaleFactors(1, 1), 200, 150),
+      Tile("a", ScaleFactors(1, 1), 0, 0),
+      Tile("s", ScaleFactors(1, 1), 200, 0),
+      Tile("d", ScaleFactors(1, 1), 0, 150),
+      Tile("f", ScaleFactors(1, 1), 200, 150),
     )
   }
 
@@ -72,12 +83,15 @@ class GeometryTest extends FunSuite with MustMatchers {
       Image("s", Size(200, 150)),
       Image("d", Size(200, 150)),
     )
-    val r: Seq[TileResult] = t(images)
+    val ti = t(images)
+    ti.width mustBe 400
+    ti.height mustBe 300
+    val r: Seq[Tile] = ti.tiles
     r must contain inOrder (
-      TileResult("a", ScaleFactors(1, 1), 0, 0),
-      TileResult("s", ScaleFactors(1, 1), 200, 0),
-      TileResult("d", ScaleFactors(1, 1), 0, 150),
-      TileResult("a", ScaleFactors(1, 1), 200, 150),
+      Tile("a", ScaleFactors(1, 1), 0, 0),
+      Tile("s", ScaleFactors(1, 1), 200, 0),
+      Tile("d", ScaleFactors(1, 1), 0, 150),
+      Tile("a", ScaleFactors(1, 1), 200, 150),
     )
   }
 
