@@ -40,14 +40,14 @@ object T {
                |<img alt="taschenfahrrad" src="${imagesDirPath(p)}/${f.getName}" />
                |<p class="flex-caption"></p>
                |</li>
-               |""" stripMargin
+               |""".stripMargin
           else
             s"""
                |<li>
                |<img alt="taschenfahrrad" class="lazy" data-src="${imagesDirPath(p)}/${f.getName}" />
                |<p class="flex-caption"></p>
                |</li>
-               |""" stripMargin
+               |""".stripMargin
 
         case Some(txt) =>
           if (i == 0)
@@ -56,14 +56,14 @@ object T {
                |<img alt="taschenfahrrad" src="${imagesDirPath(p)}/${f.getName}" />
                |<p class="flex-caption">%s</p>
                |</li>
-               |""" stripMargin
+               |""".stripMargin
           else
             s"""
                |<li>
                |<img class="lazy" data-src="${imagesDirPath(p)}/${f.getName}" />
                |<p class="flex-caption">%s</p>
                |</li>
-               |""" stripMargin
+               |""".stripMargin
 
       }
     }
@@ -118,7 +118,7 @@ object T {
   def htmlPageLink(p: Page): String = {
     s"""
        |<p><a href="${T.fileName(p)}">${p.name}...</a></p>
-       |""" stripMargin
+       |""".stripMargin
   }
 
   def htmlContetntRight(p: Page): String =
@@ -289,7 +289,7 @@ object D {
           |        <td><a href="http://www.tokyobike.de" target="_blank">tokyobike</a></td>
           |        <td><a href="http://www.tokyobike.de/?area=bikes" target="_blank">classic26</a></td>
           |        <td>47, 53, 57, 61</td>
-          |        <td class="col-prize">759€</td>
+          |        <td class="col-prize">789€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
