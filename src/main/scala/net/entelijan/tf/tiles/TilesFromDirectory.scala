@@ -44,23 +44,23 @@ object TilesFromDirectory {
 
   def asBuffered(p: Path): BufferedImage = ImageIO.read(p.toFile)
 
-  def create(name: String, indir: Path, outdir: Path): Unit = {
+  def tiles(name: String, indir: Path, outdir: Path): Unit = {
     require(Files.exists(indir), s"$indir must exist")
     require(Files.isDirectory(indir), s"$indir must be a directory")
     if (!Files.exists(outdir))
       Files.createDirectories(outdir)
-    val bimages: Seq[(String, BufferedImage)] = Files.list(indir)
+    val bufferedImages: Seq[(String, BufferedImage)] = Files.list(indir)
       .filter(p => isImageFile(p))
       .iterator()
       .asScala
       .toList
       .map(p => (p.getFileName.toString, asBuffered(p)))
 
-    val images = for ((id, bi) <- bimages) yield {
+    val images = for ((id, bi) <- bufferedImages) yield {
       Image(id = id, size = Size(bi.getWidth, bi.getHeight))
     }
 
-    val bimagesMap = bimages.toMap
+    val bimagesMap = bufferedImages.toMap
 
     val gr = Geometry.tiles(1200, 3)(images)
     val outImg = new BufferedImage(gr.width, gr.height, BufferedImage.TYPE_INT_RGB)
