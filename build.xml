@@ -3,9 +3,12 @@
 
 <project name="taschenfahrrad">
 
-    <property name="work">/Users/wwagner4/prj/html-hp-t/target</property>
+	<!--
+	<property name="work">/Users/wwagner4/prj/html-hp-t/target</property>
+	-->
+	<property name="work">/home/wwagner4/prj/taschenfahrrad-2019/html-hp-t/target</property>
 
-	<property name="version" value="2019.2" />
+	<property name="version" value="2019.3" />
 	<target name="clean">
 		<delete dir="${work}/gen" >
 			<include name="**/*" />
