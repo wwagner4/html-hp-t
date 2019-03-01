@@ -1,97 +1,59 @@
 package net.entelijan.tf.tiles
 
-import com.sun.javafx.iio.common.ScalerFactory
-import org.scalatest.{Assertion, FunSuite, MustMatchers}
+import org.scalatest.{FunSuite, MustMatchers}
 
 class GeometryTest extends FunSuite with MustMatchers {
 
-  test("different ratios") {
-    val t = Geometry.tiles(400, 2)(_)
-    val images = Seq(
-      Image("a", Size(200, 150)),
-      Image("s", Size(200, 250)),
-    )
-    val thrown = the [IllegalArgumentException] thrownBy t(images)
-    thrown.getMessage.contains("same ratio") mustBe true
-  }
-
   test("no images") {
-    val t = Geometry.tiles(400, 2)(_)
+    val t = Geometry.tiles(Size(200, 150), 2)(_)
     val images = Seq()
-    val thrown = the [IllegalArgumentException] thrownBy t(images)
+    val thrown = the[IllegalArgumentException] thrownBy t(images)
     thrown.getMessage.contains("one image") mustBe true
   }
 
-  test("no scale") {
-    val t = Geometry.tiles(400, 2)(_)
-    val images = Seq(
-      Image("a", Size(200, 150)),
-      Image("s", Size(200, 150)),
-    )
+  test("one row") {
+    val t = Geometry.tiles(Size(200, 150), 2)(_)
+    val images = Seq("a", "s")
     val ti = t(images)
     ti.width mustBe 400
     ti.height mustBe 150
     val r: Seq[Tile] = ti.tiles
-    r must contain inOrder (
-      Tile("a", ScaleFactors(1, 1), 0, 0),
-      Tile("s", ScaleFactors(1, 1), 200, 0),
+    r.size mustBe 2
+    r must contain inOrder(
+      Tile("a", 0, 0),
+      Tile("s", 200, 0),
     )
   }
 
-  test("one scale") {
-    val t = Geometry.tiles(400, 2)(_)
-    val images = Seq(
-      Image("a", Size(200, 150)),
-      Image("s", Size(400, 300)),
-    )
-    val ti = t(images)
-    ti.width mustBe 400
-    ti.height mustBe 150
-    ti.tileHeight mustBe 150
-    ti.tileWidth mustBe 200
-    val r: Seq[Tile] = ti.tiles
-    r must contain inOrder (
-      Tile("a", ScaleFactors(1, 1), 0, 0),
-      Tile("s", ScaleFactors(0.5, 0.5), 200, 0),
-    )
-  }
-
-  test("no scale two rows") {
-    val t = Geometry.tiles(400, 2)(_)
-    val images = Seq(
-      Image("a", Size(200, 150)),
-      Image("s", Size(200, 150)),
-      Image("d", Size(200, 150)),
-      Image("f", Size(200, 150)),
-    )
+  test("two rows A") {
+    val t = Geometry.tiles(Size(200, 150), 2)(_)
+    val images = Seq("a", "s", "r")
     val ti = t(images)
     ti.width mustBe 400
     ti.height mustBe 300
     val r: Seq[Tile] = ti.tiles
-    r must contain inOrder (
-      Tile("a", ScaleFactors(1, 1), 0, 0),
-      Tile("s", ScaleFactors(1, 1), 200, 0),
-      Tile("d", ScaleFactors(1, 1), 0, 150),
-      Tile("f", ScaleFactors(1, 1), 200, 150),
+    r.size mustBe 4
+    r must contain inOrder(
+      Tile("a", 0, 0),
+      Tile("s", 200, 0),
+      Tile("r", 0, 150),
+      Tile("a", 200, 150),
     )
   }
 
-  test("no scale two rows from tree images") {
-    val t = Geometry.tiles(400, 2)(_)
-    val images = Seq(
-      Image("a", Size(200, 150)),
-      Image("s", Size(200, 150)),
-      Image("d", Size(200, 150)),
-    )
+  test("two rows B") {
+    val t = Geometry.tiles(Size(200, 150), 2)(_)
+    val images = Seq("a", "s", "r", "k")
     val ti = t(images)
     ti.width mustBe 400
     ti.height mustBe 300
     val r: Seq[Tile] = ti.tiles
-    r must contain inOrder (
-      Tile("a", ScaleFactors(1, 1), 0, 0),
-      Tile("s", ScaleFactors(1, 1), 200, 0),
-      Tile("d", ScaleFactors(1, 1), 0, 150),
-      Tile("a", ScaleFactors(1, 1), 200, 150),
+    r.size mustBe 4
+    r must contain inOrder(
+      Tile("a", 0, 0),
+      Tile("s", 200, 0),
+      Tile("r", 0, 150),
+      Tile("k", 200, 150),
     )
   }
 

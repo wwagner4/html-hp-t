@@ -1,30 +1,19 @@
 package net.entelijan.tf.tiles
 
-import java.awt.geom.AffineTransform
 import java.awt.image.BufferedImage
-import java.awt.{AlphaComposite, RenderingHints}
 import java.io.File
 import java.nio.file.{Files, Path}
 
 import javax.imageio.ImageIO
 import net.coobird.thumbnailator.Thumbnails
 import net.coobird.thumbnailator.name.Rename
-import net.entelijan.tf.tiles.TilesFromDirectory.bufferedImages
 
 import scala.collection.JavaConverters._
 
+
 object TilesFromDirectory {
 
-  def thumbnails(thumbSize: Size, indir: Path, outdir: Path): Unit = {
-    if (!Files.exists(outdir)) {
-      Files.createDirectories(outdir)
-    }
-
-    Thumbnails.of(imgFiles(indir): _*)
-      .forceSize(thumbSize.width, thumbSize.height)
-      .outputQuality(1.0)
-      .toFiles(outdir.toFile, Rename.NO_CHANGE)
-  }
+  case class NamedImage(name: String, image: BufferedImage)
 
   private def imgFiles(dir: Path): Array[File] =
     Files.list(dir)
@@ -42,44 +31,71 @@ object TilesFromDirectory {
       p.getFileName.toString.toLowerCase().endsWith("png")
 
 
-  def bufferedImages(indir: Path): Seq[(String, BufferedImage)] = {
-    def asBuffered(p: Path): BufferedImage = ImageIO.read(p.toFile)
+  def namedImages(indir: Path): Seq[NamedImage] = {
+
+    def asBuffered(p: Path): BufferedImage = {
+      ImageIO.read(p.toFile)
+    }
 
     Files.list(indir)
       .filter(p => isImageFile(p))
       .iterator()
       .asScala
-      .toStream
-      .map(p => (p.getFileName.toString, asBuffered(p)))
+      .toList
+      .map(p => NamedImage(p.getFileName.toString, asBuffered(p)))
+      .sortBy(a => a.name)
   }
 
 
-  def tiles(name: String, cols: Int, tileSize: Size, indir: Path, outdir: Path): Unit = {
+  def squared(bi: BufferedImage): BufferedImage = {
+    val w = bi.getWidth
+    val h = bi.getHeight
+
+    def portrait: BufferedImage = {
+      val out = new BufferedImage(w, w, BufferedImage.TYPE_INT_RGB)
+      val off = ((h - w).toDouble / 2).toInt
+      bi.getSubimage(0, off, w, w)
+    }
+
+    def landscape: BufferedImage = {
+      val out = new BufferedImage(h, h, BufferedImage.TYPE_INT_RGB)
+      val off = math.ceil((w - h).toDouble / 2).toInt
+      bi.getSubimage(off, 0, h, h)
+    }
+
+    if (w == h) bi
+    else if (w < h) portrait
+    else landscape
+  }
+
+  def thumb(thumbSize: Size)(ni: BufferedImage): BufferedImage = {
+    Thumbnails.of(ni)
+      .forceSize(thumbSize.width, thumbSize.height)
+      .asBufferedImage()
+  }
+
+  def mapNamed(f: BufferedImage => BufferedImage)(ni: NamedImage): NamedImage = {
+    NamedImage(ni.name, f(ni.image))
+  }
+
+  def tiles(name: String, cols: Int, size: Int, indir: Path, outdir: Path): Unit = {
+    val tileSize = Size(size, size)
     require(Files.exists(indir), s"$indir must exist")
     require(Files.isDirectory(indir), s"$indir must be a directory")
     if (!Files.exists(outdir))
       Files.createDirectories(outdir)
-    val bimages = bufferedImages(indir)
+    val images = namedImages(indir)
+      .map(mapNamed(squared) _)
+      .map(mapNamed(thumb(tileSize) _) _)
 
-    val images = for ((id, bi) <- bimages) yield {
-      Image(id = id, size = Size(bi.getWidth, bi.getHeight))
-    }
+    val imgMap = images.map(i => (i.name, i.image)).toMap
 
-    val bimagesMap = bimages.toMap
-
-    val gr = Geometry.tiles(1200, 3)(images)
+    val names = images.map(is => is.name)
+    val gr = Geometry.tiles(tileSize, cols)(names)
     val outImg = new BufferedImage(gr.width, gr.height, BufferedImage.TYPE_INT_RGB)
     val grOutImg = outImg.getGraphics
     gr.tiles.foreach { tile =>
-      val src = bimagesMap(tile.id)
-      val at = new AffineTransform
-      at.scale(tile.scale.x, tile.scale.y)
-      val grdest = src.createGraphics()
-      grdest.setComposite(AlphaComposite.Src)
-      grdest.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC)
-      grdest.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY)
-      grdest.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)
-      grdest.transform(at)
+      val src = imgMap(tile.id)
       grOutImg.drawImage(src, tile.xoff, tile.yoff, gr.tileWidth, gr.tileHeight, null)
     }
     if (!Files.exists(outdir)) {
@@ -87,10 +103,7 @@ object TilesFromDirectory {
     }
     val imgtype = "jpg"
     val outPath = outdir.resolve(s"$name.$imgtype")
-
     ImageIO.write(outImg, imgtype, outPath.toFile)
-
   }
-
 
 }

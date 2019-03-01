@@ -7,24 +7,24 @@ object Tryout extends App {
   tiles()
 
   def tiles(): Unit = {
-    val indir = Paths.get("target/thumbs")
-    val outdir = Paths.get("target/tiles")
+    Seq(
+      "index",
+      "selfmade",
+      "jobs",
+      "producer",
+      "service",
+      "0223",
+    ).foreach { nam =>
+      val indir = Paths.get(s"src/main/web/images/$nam")
+      val outdir = Paths.get("target/tiles")
 
-    val name = "tiles001"
+      val name = s"tiles$nam"
 
-    TilesFromDirectory.tiles(name, 3, Size(208, 210), indir, outdir)
-    println("Wrote to " + outdir.toAbsolutePath)
+      TilesFromDirectory.tiles(name, 4, 300, indir, outdir)
+      println(s"Wrote $name to ${outdir.toAbsolutePath}")
 
-  }
+    }
 
-  def thumbnails(): Unit = {
-    val indir = Paths.get("src/main/web/images/index")
-    println(s"indir:${indir.toAbsolutePath}")
-    val outdir = Paths.get("target/thumbs")
-    //TilesFromDirectory.create("index-tiles", indir, outdir)
-
-    TilesFromDirectory.thumbnails(Size(200, 100), indir, outdir)
-    println(s"thumbs in ${outdir.toAbsolutePath}")
   }
 
 }
