@@ -1,39 +1,38 @@
 package net.entelijan.tf.tiles
 
-import java.awt.Graphics2D
+import java.awt.geom.AffineTransform
 import java.awt.image.BufferedImage
+import java.awt.{AlphaComposite, RenderingHints}
+import java.io.File
 import java.nio.file.{Files, Path}
 
 import javax.imageio.ImageIO
-import java.awt.geom.AffineTransform
-import java.awt.AlphaComposite
-import java.awt.RenderingHints
-import java.io.File
-import java.util.stream
-
+import net.coobird.thumbnailator.Thumbnails
 import net.coobird.thumbnailator.name.Rename
-import net.coobird.thumbnailator.{Thumbnailator, Thumbnails}
+import net.entelijan.tf.tiles.TilesFromDirectory.bufferedImages
 
 import scala.collection.JavaConverters._
 
 object TilesFromDirectory {
 
-  def thumbnails(p: Path, destDir: Path): Unit = {
-    if (!Files.exists(destDir)) {
-      Files.createDirectories(destDir)
+  def thumbnails(thumbSize: Size, indir: Path, outdir: Path): Unit = {
+    if (!Files.exists(outdir)) {
+      Files.createDirectories(outdir)
     }
-    val files = Files.list(p)
-      .filter(p => isImageFile(p))
+
+    Thumbnails.of(imgFiles(indir): _*)
+      .forceSize(thumbSize.width, thumbSize.height)
+      .outputQuality(1.0)
+      .toFiles(outdir.toFile, Rename.NO_CHANGE)
+  }
+
+  private def imgFiles(dir: Path): Array[File] =
+    Files.list(dir)
+      .filter(isImageFile)
       .iterator()
       .asScala
       .toArray
-      .map(p => p.toFile)
-
-    Thumbnails.of(files:_*)
-      .scale(0.3)
-      .outputQuality(1.0)
-      .toFiles(destDir.toFile, Rename.NO_CHANGE)
-  }
+      .map(_.toFile)
 
 
   def isImageFile(p: Path): Boolean =
@@ -42,25 +41,31 @@ object TilesFromDirectory {
       p.getFileName.toString.toLowerCase().endsWith("jpeg") ||
       p.getFileName.toString.toLowerCase().endsWith("png")
 
-  def asBuffered(p: Path): BufferedImage = ImageIO.read(p.toFile)
 
-  def tiles(name: String, indir: Path, outdir: Path): Unit = {
+  def bufferedImages(indir: Path): Seq[(String, BufferedImage)] = {
+    def asBuffered(p: Path): BufferedImage = ImageIO.read(p.toFile)
+
+    Files.list(indir)
+      .filter(p => isImageFile(p))
+      .iterator()
+      .asScala
+      .toStream
+      .map(p => (p.getFileName.toString, asBuffered(p)))
+  }
+
+
+  def tiles(name: String, cols: Int, tileSize: Size, indir: Path, outdir: Path): Unit = {
     require(Files.exists(indir), s"$indir must exist")
     require(Files.isDirectory(indir), s"$indir must be a directory")
     if (!Files.exists(outdir))
       Files.createDirectories(outdir)
-    val bufferedImages: Seq[(String, BufferedImage)] = Files.list(indir)
-      .filter(p => isImageFile(p))
-      .iterator()
-      .asScala
-      .toList
-      .map(p => (p.getFileName.toString, asBuffered(p)))
+    val bimages = bufferedImages(indir)
 
-    val images = for ((id, bi) <- bufferedImages) yield {
+    val images = for ((id, bi) <- bimages) yield {
       Image(id = id, size = Size(bi.getWidth, bi.getHeight))
     }
 
-    val bimagesMap = bufferedImages.toMap
+    val bimagesMap = bimages.toMap
 
     val gr = Geometry.tiles(1200, 3)(images)
     val outImg = new BufferedImage(gr.width, gr.height, BufferedImage.TYPE_INT_RGB)
@@ -85,7 +90,7 @@ object TilesFromDirectory {
 
     ImageIO.write(outImg, imgtype, outPath.toFile)
 
-    println("Wrote to " + outPath)
   }
+
 
 }
