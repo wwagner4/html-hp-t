@@ -2,7 +2,7 @@ package net.entelijan.tf.tiles
 
 import java.nio.file.Paths
 
-object Tryout extends App {
+object TilesTryout extends App {
 
   val cfg1 = TilesConf(
     indirs = Seq(

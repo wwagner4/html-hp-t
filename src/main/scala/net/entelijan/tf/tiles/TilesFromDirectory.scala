@@ -6,7 +6,6 @@ import java.nio.file.{Files, Path}
 
 import javax.imageio.ImageIO
 import net.coobird.thumbnailator.Thumbnails
-import net.coobird.thumbnailator.name.Rename
 
 import scala.collection.JavaConverters._
 
@@ -26,9 +25,10 @@ object TilesFromDirectory {
 
   def isImageFile(p: Path): Boolean =
     Files.isRegularFile(p) &&
-      p.getFileName.toString.toLowerCase().endsWith("jpg") ||
-      p.getFileName.toString.toLowerCase().endsWith("jpeg") ||
-      p.getFileName.toString.toLowerCase().endsWith("png")
+      (p.getFileName.toString.toLowerCase().endsWith("jpg") ||
+        p.getFileName.toString.toLowerCase().endsWith("jpeg") ||
+        p.getFileName.toString.toLowerCase().endsWith("png")) &&
+      !p.getFileName.toString.toLowerCase().startsWith("tiles")
 
 
   def namedImages(indir: Path): Seq[NamedImage] = {
