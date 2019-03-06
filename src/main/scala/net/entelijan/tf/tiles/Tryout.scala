@@ -4,27 +4,44 @@ import java.nio.file.Paths
 
 object Tryout extends App {
 
-  tiles()
-
-  def tiles(): Unit = {
-    Seq(
+  val cfg1 = TilesConf(
+    indirs = Seq(
       "index",
       "selfmade",
       "jobs",
       "producer",
       "service",
       "0223",
-    ).foreach { nam =>
-      val indir = Paths.get(s"src/main/web/images/$nam")
-      val outdir = Paths.get("target/tiles")
+    ),
+    indirBase = "src/main/web/images",
+    outdirBase = "target/tiles"
+  )
+  val cfg2 = TilesConf(
+    cols = 3,
+    indirs = Seq("index"),
+    indirBase = "proto/WebContent/proto03/images",
+    outdirBase = "target/proto03"
+  )
 
+  tiles(cfg2)
+
+  def tiles(cfg: TilesConf): Unit = {
+    cfg.indirs.foreach { nam =>
+      val indir = Paths.get(s"${cfg.indirBase}/$nam")
+      val outdir = Paths.get(cfg.outdirBase)
       val name = s"tiles$nam"
-
-      TilesFromDirectory.tiles(name, 4, 300, indir, outdir)
+      TilesFromDirectory.tiles(name, cfg.cols, cfg.size, indir, outdir)
       println(s"Wrote $name to ${outdir.toAbsolutePath}")
-
     }
 
   }
 
 }
+
+
+case class TilesConf(cols: Int = 4,
+                     size: Int = 300,
+                     indirs: Seq[String],
+                     indirBase: String,
+                     outdirBase: String,
+                    )
