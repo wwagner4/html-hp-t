@@ -3,27 +3,38 @@
  src: url("font/isonormd.ttf") /* TTF file for CSS3 browsers */
 }
 body {
-	margin-top: 0px;
+	margin: 0px;
 	font-family: 'isonormd', sans-serif;
-	background-color: white;
+	background-color: red;
 	font-size: 15px;
 	font-weight: normal;
 }
-h1 {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 5px;
-	padding: 0px;
+
+#left {
+	background-color: white;
+	width: 400px;
+	height: 100vh;
+	float: left;
 }
-p .p1 {
-	font-family: inherit;
+
+#right {
+	width: calc(100vw - 400px);
+    height: 100vh;
+	float: right;
+	background-repeat: repeat;
+    background-image: url(images/index/tilesindex.jpg);
+}
+
+p {
 	margin: 0px;
-	padding: 0px;
+	padding: 10px;
 }
-.p1 {
-	max-width: 700px;
+
+h1 {
+	margin: 0px;
+	padding: 10px;
 }
+
 img {
 	margin: 0px;
 	padding: 0px;
@@ -70,23 +81,7 @@ a:active {
 	text-decoration: underline;
 	color: #000000;
 }
-#all {
-	width: 1200px;
-	margin:0 auto;
-}
 
-#left {
-	background-color: white;
-	width: 400px;
-	float: left;
-	padding-bottom: 30px;
-}
-
-#right {
-	background-color: white;
-	width: 800px;
-	float: right;
-}
 #sepa {
 	margin-left: 0px;
 	margin-top: 8px;
