@@ -2,121 +2,88 @@
     font-family: isonormd;
     src: url("font/isonormd.ttf") /* TTF file for CSS3 browsers */
 }
-@media (min-aspect-ratio: 1/1) {
-    body {
-        margin: 0px;
-        font-family: 'isonormd', sans-serif;
-        background-color: white;
-        font-size: normal;
-        font-weight: normal;
-        overflow: hidden;
-    }
+body {
+    margin: 0px;
+    font-family: 'isonormd', sans-serif;
+    background-color: white;
+    font-size: normal;
+    font-weight: large;
+}
 
-    #left {
-        background-color: white;
-        width: 400px;
-        height: 100vh;
-        float: left;
-        overflow: auto;
-    }
+p {
+    margin: 0px;
+    padding: 3px;
+}
 
-    #right {
-        width: calc(100vw - 400px);
-        height: 100vh;
-        float: right;
-        background-repeat: repeat;
-        background-image: url(images/index/tilesindex.jpg);
-    }
+h1 {
+    margin: 0px;
+    padding: 10px;
+}
 
-    p {
-        margin: 0px;
-        padding: 3px;
-    }
+a, img {
+    border: none;
+}
 
-    h1 {
-        margin: 0px;
-        padding: 10px;
-    }
+a {
+    text-decoration: none;
+    color: #000000;
+}
 
-    a, img {
-        border: none;
-    }
+a:visited {
+    text-decoration: none;
+    color: #000000;
+}
 
-    a {
-        text-decoration: none;
-        color: #000000;
-    }
+a:hover {
+    text-decoration: underline;
+    color: #000000;
+}
 
-    a:visited {
-        text-decoration: none;
-        color: #000000;
-    }
+a:active {
+    text-decoration: underline;
+    color: #000000;
+}
 
-    a:hover {
-        text-decoration: underline;
-        color: #000000;
-    }
+@media (min-aspect-ratio: 2/3) {
+body {
+    overflow: hidden;
+}
 
-    a:active {
-        text-decoration: underline;
-        color: #000000;
-    }
+#left {
+    background-color: white;
+    width: 400px;
+    height: 100vh;
+    float: left;
+    overflow: auto;
+}
+
+#right {
+    width: calc(100vw - 400px);
+    height: 100vh;
+    float: right;
+    background-repeat: repeat;
+    background-image: url(images/index/tilesindex.jpg);
+    background-size: contain;
+}
 
 }
-@media (max-aspect-ratio: 1/1) {
-    body {
-        margin: 0px;
-        font-family: 'isonormd', sans-serif;
-        background-color: white;
-        font-size: normal;
-        font-weight: normal;
-        overflow: auto;
-    }
+@media (max-aspect-ratio: 2/3) {
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 
-    #left {
-        width: 100vw;
-         background-color: white;
-    }
+#left {
+    width: 100vw;
+     background-color: white;
+     padding-right:10px;
+}
 
-    #right {
-        width: 100vw;
-        height: 1800px;
-        background-repeat: repeat;
-        background-image: url(images/index/tilesindex.jpg);
-    }
-
-    p {
-        margin: 0px;
-        padding: 3px;
-    }
-
-    h1 {
-        margin: 0px;
-        padding: 10px;
-    }
-
-    a, img {
-        border: none;
-    }
-
-    a {
-        text-decoration: none;
-        color: #000000;
-    }
-
-    a:visited {
-        text-decoration: none;
-        color: #000000;
-    }
-
-    a:hover {
-        text-decoration: underline;
-        color: #000000;
-    }
-
-    a:active {
-        text-decoration: underline;
-        color: #000000;
-    }
-
+#right {
+    width: 100vw;
+    height: 1800px;
+    background-repeat: repeat;
+    background-image: url(images/index/tilesindex.jpg);
+    background-size: contain;
+}
 }
