@@ -18,6 +18,7 @@ object TilesTryout extends App {
   )
   val cfg2 = TilesConf(
     cols = 3,
+    size = 500,
     indirs = Seq("index"),
     indirBase = "proto/WebContent/proto03/images",
     outdirBase = "target/proto03"
