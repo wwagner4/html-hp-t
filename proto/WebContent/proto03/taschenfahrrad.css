@@ -7,7 +7,7 @@
         margin: 0px;
         font-family: 'isonormd', sans-serif;
         background-color: white;
-        font-size: 15px;
+        font-size: normal;
         font-weight: normal;
         overflow: hidden;
     }
@@ -30,7 +30,7 @@
 
     p {
         margin: 0px;
-        padding: 10px;
+        padding: 3px;
     }
 
     h1 {
@@ -68,7 +68,7 @@
         margin: 0px;
         font-family: 'isonormd', sans-serif;
         background-color: white;
-        font-size: 15px;
+        font-size: normal;
         font-weight: normal;
         overflow: auto;
     }
@@ -87,7 +87,7 @@
 
     p {
         margin: 0px;
-        padding: 10px;
+        padding: 3px;
     }
 
     h1 {
