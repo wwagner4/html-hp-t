@@ -1,135 +1,154 @@
 @font-face {
- font-family: isonormd;
- src: url("font/isonormd.ttf") /* TTF file for CSS3 browsers */
+    font-family: isonormd;
+    src: url("font/isonormd.ttf") /* TTF file for CSS3 browsers */
 }
+
 body {
-	margin: 0px;
-	font-family: 'isonormd', sans-serif;
-	background-color: red;
-	font-size: 15px;
-	font-weight: normal;
+    margin: 0px;
+    font-family: 'isonormd', sans-serif;
+    background-color: red;
+    font-size: 15px;
+    font-weight: normal;
+    overflow: hidden;
 }
 
 #left {
-	background-color: white;
-	width: 400px;
-	height: 100vh;
-	float: left;
+    background-color: white;
+    width: 400px;
+    height: 100vh;
+    float: left;
 }
 
 #right {
-	width: calc(100vw - 400px);
+    width: calc(100vw - 400px);
     height: 100vh;
-	float: right;
-	background-repeat: repeat;
+    float: right;
+    background-repeat: repeat;
     background-image: url(images/index/tilesindex.jpg);
 }
 
 p {
-	margin: 0px;
-	padding: 10px;
+    margin: 0px;
+    padding: 10px;
 }
 
 h1 {
-	margin: 0px;
-	padding: 10px;
+    margin: 0px;
+    padding: 10px;
 }
 
 img {
-	margin: 0px;
-	padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
+
 table {
-	border-collapse: collapse;
-	font-size: inherit;
+    border-collapse: collapse;
+    font-size: inherit;
 }
+
 tbody {
-	font-size: inherit;
+    font-size: inherit;
 }
+
 tr {
-	font-size: inherit;
+    font-size: inherit;
 }
+
 td {
-	text-align: left;
-	vertical-align: top;
-	font-size: inherit;
-	font-weight: normal;
+    text-align: left;
+    vertical-align: top;
+    font-size: inherit;
+    font-weight: normal;
 }
+
 .col-prize {
-	text-align: left;
-	vertical-align: top;
-	font-size: inherit;
-	font-weight: normal;
+    text-align: left;
+    vertical-align: top;
+    font-size: inherit;
+    font-weight: normal;
     min-width: 140px;
 }
+
 a, img {
-    border:none;
+    border: none;
 }
+
 a {
-	text-decoration: none;
-	color: #000000;
+    text-decoration: none;
+    color: #000000;
 }
+
 a:visited {
-	text-decoration: none;
-	color: #000000;
+    text-decoration: none;
+    color: #000000;
 }
+
 a:hover {
-	text-decoration: underline;
-	color: #000000;
+    text-decoration: underline;
+    color: #000000;
 }
+
 a:active {
-	text-decoration: underline;
-	color: #000000;
+    text-decoration: underline;
+    color: #000000;
 }
 
 #sepa {
-	margin-left: 0px;
-	margin-top: 8px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	padding: 0px;
+    margin-left: 0px;
+    margin-top: 8px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
 }
+
 #sepa1 {
-	margin-left: 0px;
-	margin-top: 8px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	padding: 0px;
+    margin-left: 0px;
+    margin-top: 8px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
 }
+
 #sepa2 {
-	margin-left: 0px;
-	margin-top: 20px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	padding: 0px;
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
 }
+
 #sepa3 {
-	margin-left: 0px;
-	margin-top: 40px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	padding: 0px;
+    margin-left: 0px;
+    margin-top: 40px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
 }
+
 #sepa4 {
-	margin-left: 0px;
-	margin-top: 60px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	padding: 0px;
+    margin-left: 0px;
+    margin-top: 60px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
 }
+
 #sepa-logos {
-	margin-left: 0px;
-	margin-top: 150px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	padding: 0px;
+    margin-left: 0px;
+    margin-top: 150px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
 }
+
 .flex-caption {
-	width: 100%;
-	text-align: center;
-	height: 25px;	
-} 
+    width: 100%;
+    text-align: center;
+    height: 25px;
+}
+
 #models {
-	height: 300px;
+    height: 300px;
     overflow-y: auto;
 }
