@@ -17,6 +17,7 @@ body {
     width: 400px;
     height: 100vh;
     float: left;
+    overflow: auto;
 }
 
 #right {
