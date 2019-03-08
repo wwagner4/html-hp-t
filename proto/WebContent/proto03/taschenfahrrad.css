@@ -2,154 +2,121 @@
     font-family: isonormd;
     src: url("font/isonormd.ttf") /* TTF file for CSS3 browsers */
 }
+@media (min-aspect-ratio: 1/1) {
+    body {
+        margin: 0px;
+        font-family: 'isonormd', sans-serif;
+        background-color: white;
+        font-size: 15px;
+        font-weight: normal;
+        overflow: hidden;
+    }
 
-body {
-    margin: 0px;
-    font-family: 'isonormd', sans-serif;
-    background-color: red;
-    font-size: 15px;
-    font-weight: normal;
-    overflow: hidden;
+    #left {
+        background-color: white;
+        width: 400px;
+        height: 100vh;
+        float: left;
+        overflow: auto;
+    }
+
+    #right {
+        width: calc(100vw - 400px);
+        height: 100vh;
+        float: right;
+        background-repeat: repeat;
+        background-image: url(images/index/tilesindex.jpg);
+    }
+
+    p {
+        margin: 0px;
+        padding: 10px;
+    }
+
+    h1 {
+        margin: 0px;
+        padding: 10px;
+    }
+
+    a, img {
+        border: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: #000000;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: #000000;
+    }
+
+    a:active {
+        text-decoration: underline;
+        color: #000000;
+    }
+
 }
+@media (max-aspect-ratio: 1/1) {
+    body {
+        margin: 0px;
+        font-family: 'isonormd', sans-serif;
+        background-color: white;
+        font-size: 15px;
+        font-weight: normal;
+        overflow: auto;
+    }
 
-#left {
-    background-color: white;
-    width: 400px;
-    height: 100vh;
-    float: left;
-    overflow: auto;
-}
+    #left {
+        width: 100vw;
+         background-color: white;
+    }
 
-#right {
-    width: calc(100vw - 400px);
-    height: 100vh;
-    float: right;
-    background-repeat: repeat;
-    background-image: url(images/index/tilesindex.jpg);
-}
+    #right {
+        width: 100vw;
+        height: 1800px;
+        background-repeat: repeat;
+        background-image: url(images/index/tilesindex.jpg);
+    }
 
-p {
-    margin: 0px;
-    padding: 10px;
-}
+    p {
+        margin: 0px;
+        padding: 10px;
+    }
 
-h1 {
-    margin: 0px;
-    padding: 10px;
-}
+    h1 {
+        margin: 0px;
+        padding: 10px;
+    }
 
-img {
-    margin: 0px;
-    padding: 0px;
-}
+    a, img {
+        border: none;
+    }
 
-table {
-    border-collapse: collapse;
-    font-size: inherit;
-}
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
 
-tbody {
-    font-size: inherit;
-}
+    a:visited {
+        text-decoration: none;
+        color: #000000;
+    }
 
-tr {
-    font-size: inherit;
-}
+    a:hover {
+        text-decoration: underline;
+        color: #000000;
+    }
 
-td {
-    text-align: left;
-    vertical-align: top;
-    font-size: inherit;
-    font-weight: normal;
-}
+    a:active {
+        text-decoration: underline;
+        color: #000000;
+    }
 
-.col-prize {
-    text-align: left;
-    vertical-align: top;
-    font-size: inherit;
-    font-weight: normal;
-    min-width: 140px;
-}
-
-a, img {
-    border: none;
-}
-
-a {
-    text-decoration: none;
-    color: #000000;
-}
-
-a:visited {
-    text-decoration: none;
-    color: #000000;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #000000;
-}
-
-a:active {
-    text-decoration: underline;
-    color: #000000;
-}
-
-#sepa {
-    margin-left: 0px;
-    margin-top: 8px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
-}
-
-#sepa1 {
-    margin-left: 0px;
-    margin-top: 8px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
-}
-
-#sepa2 {
-    margin-left: 0px;
-    margin-top: 20px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
-}
-
-#sepa3 {
-    margin-left: 0px;
-    margin-top: 40px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
-}
-
-#sepa4 {
-    margin-left: 0px;
-    margin-top: 60px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
-}
-
-#sepa-logos {
-    margin-left: 0px;
-    margin-top: 150px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
-}
-
-.flex-caption {
-    width: 100%;
-    text-align: center;
-    height: 25px;
-}
-
-#models {
-    height: 300px;
-    overflow-y: auto;
 }
