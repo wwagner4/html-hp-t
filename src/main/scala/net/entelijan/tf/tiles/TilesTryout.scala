@@ -31,7 +31,7 @@ object TilesTryout extends App {
       val indir = Paths.get(s"${cfg.indirBase}/$nam")
       val outdir = Paths.get(cfg.outdirBase)
       val name = s"tiles$nam"
-      TilesFromDirectory.tiles(name, cfg.cols, cfg.size, indir, outdir)
+      TilesFromDirectory.squaredTiles(name, cfg.cols, cfg.size, indir, outdir)
       println(s"Wrote $name to ${outdir.toAbsolutePath}")
     }
 
