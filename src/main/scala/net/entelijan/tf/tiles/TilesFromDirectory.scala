@@ -1,5 +1,6 @@
 package net.entelijan.tf.tiles
 
+import java.awt.Color
 import java.awt.image.BufferedImage
 import java.nio.file.{Files, Path}
 
@@ -13,15 +14,17 @@ object TilesFromDirectory {
 
   case class NamedBufferedImage(name: String, image: BufferedImage)
 
-  def squaredTiles(name: String, cols: Int, tileSize: Int, indir: Path, outdir: Path): Unit = {
-    val size = Size(tileSize, tileSize)
+  def squaredTiles(name: String, cols: Int, tileSize: Int, borderSize: Int, indir: Path, outdir: Path): Unit = {
+    val fullsize = Size(tileSize, tileSize)
+    val size = Size(tileSize - borderSize, tileSize - borderSize)
     require(Files.exists(indir), s"$indir must exist")
     require(Files.isDirectory(indir), s"$indir must be a directory")
     if (!Files.exists(outdir))
       Files.createDirectories(outdir)
     val images = dirToNamedBufferedImages(indir)
-      .map(mapNamed(cropToSquare(10)))
+      .map(mapNamed(cropToSquare))
       .map(mapNamed(scaleSquare(size)))
+      .map(mapNamed(placeOnRect(fullsize, 0, 0)))
 
     val imgMap = images.map(i => (i.name, i.image)).toMap
 
@@ -65,7 +68,7 @@ object TilesFromDirectory {
   }
 
 
-  private def cropToSquare(borderWidth: Int = 0)(bi: BufferedImage): BufferedImage = {
+  private def cropToSquare(bi: BufferedImage): BufferedImage = {
     val w = bi.getWidth
     val h = bi.getHeight
 
@@ -82,6 +85,15 @@ object TilesFromDirectory {
     if (w == h) bi
     else if (w < h) portrait
     else landscape
+  }
+
+  private def placeOnRect(canvas: Size, xoff: Int, yoff: Int)(bi: BufferedImage): BufferedImage = {
+    val biout = new BufferedImage(canvas.width, canvas.height, BufferedImage.TYPE_INT_RGB)
+    val gr = biout.createGraphics()
+    gr.setColor(Color.WHITE)
+    gr.fillRect(0, 0, canvas.width, canvas.height)
+    gr.drawImage(bi, xoff, yoff , null)
+    biout
   }
 
   private def scaleSquare(sideLen: Size)(ni: BufferedImage): BufferedImage = {
