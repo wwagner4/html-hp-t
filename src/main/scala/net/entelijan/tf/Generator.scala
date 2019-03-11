@@ -49,7 +49,7 @@ object T {
                |</li>
                |""".stripMargin
 
-        case Some(txt) =>
+        case Some(_) =>
           if (i == 0)
             s"""
                |<li>

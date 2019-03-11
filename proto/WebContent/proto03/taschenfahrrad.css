@@ -2,73 +2,22 @@
     font-family: isonormd;
     src: url("font/isonormd.ttf") /* TTF file for CSS3 browsers */
 }
-
 body {
     margin: 0px;
-    font-family: 'isonormd', sans-serif;
-    background-color: red;
-    font-size: 15px;
-    font-weight: normal;
-    overflow: hidden;
-}
-
-#left {
     background-color: white;
-    width: 400px;
-    height: 100vh;
-    float: left;
-    overflow: auto;
-}
-
-#right {
-    width: calc(100vw - 400px);
-    height: 100vh;
-    float: right;
-    background-repeat: repeat;
-    background-image: url(images/index/tilesindex.jpg);
+    font-family: 'isonormd', sans-serif;
+    font-size: large;
+    font-weight: normal;
 }
 
 p {
     margin: 0px;
-    padding: 10px;
+    padding: 3px;
 }
 
 h1 {
     margin: 0px;
-    padding: 10px;
-}
-
-img {
-    margin: 0px;
-    padding: 0px;
-}
-
-table {
-    border-collapse: collapse;
-    font-size: inherit;
-}
-
-tbody {
-    font-size: inherit;
-}
-
-tr {
-    font-size: inherit;
-}
-
-td {
-    text-align: left;
-    vertical-align: top;
-    font-size: inherit;
-    font-weight: normal;
-}
-
-.col-prize {
-    text-align: left;
-    vertical-align: top;
-    font-size: inherit;
-    font-weight: normal;
-    min-width: 140px;
+    padding: 10px 3px 20px 3px;
 }
 
 a, img {
@@ -95,61 +44,48 @@ a:active {
     color: #000000;
 }
 
-#sepa {
-    margin-left: 0px;
-    margin-top: 8px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
+#right {
+    background-repeat: repeat;
+    background-image: url(images/index/tilesindex.jpg);
+    background-size: contain;
+}
+@media (min-aspect-ratio: 3/4) {
+body {
+    overflow: hidden;
 }
 
-#sepa1 {
-    margin-left: 0px;
-    margin-top: 8px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
+#left {
+    background-color: white;
+    width: 400px;
+    height: 100vh;
+    float: left;
+    overflow: auto;
 }
 
-#sepa2 {
-    margin-left: 0px;
-    margin-top: 20px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
+#right {
+    width: calc(100vw - 400px);
+    height: 100vh;
+    float: right;
 }
 
-#sepa3 {
-    margin-left: 0px;
-    margin-top: 40px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
 }
-
-#sepa4 {
-    margin-left: 0px;
-    margin-top: 60px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
-}
-
-#sepa-logos {
-    margin-left: 0px;
-    margin-top: 150px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
-}
-
-.flex-caption {
-    width: 100%;
-    text-align: center;
-    height: 25px;
-}
-
-#models {
-    height: 300px;
+@media (max-aspect-ratio: 3/4) {
+body {
+    overflow-x: hidden;
     overflow-y: auto;
+}
+
+p {
+    padding-right: 20px;
+}
+
+#left {
+    width: 100vw;
+    padding-right:10px;
+}
+
+#right {
+    width: 100vw;
+    height: 1800px;
+}
 }

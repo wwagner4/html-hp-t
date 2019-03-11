@@ -4,7 +4,6 @@ object Geometry {
 
   def tiles(tileSize: Size, cols: Int)(images: Seq[String]): TileImage = {
     require(images.nonEmpty, "You need at least one image")
-    val img = images.head
     val rows = math.ceil(images.size.toDouble / cols).toInt
     val tileWidth = tileSize.width
     val tileHeight = tileSize.height
