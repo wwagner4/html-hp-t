@@ -30,7 +30,7 @@ object SliderTemplate {
        |
        |    .slider {
        |        width: 50%;
-       |        margin: 100px auto;
+       |        margin: 0px auto;
        |    }
        |
        |    .slick-slide {
