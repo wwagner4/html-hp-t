@@ -10,6 +10,7 @@ import scala.collection.JavaConverters._
 object SliderApp extends App {
 
   val inDir = Paths.get("src/main/web/images/producer")
+  //val inDir = Paths.get("/home/wwagner4/.doc/a/r")
 
   val _fileNames = fileNames(inDir)
 
