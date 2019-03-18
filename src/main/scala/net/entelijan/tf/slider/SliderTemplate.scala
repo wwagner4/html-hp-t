@@ -6,8 +6,7 @@ object SliderTemplate {
     val imgsl: String = files.map { fn =>
       s"""<div>
          |<img data-lazy="images/$name/$fn" data-srcset="images/$name/$fn, images/$name/$fn" data-sizes="100vw">
-         |</div>
-      """.stripMargin
+         |</div>""".stripMargin
     }.mkString("\n")
 
     s"""
@@ -78,6 +77,40 @@ object SliderTemplate {
        |</body>
        |</html>
        |
+    """.stripMargin
+  }
+
+  def owl(name: String, files: Seq[String]): String = {
+    val imgs: String = files.map { fn =>
+      s"""<div><div style="width: 100vw; height:97vh; background-size: cover; background-image: url('images/$name/$fn')"></div></div>""".stripMargin
+    }.mkString("\n")
+
+    s"""
+       |<!DOCTYPE html>
+       |<html lang="en">
+       |  <head>
+       |    <meta charset="utf-8">
+       |    <meta name="msapplication-tap-highlight" content="no" />
+       |    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       |    <meta name="description" content="autoHeight usage demo">
+       |    <title>owl</title>
+       |    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+       |    <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
+       |    <script src="owlcarousel/assets/vendors/jquery.min.js"></script>
+       |    <script src="owlcarousel/owl.carousel.min.js"></script>
+       |  </head>
+       |  <body>
+       |  <div class="owl-carousel">
+       |  $imgs
+       |  </div>
+       |  <script>
+       |     $$('.owl-carousel').owlCarousel({
+       |      items:1,
+       |      margin:10
+       |    });
+       |  </script>
+       |  </body>
+       |</html>
     """.stripMargin
   }
 

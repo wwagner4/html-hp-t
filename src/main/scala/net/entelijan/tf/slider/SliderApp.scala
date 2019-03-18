@@ -9,12 +9,13 @@ import scala.collection.JavaConverters._
 
 object SliderApp extends App {
 
-  val inDir = Paths.get("proto/WebContent/proto04/images/index")
-  //val inDir = Paths.get("/home/wwagner4/.doc/a/r")
+  //val inDir = Paths.get("proto/WebContent/proto04/images/index")
+  val inDir = Paths.get("/home/wwagner4/.doc/a/r")
 
-  slick(inDir, "slick", SliderTemplate.slick)
+  create(inDir, "slick", SliderTemplate.slick)
+  create(inDir, "owlcarousel", SliderTemplate.owl)
 
-  private def slick(inDir: Path, name: String, f: (String, Seq[String]) => String): Unit = {
+  private def create(inDir: Path, name: String, f: (String, Seq[String]) => String): Unit = {
     val _fileNames = imageFileNames(inDir)
 
     val outName = inDir.getFileName.toString
