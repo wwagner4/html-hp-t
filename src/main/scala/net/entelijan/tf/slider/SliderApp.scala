@@ -12,30 +12,34 @@ object SliderApp extends App {
   val inDir = Paths.get("proto/WebContent/proto04/images/index")
   //val inDir = Paths.get("/home/wwagner4/.doc/a/r")
 
-  val _fileNames = fileNames(inDir)
+  slick(inDir, "slick", SliderTemplate.slick)
 
-  val outName = inDir.getFileName.toString
-  val outDir = Paths.get("target/slider")
-  if (!Files.exists(outDir)) {
-    Files.createDirectories(outDir)
+  private def slick(inDir: Path, name: String, f: (String, Seq[String]) => String): Unit = {
+    val _fileNames = imageFileNames(inDir)
+
+    val outName = inDir.getFileName.toString
+    val outDir = Paths.get(s"target/$name")
+    if (!Files.exists(outDir)) {
+      Files.createDirectories(outDir)
+    }
+    val imagesDir = outDir.resolve(Paths.get("images"))
+    if (!Files.exists(imagesDir)) {
+      Files.createDirectories(imagesDir)
+    }
+    ResCopy.copyDir(inDir, imagesDir)
+    ResCopy.copyDir(Paths.get(s"proto/WebContent/proto04/$name"), outDir)
+    val outFile = outDir.resolve(s"$outName.html")
+    tryWithRes(Files.newBufferedWriter(outFile)) {
+      bw =>
+        TfUtil.tryWithRes(new PrintWriter(bw)) {
+          pw => pw.print(f(outName, _fileNames))
+        }
+    }
+    println(s"wrote slick to $outFile")
   }
-  val imagesDir = outDir.resolve(Paths.get("images"))
-  if (!Files.exists(imagesDir)) {
-    Files.createDirectories(imagesDir)
-  }
-  ResCopy.copyDir(inDir, imagesDir)
-  ResCopy.copyDir(Paths.get("proto/WebContent/proto04/slick"), outDir)
-  val outFile = outDir.resolve(s"$outName.html")
-  tryWithRes(Files.newBufferedWriter(outFile)) {
-    bw =>
-      TfUtil.tryWithRes(new PrintWriter(bw)) {
-        pw => pw.print(SliderTemplate.index(outName, _fileNames))
-      }
-  }
-  println(s"wrote to $outFile")
 
 
-  def fileNames(dir: Path): Seq[String] = {
+  def imageFileNames(dir: Path): Seq[String] = {
     Files.list(dir)
       .iterator
       .asScala
@@ -46,3 +50,4 @@ object SliderApp extends App {
       .map(p => p.getFileName.toString)
   }
 }
+

@@ -2,7 +2,7 @@ package net.entelijan.tf.slider
 
 object SliderTemplate {
 
-  def index(name: String, files: Seq[String]): String = {
+  def slick(name: String, files: Seq[String]): String = {
     val imgsl: String = files.map { fn =>
       s"""<div>
          |<img data-lazy="images/$name/$fn" data-srcset="images/$name/$fn, images/$name/$fn" data-sizes="100vw">
