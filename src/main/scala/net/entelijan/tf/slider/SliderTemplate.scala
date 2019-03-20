@@ -82,7 +82,7 @@ object SliderTemplate {
 
   def owl(name: String, files: Seq[String]): String = {
     val imgs: String = files.map { fn =>
-      s"""<div><div style="width: 100vw; height:97vh; background-size: cover; background-image: url('images/$name/$fn')"></div></div>""".stripMargin
+      s"""<div><div class="fill" style="background-image: url('images/$name/$fn')"></div></div>"""
     }.mkString("\n")
 
     s"""
@@ -98,11 +98,35 @@ object SliderTemplate {
        |    <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
        |    <script src="owlcarousel/assets/vendors/jquery.min.js"></script>
        |    <script src="owlcarousel/owl.carousel.min.js"></script>
+       |    <style>
+       |            body {
+       |            margin: 0px;
+       |        }
+       |        .fill {
+       |            width: 100vw;
+       |            height: 100vh;
+       |            background-image: url(images/index/tf_0223_3.jpg);
+       |            background-position: center;
+       |            background-size: contain;
+       |            background-repeat: no-repeat;
+       |            background-color: #000000d1;
+       |            z-index: 10;
+       |        }
+       |        #back {
+       |            width: 100vw;
+       |            height: 100vh;
+       |            background-image: url(images/index/tilesindex.jpg);
+       |            z-index: 0;
+       |            position: absolute;
+       |            top: 0px;
+       |        }
+       |    </style>
        |  </head>
        |  <body>
        |  <div class="owl-carousel">
        |  $imgs
        |  </div>
+       |  <div id="back"></div>
        |  <script>
        |     $$('.owl-carousel').owlCarousel({
        |      items:1,

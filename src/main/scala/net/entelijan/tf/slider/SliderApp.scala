@@ -9,8 +9,8 @@ import scala.collection.JavaConverters._
 
 object SliderApp extends App {
 
-  //val inDir = Paths.get("proto/WebContent/proto04/images/index")
-  val inDir = Paths.get("/home/wwagner4/.doc/a/r")
+  val inDir = Paths.get("proto/WebContent/proto04/images/index")
+  //val inDir = Paths.get("/home/wwagner4/.doc/a/r")
 
   create(inDir, "slick", SliderTemplate.slick)
   create(inDir, "owlcarousel", SliderTemplate.owl)
@@ -36,7 +36,7 @@ object SliderApp extends App {
           pw => pw.print(f(outName, _fileNames))
         }
     }
-    println(s"wrote slick to $outFile")
+    println(s"wrote $name to $outFile")
   }
 
 
