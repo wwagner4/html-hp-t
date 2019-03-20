@@ -4,9 +4,7 @@ object SliderTemplate {
 
   def slick(name: String, files: Seq[String]): String = {
     val imgsl: String = files.map { fn =>
-      s"""<div>
-         |<img data-lazy="images/$name/$fn" data-srcset="images/$name/$fn, images/$name/$fn" data-sizes="100vw">
-         |</div>""".stripMargin
+      s"""<div class="fill" style="background-image: url('images/$name/$fn')"></div>"""
     }.mkString("\n")
 
     s"""
@@ -22,48 +20,32 @@ object SliderTemplate {
        |      margin: 0;
        |      padding: 0;
        |    }
-       |
-       |    * {
-       |      box-sizing: border-box;
+       |    .slick-slider {
+       |        z-index: 10;
        |    }
-       |
-       |    .slider {
-       |        width: 50%;
-       |        margin: 0px auto;
-       |    }
-       |
-       |    .slick-slide {
-       |      margin: 0px 20px;
-       |    }
-       |
-       |    .slick-slide img {
-       |      width: 100%;
-       |    }
-       |
-       |    .slick-prev:before,
-       |    .slick-next:before {
-       |      color: black;
-       |    }
-       |
-       |
-       |    .slick-slide {
-       |      transition: all ease-in-out .3s;
-       |      opacity: .2;
-       |    }
-       |
-       |    .slick-active {
-       |      opacity: .5;
-       |    }
-       |
-       |    .slick-current {
-       |      opacity: 1;
-       |    }
+       |    .fill {
+       |        width: 100vw;
+       |        height: 100vh;
+       |        background-position: center;
+       |        background-size: contain;
+       |        background-repeat: no-repeat;
+       |        background-color: #000000d1;
+       |     }
+       |     #back {
+       |         width: 100vw;
+       |         height: 100vh;
+       |         background-image: url(images/index/tilesindex.jpg);
+       |         z-index: 0;
+       |         position: absolute;
+       |         top: -10px;
+       |     }
        |  </style>
        |</head>
        |<body>
        |  <section class="lazy slider" data-sizes="90vw">
        |$imgsl
        |  </section>
+       |  <div id="back"></div>
        |  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
        |  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
        |  <script type="text/javascript">
@@ -105,7 +87,6 @@ object SliderTemplate {
        |        .fill {
        |            width: 100vw;
        |            height: 100vh;
-       |            background-image: url(images/index/tf_0223_3.jpg);
        |            background-position: center;
        |            background-size: contain;
        |            background-repeat: no-repeat;
