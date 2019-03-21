@@ -14,6 +14,7 @@ object SliderApp extends App {
 
   create(inDir, "slick", SliderTemplate.slick)
   create(inDir, "owlcarousel", SliderTemplate.owl)
+  create(inDir, "glide", SliderTemplate.glide)
 
   private def create(inDir: Path, name: String, f: (String, Seq[String]) => String): Unit = {
     val _fileNames = imageFileNames(inDir)

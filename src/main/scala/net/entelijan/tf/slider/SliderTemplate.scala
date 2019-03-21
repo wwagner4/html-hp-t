@@ -119,4 +119,55 @@ object SliderTemplate {
     """.stripMargin
   }
 
+  def glide(name: String, files: Seq[String]): String = {
+    val imgs: String = files.map { fn =>
+      s"""            <li class="glide__slide"><div class="fill" style="background-image: url(images/$name/$fn);"></div></li>"""
+    }.mkString("\n")
+
+    s"""<!DOCTYPE html>
+       |<html lang="en">
+       |<head>
+       |    <meta charset="UTF-8">
+       |    <title>tf glide</title>
+       |    <link rel="stylesheet" href="glide/css/glide.core.min.css">
+       |    <style>
+       |        body {
+       |            margin: 0px;
+       |        }
+       |        .fill {
+       |            width: 100vw;
+       |            height: 100vh;
+       |            background-position: center;
+       |            background-size: contain;
+       |            background-repeat: no-repeat;
+       |            background-color: #000000d1;
+       |            z-index: 10;
+       |        }
+       |        .glide__slides {
+       |            margin: 0px;
+       |        }
+       |    </style>
+       |</head>
+       |<body>
+       |<div class="glide">
+       |    <div class="glide__track" data-glide-el="track">
+       |        <ul class="glide__slides">
+       |$imgs
+       |        </ul>
+       |    </div>
+       |</div>
+       |<script src="glide/glide.min.js"></script>
+       |<script>
+       |  new Glide('.glide', {
+       |  type: 'carousel',
+       |  startAt: 0,
+       |  perView: 1,
+       |  gap: 0
+       |}).mount()
+       |</script>
+       |</body>
+       |</html>
+    """.stripMargin
+  }
+
 }
