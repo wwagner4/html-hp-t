@@ -2,39 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>onclick</title>
+    <title>tf glide</title>
+    <link rel="stylesheet" href="glide/css/glide.core.min.css">
     <style>
-        .rect {
-            position: absolute;
-            top: 100px;
-            left: 100px;
-            background-color: red;
-            height: 50px;
-            width: 50px;
-        }
-
-        .relative-rect {
-            background-color: blue;
-            height: 50px;
-            width: 50px;
-        }
-
-        #area {
-            position: fixed;
-            right: 0;
-            top: 0;
-        }
-
         body {
-            height: 500px;
+            margin: 0px;
         }
-
+        .fill {
+            width: 100vw;
+            height: 100vh;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: #000000d1;
+            z-index: 10;
+        }
+        .glide__slides {
+            margin: 0px;
+        }
     </style>
+    <script>
+    var imgDims = [
+        {w : 1200, h : 1600}, // 3   0
+        {w : 1080, h : 1080}, // 10  1
+        {w : 1080, h : 1080}, // 29  2
+        {w : 1600, h : 1200}  // 47  3
+        ];
+    var imgIdx = 0;
+    </script>
 </head>
 <body>
-<div class="rect" id="rect"></div>
-<div class="relative-rect" id="relative-rect"></div>
+<div id="img1" class="fill" style="background-image: url(images/index/tf_0223_3.jpg);"></div>
 <script src="taschenfahrrad.js"></script>
 </body>
-
 </html>
