@@ -101,6 +101,14 @@ object SliderTemplate {
        |            position: absolute;
        |            top: 0px;
        |        }
+       |        #back {
+       |            width: 100vw;
+       |            height: 100vh;
+       |            background-image: url(images/index/tilesindex.jpg);
+       |            z-index: 0;
+       |            position: absolute;
+       |            top: 0px;
+       |        }
        |    </style>
        |  </head>
        |  <body>
@@ -141,6 +149,17 @@ object SliderTemplate {
        |            background-size: contain;
        |            background-repeat: no-repeat;
        |            background-color: #000000d1;
+       |        }
+       |        #back {
+       |            width: 100vw;
+       |            height: 100vh;
+       |            background-image: url(images/index/tilesindex.jpg);
+       |            z-index: 0;
+       |            position: absolute;
+       |            top: 0px;
+       |            z-index: 0;
+       |        }
+       |        .glide {
        |            z-index: 10;
        |        }
        |        .glide__slides {
@@ -156,6 +175,7 @@ object SliderTemplate {
        |        </ul>
        |    </div>
        |</div>
+       |<div id="back"></div>
        |<script src="glide/glide.min.js"></script>
        |<script>
        |  new Glide('.glide', {
