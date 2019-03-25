@@ -153,7 +153,7 @@ object SliderTemplate {
        |        #back {
        |            width: 100vw;
        |            height: 100vh;
-       |            background-image: url(images/index/tilesindex.jpg);
+       |            background-image: url(images/tiles/tiles$name.jpg);
        |            z-index: 0;
        |            position: absolute;
        |            top: 0px;

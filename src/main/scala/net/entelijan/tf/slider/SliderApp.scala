@@ -5,6 +5,8 @@ import java.nio.file.{Files, Path, Paths}
 
 import net.entelijan.tf.{ResCopy, TfUtil}
 import TfUtil._
+import net.entelijan.tf.tiles.TilesFromDirectory
+
 import scala.collection.JavaConverters._
 
 object SliderApp extends App {
@@ -12,8 +14,8 @@ object SliderApp extends App {
   val inDir = Paths.get("proto/WebContent/proto04/images/index")
   //val inDir = Paths.get("/home/wwagner4/.doc/a/r")
 
-  create(inDir, "slick", SliderTemplate.slick)
-  create(inDir, "owlcarousel", SliderTemplate.owl)
+  //create(inDir, "slick", SliderTemplate.slick)
+  //create(inDir, "owlcarousel", SliderTemplate.owl)
   create(inDir, "glide", SliderTemplate.glide)
 
   private def create(inDir: Path, name: String, f: (String, Seq[String]) => String): Unit = {
@@ -29,15 +31,18 @@ object SliderApp extends App {
       Files.createDirectories(imagesDir)
     }
     ResCopy.copyDir(inDir, imagesDir)
+
+    TilesFromDirectory.squaredTiles(s"tiles$outName", 4, 200, 5, imagesDir.resolve(outName), imagesDir.resolve("tiles"))
+
     ResCopy.copyDir(Paths.get(s"proto/WebContent/proto04/$name"), outDir)
-    val outFile = outDir.resolve(s"$outName.html")
-    tryWithRes(Files.newBufferedWriter(outFile)) {
+    val htmlFile = outDir.resolve(s"$outName.html")
+    tryWithRes(Files.newBufferedWriter(htmlFile)) {
       bw =>
         TfUtil.tryWithRes(new PrintWriter(bw)) {
           pw => pw.print(f(outName, _fileNames))
         }
     }
-    println(s"wrote $name to $outFile")
+    println(s"wrote $name to $htmlFile")
   }
 
 
