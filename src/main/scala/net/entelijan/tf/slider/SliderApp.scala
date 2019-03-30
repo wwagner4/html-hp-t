@@ -11,18 +11,19 @@ import scala.collection.JavaConverters._
 
 object SliderApp extends App {
 
-  val inDir = Paths.get("proto/WebContent/proto04/images/index")
-  //val inDir = Paths.get("/home/wwagner4/.doc/a/r")
+  val baseInDir = Paths.get("proto/WebContent/proto04")
 
-  //create(inDir, "slick", SliderTemplate.slick)
-  //create(inDir, "owlcarousel", SliderTemplate.owl)
-  create(inDir, "glide", SliderTemplate.glide)
+  val imagesInDir = Paths.get("proto/WebContent/proto04/images/index")
+  //val imagesInDir = Paths.get("/home/wwagner4/.doc/a/r")
 
-  private def create(inDir: Path, name: String, f: (String, Seq[String]) => String): Unit = {
-    val _fileNames = imageFileNames(inDir)
+  //create(baseInDir, imagesInDir, "slick", SliderTemplate.slick)
+  //create(baseInDir, imagesInDir, "owlcarousel", SliderTemplate.owl)
+  create(baseInDir, imagesInDir, "glide", SliderTemplate.glide)
 
-    val outName = inDir.getFileName.toString
-    val outDir = Paths.get(s"target/$name")
+  private def create(baseIndDir: Path, imagesInDir: Path, sliderName: String, f: (String, Seq[String]) => String): Unit = {
+    val _fileNames = imageFileNames(imagesInDir)
+
+    val outDir = Paths.get(s"target/$sliderName")
     if (!Files.exists(outDir)) {
       Files.createDirectories(outDir)
     }
@@ -30,19 +31,31 @@ object SliderApp extends App {
     if (!Files.exists(imagesDir)) {
       Files.createDirectories(imagesDir)
     }
-    ResCopy.copyDir(inDir, imagesDir)
+    ResCopy.copyDir(imagesInDir, imagesDir)
+    ResCopy.copyDir(baseInDir.resolve("css"), outDir)
+    ResCopy.copyDir(baseInDir.resolve("js"), outDir)
 
-    TilesFromDirectory.squaredTiles(s"tiles$outName", 4, 200, 5, imagesDir.resolve(outName), imagesDir.resolve("tiles"))
+    val pageName = imagesInDir.getFileName.toString
+    TilesFromDirectory.squaredTiles(s"tiles$pageName", 4, 200, 5, imagesDir.resolve(pageName), imagesDir.resolve("tiles"))
 
-    ResCopy.copyDir(Paths.get(s"proto/WebContent/proto04/$name"), outDir)
-    val htmlFile = outDir.resolve(s"$outName.html")
+    ResCopy.copyDir(Paths.get(s"proto/WebContent/proto04/$sliderName"), outDir)
+    val htmlFile = outDir.resolve(s"$pageName.html")
     tryWithRes(Files.newBufferedWriter(htmlFile)) {
       bw =>
         TfUtil.tryWithRes(new PrintWriter(bw)) {
-          pw => pw.print(f(outName, _fileNames))
+          pw => pw.print(f(pageName, _fileNames))
         }
     }
-    println(s"wrote $name to $htmlFile")
+    println(s"wrote $sliderName to $htmlFile")
+  }
+
+  def cpDir(dir: Path, toDir: Path): Unit = {
+    val dirName: Path = dir.getParent
+    val outDir = toDir.resolve(dirName)
+    if (!Files.exists(outDir)) {
+      Files.createDirectories(outDir)
+    }
+    ResCopy.copyDir(dir, outDir)
   }
 
 

@@ -1,6 +1,6 @@
 @font-face {
     font-family: isonormd;
-    src: url('font/isonormd.ttf') /* TTF file for CSS3 browsers */
+    src: url("isonormd.ttf") /* TTF file for CSS3 browsers */
 }
 body {
     margin: 0;
@@ -46,7 +46,7 @@ a:active {
 
 #right {
     background-repeat: repeat;
-    background-image: url('images/index/tilesindex.jpg');
+    background-image: url(../images/index/tilesindex.jpg);
     background-size: contain;
 }
 @media (min-aspect-ratio: 3/4) {
