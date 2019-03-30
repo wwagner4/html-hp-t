@@ -140,7 +140,7 @@ object SliderTemplate {
        |    <link rel="stylesheet" href="glide/css/glide.core.min.css">
        |    <style>
        |        body {
-       |            margin: 0px;
+       |            margin: 0;
        |        }
        |        .fill {
        |            width: 100vw;
@@ -154,16 +154,15 @@ object SliderTemplate {
        |            width: 100vw;
        |            height: 100vh;
        |            background-image: url(images/tiles/tiles$name.jpg);
-       |            z-index: 0;
        |            position: absolute;
-       |            top: 0px;
+       |            top: 0;
        |            z-index: 0;
        |        }
        |        .glide {
        |            z-index: 10;
        |        }
        |        .glide__slides {
-       |            margin: 0px;
+       |            margin: 0;
        |        }
        |    </style>
        |</head>
