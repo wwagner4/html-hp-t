@@ -138,6 +138,7 @@ object SliderTemplate {
        |    <meta charset="UTF-8">
        |    <title>tf glide</title>
        |    <link rel="stylesheet" href="glide/css/glide.core.min.css">
+       |    <link rel="stylesheet" href="glide/css/glide.theme.min.css">
        |    <style>
        |        body {
        |            margin: 0;
@@ -173,6 +174,10 @@ object SliderTemplate {
        |$imgs
        |        </ul>
        |    </div>
+       |    <div class="glide__arrows" data-glide-el="controls">
+       |        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+       |        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+       |    </div>
        |</div>
        |<div id="back"></div>
        |<script src="glide/glide.min.js"></script>
@@ -182,7 +187,7 @@ object SliderTemplate {
        |  startAt: 0,
        |  perView: 1,
        |  gap: 0
-       |}).mount()
+       |}).mount();
        |</script>
        |</body>
        |</html>
