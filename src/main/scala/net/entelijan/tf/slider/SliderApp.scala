@@ -13,8 +13,8 @@ object SliderApp extends App {
 
   val baseInDir = Paths.get("proto/WebContent/proto04")
 
-  val imagesInDir = Paths.get("proto/WebContent/proto04/images/index")
-  //val imagesInDir = Paths.get("/home/wwagner4/.doc/a/r")
+  //val imagesInDir = Paths.get("proto/WebContent/proto04/images/index")
+  val imagesInDir = Paths.get("/home/wwagner4/.doc/a/r")
 
   //create(baseInDir, imagesInDir, "slick", SliderTemplate.slick)
   //create(baseInDir, imagesInDir, "owlcarousel", SliderTemplate.owl)
@@ -36,7 +36,14 @@ object SliderApp extends App {
     ResCopy.copyDir(baseInDir.resolve("js"), outDir)
 
     val pageName = imagesInDir.getFileName.toString
-    TilesFromDirectory.squaredTiles(s"tiles$pageName", 4, 200, 5, imagesDir.resolve(pageName), imagesDir.resolve("tiles"))
+    val fileNameStr = s"tiles$pageName"
+    val tilesOutDir = imagesDir.resolve("tiles")
+
+    val tilesFile = tilesOutDir.resolve(fileNameStr + ".jpg")
+    if (!Files.exists(tilesFile)) {
+      println(s"ceating tiles in $tilesFile")
+      TilesFromDirectory.squaredTiles(fileNameStr, 4, 200, 5, imagesDir.resolve(pageName), tilesOutDir)
+    }
 
     ResCopy.copyDir(Paths.get(s"proto/WebContent/proto04/$sliderName"), outDir)
     val htmlFile = outDir.resolve(s"$pageName.html")
