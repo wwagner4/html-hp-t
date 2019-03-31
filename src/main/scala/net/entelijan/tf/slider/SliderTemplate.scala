@@ -194,11 +194,15 @@ object SliderTemplate {
        |            cursor: pointer;
        |            background-color: rgba(255,255,255,0);
        |            border-width: 0;
+       |            outline: none;
+       |        }
+       |        #slider1 {
+       |            display: block;
        |        }
        |    </style>
        |</head>
        |<body>
-       |<div class="glide">
+       |<div id="slider1" class="glide">
        |    <div id="closeb" onclick="console.log('close');"></div>
        |    <div class="glide__track" data-glide-el="track">
        |        <ul class="glide__slides">
