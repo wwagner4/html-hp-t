@@ -149,7 +149,7 @@ object SliderTemplate {
        |            background-position: center;
        |            background-size: contain;
        |            background-repeat: no-repeat;
-       |            background-color: #000000d1;
+       |            background-color: #00000090;
        |        }
        |        #back {
        |            width: 100vw;
@@ -165,18 +165,49 @@ object SliderTemplate {
        |        .glide__slides {
        |            margin: 0;
        |        }
+       |        #closeb {
+       |            background-image: url(css/cross.png);
+       |            background-repeat: no-repeat;
+       |            position: absolute;
+       |            top: 10px;
+       |            left: 10px;
+       |            width:150px;
+       |            height: 150px;
+       |            z-index: 30;
+       |            cursor: pointer;
+       |        }
+       |        .butto-left {
+       |            background-image: url(css/arrow-left.png);
+       |            left: 10px;
+       |        }
+       |        .butto-right {
+       |            background-image: url(css/arrow-right.png);
+       |            right: 10px;
+       |        }
+       |        .butto {
+       |            position: absolute;
+       |            display: block;
+       |            top: 50%;
+       |            z-index: 2;
+       |            width: 50px;
+       |            height: 50px;
+       |            cursor: pointer;
+       |            background-color: rgba(255,255,255,0);
+       |            border-width: 0;
+       |        }
        |    </style>
        |</head>
        |<body>
        |<div class="glide">
+       |    <div id="closeb" onclick="console.log('close');"></div>
        |    <div class="glide__track" data-glide-el="track">
        |        <ul class="glide__slides">
        |$imgs
        |        </ul>
        |    </div>
        |    <div class="glide__arrows" data-glide-el="controls">
-       |        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-       |        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+       |        <button class="butto butto-left" data-glide-dir="<"></button>
+       |        <button class="butto butto-right" data-glide-dir=">"></button>
        |    </div>
        |</div>
        |<div id="back"></div>
