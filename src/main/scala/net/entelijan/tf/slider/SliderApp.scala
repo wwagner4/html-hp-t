@@ -13,14 +13,14 @@ object SliderApp extends App {
 
   val baseInDir = Paths.get("proto/WebContent/proto04")
 
-  val imagesInDir = Paths.get("proto/WebContent/proto04/images/index")
-  //val imagesInDir = Paths.get("/home/wwagner4/.doc/a/r")
+  //val imagesInDir = Paths.get("proto/WebContent/proto04/images/index")
+  val imagesInDir = Paths.get("/home/wwagner4/.doc/a/r")
 
   //create(baseInDir, imagesInDir, "slick", SliderTemplate.slick)
   //create(baseInDir, imagesInDir, "owlcarousel", SliderTemplate.owl)
-  create(baseInDir, imagesInDir, "glide", SliderTemplate.glide)
+  create(baseInDir, imagesInDir, "glide", SliderTemplate.glide, 10)
 
-  private def create(baseIndDir: Path, imagesInDir: Path, sliderName: String, f: (String, Seq[String]) => String): Unit = {
+  private def create(baseIndDir: Path, imagesInDir: Path, sliderName: String, f: (String, Seq[String]) => String, cols: Int = 4): Unit = {
     val _fileNames = imageFileNames(imagesInDir)
 
     val outDir = Paths.get(s"target/$sliderName")
@@ -42,7 +42,7 @@ object SliderApp extends App {
     val tilesFile = tilesOutDir.resolve(fileNameStr + ".jpg")
     if (!Files.exists(tilesFile)) {
       println(s"ceating tiles in $tilesFile")
-      TilesFromDirectory.squaredTiles(fileNameStr, 4, 200, 5, imagesDir.resolve(pageName), tilesOutDir)
+      TilesFromDirectory.squaredTiles(fileNameStr, cols, 200, 5, imagesDir.resolve(pageName), tilesOutDir)
     }
 
     ResCopy.copyDir(Paths.get(s"proto/WebContent/proto04/$sliderName"), outDir)
@@ -75,6 +75,7 @@ object SliderApp extends App {
         || p.toString.toLowerCase.endsWith("jpeg")
         || p.toString.toLowerCase.endsWith("png"))
       .map(p => p.getFileName.toString)
+      .sorted
   }
 }
 
