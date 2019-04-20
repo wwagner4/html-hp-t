@@ -13,12 +13,12 @@ object SliderApp extends App {
 
   val baseInDir = Paths.get("proto/WebContent/proto04")
 
-  //val imagesInDir = Paths.get("proto/WebContent/proto04/images/index")
-  val imagesInDir = Paths.get("/home/wwagner4/.doc/a/r")
+  val imagesInDir = Paths.get("proto/WebContent/proto04/images/index")
+  //val imagesInDir = Paths.get("/home/wwagner4/.doc/a/r")
 
   //create(baseInDir, imagesInDir, "slick", SliderTemplate.slick)
   //create(baseInDir, imagesInDir, "owlcarousel", SliderTemplate.owl)
-  create(baseInDir, imagesInDir, "glide", SliderTemplate.glide, 10)
+  create(baseInDir, imagesInDir, "glide", SliderTemplate.glide)
 
   private def create(baseIndDir: Path, imagesInDir: Path, sliderName: String, f: (String, Seq[String]) => String, cols: Int = 4): Unit = {
     val _fileNames = imageFileNames(imagesInDir)
