@@ -14,7 +14,7 @@ object TilesFromDirectory {
 
   case class NamedBufferedImage(name: String, image: BufferedImage)
 
-  def squaredTiles(name: String, cols: Int, tileSize: Int, borderSize: Int, indir: Path, outdir: Path): Unit = {
+  def squaredTiles(name: String, cols: Int, tileSize: Int, borderSize: Int, imgType: String, indir: Path, outdir: Path): Unit = {
     val fullsize = Size(tileSize, tileSize)
     val size = Size(tileSize - borderSize, tileSize - borderSize)
     require(Files.exists(indir), s"$indir must exist")
@@ -39,9 +39,8 @@ object TilesFromDirectory {
     if (!Files.exists(outdir)) {
       Files.createDirectories(outdir)
     }
-    val imgtype = "png"
-    val outPath = outdir.resolve(s"$name.$imgtype")
-    ImageIO.write(outImg, imgtype, outPath.toFile)
+    val outPath = outdir.resolve(s"$name.$imgType")
+    ImageIO.write(outImg, imgType, outPath.toFile)
   }
 
 

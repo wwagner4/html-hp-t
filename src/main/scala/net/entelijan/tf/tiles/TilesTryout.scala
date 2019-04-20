@@ -32,7 +32,7 @@ object TilesTryout extends App {
       val indir = Paths.get(s"${cfg.indirBase}/$nam")
       val outdir = Paths.get(cfg.outdirBase)
       val name = s"tiles$nam"
-      TilesFromDirectory.squaredTiles(name, cfg.cols, cfg.size, cfg.borderSize, indir, outdir)
+      TilesFromDirectory.squaredTiles(name, cfg.cols, cfg.size, cfg.borderSize, cfg.imgType, indir, outdir)
       println(s"Wrote $name to ${outdir.toAbsolutePath}")
     }
 
@@ -44,6 +44,7 @@ object TilesTryout extends App {
 case class TilesConf(cols: Int = 4,
                      size: Int = 300,
                      borderSize: Int = 5,
+                     imgType: String = "jpg",
                      indirs: Seq[String],
                      indirBase: String,
                      outdirBase: String,

@@ -13,6 +13,7 @@ case class TilesDim(
                      cols: Int,
                      tileSize: Int,
                      borderSize: Int,
+                     imgType: String = "jpg"
                    )
 
 object SliderApp extends App {
@@ -51,7 +52,7 @@ object SliderApp extends App {
     val tilesFile = tilesOutDir.resolve(fileNameStr + ".jpg")
     if (!Files.exists(tilesFile)) {
       println(s"ceating tiles in $tilesFile")
-      TilesFromDirectory.squaredTiles(fileNameStr, dim.cols, dim.tileSize, dim.borderSize, imagesDir.resolve(pageName), tilesOutDir)
+      TilesFromDirectory.squaredTiles(fileNameStr, dim.cols, dim.tileSize, dim.borderSize, dim.imgType, imagesDir.resolve(pageName), tilesOutDir)
     }
 
     ResCopy.copyDir(Paths.get(s"proto/WebContent/proto04/$sliderName"), outDir)
