@@ -218,7 +218,7 @@ object SliderTemplate {
        |<script src="glide/glide.min.js"></script>
        |<script src="js/taschenfahrrad.js"></script>
        |<script>
-       |  new Glide('.glide', {
+       |  var glide = new Glide('.glide', {
        |  type: 'carousel',
        |  startAt: 0,
        |  perView: 1,

@@ -13,6 +13,16 @@ function printPosition(e) {
     var elemDim = {w : elem.offsetWidth, h: elem.offsetHeight};
     console.log("pos:" + pos.x + " " + pos.y);
     console.log("elemDim:" + elemDim.w + " " + elemDim.h);
+
+    var len = glide._c.Run.length;
+
+    var ran = Math.floor(Math.random() * len);
+    console.log("ran:" + ran);
+
+    var goSym = "=" + ran;
+    console.log("going to:" + goSym);
+    glide.go(goSym);
+
 }
 
 function ratio(dim) {
