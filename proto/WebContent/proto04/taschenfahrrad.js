@@ -1,10 +1,11 @@
-document.getElementById('img1').addEventListener('click', printPosition)
+document.getElementById('img1')
+    .addEventListener('click', showSlider);
 
-function printPosition(e) {
-    var imgDim = imgDims[imgIdx]
+function showSlider(e) {
+    var imgDim = imgDims[imgIdx];
     var elem = e.target;
     var rect = elem.getBoundingClientRect();
-    var pos = {x : e.clientX - rect.left, y : e.clientY - rect.top}
+    var pos = {x : e.clientX - rect.left, y : e.clientY - rect.top};
     var elemDim = {w : elem.offsetWidth, h: elem.offsetHeight};
     console.log("pos:" + pos.x + " " + pos.y);
     console.log("elemDim:" + elemDim.w + " " + elemDim.h);
@@ -17,7 +18,7 @@ function printPosition(e) {
 
 
     if (elemRatio < imgRatio) {
-        console.log("border L R")
+        console.log("border L R");
         var imgw = elemDim.h / imgRatio;
         var xoff = (elemDim.w - imgw) / 2.0;
         if (pos.x < xoff || pos.x > imgw + xoff) {
@@ -28,7 +29,7 @@ function printPosition(e) {
             right();
         }
     } else {
-        console.log("border T B")
+        console.log("border T B");
         var imgh = elemDim.w * imgRatio;
         var yoff = (elemDim.h - imgh) / 2.0;
         if (pos.y < yoff || pos.y > imgh + yoff) {

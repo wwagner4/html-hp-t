@@ -1,11 +1,13 @@
-document.getElementById('back').addEventListener('click', printPosition);
+document.getElementById('back')
+    .addEventListener('click', showSlider);
+
 var slider1 = document.getElementById('slider1');
 
 function hideSlider() {
     slider1.style.visibility = 'hidden'
 }
 
-function printPosition(e) {
+function showSlider(e) {
     slider1.style.visibility = 'visible';
     var elem = e.target;
     var rect = elem.getBoundingClientRect();
