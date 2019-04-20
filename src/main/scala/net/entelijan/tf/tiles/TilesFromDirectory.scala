@@ -39,7 +39,7 @@ object TilesFromDirectory {
     if (!Files.exists(outdir)) {
       Files.createDirectories(outdir)
     }
-    val imgtype = "jpg"
+    val imgtype = "png"
     val outPath = outdir.resolve(s"$name.$imgtype")
     ImageIO.write(outImg, imgtype, outPath.toFile)
   }

@@ -14,15 +14,29 @@ function printPosition(e) {
     console.log("pos:" + pos.x + " " + pos.y);
     console.log("elemDim:" + elemDim.w + " " + elemDim.h);
 
-    var len = glide._c.Run.length;
+    var index = indexFromPos(tiles_length, tiles_cols, tiles_tileSize, pos);
+    console.log("            length: " + tiles_length + ",");
+    console.log("            cols: " + tiles_cols + ",");
+    console.log("            pos: " + JSON.stringify(pos) + ",");
+    console.log("            should: " + "?" + ",");
 
-    var ran = Math.floor(Math.random() * len);
-    console.log("ran:" + ran);
 
-    var goSym = "=" + ran;
-    console.log("going to:" + goSym);
+    console.log("index: " + index);
+
+    var goSym = "=" + index;
+    console.log("going to: " + goSym);
     glide.go(goSym);
 
+}
+
+
+function indexFromPos(length, cols, tileSize, pos) {
+    var w = tileSize * cols;
+    var posx = pos.x % w;
+    var x = Math.floor(posx / tileSize);
+    var y = Math.floor(pos.y / tileSize);
+    var n = y * cols + x;
+    return n % length;
 }
 
 function ratio(dim) {
