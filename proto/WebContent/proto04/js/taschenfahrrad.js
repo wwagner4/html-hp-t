@@ -31,10 +31,13 @@ function printPosition(e) {
 
 
 function indexFromPos(length, cols, tileSize, pos) {
+    var rows = Math.ceil(length / cols);
+    var h = tileSize * rows;
     var w = tileSize * cols;
     var posx = pos.x % w;
+    var posy = pos.y % h;
     var x = Math.floor(posx / tileSize);
-    var y = Math.floor(pos.y / tileSize);
+    var y = Math.floor(posy / tileSize);
     var n = y * cols + x;
     return n % length;
 }
