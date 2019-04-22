@@ -29,7 +29,7 @@ object SliderTemplate {
        |        #back {
        |            width: 100vw;
        |            height: 100vh;
-       |            background-image: url(images/tiles/tiles$name.${tilesDim.imgType});
+       |            background-image: url(images/tiles/tiles$name.${tilesDim.imgType.ext});
        |            position: absolute;
        |            top: 0;
        |            z-index: 0;

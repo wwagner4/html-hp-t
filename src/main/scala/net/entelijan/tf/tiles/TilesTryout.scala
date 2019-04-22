@@ -2,6 +2,8 @@ package net.entelijan.tf.tiles
 
 import java.nio.file.Paths
 
+import net.entelijan.tf.imgutil.{ImgFormat, ImgFormat_PNG}
+
 object TilesTryout extends App {
 
   val cfg1 = TilesConf(
@@ -32,7 +34,7 @@ object TilesTryout extends App {
       val indir = Paths.get(s"${cfg.indirBase}/$nam")
       val outdir = Paths.get(cfg.outdirBase)
       val name = s"tiles$nam"
-      TilesFromDirectory.squaredTiles(name, cfg.cols, cfg.size, cfg.borderSize, cfg.imgType, indir, outdir)
+      TilesFromDirectory.squaredTiles(name, cfg.cols, cfg.size, cfg.borderSize, cfg.imgType, 0.9, indir, outdir)
       println(s"Wrote $name to ${outdir.toAbsolutePath}")
     }
 
@@ -44,7 +46,7 @@ object TilesTryout extends App {
 case class TilesConf(cols: Int = 4,
                      size: Int = 300,
                      borderSize: Int = 5,
-                     imgType: String = "jpg",
+                     imgType: ImgFormat = ImgFormat_PNG,
                      indirs: Seq[String],
                      indirBase: String,
                      outdirBase: String,
