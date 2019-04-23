@@ -22,12 +22,12 @@ object SliderApp extends App {
   val baseInDir = Paths.get("proto/WebContent/proto04")
 
 
-  val imagesInDir = Paths.get("proto/WebContent/proto04/images/index")
-  //val imagesInDir = Paths.get("/home/wwagner4/.doc/a/r")
+  //val imagesInDir = Paths.get("proto/WebContent/proto04/images/index")
+  val imagesInDir = Paths.get("/home/wwagner4/.doc/a/r")
 
   create(baseInDir, imagesInDir, "glide",
     SliderTemplate.glide,
-    TilesDim(3, 300, 0))
+    TilesDim(8, 400, 0))
 
   private def create(baseIndDir: Path, imagesInDir: Path, sliderName: String,
                      f: (String, Seq[String], TilesDim) => String,

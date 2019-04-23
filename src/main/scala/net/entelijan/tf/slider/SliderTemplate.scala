@@ -101,7 +101,7 @@ object SliderTemplate {
        |  }).mount();
        |  var tiles_length = ${files.size};
        |  var tiles_cols = ${tilesDim.cols};
-       |  var tiles_tileSize = ${tilesDim.tileSize};
+       |  var tiles_tileSize = ${tilesDim.tileSize - tilesDim.borderSize};
        |</script>
        |</body>
        |</html>
