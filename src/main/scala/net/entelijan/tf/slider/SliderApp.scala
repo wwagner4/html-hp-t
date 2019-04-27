@@ -22,8 +22,8 @@ object SliderApp extends App {
   val baseInDir = Paths.get("proto/WebContent/proto04")
 
 
-  //val imagesInDir = Paths.get("proto/WebContent/proto04/images/index")
-  val imagesInDir = Paths.get("/home/wwagner4/.doc/a/r")
+  val imagesInDir = Paths.get("proto/WebContent/proto04/images/index")
+  //val imagesInDir = Paths.get("/home/wwagner4/.doc/a/r")
 
   create(baseInDir, imagesInDir, "glide",
     SliderTemplate.glide,
