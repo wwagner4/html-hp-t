@@ -72,7 +72,7 @@ object SliderTemplate {
        |            outline: none;
        |        }
        |        #slider1 {
-       |            visibillity: hidden;
+       |            visibility: hidden;
        |        }
        |    </style>
        |</head>
