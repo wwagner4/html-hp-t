@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test IndexFromPos</title>
+    <script src="js/taschenfahrrad.js"></script>
+</head>
+<body>
+<p id="out"></p>
+
+<script>
+    var p = document.getElementById("out");
+    var args = [
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 5, y: 6},
+            should: 0
+        },
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 15, y: 6},
+            should: 1
+        },
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 22, y: 9},
+            should: 2
+        },
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 33, y: 2},
+            should: 0
+        },
+
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 5, y: 16},
+            should: 3
+        },
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 15, y: 16},
+            should: 4
+        },
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 22, y: 19},
+            should: 0
+        },
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 33, y: 12},
+            should: 3
+        },
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 43, y: 12},
+            should: 4
+        },
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 53, y: 12},
+            should: 0
+        },
+
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 5, y: 26},
+            should: 1
+        },
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 15, y: 26},
+            should: 2
+        },
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 22, y: 29},
+            should: 3
+        },
+        {
+            length: 5,
+            cols: 3,
+            tileSize: 10,
+            pos: {x: 33, y: 22},
+            should: 1
+        },
+    ];
+    var inner = "";
+    for(var j = 0; j < args.length; j++) {
+        var arg = args[j];
+        var pos = indexFromPos(arg.length, arg.cols, arg.tileSize, arg.pos);
+        inner += JSON.stringify(arg) + " -> " + pos + " == " + arg.should + "<br>";
+    }
+    p.innerHTML = inner;
+</script>
+
+</body>
+</html>

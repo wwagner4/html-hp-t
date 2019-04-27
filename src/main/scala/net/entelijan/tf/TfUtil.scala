@@ -2,6 +2,8 @@ package net.entelijan.tf
 
 import java.io.File
 
+import scala.util.{Failure, Success, Try}
+
 object TfUtil {
 
   def genDir: File = getCreateDir(Some(targetDir), "gen")
@@ -27,4 +29,14 @@ object TfUtil {
     }
   }
 
+  def tryWithRes[A <: AutoCloseable, B](resource: A)(block: A => B): B = {
+    Try(block(resource)) match {
+      case Success(result) =>
+        resource.close()
+        result
+      case Failure(e) =>
+        resource.close()
+        throw e
+    }
+  }
 }
