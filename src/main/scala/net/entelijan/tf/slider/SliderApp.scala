@@ -26,8 +26,8 @@ object SliderApp extends App {
   //val imagesInDir = Paths.get("/home/wwagner4/.doc/a/r")
 
   create(baseInDir, imagesInDir, "glide",
-    SliderTemplate.glide,
-    TilesDim(8, 400, 0))
+    SliderTemplate.glideFull,
+    TilesDim(5, 300, 0))
 
   private def create(baseIndDir: Path, imagesInDir: Path, sliderName: String,
                      f: (String, Seq[String], TilesDim) => String,
