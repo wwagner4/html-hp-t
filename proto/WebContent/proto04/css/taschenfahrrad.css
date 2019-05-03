@@ -2,6 +2,7 @@
     font-family: isonormd;
     src: url("isonormd.ttf") /* TTF file for CSS3 browsers */
 }
+
 body {
     margin: 0;
     background-color: white;
@@ -45,47 +46,103 @@ a:active {
 }
 
 #right {
-    background-repeat: repeat;
-    background-image: url(../images/index/tilesindex.jpg);
+}
+
+.fill {
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #00000090;
 }
+
+
+.glide {
+    z-index: 10;
+}
+
+.glide__slides {
+    margin: 0;
+}
+
+#closeb {
+    background-image: url(cross.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 150px;
+    height: 150px;
+    z-index: 30;
+    cursor: pointer;
+}
+
+.butto-left {
+    background-image: url(arrow-left.png);
+    left: 10px;
+}
+
+.butto-right {
+    background-image: url(arrow-right.png);
+    right: 10px;
+}
+
+.butto {
+    position: absolute;
+    display: block;
+    top: 50%;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    border-width: 0;
+    outline: none;
+}
+
+#slider1 {
+    visibility: hidden;
+}
+
 @media (min-aspect-ratio: 3/4) {
-body {
-    overflow: hidden;
+    body {
+        overflow: hidden;
+    }
+
+    #left {
+        background-color: white;
+        width: 400px;
+        height: 100vh;
+        float: left;
+        overflow: auto;
+    }
+
+    #right {
+        width: calc(100vw - 400px);
+        height: 100vh;
+        float: right;
+    }
+
 }
 
-#left {
-    background-color: white;
-    width: 400px;
-    height: 100vh;
-    float: left;
-    overflow: auto;
-}
-
-#right {
-    width: calc(100vw - 400px);
-    height: 100vh;
-    float: right;
-}
-
-}
 @media (max-aspect-ratio: 3/4) {
-body {
-    overflow-x: hidden;
-    overflow-y: auto;
-}
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
 
-p {
-    padding-right: 20px;
-}
+    p {
+        padding-right: 20px;
+    }
 
-#left {
-    width: 100vw;
-    padding-right:10px;
-}
+    #left {
+        width: 100vw;
+        padding-right: 10px;
+    }
 
-#right {
-    width: 100vw;
-    height: 1800px;
-}
+    #right {
+        width: 100vw;
+        height: 1800px;
+    }
 }

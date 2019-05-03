@@ -108,7 +108,7 @@ object SliderTemplate {
     """.stripMargin
   }
 
-  def glideFinal(name: String, files: Seq[String], tilesDim: TilesDim): String = {
+  def glideText(name: String, files: Seq[String], tilesDim: TilesDim): String = {
     val imgs: String = files.map { fn =>
       s"""            <li class="glide__slide"><div class="fill" style="background-image: url(images/$name/$fn);"></div></li>"""
     }.mkString("\n")
@@ -116,86 +116,75 @@ object SliderTemplate {
     s"""<!DOCTYPE html>
        |<html lang="en">
        |<head>
-       |    <meta charset="UTF-8">
-       |    <title>tf glide</title>
+       |    <title>das taschenfahrrad</title>
+       |    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+       |    <meta name="viewport" content="width=device-width, initial-scale=1.0">
        |    <link rel="stylesheet" href="glide/css/glide.core.min.css">
        |    <link rel="stylesheet" href="glide/css/glide.theme.min.css">
+       |    <link href='css/taschenfahrrad.css' rel='stylesheet' type='text/css'>
        |    <style>
-       |        body {
-       |            margin: 0;
-       |        }
-       |        .fill {
-       |            width: 100vw;
-       |            height: 100vh;
-       |            background-position: center;
-       |            background-size: contain;
-       |            background-repeat: no-repeat;
-       |            background-color: #00000090;
-       |        }
-       |        #back {
-       |            width: 100vw;
-       |            height: 100vh;
-       |            background-image: url(images/tiles/tiles$name.${tilesDim.imgType.ext});
-       |            position: absolute;
-       |            top: 0;
-       |            z-index: 0;
-       |        }
-       |        .glide {
-       |            z-index: 10;
-       |        }
-       |        .glide__slides {
-       |            margin: 0;
-       |        }
-       |        #closeb {
-       |            background-image: url(css/cross.png);
-       |            background-repeat: no-repeat;
-       |            position: absolute;
-       |            top: 10px;
-       |            left: 10px;
-       |            width:150px;
-       |            height: 150px;
-       |            z-index: 30;
-       |            cursor: pointer;
-       |        }
-       |        .butto-left {
-       |            background-image: url(css/arrow-left.png);
-       |            left: 10px;
-       |        }
-       |        .butto-right {
-       |            background-image: url(css/arrow-right.png);
-       |            right: 10px;
-       |        }
-       |        .butto {
-       |            position: absolute;
-       |            display: block;
-       |            top: 50%;
-       |            z-index: 2;
-       |            width: 50px;
-       |            height: 50px;
-       |            cursor: pointer;
-       |            background-color: rgba(255,255,255,0);
-       |            border-width: 0;
-       |            outline: none;
-       |        }
-       |        #slider1 {
-       |            visibility: hidden;
-       |        }
+       |    #back {
+       |        width: 100vw;
+       |        height: 100vh;
+       |        background-image: url(images/tiles/tiles$name.${tilesDim.imgType.ext});
+       |        position: absolute;
+       |        top: 0;
+       |        z-index: 0;
+       |    }
        |    </style>
        |</head>
-       |<body>
-       |<div id="slider1" class="glide">
-       |    <div id="closeb" onclick="hideSlider();"></div>
-       |    <div class="glide__track" data-glide-el="track">
-       |        <ul class="glide__slides">
+       |<body class="load">
+       |    <div id="left">
+       |        <h1>das taschenfahrrad</h1>
+       |        <p>Wer radlos ist, kann im taschenfahrrad eine treffende Beratung
+       |            und mit etwas Glück gleich das passende Rad finden.
+       |            Wir haben uns das Knowhow in vielen Jahren als Rennradler,
+       |            Reiseradler, Fahrradkurier er-fahren, wissen, wo es zwicken
+       |            kann und wie es sich anfühlt, wenn alles passt. Unsere visits
+       |            sind die vielen großartigen Räder, die wir Dank unserer Kunden
+       |            bauen konnten.<br>
+       |            <a href="http://entelijan.net/">entelijan...</a><br>
+       |            Das 2010 gegründete 'taschenfahrrad' bietet Räder für alltägliche
+       |            Stadtfahrten und Überlandfahrten bis Weltreisen.
+       |            Wir bevorzugen Räder mit schlankem Stahlrahmen,
+       |            die sowohl komfortabel als auch robust sind, mit möglichst einfacher, lang-
+       |            lebiger Technik. Räder, die sich schnell, unkompliziert und
+       |            günstig servicieren lassen. Wenn der Markt uns das nicht bieten
+       |            kann, bauen wir die Räder selbst.
+       |        </p>
+       |        <p>Wer radlos ist, kann im taschenfahrrad eine treffende Beratung
+       |            und mit etwas Glück gleich das passende Rad finden.
+       |            Wir haben uns das Knowhow in vielen Jahren als Rennradler,
+       |            Reiseradler, Fahrradkurier er-fahren, wissen, wo es zwicken
+       |            kann und wie es sich anfühlt, wenn alles passt. Unsere visits
+       |            sind die vielen großartigen Räder, die wir Dank unserer Kunden
+       |            bauen konnten.<br>
+       |            Das 2010 gegründete 'taschenfahrrad' bietet Räder für alltägliche
+       |            Stadtfahrten und Überlandfahrten bis Weltreisen.
+       |            Wir bevorzugen Räder mit schlankem Stahlrahmen,
+       |            die sowohl komfortabel als auch robust sind, mit möglichst einfacher, lang-
+       |            lebiger Technik. Räder, die sich schnell, unkompliziert und
+       |            günstig servicieren lassen. Wenn der Markt uns das nicht bieten
+       |            kann, bauen wir die Räder selbst.
+       |        </p>
+       |    </div>
+       |    <div id="right">
+       |
+       |        <div id="slider1" class="glide">
+       |            <div id="closeb" onclick="hideSlider();"></div>
+       |            <div class="glide__track" data-glide-el="track">
+       |                <ul class="glide__slides">
        |$imgs
-       |        </ul>
+       |                </ul>
+       |            </div>
+       |            <div class="glide__arrows" data-glide-el="controls">
+       |                <button class="butto butto-left" data-glide-dir="<"></button>
+       |                <button class="butto butto-right" data-glide-dir=">"></button>
+       |            </div>
+       |        </div>
+       |        <div id="back"></div>
        |    </div>
-       |    <div class="glide__arrows" data-glide-el="controls">
-       |        <button class="butto butto-left" data-glide-dir="<"></button>
-       |        <button class="butto butto-right" data-glide-dir=">"></button>
-       |    </div>
-       |</div>
-       |<div id="back"></div>
+       |</body>
        |<script src="glide/glide.min.js"></script>
        |<script src="js/taschenfahrrad.js"></script>
        |<script>
@@ -209,8 +198,8 @@ object SliderTemplate {
        |  var tiles_cols = ${tilesDim.cols};
        |  var tiles_tileSize = ${tilesDim.tileSize - tilesDim.borderSize};
        |</script>
-       |</body>
        |</html>
     """.stripMargin
   }
+
 }
