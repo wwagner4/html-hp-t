@@ -131,6 +131,18 @@ object SliderTemplate {
        |    </style>
        |</head>
        |<body class="load">
+       |    <div id="slider1" class="glide">
+       |        <div id="closeb" onclick="hideSlider();"></div>
+       |        <div class="glide__track" data-glide-el="track">
+       |            <ul class="glide__slides">
+       |$imgs
+       |            </ul>
+       |        </div>
+       |        <div class="glide__arrows" data-glide-el="controls">
+       |            <button class="butto butto-left" data-glide-dir="<"></button>
+       |            <button class="butto butto-right" data-glide-dir=">"></button>
+       |        </div>
+       |    </div>
        |    <div id="back">
        |        <div id="left">
        |            <h1>das taschenfahrrad</h1>
