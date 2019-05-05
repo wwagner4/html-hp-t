@@ -27,7 +27,7 @@ object SliderApp extends App {
 
   create(baseInDir, imagesInDir, "glide",
     SliderTemplate.glideText,
-    TilesDim(5, 300, 0))
+    TilesDim(3, 300, 5))
 
   private def create(baseIndDir: Path, imagesInDir: Path, sliderName: String,
                      f: (String, Seq[String], TilesDim) => String,
