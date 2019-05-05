@@ -114,23 +114,18 @@ object SliderTemplate {
     }.mkString("\n")
 
     s"""<!DOCTYPE html>
-       |<html lang="en">
+       |<html class="no-js" lang="de">
        |<head>
        |    <title>das taschenfahrrad</title>
        |    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
        |    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       |    <link rel="stylesheet" href="glide/css/glide.core.min.css">
-       |    <link rel="stylesheet" href="glide/css/glide.theme.min.css">
        |    <link href='css/taschenfahrrad.css' rel='stylesheet' type='text/css'>
        |    <style>
-       |    #back {
-       |        width: 100vw;
-       |        height: 100vh;
-       |        background-image: url(images/tiles/tiles$name.${tilesDim.imgType.ext});
-       |        position: absolute;
-       |        top: 0;
-       |        z-index: 0;
-       |    }
+       |        #right {
+       |            background-repeat: repeat;
+       |            background-image: url(images/tiles/tiles$name.${tilesDim.imgType.ext});
+       |            background-size: contain;
+       |        }
        |    </style>
        |</head>
        |<body class="load">
@@ -169,37 +164,10 @@ object SliderTemplate {
        |        </p>
        |    </div>
        |    <div id="right">
-       |
-       |        <div id="slider1" class="glide">
-       |            <div id="closeb" onclick="hideSlider();"></div>
-       |            <div class="glide__track" data-glide-el="track">
-       |                <ul class="glide__slides">
-       |$imgs
-       |                </ul>
-       |            </div>
-       |            <div class="glide__arrows" data-glide-el="controls">
-       |                <button class="butto butto-left" data-glide-dir="<"></button>
-       |                <button class="butto butto-right" data-glide-dir=">"></button>
-       |            </div>
-       |        </div>
-       |        <div id="back"></div>
        |    </div>
        |</body>
-       |<script src="glide/glide.min.js"></script>
-       |<script src="js/taschenfahrrad.js"></script>
-       |<script>
-       |  var glide = new Glide('.glide', {
-       |    type: 'carousel',
-       |    startAt: 0,
-       |    perView: 1,
-       |    gap: 0
-       |  }).mount();
-       |  var tiles_length = ${files.size};
-       |  var tiles_cols = ${tilesDim.cols};
-       |  var tiles_tileSize = ${tilesDim.tileSize - tilesDim.borderSize};
-       |</script>
        |</html>
-    """.stripMargin
+       |""".stripMargin
   }
 
 }
