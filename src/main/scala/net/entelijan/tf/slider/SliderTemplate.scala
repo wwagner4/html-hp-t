@@ -129,41 +129,43 @@ object SliderTemplate {
        |    </style>
        |</head>
        |<body class="load">
-       |    <div id="left">
-       |        <h1>das taschenfahrrad</h1>
-       |        <p>Wer radlos ist, kann im taschenfahrrad eine treffende Beratung
-       |            und mit etwas Glück gleich das passende Rad finden.
-       |            Wir haben uns das Knowhow in vielen Jahren als Rennradler,
-       |            Reiseradler, Fahrradkurier er-fahren, wissen, wo es zwicken
-       |            kann und wie es sich anfühlt, wenn alles passt. Unsere visits
-       |            sind die vielen großartigen Räder, die wir Dank unserer Kunden
-       |            bauen konnten.<br>
-       |            <a href="http://entelijan.net/">entelijan...</a><br>
-       |            Das 2010 gegründete 'taschenfahrrad' bietet Räder für alltägliche
-       |            Stadtfahrten und Überlandfahrten bis Weltreisen.
-       |            Wir bevorzugen Räder mit schlankem Stahlrahmen,
-       |            die sowohl komfortabel als auch robust sind, mit möglichst einfacher, lang-
-       |            lebiger Technik. Räder, die sich schnell, unkompliziert und
-       |            günstig servicieren lassen. Wenn der Markt uns das nicht bieten
-       |            kann, bauen wir die Räder selbst.
-       |        </p>
-       |        <p>Wer radlos ist, kann im taschenfahrrad eine treffende Beratung
-       |            und mit etwas Glück gleich das passende Rad finden.
-       |            Wir haben uns das Knowhow in vielen Jahren als Rennradler,
-       |            Reiseradler, Fahrradkurier er-fahren, wissen, wo es zwicken
-       |            kann und wie es sich anfühlt, wenn alles passt. Unsere visits
-       |            sind die vielen großartigen Räder, die wir Dank unserer Kunden
-       |            bauen konnten.<br>
-       |            Das 2010 gegründete 'taschenfahrrad' bietet Räder für alltägliche
-       |            Stadtfahrten und Überlandfahrten bis Weltreisen.
-       |            Wir bevorzugen Räder mit schlankem Stahlrahmen,
-       |            die sowohl komfortabel als auch robust sind, mit möglichst einfacher, lang-
-       |            lebiger Technik. Räder, die sich schnell, unkompliziert und
-       |            günstig servicieren lassen. Wenn der Markt uns das nicht bieten
-       |            kann, bauen wir die Räder selbst.
-       |        </p>
-       |    </div>
-       |    <div id="right">
+       |    <div id="back">
+       |        <div id="left">
+       |            <h1>das taschenfahrrad</h1>
+       |            <p>Wer radlos ist, kann im taschenfahrrad eine treffende Beratung
+       |                und mit etwas Glück gleich das passende Rad finden.
+       |                Wir haben uns das Knowhow in vielen Jahren als Rennradler,
+       |                Reiseradler, Fahrradkurier er-fahren, wissen, wo es zwicken
+       |                kann und wie es sich anfühlt, wenn alles passt. Unsere visits
+       |                sind die vielen großartigen Räder, die wir Dank unserer Kunden
+       |                bauen konnten.<br>
+       |                <a href="http://entelijan.net/">entelijan...</a><br>
+       |                Das 2010 gegründete 'taschenfahrrad' bietet Räder für alltägliche
+       |                Stadtfahrten und Überlandfahrten bis Weltreisen.
+       |                Wir bevorzugen Räder mit schlankem Stahlrahmen,
+       |                die sowohl komfortabel als auch robust sind, mit möglichst einfacher, lang-
+       |                lebiger Technik. Räder, die sich schnell, unkompliziert und
+       |                günstig servicieren lassen. Wenn der Markt uns das nicht bieten
+       |                kann, bauen wir die Räder selbst.
+       |            </p>
+       |            <p>Wer radlos ist, kann im taschenfahrrad eine treffende Beratung
+       |                und mit etwas Glück gleich das passende Rad finden.
+       |                Wir haben uns das Knowhow in vielen Jahren als Rennradler,
+       |                Reiseradler, Fahrradkurier er-fahren, wissen, wo es zwicken
+       |                kann und wie es sich anfühlt, wenn alles passt. Unsere visits
+       |                sind die vielen großartigen Räder, die wir Dank unserer Kunden
+       |                bauen konnten.<br>
+       |                Das 2010 gegründete 'taschenfahrrad' bietet Räder für alltägliche
+       |                Stadtfahrten und Überlandfahrten bis Weltreisen.
+       |                Wir bevorzugen Räder mit schlankem Stahlrahmen,
+       |                die sowohl komfortabel als auch robust sind, mit möglichst einfacher, lang-
+       |                lebiger Technik. Räder, die sich schnell, unkompliziert und
+       |                günstig servicieren lassen. Wenn der Markt uns das nicht bieten
+       |                kann, bauen wir die Räder selbst.
+       |            </p>
+       |        </div>
+       |        <div id="right">
+       |        </div>
        |    </div>
        |</body>
        |</html>
