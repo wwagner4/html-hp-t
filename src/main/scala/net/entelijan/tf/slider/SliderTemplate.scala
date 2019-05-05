@@ -119,6 +119,8 @@ object SliderTemplate {
        |    <title>das taschenfahrrad</title>
        |    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
        |    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       |    <link rel="stylesheet" href="glide/css/glide.core.min.css">
+       |    <link rel="stylesheet" href="glide/css/glide.theme.min.css">
        |    <link href='css/taschenfahrrad.css' rel='stylesheet' type='text/css'>
        |    <style>
        |        #right {
