@@ -167,6 +167,19 @@ object SliderTemplate {
        |        <div id="right">
        |        </div>
        |    </div>
+       |    <script src="glide/glide.min.js"></script>
+       |    <script src="js/taschenfahrrad.js"></script>
+       |    <script>
+       |      var glide = new Glide('.glide', {
+       |        type: 'carousel',
+       |        startAt: 0,
+       |        perView: 1,
+       |        gap: 0
+       |      }).mount();
+       |      var tiles_length = ${files.size};
+       |      var tiles_cols = ${tilesDim.cols};
+       |      var tiles_tileSize = ${tilesDim.tileSize - tilesDim.borderSize};
+       |    </script>
        |</body>
        |</html>
        |""".stripMargin
