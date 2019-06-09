@@ -7,27 +7,29 @@ function hideSlider() {
     slider1.style.visibility = 'hidden'
 }
 
-function showSlider(e) {
-    slider1.style.visibility = 'visible';
+function showSlider(e) { // MouseEvent
     var elem = e.target;
-    var rect = elem.getBoundingClientRect();
-    var pos = {x : e.clientX - rect.left, y : e.clientY - rect.top};
-    var elemDim = {w : elem.offsetWidth, h: elem.offsetHeight};
-    console.log("pos:" + pos.x + " " + pos.y);
-    console.log("elemDim:" + elemDim.w + " " + elemDim.h);
+    if (elem.id === 'right') {
+        slider1.style.visibility = 'visible';
+        var rect = elem.getBoundingClientRect();
+        var pos = {x : e.clientX - rect.left, y : e.clientY - rect.top};
+        var elemDim = {w : elem.offsetWidth, h: elem.offsetHeight};
+        console.log("pos:" + pos.x + " " + pos.y);
+        console.log("elemDim:" + elemDim.w + " " + elemDim.h);
 
-    var index = indexFromPos(tiles_length, tiles_cols, tiles_tileSize, pos);
-    console.log("            length: " + tiles_length + ",");
-    console.log("            cols: " + tiles_cols + ",");
-    console.log("            pos: " + JSON.stringify(pos) + ",");
-    console.log("            should: " + "?" + ",");
+        var index = indexFromPos(tiles_length, tiles_cols, tiles_tileSize, pos);
+        console.log("            length: " + tiles_length + ",");
+        console.log("            cols: " + tiles_cols + ",");
+        console.log("            pos: " + JSON.stringify(pos) + ",");
+        console.log("            should: " + "?" + ",");
 
 
-    console.log("index: " + index);
+        console.log("index: " + index);
 
-    var goSym = "=" + index;
-    console.log("going to: " + goSym);
-    glide.go(goSym);
+        var goSym = "=" + index;
+        console.log("going to: " + goSym);
+        glide.go(goSym);
+    }
 
 }
 
