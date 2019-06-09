@@ -12,6 +12,7 @@ body {
 }
 
 p {
+    cursor: default;
     margin: 0;
     padding: 3px;
 }
