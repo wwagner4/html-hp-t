@@ -16,20 +16,21 @@ function closeb() {
 
 function showSlider(e) { // MouseEvent
     var elem = e.target;
+    var elem_width = elem.clientWidth;
     slider1.style.visibility = 'visible';
     document.getElementById('back').style.display = 'none';
     var rect = elem.getBoundingClientRect();
-    var pos = {x : e.clientX - rect.left, y : e.clientY - rect.top};
-    var elemDim = {w : elem.offsetWidth, h: elem.offsetHeight};
+    var pos = {x: e.clientX - rect.left, y: e.clientY - rect.top};
     console.log("pos:" + pos.x + " " + pos.y);
-    console.log("elemDim:" + elemDim.w + " " + elemDim.h);
+    console.log("elem_width:" + elem_width);
 
-    var index = indexFromPos(tiles_length, tiles_cols, tiles_tileSize, pos);
-    console.log("            length: " + tiles_length + ",");
-    console.log("            cols: " + tiles_cols + ",");
+    var tiles_tileSize1 = elem_width / tiles_cols;
+
+    console.log("            tiles_length: " + tiles_length + ",");
+    console.log("            tiles_cols: " + tiles_cols + ",");
+    console.log("            tiles_size: " + tiles_tileSize1 + ",");
     console.log("            pos: " + JSON.stringify(pos) + ",");
-    console.log("            should: " + "?" + ",");
-
+    var index = indexFromPos(tiles_length, tiles_cols, tiles_tileSize1, pos);
 
     console.log("index: " + index);
 
@@ -59,9 +60,11 @@ function ratio(dim) {
 function back() {
     console.log("BACK")
 }
+
 function left() {
     console.log("LEFT")
 }
+
 function right() {
     console.log("RIGHT")
 }
