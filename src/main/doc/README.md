@@ -9,7 +9,6 @@ Single page.
 
 TODO
 * Image is not correct selected when clicking in images
-* Quit slider when clicking on background
 
 
 OK
@@ -17,3 +16,11 @@ OK
 * Links on texts OK
 * normal mouse on txt
 * hide background when showing slider visible
+
+NOT OK
+
+Quit slider when clicking on background.  
+Cannot be solved because the image is on a div filling 100%
+of the background. Because of that events cannot (if, it would be hard) distiguishe
+between the image and background.
+
