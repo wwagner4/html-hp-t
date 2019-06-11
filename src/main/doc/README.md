@@ -8,10 +8,12 @@ Single page.
 
 
 TODO
-* Image is not correct selected when clicking in images
+* Hand on right side
+* slider return with esc
 
 
 OK
+* Image is not correct selected when clicking in images
 * Does not switch to slider when clicking on Text
 * Links on texts OK
 * normal mouse on txt

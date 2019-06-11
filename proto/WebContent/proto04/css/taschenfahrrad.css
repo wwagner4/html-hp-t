@@ -78,6 +78,8 @@ a:active {
 #closeb {
     background-image: url(cross.png);
     background-repeat: no-repeat;
+    background-size: 15% 15%;
+    right: 10px;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -89,12 +91,16 @@ a:active {
 
 .butto-left {
     background-image: url(arrow-left.png);
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
     left: 10px;
 }
 
 .butto-right {
     background-image: url(arrow-right.png);
-    right: 10px;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    right: -10px;
 }
 
 .butto {
