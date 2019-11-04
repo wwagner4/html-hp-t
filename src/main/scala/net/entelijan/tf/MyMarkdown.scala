@@ -1,6 +1,6 @@
 package net.entelijan.tf
 
-import laika.api.{Transformer}
+import laika.api.Transformer
 import laika.format._
 import laika.parse.markup.DocumentParser
 
@@ -21,7 +21,7 @@ object MyMarkdown {
 
     implicit val codec: Codec = Codec.UTF8
 
-    Transformer.from(Markdown).to(HTML).build.transform(in) match {
+    Transformer.from(Markdown).to(HTML).withRawContent.build.transform(in) match {
       case Left(e: DocumentParser.ParserError) => throw new IllegalArgumentException(e)
       case Right(str: String) => sth(str)
     }
