@@ -33,7 +33,7 @@ object Data {
 
     override def markdownLeft: String =
       """
-        |## das ftaschenfahrrad
+        |## das taschenfahrrad
         |stadt-, tourenräder und fahrradtaschen
         |
         |Verkauf / Werkstatt    
