@@ -81,6 +81,7 @@ object T {
 
     case class F(o: Int, f: File)
 
+    @scala.annotation.tailrec
     def order(l: List[(String, Int)], f: File): Option[F] = {
       l match {
         case Nil => None
@@ -147,7 +148,7 @@ object T {
        |</style>
        |</head>
        |<body class="load">
-       |<div id="all">
+       |<div id="all" >
        |${p.htmlContent}
        |</div>
        |<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -205,16 +206,16 @@ object D {
          |<div id="left">
          |<h1>das taschenfahrrad</h1>
          |<p>stadt-, tourenräder und fahrradtaschen<p>
-         |<p id="sepa2" />
+         |<p class="sepa2" />
          |<p>Verkauf / Werkstatt<p>
          |<p>di-fr: 13-18:00 sa 9-15</p>
          |<p><a target="_blank" href="http://www.openstreetmap.org/?lat=48.218173500000006&amp;lon=16.377131&amp;zoom=17&amp;layers=M&amp;mlat=48.21819&amp;mlon=16.37711">Leopoldsgasse 28 1020 Wien...</a></p>
          |<p><a target="_blank" href="https://www.facebook.com/das-taschenfahrrad-108130579232304">facebook...</a></p>
          |<p><a target="_blank" href="https://www.instagram.com/taschenfahrrad/">instagram...</a></p>
-         |<p id="sepa"/>
+         |<p class="sepa"/>
          |<p>kontakt <a href="mailto:hans.poellhuber@chello.at">hans.poellhuber@chello.at</a></p>
          |<p>0043 699 1043 1886</p>
-         |<p id="sepa2"/>
+         |<p class="sepa2"/>
          |
          |<p>Wer radlos ist, kann im taschenfahrrad eine treffende Beratung
          |und mit etwas Glück gleich das passende Rad finden.
@@ -231,7 +232,7 @@ object D {
          |günstig servicieren lassen. Wenn der Markt uns das nicht bieten
          |kann, bauen wir die Räder selbst.
          |</p>
-         |<p id="sepa2"/>
+         |<p class="sepa2"/>
          |
          |
          |<p>
@@ -239,16 +240,16 @@ object D {
          |schöne Räder, weil wir gerne und mit Stolz radfahren.
          |</p>
          |
-         |<p id="sepa2"/>
+         |<p class="sepa2"/>
          |<p><a href="producer.html">unsere Markenräder...</a></p>
          |
-         |<p id="sepa"/>
+         |<p class="sepa"/>
          |<p><a href="selfmade.html">unsere Eigenbauräder...</a></p>
          |
-         |<p id="sepa"/>
+         |<p class="sepa"/>
          |<p><a href="service.html">unser Service...</a></p>
          |
-         |<p id="sepa"/>
+         |<p class="sepa"/>
          |<p><a href="jobs.html">unser Jobangebot...</a></p>
          |
          |</div>
@@ -265,23 +266,23 @@ object D {
     def htmlContent: String =
       s"""|<h1><a href="index.html">das taschenfahrrad</a></h1>
           |<p><a href="index.html">start</a> &#62; $name</p>
-          |<p id="sepa3"/>
+          |<p class="sepa3"/>
           |<p class="p1">
           |    Wir haben im Laufe der Jahre viele Marken geführt, erprobt und schätzen gelernt.
           |    Veränderungen gibt es, weil sich Bezugsquellen ändern und das
           |    Platzangebot im taschenfahrrad beschränkt ist.
           |</p>
-          |<p id="sepa"/>
+          |<p class="sepa"/>
           |<p class="p1">
           |    Einige clicks führen jeweils zur Hersteller- oder Importeurseite
           |    für detaillierte und bebilderte Infos. Die reale Welt des
           |    taschenfahrrads ist in 1020 Leopoldsg. 28,
           |</p>
-          |<p id="sepa"/>
+          |<p class="sepa"/>
           |<p>
           |    come and see, die Auswahl:
           |</p>
-          |<p id="sepa"/>
+          |<p class="sepa"/>
           |
           |<table>
           |    <tbody>
@@ -491,7 +492,7 @@ object D {
       s"""|<div id="left">
           |   <h1><a href="index.html">das taschenfahrrad</a></h1>
           |   <p><a href="index.html">start</a> &#62; $name</p>
-          |   <p id="sepa3"/>
+          |   <p class="sepa3"/>
           |
           |   <p>
           |    für spezielle Anforderungen oder weil es individueller
@@ -591,14 +592,14 @@ object D {
       s"""|<div id="left">
           |<h1><a href="index.html">das taschenfahrrad</a></h1>
           |<p><a href="index.html">start</a> &#62; $name</p>
-          |<p id="sepa3"/>
+          |<p class="sepa3"/>
           |
           |<p>
           |    In den Monaten März bis Oktober sucht das taschenfahrrad
           |    Aushilfen für Verkauf, leichtere Reparaturen und für alles,
           |    was das Geschäft in Schwung hält.
           |</p>
-          |<p id="sepa"/>
+          |<p class="sepa"/>
           |<p>
           |    Bis 40 Std./Monat, 400€/Monat an vereinbarten Tagen,
           |    für Fahrradtechniker die einen Zusatzverdienst suchen,
@@ -606,7 +607,7 @@ object D {
           |    Praxiserfahrung erwerben wollen und für Studenten mit
           |    Interesse für Fahrradtechnik.
           |</p>
-          |<p id="sepa"/>
+          |<p class="sepa"/>
           |<p>
           |    Bewirb dich, wir freuen uns.
           |</p>
@@ -627,20 +628,20 @@ object D {
          |<div id="left">
          |<h1><a href="index.html">das taschenfahrrad</a></h1>
          |<p><a href="index.html">start</a> &#62; $name</p>
-         |<p id="sepa3"/>
+         |<p class="sepa3"/>
          |
          |<p>
          |    Ein regelmäßiges Service dient der Sicherheit und Wert-
          |    erhaltung des geliebten Fahrzeuges und erspart spätere
          |    teure Reparaturen.
          |</p>
-         |<p id="sepa"/>
+         |<p class="sepa"/>
          |<p>
          |    Wir machen Pannendienst und schnelle Reparaturen für
          |    alle Räder, immer wird der tatsächliche Arbeitsaufwand
          |    verrechnet 1€/min.
          |</p>
-         |<p id="sepa"/>
+         |<p class="sepa"/>
          |<p>
          |    Für taschenfahrrad- Räder wird innerhalb der ersten 3 Monate
          |    ein Gratis/Garantie-Service angeboten und innerhalb der

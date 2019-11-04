@@ -3,27 +3,27 @@
  src: url("font/isonormd.ttf") /* TTF file for CSS3 browsers */
 }
 body {
-	margin-top: 0px;
+	margin-top: 0;
 	font-family: 'isonormd', sans-serif;
 	background-color: white;
 	font-size: 15px;
 	font-weight: normal;
 }
 h1 {
-	margin: 0px 0px 5px;
-	padding: 0px;
+	margin: 0 0 5px;
+	padding: 0;
 }
 p .p1 {
 	font-family: inherit;
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 }
 .p1 {
 	max-width: 700px;
 }
 img {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 }
 table {
 	border-collapse: collapse;
@@ -84,29 +84,29 @@ a:active {
 	width: 800px;
 	float: right;
 }
-#sepa {
-	margin: 8px 0px 0px;
-	padding: 0px;
+.sepa {
+	margin: 8px 0 0;
+	padding: 0;
 }
-#sepa1 {
-	margin: 8px 0px 0px;
-	padding: 0px;
+.sepa1 {
+	margin: 8px 0 0;
+	padding: 0;
 }
-#sepa2 {
-	margin: 20px 0px 0px;
-	padding: 0px;
+.sepa2 {
+	margin: 20px 0 0;
+	padding: 0;
 }
-#sepa3 {
-	margin: 40px 0px 0px;
-	padding: 0px;
+.sepa3 {
+	margin: 40px 0 0;
+	padding: 0;
 }
-#sepa4 {
-	margin: 60px 0px 0px;
-	padding: 0px;
+.sepa4 {
+	margin: 60px 0 0;
+	padding: 0;
 }
-#sepa-logos {
-	margin: 150px 0px 0px;
-	padding: 0px;
+.sepa-logos {
+	margin: 150px 0 0;
+	padding: 0;
 }
 .flex-caption {
 	width: 100%;
