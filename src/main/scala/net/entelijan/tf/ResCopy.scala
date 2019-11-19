@@ -61,6 +61,7 @@ object ResCopy {
     time(left) > time(right)
   }
 
+  @scala.annotation.tailrec
   def findFile(name: String, files: List[File]): Option[File] = {
     files match {
       case Nil => None
