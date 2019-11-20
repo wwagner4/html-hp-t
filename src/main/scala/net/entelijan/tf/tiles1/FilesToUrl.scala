@@ -8,15 +8,13 @@ object FilesToUrl {
 
   def urls(baseDir: Path, pageDir: String): List[String] = {
 
-    def relPath(baseDir: Path, file: Path): String = {
+    def relPath(file: Path): String =
       baseDir.relativize(file).toString
-    }
-
-    val dir = baseDir.resolve(pageDir)
-    Files.list(dir)
+    
+    Files.list(baseDir.resolve(pageDir))
       .iterator()
       .asScala
-      .map(file => relPath(baseDir, file))
+      .map(relPath)
       .toList
   }
 
