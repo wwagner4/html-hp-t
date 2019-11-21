@@ -20,10 +20,6 @@ trait Page extends ImageProvider {
   def imageText(fnam: String): Option[String] = None
 }
 
-trait OverviewPage extends Page {
-  def pages: List[Page]
-}
-
 object Data {
 
   val startPage: Page = new Page {

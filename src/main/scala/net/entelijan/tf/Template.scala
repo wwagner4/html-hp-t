@@ -20,7 +20,7 @@ object Template extends Templ {
           else
             s"""
                |<li>
-               |<img alt="taschenfahrrad" class="lazy" data-src="${imagesDirPath(p)}/${f.getName}" />
+               |<img alt="taschenfahrrad" class="lazy" src="#" data-src="${imagesDirPath(p)}/${f.getName}" />
                |<p class="flex-caption"></p>
                |</li>
                |""".stripMargin
