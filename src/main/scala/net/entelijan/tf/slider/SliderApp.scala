@@ -5,7 +5,7 @@ import java.nio.file.{Files, Path, Paths}
 
 import net.entelijan.tf.{ResCopy, TfUtil}
 import TfUtil._
-import net.entelijan.tf.imgutil.{ImgFormat, ImgFormat_JPG, ImgFormat_PNG}
+import net.entelijan.tf.imgutil.{ImgFormat, ImgFormat_JPG}
 import net.entelijan.tf.tiles.TilesFromDirectory
 
 import scala.collection.JavaConverters._
