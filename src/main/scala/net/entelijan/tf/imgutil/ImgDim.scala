@@ -19,12 +19,12 @@ object ImgDim {
   }
 
   private def dim(file: Path): Option[Dim] =
-    Some(file)
+    Option(file)
       .flatMap(toRegularFile)
       .flatMap(file => toImageDimension(file))
 
   private def toRegularFile(file: Path): Option[File] =
-    if (Files.isRegularFile(file)) Some(file.toFile)
+    if (Files.isRegularFile(file)) Option(file.toFile)
     else None
 
   private def toImageDimension(imgFile: File): Option[Dim] = {

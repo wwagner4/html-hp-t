@@ -1,12 +1,6 @@
 package net.entelijan.tf
 
-trait ImageProvider {
-  def id: String
-
-  def imageFolder: String = id
-}
-
-trait Page extends ImageProvider {
+trait Page {
   def name: String
 
   def markdownLeft: String = "???"
@@ -23,9 +17,7 @@ trait Page extends ImageProvider {
 object Data {
 
   val startPage: Page = new Page {
-    def id = "index"
-
-    def name = "start"
+    def name = "index"
 
     override def markdownLeft: String =
       """
@@ -75,8 +67,6 @@ object Data {
 
 
   val producerPage: Page = new Page {
-    def id = "producer"
-
     def name = "fahrräder"
 
     def htmlContent(templ: Templ): String =
@@ -300,9 +290,7 @@ object Data {
   }
 
   val selfmadePage: Page = new Page {
-    def id = "selfmade"
-
-    def name = "eigenbau"
+    def name = "selfmade"
 
     def htmlContent(templ: Templ): String =
       s"""|<div id="left">
@@ -400,8 +388,6 @@ object Data {
   }
 
   val jobsPage: Page = new Page {
-    def id = "jobs"
-
     def name = "jobs"
 
     def htmlContent(templ: Templ): String =
@@ -435,7 +421,6 @@ object Data {
   }
 
   val servicePage: Page = new Page {
-    def id = "service"
 
     def name = "service"
 

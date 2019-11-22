@@ -60,7 +60,7 @@ object TilesFromDirectory {
     }
 
     Files.list(indir)
-      .filter(p => isImageFile(p))
+      .filter(isImageFile)
       .iterator()
       .asScala
       .toList

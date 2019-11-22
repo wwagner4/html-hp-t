@@ -1,7 +1,7 @@
 package net.entelijan.tf.imgutil
 
 import java.nio.file.{Files, Path, Paths}
-import collection.JavaConverters._
+import scala.collection.JavaConverters._
 
 
 object ImageRename extends App {

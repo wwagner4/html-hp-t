@@ -20,8 +20,8 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
     tab.size mustBe 3
 
     {
-      tab(0).cells.size mustBe 1
-      val cell = tab(0).cells(0)
+      tab.head.cells.size mustBe 1
+      val cell = tab.head.cells.head
       cell.id mustBe 0
       cell.imgIndex mustBe 0
       cell.imagePath mustBe "a.png"
@@ -30,7 +30,7 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
 
     {
       tab(1).cells.size mustBe 1
-      val cell = tab(1).cells(0)
+      val cell = tab(1).cells.head
       cell.id mustBe 1
       cell.imgIndex mustBe 0
       cell.imagePath mustBe "a.png"
@@ -39,7 +39,7 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
 
     {
       tab(2).cells.size mustBe 1
-      val cell = tab(2).cells(0)
+      val cell = tab(2).cells.head
       cell.id mustBe 2
       cell.imgIndex mustBe 0
       cell.imagePath mustBe "a.png"
@@ -53,8 +53,8 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
     tab.size mustBe 2
 
     {
-      tab(0).cells.size mustBe 3
-      val cell = tab(0).cells(0)
+      tab.head.cells.size mustBe 3
+      val cell = tab.head.cells.head
       cell.id mustBe 0
       cell.imgIndex mustBe 0
       cell.imagePath mustBe "a.png"
@@ -62,8 +62,8 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
     }
 
     {
-      tab(0).cells.size mustBe 3
-      val cell = tab(0).cells(1)
+      tab.head.cells.size mustBe 3
+      val cell = tab.head.cells(1)
       cell.id mustBe 1
       cell.imgIndex mustBe 0
       cell.imagePath mustBe "a.png"
@@ -71,8 +71,8 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
     }
 
     {
-      tab(0).cells.size mustBe 3
-      val cell = tab(0).cells(2)
+      tab.head.cells.size mustBe 3
+      val cell = tab.head.cells(2)
       cell.id mustBe 2
       cell.imgIndex mustBe 0
       cell.imagePath mustBe "a.png"
@@ -81,7 +81,7 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
 
     {
       tab(1).cells.size mustBe 3
-      val cell = tab(1).cells(0)
+      val cell = tab(1).cells.head
       cell.id mustBe 3
       cell.imgIndex mustBe 0
       cell.imagePath mustBe "a.png"
@@ -114,8 +114,8 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
     tab.size mustBe 2
 
     {
-      tab(0).cells.size mustBe 3
-      val cell = tab(0).cells(0)
+      tab.head.cells.size mustBe 3
+      val cell = tab.head.cells.head
       cell.id mustBe 0
       cell.imgIndex mustBe 0
       cell.imagePath mustBe "a.png"
@@ -123,8 +123,8 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
     }
 
     {
-      tab(0).cells.size mustBe 3
-      val cell = tab(0).cells(1)
+      tab.head.cells.size mustBe 3
+      val cell = tab.head.cells(1)
       cell.id mustBe 1
       cell.imgIndex mustBe 1
       cell.imagePath mustBe "b.png"
@@ -132,8 +132,8 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
     }
 
     {
-      tab(0).cells.size mustBe 3
-      val cell = tab(0).cells(2)
+      tab.head.cells.size mustBe 3
+      val cell = tab.head.cells(2)
       cell.id mustBe 2
       cell.imgIndex mustBe 0
       cell.imagePath mustBe "a.png"
@@ -142,7 +142,7 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
 
     {
       tab(1).cells.size mustBe 3
-      val cell = tab(1).cells(0)
+      val cell = tab(1).cells.head
       cell.id mustBe 3
       cell.imgIndex mustBe 1
       cell.imagePath mustBe "b.png"

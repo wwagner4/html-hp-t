@@ -4,8 +4,6 @@ import java.io.File
 
 object Template extends Templ {
 
-  val IMAGES_DIR = "images"
-
   def htmlImageList(p: Page): String = {
     val l = imagesFileList(p).zipWithIndex.map {
       case (f, i) => p.imageText(f.getName) match {
@@ -46,46 +44,17 @@ object Template extends Templ {
     l.mkString("\n")
   }
 
-  def logoName(p: ImageProvider): String = {
-    val f = logoFile(p)
-    s"${imagesDirPath(p)}/${f.getName}"
-  }
+  def imagesDirPath(p: Page): String = s"images/${p.name}"
 
-  def imagesDirPath(p: ImageProvider): String = s"$IMAGES_DIR/${p.imageFolder}"
-
-  def imagesFileList(p: ImageProvider): List[File] = {
+  def imagesFileList(p: Page): List[File] = {
 
     case class F(o: Int, f: File)
-
-    @scala.annotation.tailrec
-    def order(l: List[(String, Int)], f: File): Option[F] = {
-      l match {
-        case Nil => None
-        case (id, idx) :: rest =>
-          if (f.getName.contains(id)) Some(F(idx, f)) else order(rest, f)
-      }
-    }
-
-    def acceptName(nam: String): Boolean = {
-      !nam.toUpperCase().contains("LOGO") &&
-        !nam.startsWith(".")
-    }
 
     val d = new File(s"src/main/web/${imagesDirPath(p)}")
     require(d.exists(), s"directory $d must exist")
     d.listFiles()
-      .filter(f => acceptName(f.getName))
       .toList
       .sortBy(f => f.getName)
-  }
-
-  def logoFile(p: ImageProvider): File = {
-    val d = new File(s"src/main/web/${imagesDirPath(p)}")
-    require(d.exists(), s"directory $d must exist")
-    val l = d.listFiles().filter(_.getName.toUpperCase().contains("LOGO")).toList
-    require(l.nonEmpty, s"no logo found for page '${p.id}' in $d")
-    require(l.size == 1, s"more than one logo found for page '${p.id}' in $d")
-    l.head
   }
 
   def htmlPageLinks(pages: List[Page]): String = {
@@ -155,7 +124,7 @@ object Template extends Templ {
        |</html>
        |""".stripMargin
 
-  def fileName(p: Page): String = "%s.html" format p.id
+  def fileName(p: Page): String = "%s.html" format p.name
 
 }
 

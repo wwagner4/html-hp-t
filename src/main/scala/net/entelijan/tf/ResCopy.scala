@@ -19,7 +19,7 @@ object ResCopy {
     copy(fromDir.toFile, toDir.toFile)
   }
 
-  def copy(from: File, to: File) {
+  def copy(from: File, to: File): Unit = {
     require(from.isDirectory, "%s is not a directory" format from)
     require(to.isDirectory, "%s is not a directory" format to)
     val toFiles = to.listFiles().toList
@@ -65,7 +65,7 @@ object ResCopy {
   def findFile(name: String, files: List[File]): Option[File] = {
     files match {
       case Nil => None
-      case f :: rest => if (f.getName == name) Some(f)
+      case f :: rest => if (f.getName == name) Option(f)
       else findFile(name, rest)
     }
   }

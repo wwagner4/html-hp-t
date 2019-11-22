@@ -7,7 +7,7 @@ object Generator {
   def gen(outDir: File): Unit = {
     ResCopy.copy(new File("src/main/web"), outDir)
     Data.pages.foreach(genPage(_, outDir))
-    println("finished generation of taschenfahrrad in %s" format outDir.getCanonicalPath)
+    println(s"finished generation of taschenfahrrad in ${outDir.getCanonicalPath}")
   }
 
   private def genPage(p: Page, outDir: File): Unit = {
@@ -16,7 +16,7 @@ object Generator {
     val pw = new PrintWriter(f, "UTF-8")
     pw.print(Template.htmlTemplate(p).trim())
     pw.close()
-    println("wrote to %s" format f)
+    println(s"wrote to $f")
   }
 
 }
