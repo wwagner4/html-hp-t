@@ -77,7 +77,7 @@ object Data {
 
     def htmlContentLeftPage: String =
       s"""|<h1><a href="index.html">das taschenfahrrad</a></h1>
-          |<p><a href="index.html">start</a> &#62; Markenräder</p>
+          |<p><a href="index.html">start</a> &#62; fahrräder</p>
           |<p class="sepa3"/>
           |<p class="p1">
           |    Wir haben im Laufe der Jahre viele Marken geführt, erprobt und schätzen gelernt.
@@ -301,7 +301,7 @@ object Data {
     def htmlContentLeftPage: String =
       s"""|<div id="left">
           |   <h1><a href="index.html">das taschenfahrrad</a></h1>
-          |   <p><a href="index.html">start</a> &#62; Eigenbauräder</p>
+          |   <p><a href="index.html">start</a> &#62; eigenbau</p>
           |   <p class="sepa3"/>
           |
           |   <p>
@@ -398,7 +398,7 @@ object Data {
     def htmlContentLeftPage: String =
       s"""|<div id="left">
           |<h1><a href="index.html">das taschenfahrrad</a></h1>
-          |<p><a href="index.html">start</a> &#62; Jobangebot</p>
+          |<p><a href="index.html">start</a> &#62; jobs</p>
           |<p class="sepa3"/>
           |
           |<p>
@@ -432,7 +432,7 @@ object Data {
       s"""
          |<div id="left">
          |<h1><a href="index.html">das taschenfahrrad</a></h1>
-         |<p><a href="index.html">start</a> &#62; Service</p>
+         |<p><a href="index.html">start</a> &#62; service</p>
          |<p class="sepa3"/>
          |
          |<p>

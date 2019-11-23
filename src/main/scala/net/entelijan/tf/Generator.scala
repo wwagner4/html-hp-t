@@ -5,7 +5,8 @@ import java.io.{File, PrintWriter}
 object Generator {
 
   def gen(outDir: File, templ: Templ): Unit = {
-    ResCopy.copy(new File("src/main/web"), outDir)
+    ResCopy.copy(new File("src/main/web/common"), outDir)
+    ResCopy.copy(new File(s"src/main/web/${templ.id}"), outDir)
     Data.pages.foreach(genPage(_, templ, outDir))
     println(s"finished generation of taschenfahrrad in ${outDir.getCanonicalPath}")
   }

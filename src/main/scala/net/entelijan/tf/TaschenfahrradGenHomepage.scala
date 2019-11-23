@@ -2,6 +2,6 @@ package net.entelijan.tf
 
 object TaschenfahrradGenHomepage extends App {
   
-  Generator.gen(TfUtil.genDir, new Template)
+  Generator.gen(TfUtil.inTargetDir("gen-slider"), Templs.slider)
 
 }

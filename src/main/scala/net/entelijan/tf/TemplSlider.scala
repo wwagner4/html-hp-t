@@ -2,7 +2,9 @@ package net.entelijan.tf
 
 import java.io.File
 
-class Template extends Templ {
+class TemplSlider extends Templ {
+
+  def id = "slider"
 
   def css: String = {
     s"""
@@ -178,7 +180,7 @@ class Template extends Templ {
 
     case class F(o: Int, f: File)
 
-    val d = new File(s"src/main/web/${imagesDirPath(p)}")
+    val d = new File(s"src/main/web/common/${imagesDirPath(p)}")
     require(d.exists(), s"directory $d must exist")
     d.listFiles()
       .toList

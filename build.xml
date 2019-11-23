@@ -10,13 +10,13 @@
 
 	<property name="version" value="2019.3" />
 	<target name="clean">
-		<echo message="- delete"></echo>
 		<delete verbose="true" includeemptydirs="true">
-			<fileset dir="${work}/gen" includes="**/*">
+			<fileset dir="${work}/gen-slider" includes="**/*">
 			</fileset>
 		</delete>
 	</target>
 	<target name="zip">
-		<zip destfile="${work}/hp-taschenfahrrad-${version}.zip" basedir="${work}/gen" includes="**/*" />
+		<zip destfile="${work}/hp-taschenfahrrad-${version}.zip"
+			 basedir="${work}/gen-slider" includes="**/*" />
 	</target>
 </project>

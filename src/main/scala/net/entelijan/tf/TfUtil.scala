@@ -6,6 +6,8 @@ import scala.util.{Failure, Success, Try}
 
 object TfUtil {
 
+  def inTargetDir(name: String): File = getCreateDir(Option(targetDir), name)
+
   def genDir: File = getCreateDir(Option(targetDir), "gen")
 
   def genReportDir: File = getCreateDir(Option(workDir), "gen-report")
@@ -14,7 +16,7 @@ object TfUtil {
 
   private def targetDir: File = getCreateDir(None, "target")
 
-  private def homeDir = getCreateDir(None, System.getProperty("user.home"))
+  private def homeDir: File = getCreateDir(None, System.getProperty("user.home"))
 
   private def workDirGeneral: File = getCreateDir(Option(homeDir), "work")
 
