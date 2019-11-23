@@ -27,7 +27,7 @@ class Template extends Templ {
     l.mkString("\n")
   }
 
-  def imagesDirPath(p: Page): String = s"images/${p.name}"
+  def imagesDirPath(p: Page): String = s"images/${p.id}"
 
   def imagesFileList(p: Page): List[File] = {
 
@@ -46,7 +46,7 @@ class Template extends Templ {
 
   def htmlPageLink(p: Page): String = {
     s"""
-       |<p><a href="${fileName(p)}">${p.name}...</a></p>
+       |<p><a href="${fileName(p)}">${p.id}...</a></p>
        |""".stripMargin
   }
 
@@ -131,7 +131,7 @@ class Template extends Templ {
        |</html>
        |""".stripMargin
 
-  def fileName(p: Page): String = "%s.html" format p.name
+  def fileName(p: Page): String = "%s.html" format p.id
 
 }
 

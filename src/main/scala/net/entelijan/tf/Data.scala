@@ -7,7 +7,7 @@ case object Layout_Default extends Layout
 case object Layout_Wide extends Layout
 
 trait Page {
-  def name: String
+  def id: String
 
   def layout: Layout = Layout_Default
 
@@ -18,7 +18,7 @@ trait Page {
 object Data {
 
   val startPage: Page = new Page {
-    def name = "index"
+    def id = "index"
 
     def htmlContentLeftPage: String = {
       MyMarkdown.md(markdownLeft)
@@ -71,13 +71,13 @@ object Data {
 
 
   val producerPage: Page = new Page {
-    def name = "producer"
+    def id = "producer"
 
     override def layout: Layout = Layout_Wide
 
     def htmlContentLeftPage: String =
       s"""|<h1><a href="index.html">das taschenfahrrad</a></h1>
-          |<p><a href="index.html">start</a> &#62; $name</p>
+          |<p><a href="index.html">start</a> &#62; Markenräder</p>
           |<p class="sepa3"/>
           |<p class="p1">
           |    Wir haben im Laufe der Jahre viele Marken geführt, erprobt und schätzen gelernt.
@@ -296,12 +296,12 @@ object Data {
   }
 
   val selfmadePage: Page = new Page {
-    def name = "selfmade"
+    def id = "selfmade"
 
     def htmlContentLeftPage: String =
       s"""|<div id="left">
           |   <h1><a href="index.html">das taschenfahrrad</a></h1>
-          |   <p><a href="index.html">start</a> &#62; $name</p>
+          |   <p><a href="index.html">start</a> &#62; Eigenbauräder</p>
           |   <p class="sepa3"/>
           |
           |   <p>
@@ -393,12 +393,12 @@ object Data {
   }
 
   val jobsPage: Page = new Page {
-    def name = "jobs"
+    def id = "jobs"
 
     def htmlContentLeftPage: String =
       s"""|<div id="left">
           |<h1><a href="index.html">das taschenfahrrad</a></h1>
-          |<p><a href="index.html">start</a> &#62; $name</p>
+          |<p><a href="index.html">start</a> &#62; Jobangebot</p>
           |<p class="sepa3"/>
           |
           |<p>
@@ -426,13 +426,13 @@ object Data {
 
   val servicePage: Page = new Page {
 
-    def name = "service"
+    def id = "service"
 
     def htmlContentLeftPage: String =
       s"""
          |<div id="left">
          |<h1><a href="index.html">das taschenfahrrad</a></h1>
-         |<p><a href="index.html">start</a> &#62; $name</p>
+         |<p><a href="index.html">start</a> &#62; Service</p>
          |<p class="sepa3"/>
          |
          |<p>
