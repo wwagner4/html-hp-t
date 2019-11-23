@@ -1,17 +1,18 @@
 package net.entelijan.tf
 
+sealed trait Layout
+
+case object Layout_Default extends Layout
+
+case object Layout_Wide extends Layout
+
 trait Page {
   def name: String
 
-  def markdownLeft: String = "???"
+  def layout: Layout = Layout_Default
 
-  def htmlContent(templ: Templ): String
+  def htmlContentLeftPage: String
 
-  /**
-    * Defines a text to an image.
-    * Filename of the image can be used to identify the image
-    */
-  def imageText(fnam: String): Option[String] = None
 }
 
 object Data {
@@ -19,7 +20,11 @@ object Data {
   val startPage: Page = new Page {
     def name = "index"
 
-    override def markdownLeft: String =
+    def htmlContentLeftPage: String = {
+      MyMarkdown.md(markdownLeft)
+    }
+
+    private def markdownLeft: String =
       """
         |## das taschenfahrrad
         |stadt-, tourenräder und fahrradtaschen
@@ -62,14 +67,15 @@ object Data {
         |
         |""".stripMargin
 
-    def htmlContent(templ: Templ): String = templ.htmlContent(this)
   }
 
 
   val producerPage: Page = new Page {
-    def name = "fahrräder"
+    def name = "producer"
 
-    def htmlContent(templ: Templ): String =
+    override def layout: Layout = Layout_Wide
+
+    def htmlContentLeftPage: String =
       s"""|<h1><a href="index.html">das taschenfahrrad</a></h1>
           |<p><a href="index.html">start</a> &#62; $name</p>
           |<p class="sepa3"/>
@@ -292,7 +298,7 @@ object Data {
   val selfmadePage: Page = new Page {
     def name = "selfmade"
 
-    def htmlContent(templ: Templ): String =
+    def htmlContentLeftPage: String =
       s"""|<div id="left">
           |   <h1><a href="index.html">das taschenfahrrad</a></h1>
           |   <p><a href="index.html">start</a> &#62; $name</p>
@@ -383,14 +389,13 @@ object Data {
           |
           |
           |</div>
-          |${templ.htmlContetntRight(this)}
           """.stripMargin
   }
 
   val jobsPage: Page = new Page {
     def name = "jobs"
 
-    def htmlContent(templ: Templ): String =
+    def htmlContentLeftPage: String =
       s"""|<div id="left">
           |<h1><a href="index.html">das taschenfahrrad</a></h1>
           |<p><a href="index.html">start</a> &#62; $name</p>
@@ -416,7 +421,6 @@ object Data {
           |
           |
           |</div>
-          |${templ.htmlContetntRight(this)}
           """.stripMargin
   }
 
@@ -424,7 +428,7 @@ object Data {
 
     def name = "service"
 
-    def htmlContent(templ: Templ): String =
+    def htmlContentLeftPage: String =
       s"""
          |<div id="left">
          |<h1><a href="index.html">das taschenfahrrad</a></h1>
@@ -453,7 +457,6 @@ object Data {
          |</p>
          |
          |</div>
-         |${templ.htmlContetntRight(this)}
          |""".stripMargin
   }
 

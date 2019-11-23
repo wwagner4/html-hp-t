@@ -2,42 +2,25 @@ package net.entelijan.tf
 
 import java.io.File
 
-object Template extends Templ {
+class Template extends Templ {
 
   def htmlImageList(p: Page): String = {
     val l = imagesFileList(p).zipWithIndex.map {
-      case (f, i) => p.imageText(f.getName) match {
-        case None =>
-          if (i == 0)
-            s"""
-               |<li>
-               |<img alt="taschenfahrrad" src="${imagesDirPath(p)}/${f.getName}" />
-               |<p class="flex-caption"></p>
-               |</li>
-               |""".stripMargin
-          else
-            s"""
-               |<li>
-               |<img alt="taschenfahrrad" class="lazy" src="#" data-src="${imagesDirPath(p)}/${f.getName}" />
-               |<p class="flex-caption"></p>
-               |</li>
-               |""".stripMargin
-
-        case Some(_) =>
-          if (i == 0)
-            s"""
-               |<li>
-               |<img alt="taschenfahrrad" src="${imagesDirPath(p)}/${f.getName}" />
-               |<p class="flex-caption">%s</p>
-               |</li>
-               |""".stripMargin
-          else
-            s"""
-               |<li>
-               |<img class="lazy" data-src="${imagesDirPath(p)}/${f.getName}" />
-               |<p class="flex-caption">%s</p>
-               |</li>
-               |""".stripMargin
+      case (f, i) => {
+        if (i == 0)
+          s"""
+             |<li>
+             |<img alt="taschenfahrrad" src="${imagesDirPath(p)}/${f.getName}" />
+             |<p class="flex-caption"></p>
+             |</li>
+             |""".stripMargin
+        else
+          s"""
+             |<li>
+             |<img alt="taschenfahrrad" class="lazy" src="#" data-src="${imagesDirPath(p)}/${f.getName}" />
+             |<p class="flex-caption"></p>
+             |</li>
+             |""".stripMargin
 
       }
     }
@@ -63,11 +46,37 @@ object Template extends Templ {
 
   def htmlPageLink(p: Page): String = {
     s"""
-       |<p><a href="${Template.fileName(p)}">${p.name}...</a></p>
+       |<p><a href="${fileName(p)}">${p.name}...</a></p>
        |""".stripMargin
   }
 
-  def htmlTemplate(p: Page): String =
+  def htmlContent(p: Page): String =
+    p.layout match {
+      case Layout_Default =>
+        s"""
+           |<div id="all" >
+           |<div id="left">
+           |${p.htmlContentLeftPage}
+           |</div>
+           |<div id="right">
+           |    <div class="flexslider">
+           |    <ul class="slides">
+           |${htmlImageList(p)}
+           |    </ul>
+           |    </div>
+           |</div>
+           |</div>
+           |""".stripMargin
+      case Layout_Wide =>
+        s"""
+           |<div id="all" >
+           |${p.htmlContentLeftPage}
+           |</div>
+           |""".stripMargin
+    }
+
+
+  def html(p: Page): String =
     s"""
        |<!DOCTYPE html>
        |<html class="no-js" lang="de">
@@ -82,9 +91,7 @@ object Template extends Templ {
        |</style>
        |</head>
        |<body class="load">
-       |<div id="all" >
-       |${p.htmlContent(this)}
-       |</div>
+       |${htmlContent(p)}
        |<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
        |<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\\x3C/script>')</script>
        |<script defer src="jquery.flexslider.js"></script>
