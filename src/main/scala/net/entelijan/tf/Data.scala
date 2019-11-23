@@ -299,33 +299,33 @@ object Data {
     def id = "selfmade"
 
     def htmlContentLeftPage: String =
-      s"""|<div id="left">
-          |   <h1><a href="index.html">das taschenfahrrad</a></h1>
-          |   <p><a href="index.html">start</a> &#62; eigenbau</p>
-          |   <p class="sepa3"/>
+      s"""|
+          |<h1><a href="index.html">das taschenfahrrad</a></h1>
+          |<p><a href="index.html">start</a> &#62; eigenbau</p>
+          |<p class="sepa3"/>
           |
-          |   <p>
-          |    für spezielle Anforderungen oder weil es individueller
-          |    sein soll und das gewünschte Rad am Markt
-          |    so nicht zu finden ist. Wir bauen Räder
-          |    mit bewährten Komponenten, die wir gut
-          |    kennen und die gut aufeinander  abgestimmt
-          |    sind. Wir vermeiden komplexe, wartungsintensive
-          |    Komponenten und lassen uns nicht von den
-          |    jeweils neuesten Trends hypnotisieren,
-          |    'the proof of the pudding is in the eating'.
+          |<p>
+          | für spezielle Anforderungen oder weil es individueller
+          | sein soll und das gewünschte Rad am Markt
+          | so nicht zu finden ist. Wir bauen Räder
+          | mit bewährten Komponenten, die wir gut
+          | kennen und die gut aufeinander  abgestimmt
+          | sind. Wir vermeiden komplexe, wartungsintensive
+          | Komponenten und lassen uns nicht von den
+          | jeweils neuesten Trends hypnotisieren,
+          | 'the proof of the pudding is in the eating'.
           |</p>
           |<p>
-          |    Unsere Erfahrung, welches Rad passt und
-          |    welche Komponenten ihren Job schlicht,
-          |    einfach und gut machen, ist die Basis fürs
-          |    Gelingen. Wir verwenden die auf allen Wegen
-          |    der Erde erprobten Stahlrahmen von SURLY,
-          |    die gibt es ab Rahmenhöhe 38 bis 64.
-          |    Körpermaße von 150cm oder 200cm bringen
-          |    uns nicht in Verlegenheit.
-          |    Alle Größen und Farben lagernd,
-          |    Geometriedaten siehe Herstellerseite.
+          |Unsere Erfahrung, welches Rad passt und
+          |welche Komponenten ihren Job schlicht,
+          |einfach und gut machen, ist die Basis fürs
+          |Gelingen. Wir verwenden die auf allen Wegen
+          |der Erde erprobten Stahlrahmen von SURLY,
+          |die gibt es ab Rahmenhöhe 38 bis 64.
+          |Körpermaße von 150cm oder 200cm bringen
+          |uns nicht in Verlegenheit.
+          |Alle Größen und Farben lagernd,
+          |Geometriedaten siehe Herstellerseite.
           |</p>
           |<table>
           |    <tbody>
@@ -386,9 +386,6 @@ object Data {
           |    </tr>
           |    </tbody>
           |</table>
-          |
-          |
-          |</div>
           """.stripMargin
   }
 
@@ -396,7 +393,7 @@ object Data {
     def id = "jobs"
 
     def htmlContentLeftPage: String =
-      s"""|<div id="left">
+      s"""|
           |<h1><a href="index.html">das taschenfahrrad</a></h1>
           |<p><a href="index.html">start</a> &#62; jobs</p>
           |<p class="sepa3"/>
@@ -418,9 +415,6 @@ object Data {
           |<p>
           |    Bewirb dich, wir freuen uns.
           |</p>
-          |
-          |
-          |</div>
           """.stripMargin
   }
 
@@ -430,7 +424,6 @@ object Data {
 
     def htmlContentLeftPage: String =
       s"""
-         |<div id="left">
          |<h1><a href="index.html">das taschenfahrrad</a></h1>
          |<p><a href="index.html">start</a> &#62; service</p>
          |<p class="sepa3"/>
@@ -455,8 +448,6 @@ object Data {
          |    zu lassen, wo das Rad gekauft wurde, denn dort sollten alle
          |    Ersatzteile verfügbar sein.
          |</p>
-         |
-         |</div>
          |""".stripMargin
   }
 

@@ -7,16 +7,17 @@
 	<property name="work">/home/wwagner4/prj/taschenfahrrad-2019/html-hp-t/target</property>
 	-->
 	<property name="work">/Users/wwagner4/prj/html-hp-t/target</property>
+	<property name="templ">tiles</property>
 
 	<property name="version" value="2019.3" />
 	<target name="clean">
 		<delete verbose="true" includeemptydirs="true">
-			<fileset dir="${work}/gen-slider" includes="**/*">
+			<fileset dir="${work}/gen-${templ}" includes="**/*">
 			</fileset>
 		</delete>
 	</target>
 	<target name="zip">
 		<zip destfile="${work}/hp-taschenfahrrad-${version}.zip"
-			 basedir="${work}/gen-slider" includes="**/*" />
+			 basedir="${work}/gen-${templ}" includes="**/*" />
 	</target>
 </project>
