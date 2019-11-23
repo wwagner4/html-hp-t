@@ -43,7 +43,6 @@ object ImgOverview extends App {
           s"""
              |<html>
              |<head>
-             |<link href='taschenfahrrad.css'	rel='stylesheet' type='text/css'>
              |</head>
              |<body>
              |<p class="imov_title">$name</p>
