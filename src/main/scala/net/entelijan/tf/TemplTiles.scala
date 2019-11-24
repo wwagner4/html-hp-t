@@ -87,6 +87,26 @@ class TemplTiles extends Templ {
       |    display: table-cell;
       |}
       |
+      |a, img {
+      |    border:none;
+      |}
+      |a {
+      |	text-decoration: none;
+      |	color: #000000;
+      |}
+      |a:visited {
+      |	text-decoration: none;
+      |	color: #000000;
+      |}
+      |a:hover {
+      |	text-decoration: underline;
+      |	color: #000000;
+      |}
+      |a:active {
+      |	text-decoration: underline;
+      |	color: #000000;
+      |}
+      |
       |""".stripMargin
   }
 
