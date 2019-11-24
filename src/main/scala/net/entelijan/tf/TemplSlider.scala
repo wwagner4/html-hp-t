@@ -16,7 +16,7 @@ class TemplSlider extends Templ {
       |	margin-top: 0;
       |	font-family: 'isonormd', sans-serif;
       |	background-color: white;
-      |	font-size: 15px;
+      |	font-size: normal;
       |	font-weight: normal;
       |}
       |h1 {

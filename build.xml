@@ -6,7 +6,8 @@
 	<!--
 	<property name="work">/home/wwagner4/prj/taschenfahrrad-2019/html-hp-t/target</property>
 	-->
-	<property name="work">/Users/wwagner4/prj/html-hp-t/target</property>
+	<property environment="env"/>
+	<property name="work">${env.HOME}/prj/html-hp-t/target</property>
 	<property name="templ">tiles</property>
 
 	<property name="version" value="2019.3" />
@@ -20,4 +21,14 @@
 		<zip destfile="${work}/hp-taschenfahrrad-${version}.zip"
 			 basedir="${work}/gen-${templ}" includes="**/*" />
 	</target>
+	<target name="deploy-entelijan">
+		<scp todir="root@entelijan.net:/root/app/wolfi-hp/t"
+			 keyfile="/home/wwagner4/.ssh/entelijan-key"
+			 trust="true" verbose="true">
+			<fileset dir="${work}/gen-${templ}">
+				<include name="**/*" />
+			</fileset>
+		</scp>
+	</target>
+
 </project>

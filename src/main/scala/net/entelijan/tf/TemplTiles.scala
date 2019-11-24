@@ -14,6 +14,10 @@ class TemplTiles extends Templ {
       (contentWidth * (rightPercentage / 100.0)) / columns
     }
 
+    def marginTop: Double ={
+      - (2 * tilesPadding)
+    }
+    
     def rightPercentage: Double = {
       100.0 - leftPercentage
     }
@@ -22,11 +26,11 @@ class TemplTiles extends Templ {
   def fmt(value: Double, unit: String): String = "%.3f%s".formatLocal(Locale.ENGLISH, value, unit)
 
   def params(p: Page): CssParameters = {
-    val contentWidth = 80 // em
+    val contentWidth = 75 // em
     val tilesPadding = 0.3 // em
     p.layout match {
-      case Layout_Default => CssParameters(contentWidth, 25, tilesPadding, 3, 3)
-      case Layout_Wide => CssParameters(contentWidth, 50, tilesPadding, 5, 3)
+      case Layout_Default => CssParameters(contentWidth, 25, tilesPadding, 4, 4)
+      case Layout_Wide => CssParameters(contentWidth, 55, tilesPadding, 6, 3)
     }
   }
 
@@ -103,10 +107,16 @@ class TemplTiles extends Templ {
        |	 font-weight: normal;
        |   min-width: 16em;
        |}
-       |
+       |.col-prize1 {
+       |	 text-align: left;
+       |	 vertical-align: top;
+       |	 font-size: inherit;
+       |	 font-weight: normal;
+       |   min-width: 10em;
+       |}
        |.rTable {
        |    display: table;
-       |    margin-top: -5px;
+       |    margin-top: ${fmt(par.marginTop, "em")};
        |}
        |
        |.rTableRow {

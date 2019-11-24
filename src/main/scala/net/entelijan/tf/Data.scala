@@ -102,13 +102,13 @@ object Data {
           |        <td><a href="http://www.tokyobike.de" target="_blank">tokyobike</a></td>
           |        <td><a href="http://www.tokyobike.de/?area=bikes" target="_blank">classic26</a></td>
           |        <td>47, 53, 57, 61</td>
-          |        <td class="col-prize">789€</td>
+          |        <td class="col-prize1">789€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="http://www.tokyobike.de/?area=bikes" target="_blank">bisou</a></td>
           |        <td>42, 50, 55 alle Farben</td>
-          |        <td class="col-prize">659€</td>
+          |        <td class="col-prize1">659€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="http://www.fujibikes.com/usa/bikes/road/adventure-and-touring/touring" target="_blank">FUJI</a></td>
@@ -120,19 +120,19 @@ object Data {
           |        <td></td>
           |        <td><a href="http://www.fujibikes.com/usa/bikes/city/urban/feather/feather" target="_blank">feather</a></td>
           |        <td>singlespeed</td>
-          |        <td class="col-prize">499€ statt 599€</td>
+          |        <td class="col-prize1">499€ statt 599€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td></td>
           |        <td>Größen und Farben auf Anfrage</td>
-          |        <td class="col-prize"></td>
+          |        <td class="col-prize1"></td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.konaworld.com" target="_blank">KONA</a></td>
           |        <td><a href="http://2018.konaworld.com/sutra.cfm" target="_blank">sutra</a></td>
           |        <td>54, 56, 58 blue</td>
-          |        <td class="col-prize">1399€ statt 1499€</td>
+          |        <td class="col-prize1">1399€ statt 1499€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
@@ -144,25 +144,25 @@ object Data {
           |        <td></td>
           |        <td><a href="http://2017.konaworld.com/penthouse_flat.cfm" target="_blank">penthouse flat</a></td>
           |        <td></td>
-          |        <td class="col-prize">auf Anfrage</td>
+          |        <td class="col-prize1">auf Anfrage</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="http://2016.konaworld.com/honky_tonk.cfm" target="_blank">Honky Tonk</a></td>
           |        <td></td>
-          |        <td class="col-prize">auf Anfrage</td>
+          |        <td class="col-prize1">auf Anfrage</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="http://2017.konaworld.com/paddy_wagon_3.cfm" target="_blank">paddy wagon</a></td>
           |        <td></td>
-          |        <td class="col-prize">auf Anfrage</td>
+          |        <td class="col-prize1">auf Anfrage</td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.pelagobicycles.com/" target="_blank">PELAGO</a></td>
           |        <td><a href="https://www.pelagobicycles.com/bicycles/airisto-outback.html" target="_blank">Airisto Outback</a></td>
           |        <td>57 metallic sand</td>
-          |        <td class="col-prize">1335€</td>
+          |        <td class="col-prize1">1335€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
@@ -174,30 +174,30 @@ object Data {
           |        <td></td>
           |        <td><a href="https://www.pelagobicycles.com/bicycles/brooklyn.html" target="_blank">Brooklyn3</a></td>
           |        <td>52 black, dapper red, helene grey</td>
-          |        <td class="col-prize">825€</td>
+          |        <td class="col-prize1">825€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="https://www.pelagobicycles.com/bicycles/bristol.html" target="_blank">Bristol3</a></td>
           |        <td>57,61 black, traffic grey</td>
-          |        <td class="col-prize">825€</td>
+          |        <td class="col-prize1">825€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="https://www.pelagobicycles.com/bicycles/capri.html" target="_blank">Capri3</a></td>
           |        <td>47,52,57  black, salmon, turquoise</td>
-          |        <td class="col-prize">995€</td>
+          |        <td class="col-prize1">995€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td colspan="2">Nexus8-Versionen jeweils auf Anfrage</td>
-          |        <td class="col-prize"></td>
+          |        <td class="col-prize1"></td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.linusbike.eu" target="_blank">LINUS</a></td>
           |        <td><a href="https://www.linusbike.eu/products/scout-7" target="_blank">scout</a></td>
           |        <td>46 cream, mustard</td>
-          |        <td class="col-prize">499€</td>
+          |        <td class="col-prize1">499€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
@@ -209,19 +209,19 @@ object Data {
           |        <td></td>
           |        <td><a href="https://www.linusbike.eu/products/mixte-3" target="_blank">mixte</a></td>
           |        <td>49, 56  black, sky blue</td>
-          |        <td class="col-prize">599€</td>
+          |        <td class="col-prize1">599€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="https://www.linusbike.eu/products/roadster3" target="_blank">roadster</a></td>
           |        <td>59 oliv, black</td>
-          |        <td class="col-prize">599€</td>
+          |        <td class="col-prize1">599€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="http://cremecycles.com/" target="_blank">CREME</a></td>
           |        <td><a href="http://cremecycles.com/caferecer-lady-solo,453,de.html" target="_blank">Caferacer Lady solo</a></td>
           |        <td>48 green, red</td>
-          |        <td class="col-prize">749€ statt  849€</td>
+          |        <td class="col-prize1">749€ statt  849€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
@@ -233,31 +233,31 @@ object Data {
           |        <td></td>
           |        <td><a href="http://cremecycles.com/caferacer-man-uno-classic,406,de.html" target="_blank">Caferacer Men uno</a></td>
           |        <td>60,5 gree</td>
-          |        <td class="col-prize">599€ statt  699€</td>
+          |        <td class="col-prize1">599€ statt  699€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="http://cremecycles.com/de/echo-solo-white,73,pl.html" target="_blank">Echo solo</a></td>
           |        <td>55 white</td>
-          |        <td class="col-prize">699€ statt  869€</td>
+          |        <td class="col-prize1">699€ statt  869€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="http://cremecycles.com/de/echo-doppio-deep-blue,74,pl.html" target="_blank">Echo Doppio</a></td>
           |        <td>57 deep blue</td>
-          |        <td class="col-prize">799€ statt 1199€</td>
+          |        <td class="col-prize1">799€ statt 1199€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="http://cremecycles.com/de/echo-solo-mixte-sky-blue,95,pl.html" target="_blank">Echo solo Mixte</a></td>
           |        <td>51 sky blue</td>
-          |        <td class="col-prize">699€ statt 869€</td>
+          |        <td class="col-prize1">699€ statt 869€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="http://cremecycles.com/echo-lungo-dark-green,70,de.html" target="_blank">Echo Lungo</a></td>
           |        <td>55 dark green</td>
-          |        <td class="col-prize">999€ statt 1259€</td>
+          |        <td class="col-prize1">999€ statt 1259€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://bobbinbikes.com/" target="_blank">Bobbin</a></td>
@@ -269,25 +269,25 @@ object Data {
           |        <td><a href="https://www.contoura.de/modelle/salerno/" target="_blank">CONTOURA</a></td>
           |        <td><a href="https://www.contoura.de/modelle/salerno/" target="_blank">Salerno</a></td>
           |        <td>Diamant 50, 54, 58, 66, 70</td>
-          |        <td class="col-prize">899€</td>
+          |        <td class="col-prize1">899€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td></td>
           |        <td>Mixte Anglaise 48, 52, 56, 60</td>
-          |        <td class="col-prize">899€</td>
+          |        <td class="col-prize1">899€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td></td>
           |        <td>Swiss Curve 49, 54</td>
-          |        <td class="col-prize">899€</td>
+          |        <td class="col-prize1">899€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.naloobikes.com/" target="_blank">NALOO</a></td>
           |        <td><a href="https://www.naloobikes.com/" target="_blank">Chameleon</a></td>
           |        <td>16“, 20“, 24“ Kinderräder</td>
-          |        <td class="col-prize">ab 349€</td>
+          |        <td class="col-prize1">ab 349€</td>
           |    </tr>
           |
           |    </tbody>
