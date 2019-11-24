@@ -8,16 +8,12 @@ import net.entelijan.tf.tiles1.TableUtil
 
 class TemplTiles extends Templ {
 
-  case class CssParameters(contentWidth: Double, leftPercentage: Double, tilesPadding: Double,  rows: Int, columns: Int) {
+  case class CssParameters(contentWidth: Double, leftPercentage: Double, rows: Int, columns: Int) {
 
     def tilesSize: Double = {
       (contentWidth * (rightPercentage / 100.0)) / columns
     }
 
-    def marginTop: Double ={
-      - (2 * tilesPadding)
-    }
-    
     def rightPercentage: Double = {
       100.0 - leftPercentage
     }
@@ -27,10 +23,9 @@ class TemplTiles extends Templ {
 
   def params(p: Page): CssParameters = {
     val contentWidth = 75 // em
-    val tilesPadding = 0.3 // em
     p.layout match {
-      case Layout_Default => CssParameters(contentWidth, 25, tilesPadding, 4, 4)
-      case Layout_Wide => CssParameters(contentWidth, 55, tilesPadding, 6, 3)
+      case Layout_Default => CssParameters(contentWidth, 25, 4, 4)
+      case Layout_Wide => CssParameters(contentWidth, 55, 6, 3)
     }
   }
 
@@ -85,19 +80,16 @@ class TemplTiles extends Templ {
        |#right {
        |    float: left;
        |    width: ${fmt(par.rightPercentage, "%")};
-       |    padding: 0.3em 0.3em 0.3em 0;
+       |    padding: 0 0.3em 0.3em 0;
        |    height: inherit;
        |    overflow: auto;
        |}
        |
        |.thumb {
-       |    object-fit: contain;
+       |    object-fit: cover;
        |    width: ${fmt(par.tilesSize, "em")};
        |    height: ${fmt(par.tilesSize, "em")};
-       |    background-position-x: ${fmt(par.tilesPadding, "em")};
-       |    background-position-y: ${fmt(par.tilesPadding, "em")};
-       |    background-size: ${fmt(par.tilesSize, "em")} ${fmt(par.tilesSize, "em")};
-       |    background-repeat: no-repeat;
+       |    vertical-align: top;
        |}
        |
        |.col-prize {
@@ -116,7 +108,6 @@ class TemplTiles extends Templ {
        |}
        |.rTable {
        |    display: table;
-       |    margin-top: ${fmt(par.marginTop, "em")};
        |}
        |
        |.rTableRow {
@@ -125,6 +116,7 @@ class TemplTiles extends Templ {
        |
        |.rTableCell {
        |    display: table-cell;
+       |    padding: 0 0.4em 0.4em 0;
        |}
        |
        |a, img {

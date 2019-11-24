@@ -1,4 +1,3 @@
-- tiles: images must keep ratio
 - fahrräder tabelle sollte bis zu den tiles gehen
 - index: markdown entfernen und unterschiedliche abstände wieder einführen. sepa...
 - Page hight fix value in order to work better on mobile. not scrollable to anywhere
