@@ -58,13 +58,10 @@
         }
 
         .thumb {
-            object-fit: contain;
+            object-fit: cover;
             width: 15em;
             height: 15em;
-            background-position-x: 3px;
-            background-position-y: 3px;
-            background-size: 15em 15em;
-            background-repeat: no-repeat;
+            vertical-align: top;
         }
 
         .rTable {
@@ -78,6 +75,9 @@
 
         .rTableCell {
             display: table-cell;
+            width: 15em;
+            height: 15em;
+            padding: 0 0.3em 0.3em 0;
         }
     </style>
 </head>
@@ -119,16 +119,28 @@
     <div id="right">
         <div class="rTable">
             <div class="rTableRow">
-                <div id="img0" class="thumb rTableCell" style="background-image: url('images/index/tfsm04.jpg')"></div>
-                <div id="img1"  class="thumb rTableCell" style="background-image: url('images/index/tfsm10.jpg')"></div>
+                <div id="img0" class="thumb rTableCell">
+                    <img class="thumb" src="images/index/tfst02.jpg">
+                </div>
+                <div id="img0" class="thumb rTableCell">
+                    <img class="thumb" src="images/index/tfsm12.jpg">
+                </div>
             </div>
             <div class="rTableRow">
-                <div id="img2"  class="thumb rTableCell" style="background-image: url('images/index/tfsm11.jpg')"></div>
-                <div id="img3"  class="thumb rTableCell" style="background-image: url('images/index/tfsm12.jpg')"></div>
+                <div id="img0" class="thumb rTableCell">
+                    <img class="thumb" src="images/index/tfsm04.jpg">
+                </div>
+                <div id="img0" class="thumb rTableCell">
+                    <img class="thumb" src="images/index/tfsm11.jpg">
+                </div>
             </div>
             <div class="rTableRow">
-                <div id="img4"  class="thumb rTableCell" style="background-image: url('images/index/tfsn01.jpg')"></div>
-                <div id="img5"  class="thumb rTableCell" style="background-image: url('images/index/tfst02.jpg')"></div>
+                <div id="img0" class="thumb rTableCell">
+                    <img class="thumb" src="images/index/tfsm12.jpg">
+                </div>
+                <div id="img0" class="thumb rTableCell">
+                    <img class="thumb" src="images/index/tfst02.jpg">
+                </div>
             </div>
         </div>
     </div>
