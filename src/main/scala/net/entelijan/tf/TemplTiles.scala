@@ -2,190 +2,166 @@ package net.entelijan.tf
 
 import java.io.File
 import java.nio.file.Paths
+import java.util.Locale
 
 import net.entelijan.tf.tiles1.TableUtil
-import net.entelijan.tf.tiles1.TableUtilTryout.baseDir
 
 class TemplTiles extends Templ {
 
+  case class CssParameters(contentWidth: Double, leftPercentage: Double, tilesPadding: Double,  rows: Int, columns: Int) {
+
+    def tilesSize: Double = {
+      (contentWidth * (rightPercentage / 100.0)) / columns
+    }
+
+    def rightPercentage: Double = {
+      100.0 - leftPercentage
+    }
+  }
+
+  def fmt(value: Double, unit: String): String = "%.3f%s".formatLocal(Locale.ENGLISH, value, unit)
+
+  def params(p: Page): CssParameters = {
+    val contentWidth = 80 // em
+    val tilesPadding = 0.3 // em
+    p.layout match {
+      case Layout_Default => CssParameters(contentWidth, 25, tilesPadding, 3, 3)
+      case Layout_Wide => CssParameters(contentWidth, 50, tilesPadding, 5, 3)
+    }
+  }
+
   def id = "tiles"
 
-  def css: String = {
+  def css(par: CssParameters): String = {
     s"""
-      |
-      |@font-face {
-      |    font-family: isonormd;
-      |    src: url("font/isonormd.ttf")
-      |}
-      |
-      |body {
-      |    font-family: 'isonormd', sans-serif;
-      |    background-color: white;
-      |    font-size: medium;
-      |    font-weight: normal;
-      |    margin: 0;
-      |}
-      |
-      |h1 {
-      |    margin: 0 0 1em 0;
-      |    padding: 0;
-      |}
-      |
-      |p {
-      |    margin: 0 0 0.5em 0 ;
-      |    padding: 0;
-      |}
-      |
-      |* {
-      |    box-sizing: border-box;
-      |}
-      |
-      |#cont {
-      |    margin-left: auto;
-      |    margin-right: auto;
-      |    width: 47em;
-      |    height: 100vh;
-      |    margin-top: 0;
-      |}
-      |
-      |#left {
-      |    float: left;
-      |    width: 35%;
-      |    padding: 0.3em 0.3em 0.3em 0.3em;
-      |    height: inherit;
-      |    overflow: auto;
-      |}
-      |
-      |#right {
-      |    float: left;
-      |    width: 65%;
-      |    padding: 0.3em 0.3em 0.3em 0;
-      |    height: inherit;
-      |    overflow: auto;
-      |}
-      |
-      |.thumb {
-      |    object-fit: contain;
-      |    width: 15em;
-      |    height: 15em;
-      |    background-position-x: 3px;
-      |    background-position-y: 3px;
-      |    background-size: 15em 15em;
-      |    background-repeat: no-repeat;
-      |}
-      |
-      |.rTable {
-      |    display: table;
-      |    margin-top: -5px;
-      |}
-      |
-      |.rTableRow {
-      |    display: table-row;
-      |}
-      |
-      |.rTableCell {
-      |    display: table-cell;
-      |}
-      |
-      |a, img {
-      |    border:none;
-      |}
-      |a {
-      |	text-decoration: none;
-      |	color: #000000;
-      |}
-      |a:visited {
-      |	text-decoration: none;
-      |	color: #000000;
-      |}
-      |a:hover {
-      |	text-decoration: underline;
-      |	color: #000000;
-      |}
-      |a:active {
-      |	text-decoration: underline;
-      |	color: #000000;
-      |}
-      |
-      |""".stripMargin
-  }
-
-  def htmlImageList(p: Page): String = {
-    val l = imagesFileList(p).zipWithIndex.map {
-      case (f, i) => {
-        if (i == 0)
-          s"""
-             |<li>
-             |<img alt="taschenfahrrad" src="${imagesDirPath(p)}/${f.getName}" />
-             |<p class="flex-caption"></p>
-             |</li>
-             |""".stripMargin
-        else
-          s"""
-             |<li>
-             |<img alt="taschenfahrrad" class="lazy" src="#" data-src="${imagesDirPath(p)}/${f.getName}" />
-             |<p class="flex-caption"></p>
-             |</li>
-             |""".stripMargin
-
-      }
-    }
-    l.mkString("\n")
-  }
-
-  def imagesDirPath(p: Page): String = s"images/${p.id}"
-
-  def imagesFileList(p: Page): List[File] = {
-
-    case class F(o: Int, f: File)
-
-    val d = new File(s"src/main/web/common/${imagesDirPath(p)}")
-    require(d.exists(), s"directory $d must exist")
-    d.listFiles()
-      .toList
-      .sortBy(f => f.getName)
-  }
-
-  def htmlPageLinks(pages: List[Page]): String = {
-    pages.map(htmlPageLink).mkString("\n")
-  }
-
-  def htmlPageLink(p: Page): String = {
-    s"""
-       |<p><a href="${fileName(p)}">${p.id}...</a></p>
+       |
+       |@font-face {
+       |    font-family: isonormd;
+       |    src: url("font/isonormd.ttf")
+       |}
+       |
+       |body {
+       |    font-family: 'isonormd', sans-serif;
+       |    background-color: white;
+       |    font-size: medium;
+       |    font-weight: normal;
+       |    margin: 0;
+       |}
+       |
+       |h1 {
+       |    margin: 0 0 1em 0;
+       |    padding: 0;
+       |}
+       |
+       |p {
+       |    margin: 0 0 0.5em 0 ;
+       |    padding: 0;
+       |}
+       |
+       |* {
+       |    box-sizing: border-box;
+       |}
+       |
+       |#cont {
+       |    margin-left: auto;
+       |    margin-right: auto;
+       |    width: ${fmt(par.contentWidth, "em")};
+       |    height: 100vh;
+       |    margin-top: 0;
+       |}
+       |
+       |#left {
+       |    float: left;
+       |    width: ${fmt(par.leftPercentage, "%")};
+       |    padding: 0.3em 0.3em 0.3em 0.3em;
+       |    height: inherit;
+       |    overflow: auto;
+       |}
+       |
+       |#right {
+       |    float: left;
+       |    width: ${fmt(par.rightPercentage, "%")};
+       |    padding: 0.3em 0.3em 0.3em 0;
+       |    height: inherit;
+       |    overflow: auto;
+       |}
+       |
+       |.thumb {
+       |    object-fit: contain;
+       |    width: ${fmt(par.tilesSize, "em")};
+       |    height: ${fmt(par.tilesSize, "em")};
+       |    background-position-x: ${fmt(par.tilesPadding, "em")};
+       |    background-position-y: ${fmt(par.tilesPadding, "em")};
+       |    background-size: ${fmt(par.tilesSize, "em")} ${fmt(par.tilesSize, "em")};
+       |    background-repeat: no-repeat;
+       |}
+       |
+       |.col-prize {
+       |	 text-align: left;
+       |	 vertical-align: top;
+       |	 font-size: inherit;
+       |	 font-weight: normal;
+       |   min-width: 16em;
+       |}
+       |
+       |.rTable {
+       |    display: table;
+       |    margin-top: -5px;
+       |}
+       |
+       |.rTableRow {
+       |    display: table-row;
+       |}
+       |
+       |.rTableCell {
+       |    display: table-cell;
+       |}
+       |
+       |a, img {
+       |    border:none;
+       |}
+       |a {
+       |	text-decoration: none;
+       |	color: #000000;
+       |}
+       |a:visited {
+       |	text-decoration: none;
+       |	color: #000000;
+       |}
+       |a:hover {
+       |	text-decoration: underline;
+       |	color: #000000;
+       |}
+       |a:active {
+       |	text-decoration: underline;
+       |	color: #000000;
+       |}
+       |
        |""".stripMargin
   }
 
-  def htmlTable(p: Page): String = {
+  private def htmlTable(p: Page, par: CssParameters): String = {
     val baseDir = Paths.get("src/main/web/common")
-    TableUtil.htmlTable(baseDir, s"images/${p.id}", 3, 4)
+    TableUtil.htmlTable(baseDir, s"images/${p.id}", par.rows, par.columns)
   }
 
-  def htmlContent(p: Page): String =
-    p.layout match {
-      case Layout_Default =>
-        s"""
-           |<div id="cont">
-           |<div id="left">
-           |${p.htmlContentLeftPage}
-           |</div>
-           |<div id="right">
-           |${htmlTable(p)}
-           |</div>
-           |</div>
-           |""".stripMargin
-      case Layout_Wide =>
-        s"""
-           |<div id="cont">
-           |<div id="left">
-           |${p.htmlContentLeftPage}
-           |</div>
-           |</div>
-           |""".stripMargin
-    }
+  private def htmlContent(p: Page, par: CssParameters): String =
+    s"""
+       |<div id="cont">
+       |<div id="left">
+       |${p.htmlContentLeftPage}
+       |</div>
+       |<div id="right">
+       |${htmlTable(p, par)}
+       |</div>
+       |</div>
+       |""".stripMargin
 
 
-  def html(p: Page): String =
+  def html(p: Page): String = {
+
+    val par = params(p)
+
     s"""
        |<!DOCTYPE html>
        |<html class="no-js" lang="de">
@@ -196,14 +172,19 @@ class TemplTiles extends Templ {
        |<link rel="stylesheet" href="flexslider.css" type="text/css" media="screen" />
        |<script src="js/modernizr.js"></script>
        |<style type="text/css">
-       |${css}
+       |${
+      css(par)
+    }
        |</style>
        |</head>
        |<body class="load">
-       |${htmlContent(p)}
+       |${
+      htmlContent(p, par)
+    }
        |</body>
        |</html>
        |""".stripMargin
+  }
 
   def fileName(p: Page): String = "%s.html" format p.id
 
