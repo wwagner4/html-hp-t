@@ -26,8 +26,8 @@ class TemplTiles extends Templ {
     val contentWidth = 75 // em
     val tilesPadding = 0.3 // em
     p.layout match {
-      case Layout_Default => CssParameters(contentWidth, 25, tilesPadding, 4, 4)
-      case Layout_Wide => CssParameters(contentWidth, 45, tilesPadding, 6, 3)
+      case Layout_Default => CssParameters(contentWidth, 30, tilesPadding, 4, 4)
+      case Layout_Wide => CssParameters(contentWidth, 45, tilesPadding, 5, 3)
     }
   }
 
@@ -44,7 +44,7 @@ class TemplTiles extends Templ {
        |body {
        |    font-family: 'isonormd', sans-serif;
        |    background-color: white;
-       |    font-size: medium;
+       |    font-size: 15px;
        |    font-weight: normal;
        |    margin: 0;
        |}
