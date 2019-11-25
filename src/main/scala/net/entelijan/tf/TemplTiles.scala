@@ -11,8 +11,8 @@ class TemplTiles extends Templ {
 
     def tilesSize: Double = {
       val rightWidth = contentWidth * (rightPercentage / 100.0)
-      val paddings = columns * tilesPadding
-      (rightWidth / columns)- paddings - 0.05
+      val paddings = 2 * tilesPadding
+      (rightWidth / columns) - paddings
     }
 
     def rightPercentage: Double = {
