@@ -25,7 +25,7 @@ class TemplTiles extends Templ {
     val contentWidth = 75 // em
     p.layout match {
       case Layout_Default => CssParameters(contentWidth, 25, 4, 4)
-      case Layout_Wide => CssParameters(contentWidth, 45, 6, 3)
+      case Layout_Wide => CssParameters(contentWidth, 45, 5, 3)
     }
   }
 
@@ -171,18 +171,12 @@ class TemplTiles extends Templ {
        |<title>das taschenfahrrad</title>
        |<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
        |<meta name="viewport" content="width=device-width, initial-scale=1.0">
-       |<link rel="stylesheet" href="flexslider.css" type="text/css" media="screen" />
-       |<script src="js/modernizr.js"></script>
        |<style type="text/css">
-       |${
-      css(par)
-    }
+       |${css(par)}
        |</style>
        |</head>
        |<body class="load">
-       |${
-      htmlContent(p, par)
-    }
+       |${htmlContent(p, par)}
        |</body>
        |</html>
        |""".stripMargin
