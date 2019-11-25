@@ -76,7 +76,6 @@ class TemplTiles extends Templ {
        |    width: ${fmt(par.leftPercentage, "%")};
        |    padding: 0.3em 0.3em 0.3em 0.3em;
        |    height: inherit;
-       |    overflow: auto;
        |}
        |
        |#right {
@@ -84,7 +83,6 @@ class TemplTiles extends Templ {
        |    width: ${fmt(par.rightPercentage, "%")};
        |    padding: 0 0.3em 0.3em 0;
        |    height: inherit;
-       |    overflow: auto;
        |}
        |
        |.thumb {
@@ -119,6 +117,10 @@ class TemplTiles extends Templ {
        |.rTableCell {
        |    display: table-cell;
        |    padding: 0 ${fmt(par.tilesPadding, "em")} ${fmt(par.tilesPadding, "em")} 0;
+       |}
+       |
+       |td {
+       |  vertical-align: top;
        |}
        |
        |a, img {
