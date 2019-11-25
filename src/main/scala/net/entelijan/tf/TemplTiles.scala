@@ -1,6 +1,5 @@
 package net.entelijan.tf
 
-import java.io.File
 import java.nio.file.Paths
 import java.util.Locale
 
@@ -8,10 +7,12 @@ import net.entelijan.tf.tiles1.TableUtil
 
 class TemplTiles extends Templ {
 
-  case class CssParameters(contentWidth: Double, leftPercentage: Double, rows: Int, columns: Int) {
+  case class CssParameters(contentWidth: Double, leftPercentage: Double, tilesPadding: Double, rows: Int, columns: Int) {
 
     def tilesSize: Double = {
-      (contentWidth * (rightPercentage / 100.0)) / columns
+      val rightWidth = contentWidth * (rightPercentage / 100.0)
+      val paddings = columns * tilesPadding
+      (rightWidth / columns) - paddings - 0.05
     }
 
     def rightPercentage: Double = {
@@ -24,8 +25,8 @@ class TemplTiles extends Templ {
   def params(p: Page): CssParameters = {
     val contentWidth = 75 // em
     p.layout match {
-      case Layout_Default => CssParameters(contentWidth, 25, 4, 4)
-      case Layout_Wide => CssParameters(contentWidth, 45, 6, 3)
+      case Layout_Default => CssParameters(contentWidth, 25, 0.4, 4, 4)
+      case Layout_Wide => CssParameters(contentWidth, 45, 0.4, 6, 3)
     }
   }
 
@@ -116,7 +117,7 @@ class TemplTiles extends Templ {
        |
        |.rTableCell {
        |    display: table-cell;
-       |    padding: 0 0 0 0;
+       |    padding: 0 ${fmt(par.tilesPadding, "em")} ${fmt(par.tilesPadding, "em")} 0;
        |}
        |
        |a, img {
