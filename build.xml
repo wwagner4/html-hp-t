@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE project>
-
 <project name="taschenfahrrad">
 
 	<!--
@@ -21,12 +19,21 @@
 		<zip destfile="${work}/hp-taschenfahrrad-${version}.zip"
 			 basedir="${work}/gen-${templ}" includes="**/*" />
 	</target>
-	<target name="deploy-entelijan">
+	<target name="deploy-all-entelijan">
 		<scp todir="root@entelijan.net:/root/app/wolfi-hp/t"
 			 keyfile="${env.HOME}/.ssh/entelijan-key"
 			 trust="true" verbose="true">
 			<fileset dir="${work}/gen-${templ}">
-				<include name="**/*" />
+				<include name="*" />
+			</fileset>
+		</scp>
+	</target>
+	<target name="deploy-html-entelijan">
+		<scp todir="root@entelijan.net:/root/app/wolfi-hp/t"
+			 keyfile="${env.HOME}/.ssh/entelijan-key"
+			 trust="true" verbose="true">
+			<fileset dir="${work}/gen-${templ}">
+				<include name="*" />
 			</fileset>
 		</scp>
 	</target>

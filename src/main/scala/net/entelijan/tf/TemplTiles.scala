@@ -118,9 +118,41 @@ class TemplTiles extends Templ {
        |    display: table-cell;
        |    padding: 0 ${fmt(par.tilesPadding, "em")} ${fmt(par.tilesPadding, "em")} 0;
        |}
+       |h1 {
+       |	margin: 0 0 5px;
+       |	padding: 0;
+       |}
+       |p .p1 {
+       |	font-family: inherit;
+       |	margin: 0;
+       |	padding: 0;
+       |}
+       |.p1 {
+       |	max-width: 700px;
+       |}
+       |img {
+       |	margin: 0;
+       |	padding: 0;
+       |}
        |
        |td {
        |  vertical-align: top;
+       |}
+       |.sepa1 {
+       |	margin: 8px 0 0;
+       |	padding: 0;
+       |}
+       |.sepa2 {
+       |	margin: 20px 0 0;
+       |	padding: 0;
+       |}
+       |.sepa3 {
+       |	margin: 40px 0 0;
+       |	padding: 0;
+       |}
+       |.sepa4 {
+       |	margin: 60px 0 0;
+       |	padding: 0;
        |}
        |
        |a, img {
