@@ -1,3 +1,4 @@
 - index: markdown entfernen und unterschiedliche abstände wieder einführen. sepa...
-- Page hight fix value in order to work better on mobile. not scrollable to anywhere
+- Page height fix value in order to work better on mobile. not scrollable to anywhere
+  text and images not separate scrollable.
 - remove unnecessary classes in both templates. e.g p1

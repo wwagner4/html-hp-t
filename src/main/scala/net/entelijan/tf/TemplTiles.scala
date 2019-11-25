@@ -12,7 +12,7 @@ class TemplTiles extends Templ {
     def tilesSize: Double = {
       val rightWidth = contentWidth * (rightPercentage / 100.0)
       val paddings = columns * tilesPadding
-      (rightWidth / columns) - paddings - 0.05
+      (rightWidth / columns)- paddings - 0.05
     }
 
     def rightPercentage: Double = {
@@ -24,9 +24,10 @@ class TemplTiles extends Templ {
 
   def params(p: Page): CssParameters = {
     val contentWidth = 75 // em
+    val tilesPadding = 0.3 // em
     p.layout match {
-      case Layout_Default => CssParameters(contentWidth, 25, 0.4, 4, 4)
-      case Layout_Wide => CssParameters(contentWidth, 45, 0.4, 6, 3)
+      case Layout_Default => CssParameters(contentWidth, 25, tilesPadding, 4, 4)
+      case Layout_Wide => CssParameters(contentWidth, 45, tilesPadding, 6, 3)
     }
   }
 
