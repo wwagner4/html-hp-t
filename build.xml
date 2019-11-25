@@ -23,7 +23,7 @@
 	</target>
 	<target name="deploy-entelijan">
 		<scp todir="root@entelijan.net:/root/app/wolfi-hp/t"
-			 keyfile="/home/wwagner4/.ssh/entelijan-key"
+			 keyfile="${env.HOME}/.ssh/entelijan-key"
 			 trust="true" verbose="true">
 			<fileset dir="${work}/gen-${templ}">
 				<include name="**/*" />

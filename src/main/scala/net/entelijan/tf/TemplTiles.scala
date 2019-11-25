@@ -25,7 +25,7 @@ class TemplTiles extends Templ {
     val contentWidth = 75 // em
     p.layout match {
       case Layout_Default => CssParameters(contentWidth, 25, 4, 4)
-      case Layout_Wide => CssParameters(contentWidth, 55, 6, 3)
+      case Layout_Wide => CssParameters(contentWidth, 45, 6, 3)
     }
   }
 
@@ -97,14 +97,14 @@ class TemplTiles extends Templ {
        |	 vertical-align: top;
        |	 font-size: inherit;
        |	 font-weight: normal;
-       |   min-width: 16em;
+       |   min-width: 4em;
        |}
        |.col-prize1 {
        |	 text-align: left;
        |	 vertical-align: top;
        |	 font-size: inherit;
        |	 font-weight: normal;
-       |   min-width: 10em;
+       |   min-width: 5em;
        |}
        |.rTable {
        |    display: table;
@@ -116,7 +116,7 @@ class TemplTiles extends Templ {
        |
        |.rTableCell {
        |    display: table-cell;
-       |    padding: 0 0.4em 0.4em 0;
+       |    padding: 0 0 0 0;
        |}
        |
        |a, img {
