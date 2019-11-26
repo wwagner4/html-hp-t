@@ -71,13 +71,13 @@ object SliderTemplate {
        |            border-width: 0;
        |            outline: none;
        |        }
-       |        #slider1 {
+       |        #tfslider {
        |            visibillity: hidden;
        |        }
        |    </style>
        |</head>
        |<body>
-       |<div id="slider1" class="glide">
+       |<div id="tfslider" class="glide">
        |    <div id="closeb" onclick="hideSlider();"></div>
        |    <div class="glide__track" data-glide-el="track">
        |        <ul class="glide__slides">

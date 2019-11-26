@@ -1,13 +1,10 @@
-document.getElementById('right')
-    .addEventListener('click', showSlider);
-
 document.getElementById('closeb')
     .addEventListener('click', closeb);
 
-var slider1 = document.getElementById('slider1');
+var tfslider = document.getElementById('tfslider');
 
 function hideSlider() {
-    slider1.style.visibility = 'hidden'
+    tfslider.style.visibility = 'hidden'
 }
 
 function closeb() {
@@ -19,10 +16,17 @@ function showSlider(e) { // MouseEvent
     var elem_width = elem.clientWidth;
     var rect = elem.getBoundingClientRect();
     var pos = {x: e.clientX - rect.left, y: e.clientY - rect.top};
-    slider1.style.visibility = 'visible';
+    tfslider.style.visibility = 'visible';
     document.getElementById('back').style.display = 'none';
     var tiles_tileSize1 = elem_width / tiles_cols;
     var index = indexFromPos(tiles_length, tiles_cols, tiles_tileSize1, pos);
+    var goSym = "=" + index;
+    glide.go(goSym);
+}
+
+function showS(index) { // MouseEvent
+    tfslider.style.visibility = 'visible';
+    document.getElementById('back').style.display = 'none';
     var goSym = "=" + index;
     glide.go(goSym);
 }
