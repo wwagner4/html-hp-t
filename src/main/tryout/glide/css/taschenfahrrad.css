@@ -125,20 +125,6 @@ a:active {
         overflow: hidden;
     }
 
-    #left {
-        background-color: white;
-        width: 400px;
-        height: 100vh;
-        float: left;
-        overflow: auto;
-    }
-
-    #right {
-        width: calc(100vw - 400px);
-        height: 100vh;
-        float: right;
-    }
-
 }
 
 @media (max-aspect-ratio: 3/4) {
@@ -147,17 +133,4 @@ a:active {
         overflow-y: auto;
     }
 
-    p {
-        padding-right: 20px;
-    }
-
-    #left {
-        width: 100vw;
-        padding-right: 10px;
-    }
-
-    #right {
-        width: 100vw;
-        height: 1800px;
-    }
 }
