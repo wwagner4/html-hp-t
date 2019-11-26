@@ -1,0 +1,163 @@
+@font-face {
+    font-family: isonormd;
+    src: url("isonormd.ttf") /* TTF file for CSS3 browsers */
+}
+
+body {
+    margin: 0;
+    background-color: white;
+    font-family: 'isonormd', sans-serif;
+    font-size: large;
+    font-weight: normal;
+}
+
+p {
+    cursor: default;
+    margin: 0;
+    padding: 3px;
+}
+
+h1 {
+    margin: 0;
+    padding: 10px 3px 20px 3px;
+}
+
+a, img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #000000;
+}
+
+a:active {
+    text-decoration: underline;
+    color: #000000;
+}
+
+#back {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+#right {
+}
+
+.fill {
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+
+.glide {
+    z-index: 10;
+}
+
+.glide__slides {
+    margin: 0;
+}
+
+#closeb {
+    background-image: url(cross.png);
+    background-repeat: no-repeat;
+    background-size: 15% 15%;
+    right: 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 150px;
+    height: 150px;
+    z-index: 30;
+    cursor: pointer;
+}
+
+.butto-left {
+    background-image: url(arrow-left.png);
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    left: 10px;
+}
+
+.butto-right {
+    background-image: url(arrow-right.png);
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    right: -10px;
+}
+
+.butto {
+    position: absolute;
+    display: block;
+    top: 50%;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    border-width: 0;
+    outline: none;
+}
+
+#slider1 {
+    visibility: hidden;
+}
+
+@media (min-aspect-ratio: 3/4) {
+    body {
+        overflow: hidden;
+    }
+
+    #left {
+        background-color: white;
+        width: 400px;
+        height: 100vh;
+        float: left;
+        overflow: auto;
+    }
+
+    #right {
+        width: calc(100vw - 400px);
+        height: 100vh;
+        float: right;
+    }
+
+}
+
+@media (max-aspect-ratio: 3/4) {
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    p {
+        padding-right: 20px;
+    }
+
+    #left {
+        width: 100vw;
+        padding-right: 10px;
+    }
+
+    #right {
+        width: 100vw;
+        height: 1800px;
+    }
+}
