@@ -1,0 +1,11 @@
+<project>
+    <target name="deploy">
+        <scp todir="root@entelijan.net:/root/app/wolfi-hp/t" 
+             keyfile="/home/wwagner4/.ssh/entelijan-key"
+             trust="true" verbose="true">
+            <fileset dir=".">
+                <include name="**/*" />
+            </fileset>
+        </scp>
+    </target>
+</project>

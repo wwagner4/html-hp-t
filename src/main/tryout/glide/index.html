@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="glide/css/glide.core.min.css">
     <link rel="stylesheet" href="glide/css/glide.theme.min.css">
     <link href='css/taschenfahrrad.css' rel='stylesheet' type='text/css'>
+    <style>
+        .button {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-size: 63px;
+            background-color: bisque;
+            padding: 10px;
+            margin: 10px;
+            cursor: grab;
+        }
+    </style>
 </head>
 <body class="load">
     <div id="tfslider" class="glide">
@@ -31,9 +43,9 @@
     <div id="back">
         <table>
             <tr>
-                <td onclick="showS(0)">0</td>
-                <td onclick="showS(1)">1</td>
-                <td onclick="showS(2)">2</td>
+                <td class="button" onclick="showS(0)">0</td>
+                <td class="button" onclick="showS(1)">1</td>
+                <td class="button" onclick="showS(2)">2</td>
             </tr>
         </table>
     </div>
