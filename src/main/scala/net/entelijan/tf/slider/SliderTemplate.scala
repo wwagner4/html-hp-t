@@ -59,7 +59,7 @@ object SliderTemplate {
        |            background-image: url(css/arrow-right.png);
        |            right: 10px;
        |        }
-       |        .butto {
+       |        .button-back {
        |            position: absolute;
        |            display: block;
        |            top: 50%;
@@ -85,8 +85,8 @@ object SliderTemplate {
        |        </ul>
        |    </div>
        |    <div class="glide__arrows" data-glide-el="controls">
-       |        <button class="butto butto-left" data-glide-dir="<"></button>
-       |        <button class="butto butto-right" data-glide-dir=">"></button>
+       |        <button class="button-back butto-left" data-glide-dir="<"></button>
+       |        <button class="button-back butto-right" data-glide-dir=">"></button>
        |    </div>
        |</div>
        |<div id="back"></div>
