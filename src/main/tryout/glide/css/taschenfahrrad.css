@@ -1,49 +1,6 @@
-@font-face {
-    font-family: isonormd;
-    src: url("isonormd.ttf") /* TTF file for CSS3 browsers */
-}
-
 body {
     margin: 0;
     background-color: white;
-    font-family: 'isonormd', sans-serif;
-    font-size: large;
-    font-weight: normal;
-}
-
-p {
-    cursor: default;
-    margin: 0;
-    padding: 3px;
-}
-
-h1 {
-    margin: 0;
-    padding: 10px 3px 20px 3px;
-}
-
-a, img {
-    border: none;
-}
-
-a {
-    text-decoration: none;
-    color: #000000;
-}
-
-a:visited {
-    text-decoration: none;
-    color: #000000;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #000000;
-}
-
-a:active {
-    text-decoration: underline;
-    color: #000000;
 }
 
 #back {
@@ -63,7 +20,7 @@ a:active {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: white;
 }
 
 
@@ -120,17 +77,3 @@ a:active {
     visibility: hidden;
 }
 
-@media (min-aspect-ratio: 3/4) {
-    body {
-        overflow: hidden;
-    }
-
-}
-
-@media (max-aspect-ratio: 3/4) {
-    body {
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-
-}
