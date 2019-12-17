@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="no-js" lang="de">
+<head>
+    <title>das taschenfahrrad</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="glide/css/glide.core.min.css">
+    <link rel="stylesheet" href="glide/css/glide.theme.min.css">
+    <link href='css/taschenfahrrad.css' rel='stylesheet' type='text/css'>
+    <style>
+        .button {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-size: 63px;
+            background-color: bisque;
+            padding: 10px;
+            margin: 10px;
+            cursor: grab;
+        }
+    </style>
+</head>
+<body class="load">
+    <div id="tfslider" class="glide">
+        <div id="closeb" onclick="hideSlider();"></div>
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+            <li class="glide__slide"><div class="fill" style="background-image: url(images/index/tf_0223_03.jpg);"></div></li>
+            <li class="glide__slide"><div class="fill" style="background-image: url(images/index/tf_0223_10.jpg);"></div></li>
+            <li class="glide__slide"><div class="fill" style="background-image: url(images/index/tf_0223_29.jpg);"></div></li>
+            <li class="glide__slide"><div class="fill" style="background-image: url(images/index/tf_0223_45.jpg);"></div></li>
+            <li class="glide__slide"><div class="fill" style="background-image: url(images/index/tf_0223_46.jpg);"></div></li>
+            <li class="glide__slide"><div class="fill" style="background-image: url(images/index/tf_0223_47.jpg);"></div></li>
+            <li class="glide__slide"><div class="fill" style="background-image: url(images/index/tf_0223_48.jpg);"></div></li>
+            <li class="glide__slide"><div class="fill" style="background-image: url(images/index/tf_0223_49.jpg);"></div></li>
+            </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="button-back butto-left" data-glide-dir="<"></button>
+            <button class="button-back butto-right" data-glide-dir=">"></button>
+        </div>
+    </div>
+    <div id="back">
+        <table>
+            <tr>
+                <td class="button" onclick="showS(0)">0</td>
+                <td class="button" onclick="showS(1)">1</td>
+                <td class="button" onclick="showS(2)">2</td>
+            </tr>
+        </table>
+    </div>
+    <script src="glide/glide.min.js"></script>
+    <script src="js/taschenfahrrad.js"></script>
+    <script>
+      var glide = new Glide('.glide', {
+        type: 'carousel',
+        startAt: 0,
+        perView: 1,
+        gap: 0
+      }).mount();
+      var tiles_length = 8;
+      var tiles_cols = 3;
+      var tiles_tileSize = 295;
+    </script>
+</body>
+</html>
