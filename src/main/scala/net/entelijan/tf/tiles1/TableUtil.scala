@@ -9,5 +9,10 @@ object TableUtil {
     val table = TableCreator.createTable(images, rows, cols)
     TableFormater.ftable(table)
   }
-  
+
+  def glideTable(baseDir: Path, pageDir: String): String = {
+    val images = FilesToUrl.urls(baseDir, pageDir)
+    TableFormater.fglide(images)
+  }
+
 }

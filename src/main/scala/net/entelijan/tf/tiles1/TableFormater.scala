@@ -30,4 +30,24 @@ object TableFormater {
       .mkString("\n")
   }
 
+  def fglide(images: List[String]): String = {
+    def ftableRow(imageUrl: String): String = {
+      s"""  <li class="glide__slide">
+         |    <div class="fill" style="background-image: url($imageUrl);"></div>
+         |  </li>
+         |""".stripMargin
+    }
+
+    val lines =
+      s"""<div class="glide__track" data-glide-el="track">
+         |<ul class="glide__slides">
+         |${images map ftableRow mkString "\n"}
+         |</ul>
+         |</div>
+         |""".stripMargin.split("\n").toList
+    lines
+      .filter(!_.isEmpty)
+      .mkString("\n")
+  }
+
 }

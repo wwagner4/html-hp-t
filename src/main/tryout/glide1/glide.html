@@ -6,7 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="glide/css/glide.core.min.css">
     <link rel="stylesheet" href="glide/css/glide.theme.min.css">
-    <link href='css/taschenfahrrad.css' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            margin: 0;
+            background-color: white;
+        }
+        .fill {
+            width: 100vw;
+            height: 100vh;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: white;
+        }
+        .glide {
+            z-index: 10;
+        }
+        .glide__slides {
+            margin: 0;
+        }
+        #closeb {
+            background-image: url(cross.png);
+            background-repeat: no-repeat;
+            background-size: 15% 15%;
+            right: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 150px;
+            height: 150px;
+            z-index: 30;
+            cursor: pointer;
+        }
+        .butto-left {
+            background-image: url(arrow-left.png);
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+            left: 10px;
+        }
+        .butto-right {
+            background-image: url(arrow-right.png);
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+            right: -10px;
+        }
+        .button-back {
+            position: absolute;
+            display: block;
+            top: 50%;
+            z-index: 2;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0);
+            border-width: 0;
+            outline: none;
+        }
+    </style>
 </head>
 <body class="load">
 <div class="glide">
@@ -45,7 +101,6 @@
     </div>
 </div>
 <script src="glide/glide.min.js"></script>
-<script src="js/taschenfahrrad.js"></script>
 <script>
     let loc = new URLSearchParams(window.location);
     let urlParams = new URLSearchParams(window.location.search);
