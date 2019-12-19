@@ -12,12 +12,15 @@ object Generator {
   }
 
   private def genPage(p: Page, templ: Templ, outDir: File): Unit = {
-    val fnam = templ.fileName(p)
-    val f = new File(outDir, fnam)
-    val pw = new PrintWriter(f, "UTF-8")
-    pw.print(templ.html(p).trim())
-    pw.close()
-    println(s"wrote to $f")
+    val hpages = templ.pages
+    for (hp <- hpages) {
+      val fnam = hp.fileName(p)
+      val f = new File(outDir, fnam)
+      val pw = new PrintWriter(f, "UTF-8")
+      pw.print(hp.html(p).trim())
+      pw.close()
+      println(s"wrote to $f")
+    }
   }
 
 }
