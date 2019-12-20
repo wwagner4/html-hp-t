@@ -111,11 +111,14 @@
 </div>
 <script src="glide/glide.min.js"></script>
 <script>
-    let loc = new URLSearchParams(window.location);
     let urlParams = new URLSearchParams(window.location.search);
-    //console.log("urlParams:'" + urlParams + "'")
-    let index = parseInt(urlParams.get('index'));
-    //console.log("index:'" + index + "'")
+    //console.log("urlParams type:'" + typeof urlParams + "'")
+    var index = 0;
+    if (urlParams.has("index")) {
+        // console.log("urlParams:'" + urlParams + "'")
+        index = parseInt(urlParams.get('index'));
+    } 
+    // console.log("index:'" + index + "'")
     let glide = new Glide('.glide', {
         type: 'carousel',
         startAt: index,
