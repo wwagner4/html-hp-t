@@ -11,16 +11,133 @@ class TemplTiles extends Templ {
 
   override def pages: Iterable[HtmlPage] =
     List(new HtmlPageMain, new HtmlPageGlide)
-  
+
   class HtmlPageGlide extends HtmlPage {
-    override def html(p: Page): String = ""
+
+    private def glideTable(p: Page): String = {
+      val baseDir = Paths.get("src/main/web/common")
+      TableUtil.glideTable(baseDir, s"images/${p.id}")
+    }
+
+    override def html(p: Page): String =
+      s"""
+         |<!DOCTYPE html>
+         |<html class="no-js" lang="de">
+         |<head>
+         |    <title>das taschenfahrrad</title>
+         |    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+         |    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         |    <link rel="stylesheet" href="glide/css/glide.core.min.css">
+         |    <link rel="stylesheet" href="glide/css/glide.theme.min.css">
+         |    <style>
+         |        html {
+         |            -webkit-tap-highlight-color:transparent;
+         |        }
+         |        body {
+         |            margin: 0;
+         |            background-color: white;
+         |            overflow: hidden;
+         |        }
+         |        .fill {
+         |            width: 100vw;
+         |            height: 100vh;
+         |            background-position: center;
+         |            background-size: contain;
+         |            background-repeat: no-repeat;
+         |            background-color: white;
+         |        }
+         |        .glide {
+         |            z-index: 10;
+         |        }
+         |        .glide__slides {
+         |            margin: 0;
+         |        }
+         |        #closeb {
+         |            background-image: url(css/cross.png);
+         |            background-color: transparent;
+         |            background-repeat: no-repeat;
+         |            background-size: 15% 15%;
+         |            right: 10px;
+         |            position: absolute;
+         |            top: 10px;
+         |            left: 10px;
+         |            width: 150px;
+         |            height: 150px;
+         |            z-index: 30;
+         |            cursor: pointer;
+         |        }
+         |        .butto-left {
+         |            background-image: url(css/arrow-left.png);
+         |            background-size: 50% 50%;
+         |            background-repeat: no-repeat;
+         |            left: 10px;
+         |            cursor: pointer;
+         |            user-select: none;
+         |        }
+         |        .butto-right {
+         |            background-image: url(css/arrow-right.png);
+         |            background-size: 50% 50%;
+         |            background-repeat: no-repeat;
+         |            right: -10px;
+         |            cursor: pointer;
+         |            user-select: none;
+         |        }
+         |        .button-back {
+         |            position: absolute;
+         |            display: block;
+         |            top: 50%;
+         |            z-index: 2;
+         |            width: 50px;
+         |            height: 50px;
+         |            cursor: pointer;
+         |            background-color: rgba(255, 255, 255, 0);
+         |            border-width: 0;
+         |            outline: none;
+         |            user-select: none;
+         |        }
+         |    </style>
+         |</head>
+         |<body class="load">
+         |<div class="glide">
+         |    <div id="closeb" onclick="window.history.back();"></div>
+         |${glideTable(p)}
+         |    <div class="glide__arrows" data-glide-el="controls">
+         |        <button class="button-back butto-left" data-glide-dir="<"></button>
+         |        <button class="button-back butto-right" data-glide-dir=">"></button>
+         |    </div>
+         |</div>
+         |<script src="glide/glide.min.js"></script>
+         |<script>
+         |    let urlParams = new URLSearchParams(window.location.search);
+         |    //console.log("urlParams type:'" + typeof urlParams + "'")
+         |    var index = 0;
+         |    if (urlParams.has("index")) {
+         |        // console.log("urlParams:'" + urlParams + "'")
+         |        index = parseInt(urlParams.get('index'));
+         |    } 
+         |    // console.log("index:'" + index + "'")
+         |    let glide = new Glide('.glide', {
+         |        type: 'carousel',
+         |        startAt: index,
+         |        perView: 1,
+         |        gap: 0
+         |    }).mount();
+         |    let tiles_length = 8;
+         |    let tiles_cols = 3;
+         |    let tiles_tileSize = 295;
+         |</script>
+         |</body>
+         |</html>
+         |
+         |""".stripMargin
 
     def fileName(p: Page): String = "%sGlide.html" format p.id
 
   }
-  
-  
+
+
   class HtmlPageMain extends HtmlPage {
+
     case class CssParameters(contentWidth: Double, leftPercentage: Double, tilesPadding: Double, rows: Int, columns: Int) {
 
       def tilesSize: Double = {
