@@ -4,7 +4,7 @@ version := "0.1-SNAPSHOT"
 
 organization := "net.entelijan"
 
-scalaVersion := "2.12.10"
+scalaVersion := "2.13.1"
 
 //5resolvers += "Local Maven Repository" at "file:///" + Path.userHome + "/.m2/repository"
 

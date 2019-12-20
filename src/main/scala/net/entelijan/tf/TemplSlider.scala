@@ -191,6 +191,7 @@ class TemplSlider extends Templ {
         .sortBy(f => f.getName)
     }
 
+    //noinspection ScalaUnusedSymbol
     private def htmlPageLinks(pages: List[Page]): String = {
       pages.map(htmlPageLink).mkString("\n")
     }

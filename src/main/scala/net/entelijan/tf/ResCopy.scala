@@ -46,7 +46,7 @@ object ResCopy {
     import java.io.{File, FileInputStream, FileOutputStream}
     require(dir.isDirectory, "%s is not a directory" format dir)
     val newFile = new File(dir, f.getName)
-    new FileOutputStream(newFile) getChannel() transferFrom(
+    new FileOutputStream(newFile).getChannel.transferFrom(
       new FileInputStream(f).getChannel, 0, Long.MaxValue)
     println("copied %s to %s" format(f, dir))
   }

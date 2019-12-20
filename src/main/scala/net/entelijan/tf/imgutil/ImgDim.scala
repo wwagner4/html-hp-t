@@ -6,7 +6,7 @@ import java.nio.file.{Files, Path}
 import javax.imageio.ImageIO
 import javax.imageio.stream.FileImageInputStream
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 
 object ImgDim {
 
@@ -14,7 +14,7 @@ object ImgDim {
     Files.list(dir)
       .iterator()
       .asScala
-      .toStream
+      .to(LazyList)
       .flatMap(p => dim(p))
   }
 
@@ -35,7 +35,7 @@ object ImgDim {
       val suffix = name.substring(pos + 1).toLowerCase
       ImageIO.getImageReadersBySuffix(suffix)
         .asScala
-        .toStream
+        .to(LazyList)
         .map { reader =>
           try {
             val stream = new FileImageInputStream(imgFile)
