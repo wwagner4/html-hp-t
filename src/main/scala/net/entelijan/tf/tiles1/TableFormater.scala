@@ -6,7 +6,7 @@ object TableFormater {
     def ftableCell(cell: Cell): String = {
       s"""
          |<div id="${cell.imgId()}" class="rTableCell" >
-         |<img class="thumb" src="${cell.imagePath}">
+         |<img class="thumb" src="${cell.imagePath}" ${cell.onCklick}>
          |</div>
          |""".stripMargin
     }

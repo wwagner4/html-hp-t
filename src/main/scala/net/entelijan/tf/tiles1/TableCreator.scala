@@ -1,11 +1,13 @@
 package net.entelijan.tf.tiles1
 
-import java.nio.file.Path
-
-case class Cell(id: Int, imgIndex: Int, imagePath: String) {
+case class Cell(pageId: String, id: Int, imgIndex: Int, imagePath: String) {
 
   def imgId(): String = {
     s"img_${id}_${imgIndex}"
+  }
+  
+  def onCklick: String = {
+    s"""onclick="window.open('${pageId}Glide.html?index=${imgIndex}', '_self');""""
   }
 
 }
@@ -14,7 +16,7 @@ case class Row(cells: List[Cell])
 
 object TableCreator {
 
-  def createTable(files: List[String], rows: Int, cols: Int): List[Row] = {
+  def createTable(pageId: String, files: List[String], rows: Int, cols: Int): List[Row] = {
 
     var i = 0
 
@@ -22,7 +24,7 @@ object TableCreator {
       var result = List.empty[Cell]
       for (colIndex <- 0.until(cols)) {
         val fileIndex = (baseFilesIndex + colIndex) % files.size
-        val cell = Cell(i, fileIndex, files(fileIndex))
+        val cell = Cell(pageId, i, fileIndex, files(fileIndex))
         result = cell :: result
         i += 1
       }

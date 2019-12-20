@@ -219,6 +219,7 @@ class TemplTiles extends Templ {
          |    width: ${fmt(par.tilesSize, "em")};
          |    height: ${fmt(par.tilesSize, "em")};
          |    vertical-align: top;
+         |    cursor: pointer;
          |}
          |
          |.col-prize {
@@ -226,7 +227,7 @@ class TemplTiles extends Templ {
          |	 vertical-align: top;
          |	 font-size: inherit;
          |	 font-weight: normal;
-         |   min-width: 4em;
+         |   min-width: 4.6em;
          |}
          |.col-prize1 {
          |	 text-align: left;
@@ -309,7 +310,7 @@ class TemplTiles extends Templ {
 
     private def htmlTable(p: Page, par: CssParameters): String = {
       val baseDir = Paths.get("src/main/web/common")
-      TableUtil.htmlTable(baseDir, s"images/${p.id}", par.rows, par.columns)
+      TableUtil.htmlTable(p.id, baseDir, s"images/${p.id}", par.rows, par.columns)
     }
 
     private def htmlContent(p: Page, par: CssParameters): String =

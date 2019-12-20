@@ -5,7 +5,7 @@ import org.scalatest.{FunSuite, MustMatchers}
 class TableCreatorSuite extends FunSuite with MustMatchers {
 
   test("One Image one row one col") {
-    val tab: Seq[Row] = TableCreator.createTable(List("a.png"), 1, 1)
+    val tab: Seq[Row] = TableCreator.createTable("dummy", List("a.png"), 1, 1)
     tab.size mustBe 1
     tab.head.cells.size mustBe 1
     val cell = tab.head.cells.head
@@ -16,7 +16,7 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
   }
 
   test("One Image multiple rows one col") {
-    val tab: Seq[Row] = TableCreator.createTable(List("a.png"), 3, 1)
+    val tab: Seq[Row] = TableCreator.createTable("dummy", List("a.png"), 3, 1)
     tab.size mustBe 3
 
     {
@@ -49,7 +49,7 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
   }
 
   test("One Image multiple rows multiple cols") {
-    val tab: Seq[Row] = TableCreator.createTable(List("a.png"), 2, 3)
+    val tab: Seq[Row] = TableCreator.createTable("Dummy", List("a.png"), 2, 3)
     tab.size mustBe 2
 
     {
@@ -110,7 +110,7 @@ class TableCreatorSuite extends FunSuite with MustMatchers {
 
 
   test("Multiple Images multiple rows multiple cols") {
-    val tab: Seq[Row] = TableCreator.createTable(List("a.png", "b.png"), 2, 3)
+    val tab: Seq[Row] = TableCreator.createTable("Dummy", List("a.png", "b.png"), 2, 3)
     tab.size mustBe 2
 
     {
