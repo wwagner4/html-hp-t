@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="glide/css/glide.core.min.css">
     <link rel="stylesheet" href="glide/css/glide.theme.min.css">
     <style>
+        html {
+            -webkit-tap-highlight-color:transparent;
+        }
         body {
             margin: 0;
             background-color: white;
@@ -26,7 +29,8 @@
             margin: 0;
         }
         #closeb {
-            background-image: url(cross.png);
+            background-image: url(css/cross.png);
+            background-color: transparent;
             background-repeat: no-repeat;
             background-size: 15% 15%;
             right: 10px;
@@ -39,16 +43,20 @@
             cursor: pointer;
         }
         .butto-left {
-            background-image: url(arrow-left.png);
+            background-image: url(css/arrow-left.png);
             background-size: 50% 50%;
             background-repeat: no-repeat;
             left: 10px;
+            cursor: pointer;
+            user-select: none;
         }
         .butto-right {
-            background-image: url(arrow-right.png);
+            background-image: url(css/arrow-right.png);
             background-size: 50% 50%;
             background-repeat: no-repeat;
             right: -10px;
+            cursor: pointer;
+            user-select: none;
         }
         .button-back {
             position: absolute;
@@ -61,6 +69,7 @@
             background-color: rgba(255, 255, 255, 0);
             border-width: 0;
             outline: none;
+            user-select: none;
         }
     </style>
 </head>
