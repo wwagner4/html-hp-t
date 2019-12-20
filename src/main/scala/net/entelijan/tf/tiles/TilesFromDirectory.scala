@@ -8,7 +8,7 @@ import javax.imageio.ImageIO
 import net.coobird.thumbnailator.Thumbnails
 import net.entelijan.tf.imgutil.{ImgAttr, ImgFormat, ImgSave}
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 
 
 object TilesFromDirectory {
@@ -60,7 +60,7 @@ object TilesFromDirectory {
     }
 
     Files.list(indir)
-      .filter(p => isImageFile(p))
+      .filter(isImageFile)
       .iterator()
       .asScala
       .toList

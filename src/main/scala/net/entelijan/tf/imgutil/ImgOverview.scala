@@ -3,7 +3,7 @@ package net.entelijan.tf.imgutil
 import java.io.PrintWriter
 import java.nio.file.{Files, Path, Paths}
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 import scala.util.control.NonFatal
 
 case class Img(path: String, nr: Int, imgName: String)
@@ -43,7 +43,6 @@ object ImgOverview extends App {
           s"""
              |<html>
              |<head>
-             |<link href='taschenfahrrad.css'	rel='stylesheet' type='text/css'>
              |</head>
              |<body>
              |<p class="imov_title">$name</p>

@@ -59,7 +59,7 @@ object SliderTemplate {
        |            background-image: url(css/arrow-right.png);
        |            right: 10px;
        |        }
-       |        .butto {
+       |        .button-back {
        |            position: absolute;
        |            display: block;
        |            top: 50%;
@@ -71,13 +71,13 @@ object SliderTemplate {
        |            border-width: 0;
        |            outline: none;
        |        }
-       |        #slider1 {
+       |        #tfslider {
        |            visibillity: hidden;
        |        }
        |    </style>
        |</head>
        |<body>
-       |<div id="slider1" class="glide">
+       |<div id="tfslider" class="glide">
        |    <div id="closeb" onclick="hideSlider();"></div>
        |    <div class="glide__track" data-glide-el="track">
        |        <ul class="glide__slides">
@@ -85,8 +85,8 @@ object SliderTemplate {
        |        </ul>
        |    </div>
        |    <div class="glide__arrows" data-glide-el="controls">
-       |        <button class="butto butto-left" data-glide-dir="<"></button>
-       |        <button class="butto butto-right" data-glide-dir=">"></button>
+       |        <button class="button-back butto-left" data-glide-dir="<"></button>
+       |        <button class="button-back butto-right" data-glide-dir=">"></button>
        |    </div>
        |</div>
        |<div id="back"></div>

@@ -1,7 +1,8 @@
 package net.entelijan.tf
 
 object TaschenfahrradGenHomepage extends App {
-  
-  Generator.gen(TfUtil.genDir)
+
+  val templ = Templs.tiles
+  Generator.gen(TfUtil.inTargetDir(s"gen-${templ.id}"), templ)
 
 }

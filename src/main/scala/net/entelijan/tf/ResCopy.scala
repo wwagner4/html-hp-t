@@ -19,7 +19,7 @@ object ResCopy {
     copy(fromDir.toFile, toDir.toFile)
   }
 
-  def copy(from: File, to: File) {
+  def copy(from: File, to: File): Unit = {
     require(from.isDirectory, "%s is not a directory" format from)
     require(to.isDirectory, "%s is not a directory" format to)
     val toFiles = to.listFiles().toList
@@ -46,7 +46,7 @@ object ResCopy {
     import java.io.{File, FileInputStream, FileOutputStream}
     require(dir.isDirectory, "%s is not a directory" format dir)
     val newFile = new File(dir, f.getName)
-    new FileOutputStream(newFile) getChannel() transferFrom(
+    new FileOutputStream(newFile).getChannel.transferFrom(
       new FileInputStream(f).getChannel, 0, Long.MaxValue)
     println("copied %s to %s" format(f, dir))
   }
@@ -61,10 +61,11 @@ object ResCopy {
     time(left) > time(right)
   }
 
+  @scala.annotation.tailrec
   def findFile(name: String, files: List[File]): Option[File] = {
     files match {
       case Nil => None
-      case f :: rest => if (f.getName == name) Some(f)
+      case f :: rest => if (f.getName == name) Option(f)
       else findFile(name, rest)
     }
   }

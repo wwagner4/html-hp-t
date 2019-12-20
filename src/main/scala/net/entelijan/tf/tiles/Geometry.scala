@@ -7,7 +7,7 @@ object Geometry {
     val rows = math.ceil(images.size.toDouble / cols).toInt
     val tileWidth = tileSize.width
     val tileHeight = tileSize.height
-    val imagesEndless = Stream.continually(images).flatten
+    val imagesEndless = LazyList.continually(images).flatten
     val results: Seq[Seq[Tile]] =
       for (i <- 0 until rows) yield {
         for (j <- 0 until cols) yield {

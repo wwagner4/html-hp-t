@@ -1,7 +1,8 @@
 package net.entelijan.tf.imgutil
 
 import java.nio.file.{Files, Path, Paths}
-import collection.JavaConverters._
+
+import scala.jdk.CollectionConverters._
 
 
 object ImageRename extends App {
@@ -14,7 +15,7 @@ object ImageRename extends App {
     .filter(p => !p.getFileName.toString.startsWith("."))
     .sortBy(p => p.getFileName.toString)
     .zipWithIndex
-    .map{case (p, i) => Files.copy(p, newPath(p, i))}
+    .map { case (p, i) => Files.copy(p, newPath(p, i)) }
 
 
   def newPath(oldPath: Path, index: Int): Path = {

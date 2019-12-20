@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE project>
-
 <project name="taschenfahrrad">
-
-	<!--
-	<property name="work">/Users/wwagner4/prj/html-hp-t/target</property>
-	-->
-	<property name="work">/home/wwagner4/prj/taschenfahrrad-2019/html-hp-t/target</property>
+	<property environment="env"/>
+	<property name="work">${env.HOME}/prj/html-hp-t/target</property>
+	<property name="templ">tiles</property>
 
 	<property name="version" value="2019.3" />
 	<target name="clean">
-		<delete dir="${work}/gen" >
-			<include name="**/*" />
+		<delete verbose="true" includeemptydirs="true">
+			<fileset dir="${work}/gen-${templ}" includes="**/*">
+			</fileset>
 		</delete>
 	</target>
 	<target name="zip">
-		<zip destfile="${work}/hp-taschenfahrrad-${version}.zip" basedir="${work}/gen" includes="**/*" />
+		<zip destfile="${work}/hp-taschenfahrrad-${version}.zip"
+			 basedir="${work}/gen-${templ}" includes="**/*" />
 	</target>
+	<target name="deploy-all-entelijan">
+		<scp todir="root@entelijan.net:/root/app/wolfi-hp/t"
+			 keyfile="${env.HOME}/.ssh/entelijan-key"
+			 trust="true" verbose="true">
+			<fileset dir="${work}/gen-${templ}">
+				<include name="**/*" />
+			</fileset>
+		</scp>
+	</target>
+	<target name="deploy-html-entelijan">
+		<scp todir="root@entelijan.net:/root/app/wolfi-hp/t"
+			 keyfile="${env.HOME}/.ssh/entelijan-key"
+			 trust="true" verbose="true">
+			<fileset dir="${work}/gen-${templ}">
+				<include name="*" />
+			</fileset>
+		</scp>
+	</target>
+
 </project>
