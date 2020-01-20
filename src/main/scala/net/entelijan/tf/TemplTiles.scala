@@ -157,7 +157,7 @@ class TemplTiles extends Templ {
       val contentWidth = 75 // em
       val tilesPadding = 0.3 // em
       p.layout match {
-        case Layout_Default => CssParameters(contentWidth, 30, tilesPadding, 4, 4)
+        case Layout_Default => CssParameters(contentWidth, 30, tilesPadding, 3, 3)
         case Layout_Wide => CssParameters(contentWidth, 45, tilesPadding, 5, 3)
       }
     }
