@@ -35,20 +35,15 @@ object Data {
          |<p>0043 699 1043 1886</p>
          |<p class="sepa2"/>
          |
-         |<p>Wer radlos ist, kann im taschenfahrrad eine treffende Beratung
-         |und mit etwas Glück gleich das passende Rad finden.
-         |Wir haben uns das Knowhow in vielen Jahren als Rennradler,
-         |Reiseradler, Fahrradkurier er-fahren, wissen, wo es zwicken
-         |kann und wie es sich anfühlt, wenn alles passt. Unsere visits
-         |sind die vielen großartigen Räder, die wir Dank unserer Kunden
-         |bauen konnten.<br>
-         |Das 2010 gegründete 'taschenfahrrad' bietet Räder für alltägliche
-         |Stadtfahrten und Überlandfahrten bis Weltreisen.
-         |Wir bevorzugen Räder mit schlankem Stahlrahmen,
-         |die sowohl komfortabel als auch robust sind, mit möglichst einfacher, lang-
-         |lebiger Technik. Räder, die sich schnell, unkompliziert und
-         |günstig servicieren lassen. Wenn der Markt uns das nicht bieten
-         |kann, bauen wir die Räder selbst.
+         |<p>
+         |An vorderster Reihe unseres Angebots stehen die  tokyobikes (Tokyo)
+         |für cooles entspanntes Stadtradeln und die Räder von  SURLY  (Bloomington/Indiana)
+         |für die Befahrung der übrigen Welt auf all ihren Wegen.
+         |Darüberhinaus gibt es Rahmensets und Räder von  INTEC, paripa, BLB  und  taschenfahrrad's
+         |black only.<br>
+         |Aber oftmals steht das gewünschte Rad passend, fixfertig und preisgünstig bereits im
+         |Geschäft. Ist spannend, wir wollen es wissen und werden es herausfinden,
+         |Kunde/in und wir.
          |</p>
          |<p class="sepa2"/>
          |
@@ -106,13 +101,25 @@ object Data {
           |        <td><a href="http://www.tokyobike.de" target="_blank">tokyobike</a></td>
           |        <td><a href="http://www.tokyobike.de/?area=bikes" target="_blank">classic26</a></td>
           |        <td>47, 53, 57, 61</td>
-          |        <td class="col-prize1">789€</td>
+          |        <td class="col-prize1">799€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="http://www.tokyobike.de/?area=bikes" target="_blank">bisou</a></td>
           |        <td>42, 50, 55 alle Farben</td>
           |        <td class="col-prize1">659€</td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td><a href="http://www.tokyobike.de/?area=bikes" target="_blank">classic26 LTD</a></td>
+          |        <td>42, 50, 55 alle Farben</td>
+          |        <td class="col-prize1">809€</td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td><a href="http://www.tokyobike.de/?area=bikes" target="_blank">classic699</a></td>
+          |        <td>auf Anfrage</td>
+          |        <td class="col-prize1"></td>
           |    </tr>
           |    <tr>
           |        <td><a href="http://www.fujibikes.com/usa/bikes/road/adventure-and-touring/touring" target="_blank">FUJI</a></td>
@@ -166,25 +173,25 @@ object Data {
           |        <td><a href="https://www.pelagobicycles.com/" target="_blank">PELAGO</a></td>
           |        <td><a href="https://www.pelagobicycles.com/bicycles/airisto-outback.html" target="_blank">Airisto Outback</a></td>
           |        <td>57 metallic sand</td>
-          |        <td class="col-prize1">1335€</td>
+          |        <td class="col-prize1">1099€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="https://www.pelagobicycles.com/bicycles/hanko-outback.html" target="_blank">Hanko Outback</a></td>
           |        <td>56 moss green</td>
-          |        <td class="col-prize">1335€</td>
+          |        <td class="col-prize">1099€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="https://www.pelagobicycles.com/bicycles/brooklyn.html" target="_blank">Brooklyn3</a></td>
           |        <td>52 black, dapper red, helene grey</td>
-          |        <td class="col-prize1">825€</td>
+          |        <td class="col-prize1">755€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="https://www.pelagobicycles.com/bicycles/bristol.html" target="_blank">Bristol3</a></td>
           |        <td>57,61 black, traffic grey</td>
-          |        <td class="col-prize1">825€</td>
+          |        <td class="col-prize1">755€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
@@ -195,7 +202,7 @@ object Data {
           |    <tr>
           |        <td></td>
           |        <td colspan="2">Nexus8-Versionen jeweils auf Anfrage</td>
-          |        <td class="col-prize1"></td>
+          |        <td class="col-prize1">+ 170€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.linusbike.eu" target="_blank">LINUS</a></td>
@@ -213,12 +220,6 @@ object Data {
           |        <td></td>
           |        <td><a href="https://www.linusbike.eu/products/mixte-3" target="_blank">mixte</a></td>
           |        <td>49, 56  black, sky blue</td>
-          |        <td class="col-prize1">599€</td>
-          |    </tr>
-          |    <tr>
-          |        <td></td>
-          |        <td><a href="https://www.linusbike.eu/products/roadster3" target="_blank">roadster</a></td>
-          |        <td>59 oliv, black</td>
           |        <td class="col-prize1">599€</td>
           |    </tr>
           |    <tr>
@@ -272,20 +273,8 @@ object Data {
           |    <tr>
           |        <td><a href="https://www.contoura.de/modelle/salerno/" target="_blank">CONTOURA</a></td>
           |        <td><a href="https://www.contoura.de/modelle/salerno/" target="_blank">Salerno</a></td>
-          |        <td>Diamant 50, 54, 58, 66, 70</td>
-          |        <td class="col-prize1">899€</td>
-          |    </tr>
-          |    <tr>
-          |        <td></td>
-          |        <td></td>
-          |        <td>Mixte Anglaise 48, 52, 56, 60</td>
-          |        <td class="col-prize1">899€</td>
-          |    </tr>
-          |    <tr>
-          |        <td></td>
-          |        <td></td>
-          |        <td>Swiss Curve 49, 54</td>
-          |        <td class="col-prize1">899€</td>
+          |        <td>auf Anfrage</td>
+          |        <td class="col-prize1"></td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.naloobikes.com/" target="_blank">NALOO</a></td>
@@ -309,84 +298,99 @@ object Data {
           |<p class="sepa3"/>
           |
           |<p>
-          | für spezielle Anforderungen oder weil es individueller
-          | sein soll und das gewünschte Rad am Markt
-          | so nicht zu finden ist. Wir bauen Räder
-          | mit bewährten Komponenten, die wir gut
-          | kennen und die gut aufeinander  abgestimmt
-          | sind. Wir vermeiden komplexe, wartungsintensive
-          | Komponenten und lassen uns nicht von den
-          | jeweils neuesten Trends hypnotisieren,
-          | 'the proof of the pudding is in the eating'.
-          |</p>
-          |<p>
-          |Unsere Erfahrung, welches Rad passt und
-          |welche Komponenten ihren Job schlicht,
-          |einfach und gut machen, ist die Basis fürs
-          |Gelingen. Wir verwenden die auf allen Wegen
-          |der Erde erprobten Stahlrahmen von SURLY,
-          |die gibt es ab Rahmenhöhe 38 bis 64.
-          |Körpermaße von 150cm oder 200cm bringen
-          |uns nicht in Verlegenheit.
-          |Alle Größen und Farben lagernd,
-          |Geometriedaten siehe Herstellerseite.
+          |Wenn's 100%ig passen soll dann das sind unsere Räder, die wir leidenschaftlich gerne bauen:<br>
+          |Die Basis sind robuste, hochwertige Stahlrahmen mit excellentem Fahrverhalten,
+          |bewährte Komponenten die für die Anforderungen passen
+          |und ihren Job einfach gut machen, wenns sein muß, eine Weltreise lang.
           |</p>
           |<table>
           |    <tbody>
           |    <tr>
+          |        <td></td><td></td><td>Rahmen</td><td>Komplettrad</td> 
+          |    </tr>
+          |    <tr>
           |        <td><a href="https://surlybikes.com/bikes/long_haul_trucker" target="_blank">SURLY</a></td>
-          |        <td>
-          |            Long Haul Trucker, Cross Check,
-          |            Pack rat, Pacer, Troll u. a.
-          |        </td>
+          |        <td>LHT Long Haul Trucker</td>
+          |        <td>579€</td>
           |        <td class="col-prize">ab 1650€</td>
           |    </tr>
           |    <tr>
+          |        <td></td>
+          |        <td>DT  Disc Trucker</td>
+          |        <td>649€</td>
+          |        <td class="col-prize">ab 1800€</td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td>BC Bridge Club</td>
+          |        <td>599€</td>
+          |        <td class="col-prize">ab 1700€</td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td>Pack Rat</td>
+          |        <td>599€</td>
+          |        <td class="col-prize">ab 1700€</td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td>CC Cross Check</td>
+          |        <td>599€</td>
+          |        <td class="col-prize">ab 1650€</td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td>Straggler 700 & 650</td>
+          |        <td>699€</td>
+          |        <td class="col-prize">ab 1800€</td>
+          |    </tr>
+          |    <tr>
           |        <td><a href="http://paripa.de" target="_blank">PARIPA</a></td>
-          |        <td>K und meral</td>
-          |        <td class="col-prize">ab 1500€</td>
+          |        <td>Kserie</td>
+          |        <td>500€</td>
+          |        <td class="col-prize">ab 1450€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td>J W D</td>
-          |        <td class="col-prize">ab 1650€</td>
+          |        <td>600€</td>
+          |        <td class="col-prize">ab 1750€</td>
+          |    </tr>
+          |    <tr>
+          |        <td><a href="https://shop.ra-co.com/de/intec-rahmen.html" target="_blank">INTEC</a></td>
+          |        <td>T07</td>
+          |        <td>400€</td>
+          |        <td class="col-prize">ab 1200€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>alle RAL Farben</td>
-          |        <td class="col-prize"></td>
+          |        <td>T06</td>
+          |        <td>400€</td>
+          |        <td class="col-prize">ab 1200€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td>Lieferzeit auf Anfrage</td>
-          |        <td class="col-prize"></td>
+          |        <td>M01</td>
+          |        <td>400€</td>
+          |        <td class="col-prize">ab 1200€</td>
+          |    </tr>
+          |    <tr>
+          |        <td></td>
+          |        <td>F010</td>
+          |        <td>450€</td>
+          |        <td class="col-prize">ab 1400€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.bricklanebikes.co.uk/2018-blb-hitchhiker-frameset-blackgrey" target="_blank">BLB</a></td>
-          |        <td>Hichhiker auf Anfrage</td>
-          |        <td class="col-prize">ab 1500€</td>
+          |        <td>Hichhiker</td>
+          |        <td>499€</td>
+          |        <td class="col-prize">ab 1550€</td>
           |    </tr>
           |    <tr>
           |        <td>taschenfahrrad</td>
-          |        <td>only</td>
-          |        <td class="col-prize">ab 850€</td>
-          |    </tr>
-          |    <tr>
-          |        <td></td>
-          |        <td>Schlanker CrMo- Rahmen für
-          |            Stadt- & Trekkingaufbauten,
-          |        </td>
-          |        <td class="col-prize"></td>
-          |    </tr>
-          |    <tr>
-          |        <td>Diamant</td>
-          |        <td>52, 55, 59, 62</td>
-          |        <td class="col-prize"></td>
-          |    </tr>
-          |    <tr>
-          |        <td>Mixte</td>
-          |        <td>48, 55 schwarz glänzend</td>
-          |        <td class="col-prize"></td>
+          |        <td>diamant & mixte</td>
+          |        <td>300€</td>
+          |        <td class="col-prize">ab 1000€</td>
           |    </tr>
           |    </tbody>
           |</table>
@@ -433,24 +437,18 @@ object Data {
          |<p class="sepa3"/>
          |
          |<p>
-         |    Ein regelmäßiges Service dient der Sicherheit und Wert-
-         |    erhaltung des geliebten Fahrzeuges und erspart spätere
-         |    teure Reparaturen.
-         |</p>
-         |<p class="sepa"/>
-         |<p>
-         |    Wir machen Pannendienst und schnelle Reparaturen für
-         |    alle Räder, immer wird der tatsächliche Arbeitsaufwand
-         |    verrechnet 1€/min.
-         |</p>
-         |<p class="sepa"/>
-         |<p>
-         |    Für taschenfahrrad- Räder wird innerhalb der ersten 3 Monate
-         |    ein Gratis/Garantie-Service angeboten und innerhalb der
-         |    ersten 3 Jahre gilt max. 59€ für ein umfassendes Service.
-         |    Grundsätzlich empfiehlt es sich, das Radservice dort machen
-         |    zu lassen, wo das Rad gekauft wurde, denn dort sollten alle
-         |    Ersatzteile verfügbar sein.
+         |Regelmäßiges Service erspart spätere teure Reparaturen, dient der Sicherheit und vor allem der Werterhaltung des Rades.
+         |<p class="sepa1"/>
+         |Wir machen Pannendienst und schnelle Reparaturen für fast alle Räder, Tarif 1€/min. Reparatur und Serviceumfang immer nach vorheriger Kostenabschätzung.
+         |<br>
+         |Bitte Termin vereinbaren, in den Monaten April, Mai, Juni kann unsere Werkstatt sonst platzen bzw. der taschenfahrrad-Radbau nimmt uns voll in Anspruch.
+         |Abholung am drauffolgenden Tag beachten, wir bitten das Rad zum vereinbarten Termin abzuholen damit Platz für andere ist, die unsere Dienst dringend benötigen.
+         |Wir vermitteln auch gerne an uns befreundete Kollegen in der Branche wenn bei uns nichts mehr geht oder empfehlen ein Service dort machen zu lassen,
+         |wo das Rad gekauft wurde, wenn spezielle Ersatzteile erforderlich sind.
+         |<p class="sepa1"/>
+         |Für taschenfahrrad-Räder gibt es ein Erst- und Garantieservice spätestens 3 Monate nach Kauf gratis, ansonsten 39€ und in den ersten 3 Jahren gilt ein
+         |garantierter Fixpreis von 59€ für ein umfassendes Service, excl. eventueller Materialkosten.
+         |Stark verschmutzte Räder werden nach vorheriger Grobreinigung serviciert, Kosten 25€.
          |</p>
          |""".stripMargin
   }
