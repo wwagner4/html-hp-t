@@ -4,7 +4,7 @@
 	<property name="work">${env.HOME}/prj/html-hp-t/target</property>
 	<property name="templ">tiles</property>
 
-	<property name="version" value="2019.3" />
+	<property name="version" value="2020.1" />
 	<target name="clean">
 		<delete verbose="true" includeemptydirs="true">
 			<fileset dir="${work}/gen-${templ}" includes="**/*">
