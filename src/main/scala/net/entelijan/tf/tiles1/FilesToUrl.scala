@@ -16,6 +16,8 @@ object FilesToUrl {
       .asScala
       .map(relPath)
       .toList
+      .filter(fn => fn.endsWith("jpg") || fn.endsWith("jpeg"))
+      .sorted
   }
 
 }

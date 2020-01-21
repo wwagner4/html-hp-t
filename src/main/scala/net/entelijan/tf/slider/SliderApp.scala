@@ -31,7 +31,6 @@ object SliderApp extends App {
   private def create(baseIndDir: Path, imagesInDir: Path, sliderName: String,
                      f: (String, Seq[String], TilesDim) => String,
                      dim: TilesDim): Unit = {
-    val _fileNames = imageFileNames(imagesInDir)
 
     val outDir = Paths.get(s"target/$sliderName")
     if (!Files.exists(outDir)) {
@@ -57,7 +56,8 @@ object SliderApp extends App {
 
     ResCopy.copyDir(Paths.get(s"proto/WebContent/proto04/$sliderName"), outDir)
     val htmlFile = outDir.resolve(s"$pageName.html")
-    tryWithRes(Files.newBufferedWriter(htmlFile)) {
+    val _fileNames = imageFileNames(imagesInDir)
+    tryWithRes(Files.newBufferedWriter(htmlFile)) {                     
       bw =>
         TfUtil.tryWithRes(new PrintWriter(bw)) {
           pw => pw.print(f(pageName, _fileNames, dim))

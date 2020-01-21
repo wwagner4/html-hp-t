@@ -157,8 +157,8 @@ class TemplTiles extends Templ {
       val contentWidth = 75 // em
       val tilesPadding = 0.3 // em
       p.layout match {
-        case Layout_Default => CssParameters(contentWidth, 30, tilesPadding, 3, 3)
-        case Layout_Wide => CssParameters(contentWidth, 45, tilesPadding, 5, 3)
+        case Layout_Default => CssParameters(contentWidth, 30, tilesPadding, 4, 4)
+        case Layout_Wide => CssParameters(contentWidth, 45, tilesPadding, 3, 2)
       }
     }
 
@@ -277,11 +277,11 @@ class TemplTiles extends Templ {
          |	padding: 0;
          |}
          |.sepa3 {
-         |	margin: 40px 0 0;
+         |	margin: 50px 0 0;
          |	padding: 0;
          |}
          |.sepa4 {
-         |	margin: 60px 0 0;
+         |	margin: 80px 0 0;
          |	padding: 0;
          |}
          |
@@ -291,18 +291,22 @@ class TemplTiles extends Templ {
          |a {
          |	text-decoration: none;
          |	color: #000000;
+         |  font-weight: bold;
          |}
          |a:visited {
          |	text-decoration: none;
          |	color: #000000;
+         |  font-weight: bold;
          |}
          |a:hover {
          |	text-decoration: underline;
          |	color: #000000;
+         |  font-weight: bold;
          |}
          |a:active {
          |	text-decoration: underline;
          |	color: #000000;
+         |  font-weight: bold;
          |}
          |
          |""".stripMargin

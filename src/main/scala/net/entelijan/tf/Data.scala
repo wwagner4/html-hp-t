@@ -28,41 +28,34 @@ object Data {
          |<p>Verkauf / Werkstatt<p>
          |<p>di-fr: 13-18:00 sa 9-15</p>
          |<p><a target="_blank" href="http://www.openstreetmap.org/?lat=48.218173500000006&amp;lon=16.377131&amp;zoom=17&amp;layers=M&amp;mlat=48.21819&amp;mlon=16.37711">Leopoldsgasse 28 1020 Wien...</a></p>
+         |<p class="sepa2"/>
          |<p><a target="_blank" href="https://www.facebook.com/das-taschenfahrrad-108130579232304">facebook...</a></p>
          |<p><a target="_blank" href="https://www.instagram.com/taschenfahrrad/">instagram...</a></p>
          |<p class="sepa"/>
          |<p>kontakt <a href="mailto:hans.poellhuber@chello.at">hans.poellhuber@chello.at</a></p>
          |<p>0043 699 1043 1886</p>
-         |<p class="sepa2"/>
+         |<p class="sepa4"/>
          |
          |<p>
-         |An vorderster Reihe unseres Angebots stehen die  tokyobikes (Tokyo)
-         |für cooles entspanntes Stadtradeln und die Räder von  SURLY  (Bloomington/Indiana)
+         |An vorderster Reihe unseres Angebots stehen die <b>tokyobikes</b> (Tokyo)
+         |für cooles entspanntes Stadtradeln und die Räder von  <b>SURLY</b>  (Bloomington/Indiana)
          |für die Befahrung der übrigen Welt auf all ihren Wegen.
-         |Darüberhinaus gibt es Rahmensets und Räder von  INTEC, paripa, BLB  und  taschenfahrrad's
-         |black only.<br>
+         |Darüberhinaus gibt es Rahmensets und Räder von  <b>INTEC</b>, <b>paripa</b>, <b>BLB</b> und <b>taschenfahrrad</b>'s
+         |black only.
          |Aber oftmals steht das gewünschte Rad passend, fixfertig und preisgünstig bereits im
-         |Geschäft. Ist spannend, wir wollen es wissen und werden es herausfinden,
-         |Kunde/in und wir.
-         |</p>
-         |<p class="sepa2"/>
-         |
-         |
-         |<p>
-         |Wir lieben schnelle Räder, die auch praktisch sind und wir wollen
-         |schöne Räder, weil wir gerne und mit Stolz radfahren.
+         |Geschäft.
          |</p>
          |
-         |<p class="sepa2"/>
+         |<p class="sepa4"/>
          |<p><a href="producer.html">unsere Markenräder...</a></p>
          |
-         |<p class="sepa"/>
+         |<p class="sepa2"/>
          |<p><a href="selfmade.html">unsere Eigenbauräder...</a></p>
          |
-         |<p class="sepa"/>
+         |<p class="sepa2"/>
          |<p><a href="service.html">unser Service...</a></p>
          |
-         |<p class="sepa"/>
+         |<p class="sepa2"/>
          |<p><a href="jobs.html">unser Jobangebot...</a></p>
          |
          |""".stripMargin
@@ -77,7 +70,7 @@ object Data {
     def htmlContentLeftPage: String =
       s"""|<h1><a href="index.html">das taschenfahrrad</a></h1>
           |<p><a href="index.html">start</a> &#62; fahrräder</p>
-          |<p class="sepa3"/>
+          |<p class="sepa4"/>
           |<p class="p1">
           |    Wir haben im Laufe der Jahre viele Marken geführt, erprobt und schätzen gelernt.
           |    Veränderungen gibt es, weil sich Bezugsquellen ändern und das
@@ -89,12 +82,7 @@ object Data {
           |    für detaillierte und bebilderte Infos. Die reale Welt des
           |    taschenfahrrads ist in 1020 Leopoldsg. 28,
           |</p>
-          |<p class="sepa"/>
-          |<p>
-          |    come and see, die Auswahl:
-          |</p>
-          |<p class="sepa"/>
-          |
+          |<p class="sepa3"/>
           |<table>
           |    <tbody>
           |    <tr>
@@ -117,14 +105,14 @@ object Data {
           |    </tr>
           |    <tr>
           |        <td></td>
-          |        <td><a href="http://www.tokyobike.de/?area=bikes" target="_blank">classic699</a></td>
+          |        <td><a href="http://www.tokyobike.de/?area=bikes" target="_blank">classic</a></td>
           |        <td>auf Anfrage</td>
-          |        <td class="col-prize1"></td>
+          |        <td class="col-prize1">699€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="http://www.fujibikes.com/usa/bikes/road/adventure-and-touring/touring" target="_blank">FUJI</a></td>
           |        <td><a href="http://www.fujibikes.com/usa/bikes/road/adventure-and-touring/touring" target="_blank">touring</a></td>
-          |        <td>49, 52, 54, 56, 58, 61, 64 black, blue</td>
+          |        <td>49, 52, 54, 56, 58 black, blue</td>
           |        <td class="col-prize">899€</td>
           |    </tr>
           |    <tr>
@@ -173,25 +161,25 @@ object Data {
           |        <td><a href="https://www.pelagobicycles.com/" target="_blank">PELAGO</a></td>
           |        <td><a href="https://www.pelagobicycles.com/bicycles/airisto-outback.html" target="_blank">Airisto Outback</a></td>
           |        <td>57 metallic sand</td>
-          |        <td class="col-prize1">1099€</td>
+          |        <td class="col-prize1">1099€ statt 1335€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="https://www.pelagobicycles.com/bicycles/hanko-outback.html" target="_blank">Hanko Outback</a></td>
           |        <td>56 moss green</td>
-          |        <td class="col-prize">1099€</td>
+          |        <td class="col-prize">1099€ statt 1335€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="https://www.pelagobicycles.com/bicycles/brooklyn.html" target="_blank">Brooklyn3</a></td>
           |        <td>52 black, dapper red, helene grey</td>
-          |        <td class="col-prize1">755€</td>
+          |        <td class="col-prize1">755€ statt 825€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
           |        <td><a href="https://www.pelagobicycles.com/bicycles/bristol.html" target="_blank">Bristol3</a></td>
           |        <td>57,61 black, traffic grey</td>
-          |        <td class="col-prize1">755€</td>
+          |        <td class="col-prize1">755€ statt 825€</td>
           |    </tr>
           |    <tr>
           |        <td></td>
@@ -274,7 +262,7 @@ object Data {
           |        <td><a href="https://www.contoura.de/modelle/salerno/" target="_blank">CONTOURA</a></td>
           |        <td><a href="https://www.contoura.de/modelle/salerno/" target="_blank">Salerno</a></td>
           |        <td>auf Anfrage</td>
-          |        <td class="col-prize1"></td>
+          |        <td class="col-prize1">899€</td>
           |    </tr>
           |    <tr>
           |        <td><a href="https://www.naloobikes.com/" target="_blank">NALOO</a></td>
@@ -295,13 +283,16 @@ object Data {
       s"""|
           |<h1><a href="index.html">das taschenfahrrad</a></h1>
           |<p><a href="index.html">start</a> &#62; eigenbau</p>
-          |<p class="sepa3"/>
+          |<p class="sepa4"/>
           |
           |<p>
-          |Wenn's 100%ig passen soll dann das sind unsere Räder, die wir leidenschaftlich gerne bauen:<br>
+          |Wenn's 100%ig passen soll dann das sind unsere Räder, die wir leidenschaftlich gerne bauen:
+          |<p class="sepa1"/>
+          |
           |Die Basis sind robuste, hochwertige Stahlrahmen mit excellentem Fahrverhalten,
           |bewährte Komponenten die für die Anforderungen passen
-          |und ihren Job einfach gut machen, wenns sein muß, eine Weltreise lang.
+          |und ihren Job einfach gut und lange machen, wenns sein muß, eine Weltreise lang.
+          |<p class="sepa4"/>
           |</p>
           |<table>
           |    <tbody>
@@ -345,7 +336,7 @@ object Data {
           |        <td class="col-prize">ab 1800€</td>
           |    </tr>
           |    <tr>
-          |        <td><a href="http://paripa.de" target="_blank">PARIPA</a></td>
+          |        <td><a href="http://paripa.de" target="_blank">paripa</a></td>
           |        <td>Kserie</td>
           |        <td>500€</td>
           |        <td class="col-prize">ab 1450€</td>
@@ -404,7 +395,7 @@ object Data {
       s"""|
           |<h1><a href="index.html">das taschenfahrrad</a></h1>
           |<p><a href="index.html">start</a> &#62; jobs</p>
-          |<p class="sepa3"/>
+          |<p class="sepa4"/>
           |
           |<p>
           |    In den Monaten März bis Oktober sucht das taschenfahrrad
@@ -434,20 +425,23 @@ object Data {
       s"""
          |<h1><a href="index.html">das taschenfahrrad</a></h1>
          |<p><a href="index.html">start</a> &#62; service</p>
-         |<p class="sepa3"/>
+         |<p class="sepa4"/>
          |
          |<p>
          |Regelmäßiges Service erspart spätere teure Reparaturen, dient der Sicherheit und vor allem der Werterhaltung des Rades.
-         |<p class="sepa1"/>
+         |<p class="sepa2"/>
          |Wir machen Pannendienst und schnelle Reparaturen für fast alle Räder, Tarif 1€/min. Reparatur und Serviceumfang immer nach vorheriger Kostenabschätzung.
-         |<br>
+         |<p class="sepa1"/>
          |Bitte Termin vereinbaren, in den Monaten April, Mai, Juni kann unsere Werkstatt sonst platzen bzw. der taschenfahrrad-Radbau nimmt uns voll in Anspruch.
-         |Abholung am drauffolgenden Tag beachten, wir bitten das Rad zum vereinbarten Termin abzuholen damit Platz für andere ist, die unsere Dienst dringend benötigen.
-         |Wir vermitteln auch gerne an uns befreundete Kollegen in der Branche wenn bei uns nichts mehr geht oder empfehlen ein Service dort machen zu lassen,
+         |Wir bitten das Rad zum vereinbarten Termin abzuholen 
+         |(meist der darauffolgende Tag), damit Platz für andere ist, die unsere Dienste dringend benötigen.
+         |Wir vermitteln auch gerne an uns befreundete Kollegen in der Branche, wenn bei uns nichts mehr geht oder 
+         |empfehlen ein Service dort machen zu lassen,
          |wo das Rad gekauft wurde, wenn spezielle Ersatzteile erforderlich sind.
          |<p class="sepa1"/>
          |Für taschenfahrrad-Räder gibt es ein Erst- und Garantieservice spätestens 3 Monate nach Kauf gratis, ansonsten 39€ und in den ersten 3 Jahren gilt ein
          |garantierter Fixpreis von 59€ für ein umfassendes Service, excl. eventueller Materialkosten.
+         |<p class="sepa1"/>
          |Stark verschmutzte Räder werden nach vorheriger Grobreinigung serviciert, Kosten 25€.
          |</p>
          |""".stripMargin
