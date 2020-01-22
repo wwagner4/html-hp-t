@@ -286,7 +286,8 @@ object Data {
           |<p class="sepa4"/>
           |
           |<p>
-          |Wenn's 100%ig passen soll dann das sind unsere Räder, die wir leidenschaftlich gerne bauen:
+          |Wenn's 100%ig passen soll, dann sind das unsere Räder, die wir
+          |leidenschaftlich gerne bauen.
           |<p class="sepa1"/>
           |
           |Die Basis sind robuste, hochwertige Stahlrahmen mit excellentem Fahrverhalten,
