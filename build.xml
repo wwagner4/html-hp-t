@@ -3,8 +3,8 @@
 	<property environment="env"/>
 	<property name="work">${env.HOME}/prj/html-hp-t/target</property>
 	<property name="templ">tiles</property>
+	<property name="version" value="2020.2" />
 
-	<property name="version" value="2020.1" />
 	<target name="clean">
 		<delete verbose="true" includeemptydirs="true">
 			<fileset dir="${work}/gen-${templ}" includes="**/*">
@@ -12,7 +12,7 @@
 		</delete>
 	</target>
 	<target name="zip">
-		<zip destfile="${work}/hp-taschenfahrrad-${version}.zip"
+		<zip destfile="${work}/hp-taschenfahrrad-${templ}-${version}.zip"
 			 basedir="${work}/gen-${templ}" includes="**/*" />
 	</target>
 	<target name="deploy-all-entelijan">
