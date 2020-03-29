@@ -34,19 +34,29 @@ object Data {
          |<p class="sepa"/>
          |<p>kontakt <a href="mailto:hans.poellhuber@chello.at">hans.poellhuber@chello.at</a></p>
          |<p>0043 699 1043 1886</p>
-         |<p class="sepa4"/>
+         |<p class="sepa3"/>
+         |
+         |<p>
+         |Geschäft wegen COVID 19 Verordnung geschlossen,
+         |jedoch WERKSTATT ist OFFEN.
+         |Wir bitten um Kontaktaufnahme per sms, email, telef. 
+         |und kontaktlose Übergabe und Abholung.<br>
+         |Radkauf-Beratung per sms, whatsapp, email
+         |Lieferung auf Anfrage.
+         |</p>
          |
          |<p>
          |An vorderster Reihe unseres Angebots stehen die <b>tokyobikes</b> (Tokyo)
-         |für cooles entspanntes Stadtradeln und die Räder von  <b>SURLY</b>  (Bloomington/Indiana)
-         |für die Befahrung der übrigen Welt auf all ihren Wegen.
-         |Darüberhinaus gibt es Rahmensets und Räder von  <b>INTEC</b>, <b>paripa</b>, <b>BLB</b> und <b>taschenfahrrad</b>'s
+         |für cooles entspanntes Stadtradeln und die Räder von  <b>SURLY</b>  
+         |(Bloomington/Indiana) für die Befahrung der übrigen Welt auf all ihren Wegen.
+         |Darüberhinaus gibt es Rahmensets und Räder von  <b>INTEC</b>, <b>paripa</b>, 
+         |<b>BLB</b> und <b>taschenfahrrad</b>'s
          |black only.
          |Aber oftmals steht das gewünschte Rad passend, fixfertig und preisgünstig bereits im
          |Geschäft.
          |</p>
          |
-         |<p class="sepa4"/>
+         |<p class="sepa3"/>
          |<p><a href="producer.html">unsere Markenräder...</a></p>
          |
          |<p class="sepa2"/>
@@ -57,6 +67,9 @@ object Data {
          |
          |<p class="sepa2"/>
          |<p><a href="jobs.html">unser Jobangebot...</a></p>
+         |
+         |<p class="sepa2"/>
+         |<p><a href="https://firmen.wko.at/Web/DetailsKontakt.aspx?FirmaID=3fbab856-76f3-41ab-849f-643b215a4db8&Name=Johann%20P%C3%B6llhuber&Standort=Wien%20(Bundesland)"  target="_blank">Impressum...</a></p>
          |
          |""".stripMargin
     }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="taschenfahrrad">
 	<property environment="env"/>
-	<property name="work">${env.HOME}/prj/html-hp-t/target</property>
+	<property name="work">${user.home}/prj/html-hp-t/target</property>
 	<property name="templ">tiles</property>
-	<property name="version" value="2020.2" />
+	<property name="version" value="2020.3" />
 
 	<target name="clean">
 		<delete verbose="true" includeemptydirs="true">
@@ -17,21 +17,20 @@
 	</target>
 	<target name="deploy-all-entelijan">
 		<scp todir="root@entelijan.net:/root/app/wolfi-hp/t"
-			 keyfile="${env.HOME}/.ssh/entelijan-key"
+			 keyfile="${user.home}/.ssh/id_dsa"
+			 passphrase=""
 			 trust="true" verbose="true">
 			<fileset dir="${work}/gen-${templ}">
 				<include name="**/*" />
 			</fileset>
 		</scp>
 	</target>
-	<target name="deploy-html-entelijan">
-		<scp todir="root@entelijan.net:/root/app/wolfi-hp/t"
-			 keyfile="${env.HOME}/.ssh/entelijan-key"
-			 trust="true" verbose="true">
-			<fileset dir="${work}/gen-${templ}">
-				<include name="*" />
-			</fileset>
-		</scp>
+	<target name="deploy-all-entelijan-mac">
+		<exec executable="scp" >
+			<arg value="-rv" />
+			<arg value="/Users/wwagner4/prj/html-hp-t/target/gen-tiles" />
+			<arg value="root@entelijan.net:/root/app/wolfi-hp/t" />
+		</exec>
 	</target>
 
 </project>
