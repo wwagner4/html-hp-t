@@ -26,7 +26,7 @@ object Data {
          |<p>stadt-, tourenräder und fahrradtaschen<p>
          |<p class="sepa2" />
          |<p>Verkauf / Werkstatt<p>
-         |<p>di-fr: 13-18:00 sa 9-15</p>
+         |<p>di-fr 13-18 sa9-15</p>
          |<p><a target="_blank" href="http://www.openstreetmap.org/?lat=48.218173500000006&amp;lon=16.377131&amp;zoom=17&amp;layers=M&amp;mlat=48.21819&amp;mlon=16.37711">Leopoldsgasse 28 1020 Wien...</a></p>
          |<p class="sepa2"/>
          |<p><a target="_blank" href="https://www.facebook.com/das-taschenfahrrad-108130579232304">facebook...</a></p>
@@ -37,12 +37,13 @@ object Data {
          |<p class="sepa3"/>
          |
          |<p>
-         |Geschäft wegen COVID 19 Verordnung geschlossen,
-         |jedoch WERKSTATT ist OFFEN.
-         |Wir bitten um Kontaktaufnahme per sms, email, telef. 
-         |und kontaktlose Übergabe und Abholung.<br>
-         |Radkauf-Beratung per sms, whatsapp, email
+         |<span style="color:Crimson">
+         |Geschäft wegen COVID 19 geschlossen, kein Zutritt.
+         |WERKSTATT ist OFFEN nach Kontaktaufnahme per sms, email, Telefon.
+         |Übergabe & Abholung des Rades KONTAKTLOS von Mo-Fr 9-18 möglich.
+         |Radkauf bzw. -Beratung ist ebenfalls möglich per sms, email, whatsapp.
          |Lieferung auf Anfrage.
+         |</span>.
          |</p>
          |
          |<p>
