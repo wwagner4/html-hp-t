@@ -36,15 +36,21 @@ object Data {
          |<p>0043 699 1043 1886</p>
          |<p class="sepa3"/>
          |
+         |
          |<p>
          |<span style="color:Crimson">
-         |Geschäft wegen COVID 19 geschlossen, kein Zutritt.
-         |WERKSTATT ist OFFEN nach Kontaktaufnahme per sms, email, Telefon.
-         |Übergabe & Abholung des Rades KONTAKTLOS von Mo-Fr 9-18 möglich.
-         |Radkauf bzw. -Beratung ist ebenfalls möglich per sms, email, whatsapp.
-         |Lieferung auf Anfrage.
+         |Das Geschäft ist wieder OFFEN für Verkauf & Reparatur.
+         |Es gelten jedoch COVID19-bedingte Einschränkungen:<br/>
+         |-EINZELEINLASS<br/>
+         |-SCHUTZMASKE<br/>
+         |-SICHERHEITSABSTAND<br/>
+         |Im Interesse der Gesundheit aller soll der Aufenthalt
+         |im Geschäft nur so lang als nötig sein.
+         |Bitte um Terminvereinbarung für Reparatur/Service.
          |</span>.
          |</p>
+         |
+         |
          |
          |<p>
          |An vorderster Reihe unseres Angebots stehen die <b>tokyobikes</b> (Tokyo)
@@ -57,7 +63,7 @@ object Data {
          |Geschäft.
          |</p>
          |
-         |<p class="sepa3"/>
+         |<p class="sepa2"/>
          |<p><a href="producer.html">unsere Markenräder...</a></p>
          |
          |<p class="sepa2"/>
