@@ -64,19 +64,20 @@ object Data {
          |
          |
          |<p class="sepa2"/>
-         |<p><a href="producer.html">unsere Markenräder...</a></p>
+         |<p><a href="producer.html">tokyobike...</a></p>
          |
          |<p class="sepa2"/>
-         |<p><a href="selfmade.html">unsere Eigenbauräder...</a></p>
+         |<p><a href="selfmade.html">SURLY und anderes...</a></p>
          |
          |<p class="sepa2"/>
-         |<p><a href="service.html">unser Service...</a></p>
+         |<p><a href="service.html">Service...</a></p>
          |
          |<p class="sepa2"/>
-         |<p><a href="jobs.html">unser Jobangebot...</a></p>
+         |<p><a href="jobs.html">Jobs...</a></p>
          |
          |<p class="sepa2"/>
-         |<p><a href="https://firmen.wko.at/Web/DetailsKontakt.aspx?FirmaID=3fbab856-76f3-41ab-849f-643b215a4db8&Name=Johann%20P%C3%B6llhuber&Standort=Wien%20(Bundesland)"  target="_blank">Impressum...</a></p>
+         |<p><a href="https://firmen.wko.at/Web/DetailsKontakt.aspx?FirmaID=3fbab856-76f3-41ab-849f-643b215a4db8&Name=Johann%20P%C3%B6llhuber&Standort=Wien%20(Bundesland)"  target="_blank">
+         |impressum...</a></p>
          |
          |""".stripMargin
     }
@@ -302,7 +303,7 @@ object Data {
     def htmlContentLeftPage: String =
       s"""|
           |<h1><a href="index.html">das taschenfahrrad</a></h1>
-          |<p><a href="index.html">start</a> &#62; eigenbau</p>
+          |<p><a href="index.html">start</a> &#62; SURLY und anderes</p>
           |<p class="sepa4"/>
           |
           |<p>
