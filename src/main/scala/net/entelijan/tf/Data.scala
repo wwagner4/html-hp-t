@@ -25,12 +25,18 @@ object Data {
          |<h1>das taschenfahrrad</h1>
          |<p>stadt-, tourenräder und fahrradtaschen<p>
          |<p class="sepa2" />
-         |<p>Verkauf / Werkstatt<p>
-         |<p>di-fr 13-18 sa9-15</p>
+         |
+         |<p>Verkauf Räder, Zubehör und Ersatzteile<br>
+         |di-fr 15-18  sa 9-15</p>
+         |<p>Individuelle Beratung für Eigenbauräder<br>
+         |nach Vereinbarung jeweils  di-fr 18-19</p>
+         |
          |<p><a target="_blank" href="http://www.openstreetmap.org/?lat=48.218173500000006&amp;lon=16.377131&amp;zoom=17&amp;layers=M&amp;mlat=48.21819&amp;mlon=16.37711">Leopoldsgasse 28 1020 Wien...</a></p>
          |<p class="sepa2"/>
-         |<p><a target="_blank" href="https://www.facebook.com/das-taschenfahrrad-108130579232304">facebook...</a></p>
-         |<p><a target="_blank" href="https://www.instagram.com/taschenfahrrad/">instagram...</a></p>
+         |<p><a target="_blank" href="https://www.facebook.com/das-taschenfahrrad-108130579232304">
+         |facebook...  aktuelles</a></p>
+         |<p><a target="_blank" href="https://www.instagram.com/taschenfahrrad/">
+         |instagram...  aktuelle bilder</a></p>
          |<p class="sepa"/>
          |<p>kontakt <a href="mailto:hans.poellhuber@chello.at">hans.poellhuber@chello.at</a></p>
          |<p>0043 699 1043 1886</p>
@@ -38,30 +44,24 @@ object Data {
          |
          |
          |<p>
+         |<span style="color:SeaGreen">
+         |Das Geschäft ist wieder OFFEN für Verkauf & Service.
+         |Die allgemeinen Öffnungszeiten wurden etwas eingeschränkt, dafür können Beratungstermine vereinbart werden jeweils di-fr 18.00 bis 19.00.
+         |Wir bemühen uns Schnellservice zu machen so gut und so weit möglich, auf jeden Fall fragen, wir können auch andere Radwerkstätten empfehlen und vermitteln.
+         |</span>.
+         |</p>
+         |<p>
+         |
          |<span style="color:Crimson">
-         |Das Geschäft ist wieder OFFEN für Verkauf & Reparatur.
-         |Es gelten jedoch COVID19-bedingte Einschränkungen:<br/>
-         |-EINZELEINLASS<br/>
-         |-SCHUTZMASKE<br/>
-         |-SICHERHEITSABSTAND<br/>
-         |Im Interesse der Gesundheit aller soll der Aufenthalt
-         |im Geschäft nur so lang als nötig sein.
-         |Bitte um Terminvereinbarung für Reparatur/Service.
+         |Es gelten die Covid19-bedingten Einschränkungen:
+         |EINZELEINLASS
+         |SICHERHEITSABSTAND   mindestens 2m
+         |SCHUTZMASKE  ffp2 oder ffp3
          |</span>.
          |</p>
          |
          |
          |
-         |<p>
-         |An vorderster Reihe unseres Angebots stehen die <b>tokyobikes</b> (Tokyo)
-         |für cooles entspanntes Stadtradeln und die Räder von  <b>SURLY</b>  
-         |(Bloomington/Indiana) für die Befahrung der übrigen Welt auf all ihren Wegen.
-         |Darüberhinaus gibt es Rahmensets und Räder von  <b>INTEC</b>, <b>paripa</b>, 
-         |<b>BLB</b> und <b>taschenfahrrad</b>'s
-         |black only.
-         |Aber oftmals steht das gewünschte Rad passend, fixfertig und preisgünstig bereits im
-         |Geschäft.
-         |</p>
          |
          |<p class="sepa2"/>
          |<p><a href="producer.html">unsere Markenräder...</a></p>
