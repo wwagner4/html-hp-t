@@ -124,8 +124,6 @@ object Data {
   val selfmadePage: Page = new Page {
     def id = "selfmade"
 
-    override def layout: Layout = Layout_Middle
-
     def htmlContentLeftPage: String =
       s"""|
           |<h1><a href="index.html">das taschenfahrrad</a></h1>
