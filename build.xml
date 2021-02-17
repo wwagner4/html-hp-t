@@ -3,7 +3,7 @@
 	<property environment="env"/>
 	<property name="work">${user.home}/prj/html-hp-t/target</property>
 	<property name="templ">tiles</property>
-	<property name="version" value="2020.4" />
+	<property name="version" value="2021.1" />
 
 	<target name="clean">
 		<delete verbose="true" includeemptydirs="true">
