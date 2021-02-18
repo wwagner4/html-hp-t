@@ -15,22 +15,4 @@
 		<zip destfile="${work}/hp-taschenfahrrad-${templ}-${version}.zip"
 			 basedir="${work}/gen-${templ}" includes="**/*" />
 	</target>
-	<target name="deploy-all-entelijan">
-		<scp todir="root@entelijan.net:/root/app/wolfi-hp/t"
-			 keyfile="${user.home}/.ssh/id_dsa"
-			 passphrase=""
-			 trust="true" verbose="true">
-			<fileset dir="${work}/gen-${templ}">
-				<include name="**/*" />
-			</fileset>
-		</scp>
-	</target>
-	<target name="deploy-all-entelijan-mac">
-		<exec executable="scp" >
-			<arg value="-rv" />
-			<arg value="/Users/wwagner4/prj/html-hp-t/target/gen-tiles" />
-			<arg value="root@entelijan.net:/root/app/wolfi-hp/t" />
-		</exec>
-	</target>
-
 </project>

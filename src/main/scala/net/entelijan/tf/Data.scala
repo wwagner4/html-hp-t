@@ -118,6 +118,18 @@ object Data {
           |<p>
           |<b>little tokyobike</b> auf Anfrage ... 300€
           |</p>
+          |
+          |<p>
+          |Andere Marken im <b>SALE</b><br>
+          |Fuji  Touring 52 blue, 58 black um 899€, Fuji Feather 499€ statt 599€
+          |Kona Sutra 54, 56 blue 1399€ statt 1599€, Penthouse, Honky Tonk, Paddy Wagon
+          |Pelago Bristol, Brooklyn 699€ statt 775€, Capri 899€ statt 995€, Airisto Outback
+          |Creme caferacer men 49, 60, Echo solo white 55, Echo Doppio blue 57
+          |Linus Dutchi 46 black 499€, Roadster 59 black 499€,
+          |Bobbin Noodle 60 moody blue 499€, Birdie8 599€,
+          |Viva, Breezer, Marin auf Anfrage
+          |</p>
+          |
           """.stripMargin
   }
 
