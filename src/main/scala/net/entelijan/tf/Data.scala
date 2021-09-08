@@ -107,12 +107,12 @@ object Data {
           |
           |<p>
           |<b>bisou</b> 42, 50, 55 gloss colours: saffron, moss green, blue jade, vincent blue,
-          |ivory, willow, blue gray ... 700€
+          |ivory, willow, blue gray ... 750€
           |</p>
           |
           |<p>
           |<b>classic26</b> 47, 53, 57, 61 semi-matt colours: willow, mustard, moss green,
-          |ivory, bordeaux, ash blue ... 800€
+          |ivory, bordeaux, ash blue ... 850€
           |</p>
           |
           |<p>
