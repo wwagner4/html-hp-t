@@ -263,7 +263,6 @@ class TemplTiles extends Templ {
          |}
          |.p2 {
          |	font-family: inherit;
-         |  font-weight: bold;
          |}
          |img {
          |	margin: 0;
@@ -296,22 +295,18 @@ class TemplTiles extends Templ {
          |a {
          |	text-decoration: none;
          |	color: #000000;
-         |  font-weight: bold;
          |}
          |a:visited {
          |	text-decoration: none;
          |	color: #000000;
-         |  font-weight: bold;
          |}
          |a:hover {
          |	text-decoration: underline;
          |	color: #000000;
-         |  font-weight: bold;
          |}
          |a:active {
          |	text-decoration: underline;
          |	color: #000000;
-         |  font-weight: bold;
          |}
          |
          |""".stripMargin
