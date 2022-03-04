@@ -26,11 +26,11 @@ object Data {
       s"""
          |<h1>das taschenfahrrad</h1>
          |<p>stadt-, tourenräder und fahrradtaschen<p>
-         |<p class="sepa2" />
          |
-         |<p class="p2">di-fr 15-18  sa 9-15</p>
-         |<p>Individuelle Beratung für Eigenbauräder nach Vereinbarung jeweils</p>
-         |<p class="p2">di-fr 18-19</p>
+         |<p class="sepa4" />
+         |<p class="p2">Öffnungszeiten di-fr 15-18  sa 9-15</p>
+         |<p>Individuelle Beratung für Eigenbauräder nach Vereinbarung jeweils
+         |di-fr 18-19</p>
          |
          |<p><a target="_blank" href="http://www.openstreetmap.org/?lat=48.218173500000006&amp;lon=16.377131&amp;zoom=17&amp;layers=M&amp;mlat=48.21819&amp;mlon=16.37711">Leopoldsgasse 28 1020 Wien...</a></p>
          |
@@ -55,9 +55,8 @@ object Data {
          |</p>
          |
          |
-         |<p class="sepa2"/>
-         |<p class="sepa2"/>
-         |<p><a href="selfmade.html">Surly...</a></p>
+         |<p class="sepa4"/>
+         |<p><a href="selfmade.html">SURLY...</a></p>
          |
          |<p class="sepa2"/>
          |<p><a href="producer.html">tokyobike...</a></p>
