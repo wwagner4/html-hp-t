@@ -28,48 +28,39 @@ object Data {
          |<p>stadt-, tourenräder und fahrradtaschen<p>
          |<p class="sepa2" />
          |
-         |<p>Verkauf Räder, Zubehör und Ersatzteile</p>
          |<p class="p2">di-fr 15-18  sa 9-15</p>
          |<p>Individuelle Beratung für Eigenbauräder nach Vereinbarung jeweils</p>
          |<p class="p2">di-fr 18-19</p>
          |
          |<p><a target="_blank" href="http://www.openstreetmap.org/?lat=48.218173500000006&amp;lon=16.377131&amp;zoom=17&amp;layers=M&amp;mlat=48.21819&amp;mlon=16.37711">Leopoldsgasse 28 1020 Wien...</a></p>
+         |
+         |
          |<p class="sepa2"/>
-         |<p><a target="_blank" href="https://www.facebook.com/das-taschenfahrrad-108130579232304">
-         |facebook...</a>  aktuelles</p>
          |<p><a target="_blank" href="https://www.instagram.com/taschenfahrrad/">
-         |instagram...</a>  aktuelle bilder</p>
+         |instagram...</a></p>
          |<p class="sepa"/>
-         |<p>kontakt <a href="mailto:hans.poellhuber@chello.at">hans.poellhuber@chello.at</a></p>
+         |<p><a target="_blank" href="https://www.facebook.com/das-taschenfahrrad-108130579232304">
+         |facebook...</a></p>
+         |
+         |
+         |
+         |<p class="sepa2"/>
+         |<p><a href="mailto:hans.poellhuber@chello.at">hans.poellhuber@chello.at</a></p>
          |<p>0043 699 1043 1886</p>
          |<p class="sepa2"/>
          |
-         |
          |<p>
-         |<span style="color:SeaGreen">
-         |Das Geschäft ist wieder OFFEN für Verkauf & Service.
-         |Die allgemeinen Öffnungszeiten wurden etwas eingeschränkt, dafür können Beratungstermine vereinbart werden jeweils di-fr 18.00 bis 19.00.
-         |Wir bemühen uns Schnellservice zu machen so gut und so weit möglich, auf jeden Fall fragen, wir können auch andere Radwerkstätten empfehlen und vermitteln.
-         |</span>
+         |Es gelten die aktuellen Covid19
+         |bedingten Einschränkungen.
          |</p>
-         |<p>
+         |
+         |
          |<p class="sepa2"/>
-         |<span style="color:Crimson">
-         |Es gelten die Covid19-bedingten Einschränkungen:<br>
-         |EINZELEINLASS<br>
-         |SICHERHEITSABSTAND   mindestens 2m<br>
-         |SCHUTZMASKE  ffp2 oder ffp3<br>
-         |</span>
-         |</p>
-         |
-         |
-         |
+         |<p class="sepa2"/>
+         |<p><a href="selfmade.html">Surly...</a></p>
          |
          |<p class="sepa2"/>
          |<p><a href="producer.html">tokyobike...</a></p>
-         |
-         |<p class="sepa2"/>
-         |<p><a href="selfmade.html">SURLY und anderes...</a></p>
          |
          |<p class="sepa2"/>
          |<p><a href="service.html">service...</a></p>
