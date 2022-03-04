@@ -130,61 +130,52 @@ object Data {
     def htmlContentLeftPage: String =
       s"""|
           |<h1><a href="index.html">das taschenfahrrad</a></h1>
-          |<p><a href="index.html">start</a> &#62; SURLY und anderes</p>
+          |<p><a href="index.html">start</a> &#62; SURLY</p>
+          |
           |<p class="sepa4"/>
+          |<h1>SURLY</h1>
           |
           |<p>
-          |<b>SURLY</b> 'serious steel bikes for people who don't take themselves too seriously'.
-          |Wenn es 100%ig passen soll, vom täglichen Einsatz bis zur Weltumrundung,
-          |dann vertrauen wir auf die Fahrradrahmen von SURLY Bloomington/Minnesota.
-          |Seit 1998 sind sie der Maßstab in Sachen TourenRäder, würdige Nachfolger der
-          |legendären Bikes von Bruce Gordon BLT (BasicLoadetTouring).
-          |Uns inspirieren diese äußerst widerstandsfähigen, für ein langes Radfahrerleben
-          |gebauten Rahmen. Gemeinsam mit den Kunden entstehen coole, schnelle,
-          |praktische Räder. Sie helfen beim Schultern der Lasten des Alltags,
-          |bringen dich rasend schnell ins Wochenende oder tragen dich weit,
-          |wenn's ein muß um die Welt.
+          |'serious steel bikes for people who don't take themselves too seriously...'
+          |</p>
+          |
+          |<p>
+          |wenn es 100ig passen soll, vom täglichen
+          |Einsatz bis zur Weltreise, dann vertrauen
+          |wir auf Fahrradrahmen von SURLY.
+          |Seit 1998 sind sie Maßstab in Sachen
+          |Tourenräder. Sie sind uns eine Inspiration
+          |für vieles und gemeinsam mit unseren
+          |Kunden entstehen coole Räder, die
+          |schnell und praktisch sind. Sie helfen
+          |beim Schultern der Lasten des Alltags,
+          |bringen dich schnell ins Wochenende,
+          |über die Berge und weit hinaus,
+          |wenn's sein muss, rund um unseren
+          |wunderbaren Planeten.
           |</p>
           |
           |<p>
           |Rahmensets:<br>
-          |LongHaulTrucker 579€, DiscTrucker (old) 649€,
-          |DiscTrucker (new) 649€, Straggler 699€, CrossCheck 599€,
-          |Midnight special 799€, BridgeClub 599€,
-          |Troll 779€ andere auf Anfrage.<br>
-          |Kompletträder ab1700€-2700€<br>
+          |CrossCheck 629€<br>
+          |Straggler 699€<br>
+          |Midnight special 849€<br>
+          |BridgeClub 599€<br>
+          |GhostGrappler 839€<br>
+          |DiscTrucker 799€<br>
+          |PackRat 599€<br>
+          |LongHaulTrucker 579€<br>
+          |Preamble 549€<br>
           |</p>
           |
           |<p>
-          |<b>Intec</b>  Fahrradrahmen produziert in der kleinen Fabrik FORT in
-          |Tschechien, für Tour & Alltag. Hochvergüteter, konifizierter Stahl,
-          |pulverbeschichtet und unverwüstlich.
+          |Rahmengrößen von 38 – 64
+          |oder xs s m l xl
           |</p>
           |
           |<p>
-          |Rahmensets:<br>
-          |T07 step through 449€, T07 diamant 449€,
-          |M01 449€, F10 499€<br>
-          |Kompletträder ab 1400€<br>
-          |</p>
-          |
-          |<p>
-          |<b>paripa</b>  Radspannerei/Berlin läßt auch eigene Rahmen bei FORT
-          |produzieren. Sanko CrMo Stahl, doppelt konifizierte,
-          |schlanke Rohre, pulverbeschichtet.
-          |</p>
-          |
-          |<p>
-          |Rahmensets:<br>
-          |K Serie 499€, Komlettrad ab 1400€<br>
-          |JWD 599€, Komplettrad ab 1700€<br>
-          |</p>
-          |
-          |<p>
-          |<b>taschenfahrrad</b>  diamant 52, 55, 59, 62<br>
-          |CrMo Stahl, schlanke Rohre, schwarz gepulvert<br>
-          |Rahmenset 299€,<br>
-          |Komplettrad Stadt-/Trekking ab 1200€<br>
+          |Wir bauen Kompletträder ab
+          |1600€ bis 2900€
           |</p>
           |
           |""".stripMargin
