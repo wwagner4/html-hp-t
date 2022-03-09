@@ -83,41 +83,52 @@ object Data {
     def htmlContentLeftPage: String =
       s"""|<h1><a href="index.html">das taschenfahrrad</a></h1>
           |<p><a href="index.html">start</a> &#62; tokyobike</p>
+          |
+          |
           |<p class="sepa4"/>
+          |<h1>tokyobike</h1>
           |
           |<p>
-          |<b>tokyobikes</b>  entstanden 2002 in Yanaka/Tokyo und sind inzwischen in vielen Metropolen der
-          |Welt zu finden. Für diese leichtgewichtigen, unkomplizierten Räder sind smart, pfiffig,
-          |simple, cool, einfach und schön, zutreffende Attribute. Seit einigen Jahren verschönern
-          |sie auch in Wien das urbane mobile Leben. Sie sind die bevorzugte Marke im
-          |taschenfahrrad, normal sind vor der Kirschblüte die Lager der tokyobike-shop's voll,
-          |heuer nicht so, coranabedingt hinkt die Produktion der großen Nachfrage hinterher, sie
-          |kommen verspätet, aber ganz bestimmt, im Juni.
+          |ein Rad für entspannte Mobilität in
+          |einer pulsierenden hektischen Metropole
+          |sollte es sein, dachte Ichiro Kanai in
+          |Yanaka, einem Vorort von Tokyo.
+          |So entstanden diese optisch und physisch
+          |leichten Räder und sind seither Inbegriff
+          |für coole, einfache urbane Mobilität.
+          |Tokyo, Sydney, New York, London,
+          |Berlin...... und seit 2015 in Wien im
+          |'taschenfahrrad'
+          |</p>
+          |
+          |<p class="sepa2"/>
+          |<p>
+          |classic 26 47 53 57 61
           |</p>
           |
           |<p>
-          |<b>bisou</b> 42, 50, 55 gloss colours: saffron, moss green, blue jade, vincent blue,
-          |ivory, willow, blue gray ... 750€
+          |semi matt colours:<br>
+          |willow, mustard, bordeaux, moss green,
+          |ivory, ash blue
           |</p>
           |
           |<p>
-          |<b>classic26</b> 47, 53, 57, 61 semi-matt colours: willow, mustard, moss green,
-          |ivory, bordeaux, ash blue ... 850€
+          |900€
+          |</p>
+          |
+          |
+          |<p class="sepa2"/>
+          |<p>
+          |bisou 46 50 55
           |</p>
           |
           |<p>
-          |<b>little tokyobike</b> auf Anfrage ... 300€
+          |gloss colours:<br>
+          |saffron, moss green, blue jade, ivory,
+          |vincent blue, willow, blue gray
           |</p>
-          |
           |<p>
-          |Andere Marken im <b>SALE</b><br>
-          |Fuji  Touring 52 blue, 58 black um 899€, Fuji Feather 499€ statt 599€
-          |Kona Sutra 54, 56 blue 1399€ statt 1599€, Penthouse, Honky Tonk, Paddy Wagon
-          |Pelago Bristol, Brooklyn 699€ statt 775€, Capri 899€ statt 995€, Airisto Outback
-          |Creme caferacer men 49, 60, Echo solo white 55, Echo Doppio blue 57
-          |Linus Dutchi 46 black 499€, Roadster 59 black 499€,
-          |Bobbin Noodle 60 moody blue 499€, Birdie8 599€,
-          |Viva, Breezer, Marin auf Anfrage
+          |800€
           |</p>
           |
           """.stripMargin
