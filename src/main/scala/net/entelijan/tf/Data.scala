@@ -89,37 +89,34 @@ object Data {
           |<h1>tokyobike</h1>
           |
           |<p>
-          |ein Rad für entspannte Mobilität in
-          |einer pulsierenden hektischen Metropole
-          |sollte es sein, dachte Ichiro Kanai in
-          |Yanaka, einem Vorort von Tokyo.
-          |So entstanden diese optisch und physisch
-          |leichten Räder und sind seither Inbegriff
-          |für coole, einfache urbane Mobilität.
-          |Tokyo, Sydney, New York, London,
-          |Berlin...... und seit 2015 in Wien im
+          |ein Rad für Tokyo sollte es sein,
+          |dachte Ichiro Kanai in Yanaka, einem
+          |Vorort von Tokyo, Gegenpol zur hektischen
+          |Verkehrswelt einer riesigen Metropole.
+          |Es entstanden geometrisch schlichte, sowohl
+          |optisch als auch physisch leichte Räder und
+          |sind seither Inbegriff für coole, urbane Mobilität.
+          |Tokyo, Sydney, New York, London, Kopenhagen
+          |Berlin...... und seit 2014 in Wien im
           |'taschenfahrrad'
           |</p>
           |
           |<p class="sepa2"/>
-          |<p>
-          |classic 26 47 53 57 61
-          |</p>
-          |
+          |<p>classic26</p>
+          |<p>Rahmengrößen 47 53 57 61</p>
           |<p>
           |semi matt colours:<br>
           |willow, mustard, bordeaux, moss green,
           |ivory, ash blue
           |</p>
-          |
-          |<p>
-          |900€
-          |</p>
+          |<p>900€</p>
           |
           |
           |<p class="sepa2"/>
           |<p>
-          |bisou 46 50 55
+          |bisou
+          |</p>
+          |Rahmengrößen 46 50 55
           |</p>
           |
           |<p>
