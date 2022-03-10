@@ -221,35 +221,44 @@ object Data {
          |<h1><a href="index.html">das taschenfahrrad</a></h1>
          |<p><a href="index.html">start</a> &#62; service</p>
          |<p class="sepa4"/>
-         |
+         |<h1>service</h1>
          |<p>
-         |Regelmäßiges Service und Reinigung dient der Sicherheit und Werterhaltung des
-         |Rades ... eine Binsenweisheit.
-         |Wir machen Pannendienst und schnelle Reparaturen im Rahmen unserer verfügbaren
-         |Kapazitäten. Das Geschäft ist klein, in der Hauptsaison kann es vorkommen, dass die
-         |Werkstatt platzt, wir nur mit Termin Räder annehmen oder andere RadWerkstätten,
-         |befreundeter Kollegen empfehlen beziehungsweise vermitteln. Sinnvoll und kostengünstig
-         |ist es, ein Radservice dort machen zu lassen wo das Rad gekauft wurde.
+         |unser erklärtes Ziel ist es, Räder zu
+         |bauen, die wartungsarm, bzw. einfach und
+         |schnell zu servicieren sind und das möglichst
+         |überall in der Fahrrad -Welt, sollten wir
+         |nicht vor Ort sein.<br>
+         |Unser Werkstatt, standortbedingt klein,
+         |ist in der Saison öfters nahe am platzen.
+         |Die Räder werden von uns innerhalb eines
+         |Tages repariert/serviciert. Zu den
+         |Öffnungszeiten, möglichst di-do 15-18
+         |bringen und am nächsten Tag Nachmittag
+         |abholen ist unser gewohnte Praxis.
+         |Selbstverständlich machen wir Pannendienst,
+         |schnelle Reparaturen und können, wenn nötig
+         |an andere Radwerkstätten vermitteln.
          |</p>
-         |
          |<p>
-         |Wir machen bei Reparaturannahme einen Kostenvoranschlag der fix eingehalten wird,
-         |ausgenommen Unvorhergesehenes, dann halten wir Rücksprache. taschenfahrrad-Räder werden
-         |bevorzugt, für die wird immer ein Platz leergeräumt, für die gilt ein Gratis /
-         |Garantieservice nach ca. 3 Monaten,
+         |Angebot für taschenfahrräder:
          |</p>
-         |
          |<p>
-         |1. Service nach einem Jahr ... 39€, weitere ... 59€ / Jahresservice, erst wenn der
-         |Arbeitaufwand die normale Servicezeit 3/4 Stunde übersteigt, gilt der
-         |Stundentarif 79€ / Stunde, jeweils exclusive Verschleißteile.
-         |Stark verschmutzte Räder werden vorher gereinigt ... 20€.
+         |GarantieCheck nach ca. 3 Monaten/300km ..gratis<br>
+         |1.Service ....39€, danach<br>
+         |Jahres/Zweijahresservice ....59€<br>
+         |exclusive Teile
          |</p>
-         |
          |<p>
-         |Unser Ziel ist es Räder zu bauen, die einfach und schnell zu servicieren sind.
+         |Mechanikerstunde 80€<br>
+         |Beispiele:<br>
+         |Schlauchwechsel ab 12€<br>
+         |Laufradbau 50€, Aus- & Einspeichen 75€<br>
+         |Kette, Pedale, Ständer tauschen 5€<br>
+         |Gepäckträgermontage 10€<br>
+         |Schutzblechmontage 20€<br>
+         |Felge auf Seitenschlag zentrieren 10€<br>
+         |exclusive Teile.
          |</p>
-         |
          |""".stripMargin
   }
 
