@@ -196,19 +196,27 @@ object Data {
           |<h1><a href="index.html">das taschenfahrrad</a></h1>
           |<p><a href="index.html">start</a> &#62; jobs</p>
           |<p class="sepa4"/>
+          |<h1>job</h1>
           |
           |<p>
-          |Es gibt die Möglichkeit als Aushilfe für Verkauf, Montagen und einfachen Reparaturen, zu
-          |arbeiten in den besonders intensiven Monaten März bis Oktober, 40 Stunden / Monat, 440€.
-          |Interessant für Personen in Ausbildung zum Fahrradtechniker für den Erwerb von
-          |Praxiserfahrung, für Studenten mit Leidenschaft für Fahrradtechnik und für Fahrradboten
-          |die mehr als ihr eigenes Dienstfahrrad im Griff haben. Für erfahrene Profis in
-          |Fahrradtechnik und Verkauf, mit Leidenschaft für Tourenräder, ist auch eine
-          |Fixanstellung möglich.
+          |Mitarbeit für Verkauf, einfache Montagen/
+          |Reparaturen und allem, was den Betrieb am
+          |Laufen hält, willkommen. Dies besonders in
+          |den arbeitsintensiven Monaten März-Oktober.
+          |Geringfügige Anstellung bis zu 40Std/Monat
+          |/475€, interessant für Personen in Ausbildung
+          |zum Fahrradtechniker und für Studierende
+          |mit Leidenschaft und Interesse für
+          |Fahrradtechnik.
           |</p>
           |<p>
-          |Bewirb dich, wir freuen uns.
+          |Für Profis in Fahrradtechnik/Verkauf und
+          |Leidenschaft für Tourenräder ist auch eine
+          |Fixanstellung möglich, ich geh dann
+          |radfahren ;)
           |</p>
+          |
+          |
           |""".stripMargin
   }
 
