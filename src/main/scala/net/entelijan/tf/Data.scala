@@ -102,7 +102,7 @@ object Data {
           |</p>
           |
           |<p class="sepa2"/>
-          |<p>classic26</p>
+          |<p><a target="_blank" href="https://www.tokyobike.de/products/cs26-bluegray" >classic26 ...</a></p>
           |<p>Rahmengrößen 47 53 57 61</p>
           |<p>
           |semi matt colours:<br>
@@ -113,9 +113,7 @@ object Data {
           |
           |
           |<p class="sepa2"/>
-          |<p>
-          |bisou
-          |</p>
+          |<p><a target="_blank" href="https://www.tokyobike.de/products/bike-c" >bisou ...</a></p>
           |Rahmengrößen 46 50 55
           |</p>
           |
@@ -164,14 +162,14 @@ object Data {
           |
           |<p>
           |Rahmensets:<br>
-          |CrossCheck 629€<br>
-          |Straggler 699€<br>
-          |Midnight special 849€<br>
-          |BridgeClub 599€<br>
-          |GhostGrappler 839€<br>
-          |DiscTrucker 799€<br>
-          |PackRat 599€<br>
-          |LongHaulTrucker 579€<br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/cross_check" >CrossCheck 629€ ...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/straggler" >Straggler 699€ ...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/midnight_special" >Midnight special 849€ ...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/bridge_club" >BridgeClub 599€ ...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/ghost_grappler" >GhostGrappler 839€ ...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/disc_trucker" >DiscTrucker 799€ ...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/pack_rat" >PackRat 599€ ...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/long_haul_trucker" >LongHaulTrucker 579€ ...</a><br>
           |Preamble 549€<br>
           |</p>
           |
