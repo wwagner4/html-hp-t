@@ -102,7 +102,7 @@ object Data {
           |</p>
           |
           |<p class="sepa2"/>
-          |<p><a target="_blank" href="https://www.tokyobike.de/products/cs26-bluegray" >classic26 ...</a></p>
+          |<p><a target="_blank" href="https://www.tokyobike.de/" >classic26 ...</a></p>
           |<p>Rahmengrößen 47 53 57 61</p>
           |<p>
           |semi matt colours:<br>
@@ -113,7 +113,7 @@ object Data {
           |
           |
           |<p class="sepa2"/>
-          |<p><a target="_blank" href="https://www.tokyobike.de/products/bike-c" >bisou ...</a></p>
+          |<p><a target="_blank" href="https://www.tokyobike.de/" >bisou ...</a></p>
           |Rahmengrößen 46 50 55
           |</p>
           |
