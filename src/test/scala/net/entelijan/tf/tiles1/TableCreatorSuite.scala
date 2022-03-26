@@ -1,7 +1,7 @@
 package net.entelijan.tf.tiles1
-
 import org.scalatest.funsuite.AnyFunSuite
-import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
+import org.scalatest.matchers.must.Matchers._
+
 
 
 class TableCreatorSuite extends AnyFunSuite {
