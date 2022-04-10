@@ -7,8 +7,8 @@ import scala.sys.process._
 object ImageTransform {
 
   private val size = 400
-  private val shrinkSize = 1500
-  private val quality = 80
+  private val shrinkSize = 1200
+  private val quality = 70
 
   def createAllThumbnails(imgDir: Path): Unit = {
     createAll(imgDir, createThumbnail)
@@ -33,7 +33,7 @@ object ImageTransform {
   }
 
   private def shrinkImage(img: Path): Unit = {
-    if (Files.isRegularFile(img) && Files.size(img) > 5.0e6) {
+    if (Files.isRegularFile(img) && Files.size(img) > 1.0e6) {
       println(s"Shrinking image $img size: ${Files.size(img)}")
       val cmd = s"mogrify -resize $shrinkSize> ${img.toAbsolutePath}"
       println(s"shrinking image running imagemagick: '$cmd'")
