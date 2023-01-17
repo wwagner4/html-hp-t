@@ -1,8 +1,9 @@
 package net.entelijan.tf.tiles
 
-import org.scalatest.{FunSuite, MustMatchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.must.Matchers.{contain, convertToAnyMustWrapper, the}
 
-class GeometryTest extends FunSuite with MustMatchers {
+class GeometryTest extends AnyFunSuite {
 
   test("no images") {
     val t = Geometry.tiles(Size(200, 150), 2)(_)

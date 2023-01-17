@@ -24,6 +24,7 @@ object MyMarkdown {
     Transformer.from(Markdown).to(HTML).withRawContent.build.transform(in) match {
       case Left(e: DocumentParser.ParserError) => throw new IllegalArgumentException(e)
       case Right(str: String) => sth(str)
+      case _ => throw new IllegalArgumentException("Unknown direction")
     }
   }
 }

@@ -1,8 +1,8 @@
 package net.entelijan.tf
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class TilesTryoutSuite extends FunSuite {
+class TilesTryoutSuite extends AnyFunSuite {
   
   test("grouping") {
     val l = (1 to 20).toList

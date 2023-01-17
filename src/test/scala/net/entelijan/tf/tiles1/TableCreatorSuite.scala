@@ -1,8 +1,10 @@
 package net.entelijan.tf.tiles1
 
-import org.scalatest.{FunSuite, MustMatchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
 
-class TableCreatorSuite extends FunSuite with MustMatchers {
+
+class TableCreatorSuite extends AnyFunSuite {
 
   test("One Image one row one col") {
     val tab: Seq[Row] = TableCreator.createTable("dummy", List("a.png"), 1, 1)

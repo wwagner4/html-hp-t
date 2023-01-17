@@ -1,8 +1,9 @@
 package net.entelijan.tf.tiles
 
-import org.scalatest.{FunSuite, MustMatchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.must.Matchers.convertToAnyMustWrapper
 
-class SizeTest extends FunSuite with MustMatchers {
+class SizeTest extends AnyFunSuite {
 
   test("ratio equal") {
     Size(200, 400).ratio mustBe Size(4000, 8000).ratio
