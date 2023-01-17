@@ -1,12 +1,24 @@
 package net.entelijan.tf.tiles1
 
+import java.nio.file.Path
+
 object TableFormater {
+
+  def imgToThumbPath(imgPath: String): String = {
+    val path = Path.of(imgPath)
+    val dir = path.getParent
+    val fileName = path.getFileName
+    val tnDir = dir.resolve("tn")
+    val tnPath = tnDir.resolve(fileName)
+    tnPath.toString
+  }
 
   def ftable(rows: List[Row]): String = {
     def ftableCell(cell: Cell): String = {
+      val tp = imgToThumbPath(cell.imagePath)
       s"""
          |<div id="${cell.imgId()}" class="rTableCell" >
-         |<img class="thumb" src="${cell.imagePath}" ${cell.onCklick}>
+         |<img class="thumb" src="$tp" ${cell.onCklick}>
          |</div>
          |""".stripMargin
     }
@@ -26,7 +38,7 @@ object TableFormater {
          |</div>
          |""".stripMargin.split("\n").toList
     lines
-      .filter(!_.isEmpty)
+      .filter(_.nonEmpty)
       .mkString("\n")
   }
 
@@ -46,7 +58,7 @@ object TableFormater {
          |</div>
          |""".stripMargin.split("\n").toList
     lines
-      .filter(!_.isEmpty)
+      .filter(_.nonEmpty)
       .mkString("\n")
   }
 

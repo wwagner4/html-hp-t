@@ -157,7 +157,7 @@ class TemplSlider extends Templ {
 
     private def htmlImageList(p: Page): String = {
       val l = imagesFileList(p).zipWithIndex.map {
-        case (f, i) => {
+        case (f, i) =>
           if (i == 0)
             s"""
                |<li>
@@ -172,8 +172,6 @@ class TemplSlider extends Templ {
                |<p class="flex-caption"></p>
                |</li>
                |""".stripMargin
-
-        }
       }
       l.mkString("\n")
     }
@@ -225,6 +223,7 @@ class TemplSlider extends Templ {
              |${p.htmlContentLeftPage}
              |</div>
              |""".stripMargin
+        case Layout_Middle => throw new IllegalStateException("Not yet implemented")
       }
 
 
@@ -239,7 +238,7 @@ class TemplSlider extends Templ {
          |<link rel="stylesheet" href="flexslider.css" type="text/css" media="screen" />
          |<script src="js/modernizr.js"></script>
          |<style type="text/css">
-         |${css}
+         |$css
          |</style>
          |</head>
          |<body class="load">
