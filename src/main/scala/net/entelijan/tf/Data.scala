@@ -28,9 +28,8 @@ object Data {
          |<p>stadt-, tourenräder und fahrradtaschen<p>
          |
          |<p class="sepa4" />
-         |<p class="p2">Öffnungszeiten di-fr 15-18  sa 9-15</p>
-         |<p>Individuelle Beratung für Eigenbauräder nach Vereinbarung jeweils
-         |di-fr 18-19</p>
+         |<p class="p2">Öffnungszeiten di-fr 15-18 sa 9-15</p>
+         |<p>Individuelle Beratung für Eigenbauräder nach Vereinbarung jeweils di-fr 18-19</p>
          |
          |<p><a target="_blank" href="http://www.openstreetmap.org/?lat=48.218173500000006&amp;lon=16.377131&amp;zoom=17&amp;layers=M&amp;mlat=48.21819&amp;mlon=16.37711">Leopoldsgasse 28 1020 Wien...</a></p>
          |
@@ -56,7 +55,7 @@ object Data {
          |
          |
          |<p class="sepa4"/>
-         |<p><a href="selfmade.html">SURLY...</a></p>
+         |<p><a href="selfmade.html">SURLY und andere...</a></p>
          |
          |<p class="sepa2"/>
          |<p><a href="producer.html">tokyobike...</a></p>
@@ -89,41 +88,22 @@ object Data {
           |<h1>tokyobike</h1>
           |
           |<p>
-          |ein Rad für Tokyo sollte es sein,
-          |dachte Ichiro Kanai in Yanaka, einem
-          |Vorort von Tokyo, Gegenpol zur hektischen
-          |Verkehrswelt einer riesigen Metropole.
-          |Es entstanden geometrisch schlichte, sowohl
-          |optisch als auch physisch leichte Räder und
-          |sind seither Inbegriff für coole, urbane Mobilität.
-          |Tokyo, Sydney, New York, London, Kopenhagen
-          |Berlin...... und seit 2014 in Wien im
-          |'taschenfahrrad'
-          |</p>
+          |entspanntes Radfahren in
+          |einer hektischen Metropole sieht genau
+          |so aus, in Tokyo und andernorts.
           |
-          |<p class="sepa2"/>
-          |<p><a target="_blank" href="https://www.tokyobike.de/" >classic26 ...</a></p>
-          |<p>Rahmengrößen 47 53 57 61</p>
-          |<p>
-          |semi matt colours:<br>
-          |willow, mustard, bordeaux, moss green,
-          |ivory, ash blue
-          |</p>
-          |<p>900€</p>
-          |
-          |
-          |<p class="sepa2"/>
-          |<p><a target="_blank" href="https://www.tokyobike.de/" >bisou ...</a></p>
-          |Rahmengrößen 46 50 55
-          |</p>
-          |
-          |<p>
-          |gloss colours:<br>
-          |saffron, moss green, blue jade, ivory,
-          |vincent blue, willow, blue gray
           |</p>
           |<p>
-          |800€
+          |classic26 47  53  57  61<br>
+          |semi matt colours: willow, mustard, bordeaux, moss green, ivory, ash blue<br>
+          |<br>
+          |900€
+          |</p>
+          |<p>
+          |bisou 46  50  55<br>
+          |gloss colours: saffron, moss green, blue jade, ivory, vincent blue, willow, blue gray<br>
+          |<br>
+          |800€<br>
           |</p>
           |
           """.stripMargin
@@ -141,11 +121,10 @@ object Data {
           |<h1>SURLY</h1>
           |
           |<p>
-          |'serious steel bikes for people who don't take themselves too seriously...'
+          |'serious steel bikes for people who don't take themselves too seriously'...
           |</p>
-          |
           |<p>
-          |wenn es 100ig passen soll, vom täglichen
+          |wenn es 100%ig passen soll, vom täglichen
           |Einsatz bis zur Weltreise, dann vertrauen
           |wir auf Fahrradrahmen von SURLY.
           |Seit 1998 sind sie Maßstab in Sachen
@@ -161,27 +140,37 @@ object Data {
           |</p>
           |
           |<p>
-          |Rahmensets:<br>
+          |Rahmensets  von 38-64 lagernd:<br>
           |<a target="_blank" href="https://surlybikes.com/bikes/cross_check" >CrossCheck 629€ ...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/straggler" >Straggler 699€ ...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/straggler" >Straggler 749€ ...</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/midnight_special" >Midnight special 849€ ...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/bridge_club" >BridgeClub 599€ ...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/ghost_grappler" >GhostGrappler 839€ ...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/bridge_club" >BridgeClub 649€ ...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/ghost_grappler" >Grappler 879€ ...</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/disc_trucker" >DiscTrucker 799€ ...</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/pack_rat" >PackRat 599€ ...</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/long_haul_trucker" >LongHaulTrucker 579€ ...</a><br>
-          |Preamble 549€<br>
+          |Preamble 599€<br>
+          |KarateMonkey 949€<br>
+          |</p>
+          |<p>
+          |Ogre, Krampus, Wednesday, Lowside, Steamroller und Big Dummy auf Anfrage.
+          |</p>
+          |<p>
+          |Individuelle Aufbauten ab 1800€
+          |</p>
+          |<p>
+          |Komplettrad BridgeClub 1499€
           |</p>
           |
-          |<p>
-          |Rahmengrößen von 38 – 64
-          |oder xs s m l xl
-          |</p>
-          |
-          |<p>
-          |Wir bauen Kompletträder ab
-          |1600€ bis 2900€
-          |</p>
+          |andere Rahmensets:<br>
+          |pelago stavanger 1095€<br>
+          |brother cycles Mr. Wooden 759€<br>
+          |BLB Hitchhiker 649€<br>
+          |paripa, paripa meral 549€<br>
+          |paripa JWD 699€<br>
+          |Intec F10 519€<br>
+          |Intec T6, T7 489€<br>
+          |fact taschenfahrrad 349€<br>
           |
           |""".stripMargin
   }
@@ -202,7 +191,7 @@ object Data {
           |Laufen hält, willkommen. Dies besonders in
           |den arbeitsintensiven Monaten März-Oktober.
           |Geringfügige Anstellung bis zu 40Std/Monat
-          |/475€, interessant für Personen in Ausbildung
+          |/485€, interessant für Personen in Ausbildung
           |zum Fahrradtechniker und für Studierende
           |mit Leidenschaft und Interesse für
           |Fahrradtechnik.
@@ -210,8 +199,7 @@ object Data {
           |<p>
           |Für Profis in Fahrradtechnik/Verkauf und
           |Leidenschaft für Tourenräder ist auch eine
-          |Fixanstellung möglich, ich geh dann
-          |radfahren ;)
+          |Fixanstellung möglich.
           |</p>
           |
           |
@@ -228,11 +216,12 @@ object Data {
          |<p><a href="index.html">start</a> &#62; service</p>
          |<p class="sepa4"/>
          |<h1>service</h1>
+         |
          |<p>
          |unser erklärtes Ziel ist es, Räder zu
-         |bauen, die wartungsarm, bzw. einfach und
-         |schnell zu servicieren sind und das möglichst
-         |überall in der Fahrrad -Welt, sollten wir
+         |bauen, die wartungsarm, möglichst einfach und
+         |schnell zu servicieren sind und das nahezu
+         |überall in der (Fahrrad)-Welt, sollten wir
          |nicht vor Ort sein.<br>
          |Unser Werkstatt, standortbedingt klein,
          |ist in der Saison öfters nahe am platzen.
@@ -240,31 +229,40 @@ object Data {
          |Tages repariert/serviciert. Zu den
          |Öffnungszeiten, möglichst di-do 15-18
          |bringen und am nächsten Tag Nachmittag
-         |abholen ist unser gewohnte Praxis.
+         |abholen ist unser gewohnte Praxis.<br>
          |Selbstverständlich machen wir Pannendienst,
          |schnelle Reparaturen und können, wenn nötig
          |an andere Radwerkstätten vermitteln.
          |</p>
+         |
          |<p>
-         |Angebot für taschenfahrräder:
-         |</p>
-         |<p>
-         |GarantieCheck nach ca. 3 Monaten/300km ..gratis<br>
-         |1.Service ....39€, danach<br>
-         |Jahres/Zweijahresservice ....59€<br>
-         |exclusive Teile
-         |</p>
-         |<p>
+         |Angebot für taschenfahrräder:<br>
+         |<br>
+         |GarantieCheck nach ca. 3 Monaten/300km gratis<br>
+         |1.Service 39€, danach Jahres/Zweijahresservice 59€<br>
+         |<br>
+         |extras:<br>
+         |<br>
+         |Steuerlager Service od. Tausch 50€<br>
+         |Nabenlagerservice 35€<br>
+         |Innenlagerservice od. Tausch 50€<br>
+         |Reinigung 20€<br>
+         |<br>
+         |exclusive Teile.<br>
+         |<br>
          |Mechanikerstunde 80€<br>
+         |<br>
          |Beispiele:<br>
          |Schlauchwechsel ab 12€<br>
-         |Laufradbau 50€, Aus- & Einspeichen 75€<br>
+         |Laufradbau 60€<br>
+         |Aus- & Einspeichen 75€<br>
          |Kette, Pedale, Ständer tauschen 5€<br>
-         |Gepäckträgermontage 10€<br>
-         |Schutzblechmontage 20€<br>
-         |Felge auf Seitenschlag zentrieren 10€<br>
-         |exclusive Teile.
-         |</p>
+         |Gepäckträgermontage 20€<br>
+         |Schutzblechmontage 30€<br>
+         |Felge auf Seitenschlag zentrieren ab 10€<br>
+         |<br>
+         |exclusive Teile.<br>
+         |
          |""".stripMargin
   }
 
