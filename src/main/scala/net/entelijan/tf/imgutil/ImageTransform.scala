@@ -25,7 +25,7 @@ object ImageTransform {
       val nam = img.getFileName
       val tnPath = outDir.resolve(nam)
       if (Files.notExists(tnPath)) {
-        val cmd = s"convert ${img.toAbsolutePath} -thumbnail ${size}x$size^ -quality $quality% -gravity center -extent ${size}x$size ${tnPath.toAbsolutePath}"
+        val cmd = s"convert -auto-orient ${img.toAbsolutePath} -thumbnail ${size}x$size^ -quality $quality% -gravity center -extent ${size}x$size ${tnPath.toAbsolutePath}"
         println(s"creating thumbnail running imagemagick: '$cmd'")
         cmd.!!
       }
@@ -35,7 +35,7 @@ object ImageTransform {
   private def shrinkImage(img: Path): Unit = {
     if (Files.isRegularFile(img) && Files.size(img) > 1.0e6) {
       println(s"Shrinking image $img size: ${Files.size(img)}")
-      val cmd = s"mogrify -resize $shrinkSize> ${img.toAbsolutePath}"
+      val cmd = s"mogrify -auto-orient -resize $shrinkSize> ${img.toAbsolutePath}"
       println(s"shrinking image running imagemagick: '$cmd'")
       cmd.!!
     }
