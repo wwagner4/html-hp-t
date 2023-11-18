@@ -81,12 +81,12 @@ object Data {
           |<br>
           |<a target="_blank" href="https://surlybikes.com/bikes/cross_check" >CrossCheck 629€...</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/preamble" >Preamble 599€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/straggler" >Straggler 749€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/midnight_special" >Midnight special 849€...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/straggler" >Straggler 699€...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/midnight_special" >Midnight special 799€...</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/bridge_club" >BridgeClub 649€...</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/disc_trucker" >DiscTrucker 799€...</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/ogre" >Ogre 899€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/grappler" >Grappler 899€...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/grappler" >Grappler 799€...</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/karate_monkey" >Karate Monkey 949€...</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/krampus" >Krampus 999€...</a><br>
           |alle Rahmensets 38-64 bzw XS-XL<br>
