@@ -1,7 +1,7 @@
 package net.entelijan.tf.tiles
 
 import org.scalatest.funsuite.AnyFunSuite
-import org.scalatest.matchers.must.Matchers.{contain, convertToAnyMustWrapper, the}
+import org.scalatest.matchers.must.Matchers._
 
 class GeometryTest extends AnyFunSuite {
 

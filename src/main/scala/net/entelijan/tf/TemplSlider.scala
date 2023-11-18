@@ -1,6 +1,7 @@
 package net.entelijan.tf
 
 import java.io.File
+import java.lang.IllegalStateException
 
 class TemplSlider extends Templ {
 
@@ -223,7 +224,8 @@ class TemplSlider extends Templ {
              |${p.htmlContentLeftPage}
              |</div>
              |""".stripMargin
-        case Layout_Middle => throw new IllegalStateException("Not yet implemented")
+        case Layout_Middle =>
+          throw new IllegalStateException("Layout middle not yet implemented")
       }
 
 
