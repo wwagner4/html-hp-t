@@ -100,7 +100,8 @@ object Data {
           |</p>
           |
           |<p>Pelago<br>
-          |<a target="_blank" href="https://pelagobicycles.com/stavanger/" >Stavanger 51,54,57,60 999€...</a><br>
+          |<a target="_blank" href="https://pelagobicycles.com/stavanger/" >Stavanger 48,51,54,57,60 999€...</a><br>
+          |<a target="_blank" href="https://pelagobicycles.com/airisto-commuter/" >Airisto 48,52,56 549€...</a><br>
           |San Sebastian, Capri auf Anfrage<br>
           |
           |
