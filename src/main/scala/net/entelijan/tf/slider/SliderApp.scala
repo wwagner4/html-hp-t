@@ -16,7 +16,8 @@ case class TilesDim(
                      imgType: ImgFormat = ImgFormat_JPG
                    )
 
-object SliderApp extends App {
+object SliderApp {
+
 
   val baseInDir = Paths.get("proto/WebContent/proto04")
 

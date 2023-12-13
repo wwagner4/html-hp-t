@@ -4,7 +4,7 @@ import java.nio.file.Paths
 
 import net.entelijan.tf.imgutil.{ImgFormat, ImgFormat_PNG}
 
-object TilesTryout extends App {
+object TilesTryout {
 
   val cfg1 = TilesConf(
     indirs = Seq(
@@ -27,7 +27,10 @@ object TilesTryout extends App {
     outdirBase = "proto/WebContent/proto03/images/index"
   )
 
-  tiles(cfg2)
+  def main(): Unit = {
+    // TODO add to commandline
+    tiles(cfg2)
+  }
 
   def tiles(cfg: TilesConf): Unit = {
     cfg.indirs.foreach { nam =>

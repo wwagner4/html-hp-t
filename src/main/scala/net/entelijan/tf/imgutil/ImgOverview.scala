@@ -8,9 +8,12 @@ import scala.util.control.NonFatal
 
 case class Img(path: String, nr: Int, imgName: String)
 
-object ImgOverview extends App {
+object ImgOverview {
 
-  Seq("index", "jobs", "selfmade", "service", "0223").foreach(n => page(n))
+  def main(): Unit = {
+    // TODO add to commandline
+    Seq("index", "jobs", "selfmade", "service", "0223").foreach(n => page(n))
+  }
 
   def page(name: String): Unit = {
     val outPath = Paths.get("target/gen", s"Bilder_$name.html")

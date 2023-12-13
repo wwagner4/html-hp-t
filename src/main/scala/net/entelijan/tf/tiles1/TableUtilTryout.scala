@@ -2,9 +2,12 @@ package net.entelijan.tf.tiles1
 
 import java.nio.file.Paths
 
-object TableUtilTryout extends App {
+object TableUtilTryout {
 
-  val baseDir = Paths.get("src/main/web/common")
-  print(TableUtil.htmlTable("dummy", baseDir, "images/index", 3,5))
+  def main(): Unit = {
+    // TODO add to commandline
+    val baseDir = Paths.get("src/main/web/common")
+    print(TableUtil.htmlTable("dummy", baseDir, "images/index", 3, 5))
+  }
 
 }
