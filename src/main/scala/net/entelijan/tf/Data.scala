@@ -87,8 +87,8 @@ object Data {
           |<a target="_blank" href="https://surlybikes.com/bikes/disc_trucker" >DiscTrucker 799€...</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/ogre" >Ogre 899€...</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/grappler" >Grappler 799€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/karate_monkey" >Karate Monkey 949€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/krampus" >Krampus 999€...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/karate_monkey" >Karate Monkey 899€...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/krampus" >Krampus 899€...</a><br>
           |alle Rahmensets 38-64 bzw XS-XL<br>
           |</p>
           |
