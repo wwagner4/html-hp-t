@@ -7,14 +7,15 @@ import javax.imageio.ImageIO
 import net.entelijan.tf.tiles.TilesFromDirectory
 
 
-object ImgSaveMain extends App {
+object ImgSaveMain {
 
-  val qualities = Seq(0.2, 0.5, 0.8, 1.0)
-
-  val formats = Seq(ImgFormat_JPG, ImgFormat_PNG)
-
-  for (f <- formats; q <- qualities) {
-    saveImage(f, q)
+  def main(): Unit = {
+    // TODO Add to commandline
+    val qualities = Seq(0.2, 0.5, 0.8, 1.0)
+    val formats = Seq(ImgFormat_JPG, ImgFormat_PNG)
+    for (f <- formats; q <- qualities) {
+      saveImage(f, q)
+    }
   }
 
   def createTestImage(outDir: Path): BufferedImage = {
