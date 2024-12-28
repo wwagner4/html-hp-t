@@ -64,49 +64,44 @@ object Data {
           |<p><a href="index.html">start</a> &#62; SURLY</p>
           |
           |<p class="sepa4"/>
-          |<h1>SURLY</h1>
+          |<h1>SURLY framesets</h1>
           |
           |<p>
-          |'serious steel bikes for people who don't take themselves too seriously'...
+          |&#39;serious steel bikes for people who don&#39;t take themselves too seriously&#39;, gemeinsam mit unseren
+          |Kunden entstehen Räder, die schnell und praktisch sind. Für Fahrten im Alltag, ins Wochenende
+          |und eventuell rund um unseren wunderbaren Planeten.
           |</p>
-          |<p>
-          |Surly ist uns eine Inspiration und gemeinsam
-          |mit unseren Kunden entstehen Räder, die
-          |schnell und praktisch sind. Sie helfen beim
-          |Schultern der Lasten im Alltag, bringen dich
-          |schnell ins Wochenende und möglicherweise
-          |rund um unseren wunderbaren Planeten.
-          |</p>
-          |
           |<br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/cross_check" >CrossCheck 629€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/preamble" >Preamble 599€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/straggler" >Straggler 699€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/midnight_special" >Midnight special 799€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/bridge_club" >BridgeClub 649€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/disc_trucker" >DiscTrucker 799€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/ogre" >Ogre 899€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/grappler" >Grappler 799€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/karate_monkey" >Karate Monkey 899€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/krampus" >Krampus 899€...</a><br>
+          |
+          |<p>
+          |<a target="_blank" href="https://surlybikes.com/bikes/straggler" >Straggler 699€ black, chlorine dream, cold blue...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/preamble" >Preamble 599€ throfrost white, black, skyrim blue, best buds green...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/midnight_special" >Midnight special 799€ black, fools gold, metallic lilac...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/bridge_club" >BridgeClub 749€ majestic moss, grandma's lipstic, trevor's closet black, whipped butter...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/disc_trucker" >DiscTrucker 799€ black, pea lime soup...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/ogre" >Ogre 799€ fermented plum...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/grappler" >Grappler 849€ subterranean homesick blue, purple dust bunny...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/karate_monkey" >KarateMonkey 999€ peach salmon sundae, organic eggplant, lost at sea, snow mold, black...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/krampus" >Krampus 999€ prickly pear, nose drip curry, blue oyster coat, chester copperpot...</a><br>
           |alle Rahmensets 38-64 bzw XS-XL<br>
           |</p>
           |
           |<p>
-          |Surly Legacy<br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/legacy/long_haul_trucker" >LongHaulTrucker nur 42,56 579€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/legacy/pack_rat" >PackRat 46,50,52,54,56,58 599€...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/legacy/pacer" >Pacer 42,46,50,54,58,60 499€...</a><br>
+          |Surly Legacy framesets<br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/legacy/cross_check_2000" >CrossCheck 629€ all sizes, black, bluegreengray...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/legacy/long_haul_trucker" >LongHaulTrucker only 42, 46, 56 579€ black...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/legacy/pack_rat" >PackRat only 52,54,56,58 599€ gray haze...</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/legacy/pacer" >Pacer only 42,46,50,54,58, 499€...</a><br>
           |</p>
           |
-          |<p>Pelago<br>
-          |<a target="_blank" href="https://pelagobicycles.com/stavanger/" >Stavanger 48,51,54,57,60 999€...</a><br>
-          |<a target="_blank" href="https://pelagobicycles.com/airisto-commuter/" >Airisto 48,52,56 549€...</a><br>
+          |<p>Pelago framesets<br>
+          |<a target="_blank" href="https://pelagobicycles.com/stavanger/" >Stavanger 1095€, gray terra, lilametall...</a><br>
+          |<a target="_blank" href="https://pelagobicycles.com/airisto-commuter/" >Airisto 549€ , charcoal...</a><br>
           |San Sebastian, Capri auf Anfrage<br>
+          |</p>
           |
-          |
-          |<p>BROTHER cycles<br>
-          |<a target="_blank" href="https://www.brothercycles.com/shop/frames/mr-wooden/" >Mr. Wooden XS-XL 789€...</a><br>
+          |<p>BROTHER cycles framesets<br>
+          |<a target="_blank" href="https://www.brothercycles.com/shop/frames/mr-wooden/" >Mr. Wooden XS-XL 789€ green...</a><br>
           |</p>
           |
           |<p>andere<br>
@@ -127,23 +122,7 @@ object Data {
           |
           |<p class="sepa4"/>
           |<h1>Lagerräumung, Abverkauf</h1>
-          |<p>stark reduziert:</p>
-          |
-          |Breezer Downtown 48 black 3x9 599€...<br>
-          |GIOS vintage 58 white 2x10 699€...<br>
-          |CREME caferacer uno 60 darkgreen Nexus3 499€...<br>
-          |CREME Echo Lungo 55 darkgreen 2x9 699€...<br>
-          |Pelago Capri 57 black Nexus3 699€...</a><br>
-          |Linus Roadster 52 black Nexus3 549€...<br>
-          |Kona HonkyTonk 54 black 2x9 679€...<br>
-          |Kona Penthouse drop yellow 52, 54, 56, 58 2x8 549€...<br>
-          |Kona Penthouse flat bronze 52, 54, 56, 2x8 549€...<br>
-          |Gazelle Van Steal metallic grey 59 Nexus7 549€...<br>
-          |Kona DEW mint 49 3x8 499€...</a><br>
-          |Kona Paddy Wagon 53, 56, 59 mint 56 blue 3speed 499€...<br>
-          |
-          |<p class="sepa2"/>
-          |<p>und andere</p>
+          |<p>in Arbeit</p>
           |""".stripMargin
   }
 

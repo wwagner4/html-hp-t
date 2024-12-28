@@ -1,1 +1,1 @@
-{"name":"sbt","version":"1.5.8","bspVersion":"2.0.0-M5","languages":["scala"],"argv":["/usr/lib/jvm/java-17-openjdk-amd64/bin/java","-Xms100m","-Xmx100m","-classpath","/home/wwagner4/pgm/sbt/bin/sbt-launch.jar","xsbt.boot.Boot","-bsp","--sbt-launch-jar=/home/wwagner4/pgm/sbt/bin/sbt-launch.jar"]}
+{"name":"sbt","version":"1.10.7","bspVersion":"2.1.0-M1","languages":["scala"],"argv":["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-Xms100m","-Xmx100m","-classpath","/home/wwagner4/pgm/sbt/bin/sbt-launch.jar","-Dsbt.script=/home/wwagner4/bin/sbt","xsbt.boot.Boot","-bsp"]}
