@@ -153,50 +153,39 @@ object Data {
          |<h1>Service</h1>
          |
          |<p>
-         |unser erklärtes Ziel ist es, Räder zu
-         |bauen, die wartungsarm, möglichst einfach und
-         |schnell zu servicieren sind und das nahez
-         |überall in der (Fahrrad)-Welt, sollten wir
-         |nicht vor Ort sein.<br>
-         |Unser Werkstatt, standortbedingt klein,
-         |ist in der Saison öfters nahe am platzen.
-         |Die Räder werden von uns innerhalb eines
-         |Tages repariert/serviciert. Zu den
-         |Öffnungszeiten, möglichst di-do 15-18
-         |bringen und am nächsten Tag Nachmittag
-         |abholen ist unser gewohnte Praxis.<br>
-         |Selbstverständlich machen wir Pannendienst,
-         |schnelle Reparaturen und können, wenn nötig
-         |an andere Radwerkstätten vermitteln.
+         |Wir bauen Räder, die wartungsarm sind. Möglichst einfach und schnell servicierbar, das ist unser
+         |Anspruch. Wir kümmern uns um alle Räder die wir gebaut haben, inclusive der Markenräder die wir
+         |geführt haben. Für andere Räder machen wir Pannendienst oder vermitteln an andere Werkstätten unseres
+         |Vertauens. Unsere Werkstatt, standortbedingt klein, ist mitten in der Saison öfters nahe am platzen, deshalb bitten wir
+         |um Terminvereinbarung, das sorgt auch dafür, dass die Verweildauer der Serviceräder im Geschäft kurz
+         |ist.
          |</p>
          |
          |<p>
-         |Angebot für taschenfahrräder:<br>
+         |Serviceangebote<br>
          |<br>
-         |GarantieCheck nach ca. 3 Monaten/300km gratis<br>
-         |1.Service 39€, danach Jahres/Zweijahresservice 59€<br>
+         |GarantieCheck nach ca. 3 Monaten/ca 300km gratis<br>
+         |1.Service 49€ nach einem Jahr<br>
+         |Grundservice für Räder ab 2 Jahren 79€<br>
          |<br>
-         |extras:<br>
-         |<br>
+         |zusätzlich Extras nur bei Bedarf:<br>
          |Steuerlager Service od. Tausch 50€<br>
          |Nabenlagerservice 35€<br>
          |Innenlagerservice od. Tausch 50€<br>
          |Reinigung 20€<br>
-         |<br>
          |exclusive Teile.<br>
-         |<br>
-         |Mechanikerstunde 80€<br>
+         |Mechanikerstunde 90€<br>
          |<br>
          |Beispiele:<br>
-         |Schlauchwechsel ab 12€<br>
-         |Laufradbau 60€<br>
-         |Aus- & Einspeichen 75€<br>
+         |Schlauchwechsel ab 15€<br>
+         |Laufradbau 70€<br>
+         |Aus- und Einspeichen 95€<br>
          |Kette, Pedale, Ständer tauschen 5€<br>
-         |Gepäckträgermontage 20€<br>
-         |Schutzblechmontage 30€<br>
+         |Gepäckträgermontage ab 20€<br>
+         |SchutzblechFestmontage 40€<br>
          |Felge auf Seitenschlag zentrieren ab 10€<br>
-         |<br>
-         |exclusive Teile.<br>
+         |Bremsbeläge tauschen 20€<br>
+         |</p>
          |
          |""".stripMargin
   }
