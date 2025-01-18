@@ -10,28 +10,34 @@ import net.entelijan.tf.tiles.TilesFromDirectory
 import scala.jdk.CollectionConverters._
 
 case class TilesDim(
-                     cols: Int,
-                     tileSize: Int,
-                     borderSize: Int,
-                     imgType: ImgFormat = ImgFormat_JPG
-                   )
+    cols: Int,
+    tileSize: Int,
+    borderSize: Int,
+    imgType: ImgFormat = ImgFormat_JPG
+)
 
 object SliderApp {
 
-
   val baseInDir = Paths.get("proto/WebContent/proto04")
 
-
-  //val imagesInDir = Paths.get("proto/WebContent/proto04/images/index")
+  // val imagesInDir = Paths.get("proto/WebContent/proto04/images/index")
   val imagesInDir = Paths.get("/home/wwagner4/.doc/a/r")
 
-  create(baseInDir, imagesInDir, "glide",
+  create(
+    baseInDir,
+    imagesInDir,
+    "glide",
     SliderTemplate.glide,
-    TilesDim(8, 400, 0))
+    TilesDim(8, 400, 0)
+  )
 
-  private def create(baseIndDir: Path, imagesInDir: Path, sliderName: String,
-                     f: (String, Seq[String], TilesDim) => String,
-                     dim: TilesDim): Unit = {
+  private def create(
+      baseIndDir: Path,
+      imagesInDir: Path,
+      sliderName: String,
+      f: (String, Seq[String], TilesDim) => String,
+      dim: TilesDim
+  ): Unit = {
 
     val outDir = Paths.get(s"target/$sliderName")
     if (!Files.exists(outDir)) {
@@ -52,17 +58,25 @@ object SliderApp {
     val tilesFile = tilesOutDir.resolve(fileNameStr + ".jpg")
     if (!Files.exists(tilesFile)) {
       println(s"ceating tiles in $tilesFile")
-      TilesFromDirectory.squaredTiles(fileNameStr, dim.cols, dim.tileSize, dim.borderSize, dim.imgType, 0.7, imagesDir.resolve(pageName), tilesOutDir)
+      TilesFromDirectory.squaredTiles(
+        fileNameStr,
+        dim.cols,
+        dim.tileSize,
+        dim.borderSize,
+        dim.imgType,
+        0.7,
+        imagesDir.resolve(pageName),
+        tilesOutDir
+      )
     }
 
     ResCopy.copyDir(Paths.get(s"proto/WebContent/proto04/$sliderName"), outDir)
     val htmlFile = outDir.resolve(s"$pageName.html")
     val _fileNames = imageFileNames(imagesInDir)
-    tryWithRes(Files.newBufferedWriter(htmlFile)) {                     
-      bw =>
-        TfUtil.tryWithRes(new PrintWriter(bw)) {
-          pw => pw.print(f(pageName, _fileNames, dim))
-        }
+    tryWithRes(Files.newBufferedWriter(htmlFile)) { bw =>
+      TfUtil.tryWithRes(new PrintWriter(bw)) { pw =>
+        pw.print(f(pageName, _fileNames, dim))
+      }
     }
     println(s"wrote $sliderName to $htmlFile")
   }
@@ -76,17 +90,18 @@ object SliderApp {
     ResCopy.copyDir(dir, outDir)
   }
 
-
   def imageFileNames(dir: Path): Seq[String] = {
-    Files.list(dir)
+    Files
+      .list(dir)
       .iterator
       .asScala
       .toSeq
-      .filter(p => p.getFileName.toString.toLowerCase.endsWith("jpg")
-        || p.toString.toLowerCase.endsWith("jpeg")
-        || p.toString.toLowerCase.endsWith("png"))
+      .filter(p =>
+        p.getFileName.toString.toLowerCase.endsWith("jpg")
+          || p.toString.toLowerCase.endsWith("jpeg")
+          || p.toString.toLowerCase.endsWith("png")
+      )
       .map(p => p.getFileName.toString)
       .sorted
   }
 }
-

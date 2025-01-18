@@ -157,19 +157,22 @@ class TemplSlider extends Templ {
     }
 
     private def htmlImageList(p: Page): String = {
-      val l = imagesFileList(p).zipWithIndex.map {
-        case (f, i) =>
-          if (i == 0)
-            s"""
+      val l = imagesFileList(p).zipWithIndex.map { case (f, i) =>
+        if (i == 0)
+          s"""
                |<li>
-               |<img alt="taschenfahrrad" src="${imagesDirPath(p)}/${f.getName}" />
+               |<img alt="taschenfahrrad" src="${imagesDirPath(
+              p
+            )}/${f.getName}" />
                |<p class="flex-caption"></p>
                |</li>
                |""".stripMargin
-          else
-            s"""
+        else
+          s"""
                |<li>
-               |<img alt="taschenfahrrad" class="lazy" src="#" data-src="${imagesDirPath(p)}/${f.getName}" />
+               |<img alt="taschenfahrrad" class="lazy" src="#" data-src="${imagesDirPath(
+              p
+            )}/${f.getName}" />
                |<p class="flex-caption"></p>
                |</li>
                |""".stripMargin
@@ -190,7 +193,7 @@ class TemplSlider extends Templ {
         .sortBy(f => f.getName)
     }
 
-    //noinspection ScalaUnusedSymbol
+    // noinspection ScalaUnusedSymbol
     private def htmlPageLinks(pages: List[Page]): String = {
       pages.map(htmlPageLink).mkString("\n")
     }
@@ -227,7 +230,6 @@ class TemplSlider extends Templ {
         case Layout_Middle =>
           throw new IllegalStateException("Layout middle not yet implemented")
       }
-
 
     def html(p: Page): String =
       s"""
@@ -289,4 +291,3 @@ class TemplSlider extends Templ {
   }
 
 }
-

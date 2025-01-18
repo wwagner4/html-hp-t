@@ -22,5 +22,4 @@ object Geometry {
     TileImage(w, h, tileWidth, tileHeight, tiles)
   }
 
-
 }

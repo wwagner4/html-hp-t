@@ -4,16 +4,17 @@ import java.nio.file.{Files, Path, Paths}
 
 import scala.jdk.CollectionConverters._
 
-
 object ImageRename {
 
   def main(): Unit = {
     // TODO add to commandline interface
     val dir = Paths.get("/home/wwagner4/tmp")
 
-    Files.list(dir)
+    Files
+      .list(dir)
       .iterator()
-      .asScala.toList
+      .asScala
+      .toList
       .filter(p => !p.getFileName.toString.startsWith("."))
       .sortBy(p => p.getFileName.toString)
       .zipWithIndex
