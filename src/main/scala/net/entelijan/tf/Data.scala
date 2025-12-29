@@ -36,7 +36,7 @@ object Data {
          |<p><a href="mailto:hans.poellhuber@chello.at">hans.poellhuber@chello.at</a></p>
          |<p>0043 699 1043 1886</p>
          |<p class="sepa4"/>
-         |<p><a href="selfmade.html">SURLY und andere...</a></p>
+         |<p><a href="selfmade.html">SURLY Rahmensets...</a></p>
          |
          |<p class="sepa2"/>
          |<p><a href="sale.html">Abverkaufsräder reduziert...</a></p>
@@ -64,50 +64,35 @@ object Data {
           |<p><a href="index.html">start</a> &#62; SURLY</p>
           |
           |<p class="sepa4"/>
-          |<h1>SURLY framesets</h1>
+          |<h1>Surly Rahmensets</h1>
+          |<p>alle Größen & Farben</p>
           |
           |<p>
-          |&#39;serious steel bikes for people who don&#39;t take themselves too seriously&#39;, gemeinsam mit unseren
-          |Kunden entstehen Räder, die schnell und praktisch sind. Für Fahrten im Alltag, ins Wochenende
-          |und eventuell rund um unseren wunderbaren Planeten.
-          |</p>
-          |<br>
-          |
-          |<p>
-          |<a target="_blank" href="https://surlybikes.com/bikes/straggler" >Straggler 699€ black, chlorine dream, cold blue...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/preamble" >Preamble 599€ throfrost white, black, skyrim blue, best buds green...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/midnight_special" >Midnight special 799€ black, fools gold, metallic lilac...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/bridge_club" >BridgeClub 749€ majestic moss, grandma's lipstic, trevor's closet black, whipped butter...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/disc_trucker" >DiscTrucker 799€ black, pea lime soup...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/ogre" >Ogre 799€ fermented plum...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/grappler" >Grappler 849€ subterranean homesick blue, purple dust bunny...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/karate_monkey" >KarateMonkey 999€ peach salmon sundae, organic eggplant, lost at sea, snow mold, black...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/krampus" >Krampus 999€ prickly pear, nose drip curry, blue oyster coat, chester copperpot...</a><br>
-          |alle Rahmensets 38-64 bzw XS-XL<br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/disc_trucker" >DiscTrucker 799€..</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/karate_monkey" >KarateMonkey 999€..</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/krampus" >Krampus 999€..</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/ogre" >Ogre 899€..</a><br>
+          |<a target="_blank" href="https://surlybikes.com/collections/bridge-club" >BridgeClub 749€..</a><br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/preamble" >Preamble 599€..</a><br>
+          |<a target="_blank" href="https://surlybikes.com/collections/straggler" >Straggler 799€ preis gilt bis 1.3.2026..</a><br>
           |</p>
           |
           |<p>
-          |Surly Legacy framesets<br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/legacy/cross_check_2000" >CrossCheck 629€ all sizes, black, bluegreengray...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/legacy/long_haul_trucker" >LongHaulTrucker only 42, 46, 56 579€ black...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/legacy/pack_rat" >PackRat only 52,54,56,58 599€ gray haze...</a><br>
-          |<a target="_blank" href="https://surlybikes.com/bikes/legacy/pacer" >Pacer only 42,46,50,54,58, 499€...</a><br>
-          |</p>
-          |
-          |<p>Pelago framesets<br>
-          |<a target="_blank" href="https://pelagobicycles.com/stavanger/" >Stavanger 1095€, gray terra, lilametall...</a><br>
-          |<a target="_blank" href="https://pelagobicycles.com/airisto-commuter/" >Airisto 549€ , charcoal...</a><br>
-          |San Sebastian, Capri auf Anfrage<br>
-          |</p>
-          |
-          |<p>BROTHER cycles framesets<br>
-          |<a target="_blank" href="https://www.brothercycles.com/shop/frames/mr-wooden/" >Mr. Wooden XS-XL 789€ green...</a><br>
+          |Surly legacy framesets, Größen und Farben auf Anfrage<br>
+          |Straggler 699€<br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/legacy/cross_check_2000" >CrossCeck 629€..</a><br>
+          |PackRat 599€<br>
+          |LongHaulTrucker 579€<br>
+          |<a target="_blank" href="https://surlybikes.com/bikes/legacy/pacer" >Pacer 499€..</a><br>
           |</p>
           |
           |<p>andere<br>
-          |<a target="_blank" href="https://www.bricklanebikes.co.uk/blb-hitchhiker-29er-drop-bar-gravel-racer" >BLB Hitchhiker 57 499€...</a><br>
-          |<a target="_blank" href="https://paripa.de/?page_id=390" >paripa JWD 50,54 499€...</a><br>
-          |<a target="_blank" href="https://paripa.de" >Intec, paripa Kserie, paripa meral auf Anfrage 499€...</a><br>
+          |<a target="_blank" href="https://pelagobicycles.com/stavanger/" >Pelago Stavanger 999€..</a><br>
+          |<a target="_blank" href="https://pelagobicycles.com/airisto-commuter/" >Pelago Airisto 549€..</a><br>
+          |<a target="_blank" href="https://www.brothercycles.com/shop/frames/mr-wooden/" >Brother Cycles Mr. Wooden 799€..</a><br>
+          |Pelago Capri & San Sebastian<br>
+          |<a target="_blank" href="https://paripa.de/?page_id=390" >Paripa JWD, Paripa Kserie, Paripa meral in..</a><br>
+          |Restgrößen & im Abverkauf 399€<br>
           |</p>
           |""".stripMargin
   }
