@@ -39,9 +39,6 @@ object Data {
          |<p><a href="selfmade.html">SURLY Rahmensets...</a></p>
          |
          |<p class="sepa2"/>
-         |<p><a href="sale.html">Abverkaufsräder reduziert...</a></p>
-         |
-         |<p class="sepa2"/>
          |<p><a href="service.html">Service...</a></p>
          |
          |<p class="sepa2"/>
@@ -175,7 +172,7 @@ object Data {
          |""".stripMargin
   }
 
-  val pages: List[Page] = List(startPage, selfmadePage, salePage, jobsPage, servicePage)
+  val pages: List[Page] = List(startPage, selfmadePage, jobsPage, servicePage)
 
 }
 
