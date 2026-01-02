@@ -25,29 +25,39 @@ object Data {
     def htmlContentLeftPage: String = {
       s"""
          |<h1>das taschenfahrrad</h1>
-         |<p>tourenräder und fahrradtaschen<p>
+         |<p>ob eine fahrradtour packbar oder unpackbar ist,
+         |liegt teils am fahrrad, teils nicht.<p>
          |
          |<p class="sepa4" />
-         |<p class="p2">Öffnungszeiten sa 9-15</p>
-         |<p>Individuelle Beratung für Eigenbauräder sowie Servicetermine nach Vereinbarung</p>
-         |<p><a target="_blank" href="http://www.openstreetmap.org/?lat=48.218173500000006&amp;lon=16.377131&amp;zoom=17&amp;layers=M&amp;mlat=48.21819&amp;mlon=16.37711">Leopoldsgasse 28 1020 Wien...</a></p>
+         |<p class="p2">Öffnungszeiten sa  9-15  oder Beratungstermin nach Vereinbarung</p>
+         |
          |<p><a target="_blank" href="https://www.instagram.com/taschenfahrrad/">instagram...</a></p>
          |<p><a target="_blank" href="https://www.facebook.com/das-taschenfahrrad-108130579232304">facebook...</a></p>
          |<p><a href="mailto:hans.poellhuber@chello.at">hans.poellhuber@chello.at</a></p>
          |<p>0043 699 1043 1886</p>
+         |
          |<p class="sepa4"/>
          |<p><a href="selfmade.html">SURLY Rahmensets...</a></p>
          |
-         |<p class="sepa2"/>
+         |<p class="sepa1"/>
          |<p><a href="service.html">Service...</a></p>
          |
-         |<p class="sepa2"/>
+         |<p class="sepa1"/>
          |<p><a href="jobs.html">Touren...</a></p>
          |
-         |<p class="sepa2"/>
-         |<p><a href="https://firmen.wko.at/Web/DetailsKontakt.aspx?FirmaID=3fbab856-76f3-41ab-849f-643b215a4db8&Name=Johann%20P%C3%B6llhuber&Standort=Wien%20(Bundesland)"  target="_blank">
-         |Impressum...</a></p>
-         |
+         |<p class="sepa4"/>
+         |<p>
+         |Impressum
+         |</p>
+         |<p>
+         |Johann Pöllhuber</br>
+         |das taschenfahrrad</br>
+         |Leopoldsgasse 28</br>
+         |1020 Wien</br>
+         |ATU44349601</br>
+         |GLN 9110001383918</br>
+         |GISA 26861760</br>
+         |</p>         
          |""".stripMargin
     }
   }
