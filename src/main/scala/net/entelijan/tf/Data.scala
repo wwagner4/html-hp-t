@@ -117,6 +117,44 @@ object Data {
           |<p><a href="index.html">start</a> &#62; touren</p>
           |<p class="sepa4"/>
           |<h1>Touren</h1>
+          |<p>
+          |endlich am Start, das Pferd war zu lang im Stall
+          |und scharrt jetzt mit den Hufen, uns ist etwas
+          |mulmig, das Herz pocht. Ist die Tour
+          |packbar? Oder eine Schnapsidee? Wir haben die
+          |Idee, unseren Traum so lange gehegt und gepflegt,
+          |bis er, unser Plan, so groß und startbereit geworden
+          |ist. Jetzt sollte uns jemand anstupsen, zumindest
+          |verabschieden. Den gewohnten, liebgewonnenen
+          |Komfort zu verlassen, wenn auch nur für eine
+          |Episode, kostet mehr Überwindung als wir
+          |uns eingestehen.</br>
+          |Die Vorbereitung, sie begann früh, es gab so
+          |vieles zu bedenken und doch, zum Schluß war
+          |es überhastet, alles noch am letzten Drücker,
+          |„in zwei Tagen fahren wir los und es ist noch
+          |gar nichts gepackt“ (o Ton Balkan Express/
+          |Jochen Mesle). Jedes gepackte Stück, jedes
+          |Detail innerlich abgewogen und entschieden.
+          |Lagen wir richtig? Weniger ist doch mehr
+          |und zuviel wird unpackbar schwer.
+          |Wobei, wir leben schon lange im Alltag mit
+          |dem Fahrrad, wir wissen, mit welchen
+          |Socken unsere Zehen nicht abfrieren. Und
+          |vieles andere wissen wir und doch, es kann
+          |vieles passieren auf dem Fahrrad.
+          |</p>
+          |<p>
+          |Wir hörten, Radfahren ist wieder-
+          |gefundene Freiheit. Wo war sie, die
+          |verlorene, die jetzt auf dem Fahrrad
+          |wiedergefunden werden soll? Sie war
+          |nie weg, sie steckte morgendlich, abendlich,
+          |zu Ferienbeginn und zu Ferienende, in der
+          |rush hour, im Stau. Der Stau ist es, der uns
+          |am vorankommen hindert und der löst
+          |sich für uns jetzt endlich auf.
+          |</p>
           |
           |
           |
