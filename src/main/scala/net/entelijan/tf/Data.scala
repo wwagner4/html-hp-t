@@ -43,7 +43,7 @@ object Data {
          |<p><a href="service.html">Service...</a></p>
          |
          |<p class="sepa1"/>
-         |<p><a href="jobs.html">Touren...</a></p>
+         |<p><a href="tour.html">Touren...</a></p>
          |
          |<p class="sepa4"/>
          |<p>
@@ -118,8 +118,8 @@ object Data {
           |""".stripMargin
   }
 
-  val jobsPage: Page = new Page {
-    def id = "jobs"
+  val tourPage: Page = new Page {
+    def id = "tour"
 
     def htmlContentLeftPage: String =
       s"""|
@@ -220,7 +220,7 @@ object Data {
          |""".stripMargin
   }
 
-  val pages: List[Page] = List(startPage, selfmadePage, jobsPage, servicePage)
+  val pages: List[Page] = List(startPage, selfmadePage, tourPage, servicePage)
 
 }
 
