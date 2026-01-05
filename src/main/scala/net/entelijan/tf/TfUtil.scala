@@ -12,11 +12,13 @@ object TfUtil {
 
   def genReportDir: File = getCreateDir(Option(workDir), "gen-report")
 
-  private def workDir: File = getCreateDir(Option(workDirGeneral), "work-html-hp-t")
+  private def workDir: File =
+    getCreateDir(Option(workDirGeneral), "work-html-hp-t")
 
   private def targetDir: File = getCreateDir(None, "target")
 
-  private def homeDir: File = getCreateDir(None, System.getProperty("user.home"))
+  private def homeDir: File =
+    getCreateDir(None, System.getProperty("user.home"))
 
   private def workDirGeneral: File = getCreateDir(Option(homeDir), "work")
 

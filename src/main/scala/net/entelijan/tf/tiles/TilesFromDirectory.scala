@@ -10,12 +10,20 @@ import net.entelijan.tf.imgutil.{ImgAttr, ImgFormat, ImgSave}
 
 import scala.jdk.CollectionConverters._
 
-
 object TilesFromDirectory {
 
   case class NamedBufferedImage(name: String, image: BufferedImage)
 
-  def squaredTiles(name: String, cols: Int, tileSize: Int, borderSize: Int, imgType: ImgFormat, imgQuality: Double, indir: Path, outdir: Path): Path = {
+  def squaredTiles(
+      name: String,
+      cols: Int,
+      tileSize: Int,
+      borderSize: Int,
+      imgType: ImgFormat,
+      imgQuality: Double,
+      indir: Path,
+      outdir: Path
+  ): Path = {
     val fullsize = Size(tileSize, tileSize)
     val size = Size(tileSize - borderSize, tileSize - borderSize)
     require(Files.exists(indir), s"$indir must exist")
@@ -31,11 +39,19 @@ object TilesFromDirectory {
 
     val names = images.map(is => is.name)
     val gr = Geometry.tiles(size, cols)(names)
-    val outImg = new BufferedImage(gr.width, gr.height, BufferedImage.TYPE_INT_RGB)
+    val outImg =
+      new BufferedImage(gr.width, gr.height, BufferedImage.TYPE_INT_RGB)
     val grOutImg = outImg.getGraphics
     gr.tiles.foreach { tile =>
       val src = imgMap(tile.id)
-      grOutImg.drawImage(src, tile.xoff, tile.yoff, gr.tileWidth, gr.tileHeight, null)
+      grOutImg.drawImage(
+        src,
+        tile.xoff,
+        tile.yoff,
+        gr.tileWidth,
+        gr.tileHeight,
+        null
+      )
     }
     val imgAttr = ImgAttr(
       name = name,
@@ -44,7 +60,6 @@ object TilesFromDirectory {
     )
     ImgSave.save(outImg, imgAttr, outdir)
   }
-
 
   private def dirToNamedBufferedImages(indir: Path): Seq[NamedBufferedImage] = {
 
@@ -59,7 +74,8 @@ object TilesFromDirectory {
       ImageIO.read(p.toFile)
     }
 
-    Files.list(indir)
+    Files
+      .list(indir)
       .filter(isImageFile)
       .iterator()
       .asScala
@@ -67,7 +83,6 @@ object TilesFromDirectory {
       .map(p => NamedBufferedImage(p.getFileName.toString, asBuffered(p)))
       .sortBy(a => a.name)
   }
-
 
   private def cropToSquare(bi: BufferedImage): BufferedImage = {
     val w = bi.getWidth
@@ -88,24 +103,29 @@ object TilesFromDirectory {
     else landscape
   }
 
-  private def placeOnRect(canvas: Size, xoff: Int, yoff: Int)(bi: BufferedImage): BufferedImage = {
-    val biout = new BufferedImage(canvas.width, canvas.height, BufferedImage.TYPE_INT_RGB)
+  private def placeOnRect(canvas: Size, xoff: Int, yoff: Int)(
+      bi: BufferedImage
+  ): BufferedImage = {
+    val biout =
+      new BufferedImage(canvas.width, canvas.height, BufferedImage.TYPE_INT_RGB)
     val gr = biout.createGraphics()
     gr.setColor(Color.WHITE)
     gr.fillRect(0, 0, canvas.width, canvas.height)
-    gr.drawImage(bi, xoff, yoff , null)
+    gr.drawImage(bi, xoff, yoff, null)
     biout
   }
 
   private def scaleSquare(sideLen: Size)(ni: BufferedImage): BufferedImage = {
-    Thumbnails.of(ni)
+    Thumbnails
+      .of(ni)
       .forceSize(sideLen.width, sideLen.height)
       .asBufferedImage()
   }
 
-  private def mapNamed(f: BufferedImage => BufferedImage)(ni: NamedBufferedImage): NamedBufferedImage = {
+  private def mapNamed(
+      f: BufferedImage => BufferedImage
+  )(ni: NamedBufferedImage): NamedBufferedImage = {
     NamedBufferedImage(ni.name, f(ni.image))
   }
-
 
 }

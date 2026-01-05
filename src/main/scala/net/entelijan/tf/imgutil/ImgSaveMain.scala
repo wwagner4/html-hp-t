@@ -6,7 +6,6 @@ import java.nio.file.{Files, Path, Paths}
 import javax.imageio.ImageIO
 import net.entelijan.tf.tiles.TilesFromDirectory
 
-
 object ImgSaveMain {
 
   def main(): Unit = {
@@ -20,7 +19,16 @@ object ImgSaveMain {
 
   def createTestImage(outDir: Path): BufferedImage = {
     val inDir = Paths.get("proto/WebContent/proto04/images/index")
-    val path = TilesFromDirectory.squaredTiles("orig", 4, 300, 0, ImgFormat_PNG, 1.0, inDir, outDir)
+    val path = TilesFromDirectory.squaredTiles(
+      "orig",
+      4,
+      300,
+      0,
+      ImgFormat_PNG,
+      1.0,
+      inDir,
+      outDir
+    )
     ImageIO.read(path.toFile)
   }
 
@@ -29,7 +37,9 @@ object ImgSaveMain {
     val qs2 = "%.2f".format(quality)
     val name = s"qtest$qs1"
     val attr = ImgAttr(
-      name, imgFormat, quality
+      name,
+      imgFormat,
+      quality
     )
     val outDir = Paths.get("target", "qtest01")
     val testImg = createTestImage(outDir)

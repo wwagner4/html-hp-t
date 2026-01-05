@@ -1,25 +1,28 @@
 package net.entelijan.tf
 
-import org.rogach.scallop._
-
-class Conf(args: Seq[String]) extends ScallopConf(args) {
-  val apples = opt[Int](required = true)
-  val bananas = opt[Int]()
-  val name = trailArg[String]()
-  verify()
-}
-
+trait Command
+object Generate extends Command
+object Images extends Command
+case class Error(message: String) extends Command
 
 object Main {
 
-  def main(args: Array[String]): Unit = {
-    val conf = new Conf(args.toIndexedSeq)
-    println(s"apples are: ${conf.name} ${conf.bananas} ${conf.apples}")
-    val x = conf.name;
-    println(x.getOrElse("--"))
+  def parseCmd(args: Array[String]): Command = {
+    if args.size == 0 then
+      Error("No command give. use one of 'generate', 'images'")
+    else Error("Not yet implemanted")
   }
 
-  //val templ = Templs.tiles
-  //Generator.gen(TfUtil.inTargetDir(s"gen-${templ.id}"), templ)
+  def main(args: Array[String]): Unit = {
 
+    parseCmd(args) match {
+      case Generate   => println("## generate")
+      case Images     => println("## images")
+      case Error(msg) => println(f"## error: $msg")
+    }
+
+    // val templ = Templs.tiles
+    // Generator.gen(TfUtil.inTargetDir(s"gen-${templ.id}"), templ)
+
+  }
 }

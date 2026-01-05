@@ -19,7 +19,6 @@ object ImgOverview {
     val outPath = Paths.get("target/gen", s"Bilder_$name.html")
     val inPath = Paths.get(s"src/main/web/images/$name")
 
-
     def toImg(index: Int, path: Path): Img = {
       val fname = path.getFileName.toString
       val spath = s"images/$name/$fname"
@@ -27,7 +26,9 @@ object ImgOverview {
     }
 
     def createRows(inPath: Path): String = {
-      Files.list(inPath).iterator()
+      Files
+        .list(inPath)
+        .iterator()
         .asScala
         .toSeq
         .filter(p => !p.getFileName.toString.startsWith("."))
@@ -39,11 +40,9 @@ object ImgOverview {
         .mkString("\n")
     }
 
-    withResources(new PrintWriter(Files.newBufferedWriter(outPath))) {
-      pw =>
-        val rows = createRows(inPath)
-        pw.print(
-          s"""
+    withResources(new PrintWriter(Files.newBufferedWriter(outPath))) { pw =>
+      val rows = createRows(inPath)
+      pw.print(s"""
              |<html>
              |<head>
              |</head>
@@ -65,7 +64,6 @@ object ImgOverview {
          |</tr>
       """.stripMargin
     }
-
 
     def createTd(img: Img): String = {
       s"""
@@ -89,8 +87,7 @@ object ImgOverview {
       }
     }
 
-    def closeAndAddSuppressed(e: Throwable,
-                              resource: AutoCloseable): Unit = {
+    def closeAndAddSuppressed(e: Throwable, resource: AutoCloseable): Unit = {
       if (e != null) {
         try {
           resource.close()
@@ -104,6 +101,5 @@ object ImgOverview {
     }
 
   }
-
 
 }

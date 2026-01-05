@@ -10,11 +10,11 @@ scalaVersion := "3.7.4"
 
 // scalacOptions ++= Seq("-deprecation")
 
-
+Compile / run / fork := true
 updateOptions := updateOptions.value.withLatestSnapshots(false)
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.19" % "test"
 libraryDependencies += "net.coobird" % "thumbnailator" % "0.4.21"
-libraryDependencies += "org.rogach" %% "scallop" % "6.0.0"
+libraryDependencies += "dev.zio" %% "zio-cli" % "0.7.4"
 
 //offline := true

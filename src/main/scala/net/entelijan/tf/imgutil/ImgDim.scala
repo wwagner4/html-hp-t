@@ -11,7 +11,8 @@ import scala.jdk.CollectionConverters._
 object ImgDim {
 
   def fromDir(dir: Path): Seq[Dim] = {
-    Files.list(dir)
+    Files
+      .list(dir)
       .iterator()
       .asScala
       .to(LazyList)
@@ -33,7 +34,8 @@ object ImgDim {
     if (pos == -1) None
     else {
       val suffix = name.substring(pos + 1).toLowerCase
-      ImageIO.getImageReadersBySuffix(suffix)
+      ImageIO
+        .getImageReadersBySuffix(suffix)
         .asScala
         .to(LazyList)
         .map { reader =>
@@ -44,7 +46,8 @@ object ImgDim {
             val height = reader.getHeight(reader.getMinIndex)
             Dim(name, suffix, width, height)
           } finally reader.dispose()
-        }.headOption
+        }
+        .headOption
     }
   }
 

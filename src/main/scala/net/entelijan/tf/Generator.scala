@@ -12,7 +12,9 @@ object Generator {
     ImageTransform.createAllThumbnails(outDir.toPath.resolve("images"))
     ImageTransform.shrinkAll(outDir.toPath.resolve("images"))
     Data.pages.foreach(genPage(_, templ, outDir))
-    println(s"finished generation of taschenfahrrad in ${outDir.getCanonicalPath}")
+    println(
+      s"finished generation of taschenfahrrad in ${outDir.getCanonicalPath}"
+    )
   }
 
   private def genPage(p: Page, templ: Templ, outDir: File): Unit = {
@@ -28,4 +30,3 @@ object Generator {
   }
 
 }
-

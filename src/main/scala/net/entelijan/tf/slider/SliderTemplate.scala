@@ -3,9 +3,11 @@ package net.entelijan.tf.slider
 object SliderTemplate {
 
   def glide(name: String, files: Seq[String], tilesDim: TilesDim): String = {
-    val imgs: String = files.map { fn =>
-      s"""            <li class="glide__slide"><div class="fill" style="background-image: url(images/$name/$fn);"></div></li>"""
-    }.mkString("\n")
+    val imgs: String = files
+      .map { fn =>
+        s"""            <li class="glide__slide"><div class="fill" style="background-image: url(images/$name/$fn);"></div></li>"""
+      }
+      .mkString("\n")
 
     s"""<!DOCTYPE html>
        |<html lang="en">

@@ -223,4 +223,3 @@ object Data {
   val pages: List[Page] = List(startPage, selfmadePage, tourPage, servicePage)
 
 }
-
