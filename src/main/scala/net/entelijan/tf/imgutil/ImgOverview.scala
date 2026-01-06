@@ -11,7 +11,6 @@ case class Img(path: String, nr: Int, imgName: String)
 object ImgOverview {
 
   def main(): Unit = {
-    // TODO add to commandline
     Seq("index", "jobs", "selfmade", "service", "0223").foreach(n => page(n))
   }
 
