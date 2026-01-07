@@ -31,8 +31,8 @@ object ImgPrepare {
           s"-- Cleard contents of out dir $outDir exit:${result.exitCode}"
         )
 
-      copyRename(newDir, "tf-0", outDir)
-      copyRename(oldDir, "tf-1", outDir)
+      val currentIndex = copyRename(newDir, 0, "tf-0", outDir)
+      copyRename(oldDir, currentIndex, "tf-1", outDir)
       {
         val cmd = ("/usr/bin/bash", "-c", s"chmod -R 666 *")
         val result = os.call(cmd = cmd, cwd = outDir)
@@ -45,12 +45,20 @@ object ImgPrepare {
     println("<-- Prepare images")
   }
 
-  def copyRename(inDir: Path, prefix: String, outDir: Path): Unit = {
-    println(s"-- Copy with prefix $prefix $inDir -> $outDir")
-    for (file, i) <- os.list(inDir).zipWithIndex if os.isFile(file) do
+  def copyRename(
+      inDir: Path,
+      startIndex: Int,
+      prefix: String,
+      outDir: Path
+  ): Int = {
+    println(s"-- Copy with prefix $startIndex $prefix $inDir -> $outDir")
+    var i = startIndex
+    for file <- os.list(inDir) if os.isFile(file) do
       val newFileName = f"$prefix-$i%03d.${file.ext}"
       val newFilePath = outDir / newFileName
       os.copy(file, newFilePath)
       println(f"-- copied ${file} ${newFilePath}")
+      i += 1
+    i
   }
 }

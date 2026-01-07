@@ -6,6 +6,7 @@ import java.nio.file.{Files, Path, Paths}
 
 import scala.jdk.CollectionConverters._
 import scala.util.control.NonFatal
+import os.call
 
 enum Origin:
   case New
@@ -13,28 +14,43 @@ enum Origin:
 
 case class Img(path: String, origin: Origin, nr: Int, imgName: String)
 
+case class Config(
+    val outDir: Path =
+      Path.of(System.getProperty("user.home"), "tmp", "tf", "overview"),
+    val ncol: Int = 10,
+    val baseInPath: Path =
+      Path.of(System.getProperty("user.home"), "tmp", "tf", "out"),
+    val prefix: String = "taschenfahrrad_2026"
+)
+
 object ImgOverview {
 
   def main(): Unit = {
-    Data.pages.foreach(n => page(n.id))
+    val config0 = Config()
+    val config1 = Config(baseInPath = Paths.get(s"src/main/web/common/images"))
+    val config = config0
+
+    if (Files.notExists(config.outDir)) Files.createDirectory(config.outDir)
+    os.call(cmd = ("sh", "-c", s"rm -rf ${config.outDir}/*"))
+
+    Data.pages.foreach(n => page(n.id, config))
   }
 
   def betterName(name: String): String = {
     return if name == "selfmade" then "surly"
+    else if name == "index" then "start"
     else name
   }
 
-  def page(name: String): Unit = {
-    val outDir =
-      Path.of(System.getProperty("user.home"), "tmp", "tf", "overview")
-    val ncol = 10
+  def page(name: String, config: Config): Unit = {
 
-    val inPath = Paths.get(s"src/main/web/common/images/$name")
+    val inPath = config.baseInPath.resolve(name)
     if Files.notExists(inPath) then
       throw IllegalStateException(s"$inPath does not exist")
-    if (Files.notExists(outDir)) Files.createDirectory(outDir)
-    val outPath = outDir.resolve(s"Bilder_${betterName(name)}.html")
-    ResCopy.copyDir(inPath, outDir)
+
+    val outPath =
+      config.outDir.resolve(s"${config.prefix}_${betterName(name)}.html")
+    ResCopy.copyDir(inPath, config.outDir)
 
     def toImg(index: Int, path: Path): Img = {
       val fname = path.getFileName.toString
@@ -68,7 +84,7 @@ object ImgOverview {
         .sortBy(p => p.getFileName.toString)
         .zipWithIndex
         .map { case (path, idx) => toImg(idx, path) }
-        .grouped(ncol)
+        .grouped(config.ncol)
         .map(imgs => row(imgs))
         .mkString("\n")
     }
@@ -90,7 +106,7 @@ object ImgOverview {
              |</style>
              |</head>
              |<body>
-             |<p class="imov_title">${betterName(name)}</p>
+             |<p class="imov_title">${betterName(name)} ${config.prefix}</p>
              |<table class="imov_table">
              |$rows
              |</table>
