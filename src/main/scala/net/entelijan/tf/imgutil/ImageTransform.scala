@@ -14,6 +14,7 @@ object ImageTransform {
   }
 
   def shrinkAll(imgDir: Path): Unit = {
+    println(s"## Shrink all ${imgDir}")
     createAll(imgDir, shrinkImage)
   }
 
@@ -32,13 +33,15 @@ object ImageTransform {
     }
   }
 
-  private def shrinkImage(img: Path): Unit = {
+  def shrinkImage(img: Path): Unit = {
     if (Files.isRegularFile(img) && Files.size(img) > 1.0e6) {
       println(s"Shrinking image $img size: ${Files.size(img)}")
       val cmd =
-        s"mogrify -auto-orient -resize $shrinkSize> ${img.toAbsolutePath}"
+        s"mogrify -auto-orient -resize $shrinkSize> -quality 80% ${img.toAbsolutePath}"
       println(s"shrinking image running imagemagick: '$cmd'")
       cmd.!!
+    } else {
+      println(s"Not shrinking image: '$img'")
     }
   }
 
