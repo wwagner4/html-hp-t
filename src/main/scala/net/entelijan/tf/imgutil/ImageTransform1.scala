@@ -3,8 +3,9 @@ package net.entelijan.tf.imgutil
 import os.*
 
 case class ShrinkConfig(
-    shrinkSize: Int = 1200,
-    shrinkThreshold: Int = 1_000_000
+    size: Int = 1200,
+    threshold: Int = 1_000_000,
+    qualityPerc: Int = 80
 )
 
 def shrinkAll(imgDir: os.Path, config: ShrinkConfig): Unit = {
@@ -25,14 +26,14 @@ def createAllThumbnails(imgDir: os.Path): Unit = {
 
 private def shrink(file: Path, config: ShrinkConfig): Unit = {
   if !os.isFile(file) then println(s"shrink. Not a file $file")
-  else if os.size(file) >= config.shrinkThreshold then
+  else if os.size(file) >= config.threshold then
     val cmd = (
       "mogrify",
       "-auto-orient",
       "-resize",
-      s"${config.shrinkSize}>",
+      s"${config.size}>",
       "-quality",
-      "80%",
+      s"${config.qualityPerc}%",
       file
     )
     val result = os.call(cmd = cmd, check = false)

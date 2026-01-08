@@ -15,12 +15,13 @@ enum Origin:
 case class Img(path: String, origin: Origin, nr: Int, imgName: String)
 
 case class Config(
-    val outDir: Path =
-      Path.of(System.getProperty("user.home"), "tmp", "tf", "overview"),
+    val outDir: Path = Paths.get("target", "overview"),
     val ncol: Int = 10,
     val baseInPath: Path =
       Path.of(System.getProperty("user.home"), "tmp", "tf", "out"),
-    val prefix: String = "taschenfahrrad_2026"
+    val prefix: String = "taschenfahrrad_2026",
+    val shrink: ShrinkConfig =
+      ShrinkConfig(size = 300, threshold = 50_000, qualityPerc = 50)
 )
 
 object ImgOverview {
@@ -51,6 +52,9 @@ object ImgOverview {
     val outPath =
       config.outDir.resolve(s"${config.prefix}_${betterName(name)}.html")
     ResCopy.copyDir(inPath, config.outDir)
+
+    val pageOutDir = config.outDir.resolve(name)
+    shrinkAll(os.Path(pageOutDir.toAbsolutePath()), config.shrink)
 
     def toImg(index: Int, path: Path): Img = {
       val fname = path.getFileName.toString
@@ -130,7 +134,7 @@ object ImgOverview {
       val marker = if img.nr < 16 then "#" else ""
       s"""
          |<td class="imov_txt">
-         |<img class="imov_img" src="${img.path}" width="150"></br>
+         |<img class="imov_img" src="./${img.path}" width="150"></br>
          |${img.origin} ${img.nr} $marker
          |</td>
        """.stripMargin

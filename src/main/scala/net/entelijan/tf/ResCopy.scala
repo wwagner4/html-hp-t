@@ -43,6 +43,7 @@ object ResCopy {
         }
       }
     }
+    println(s"res copy: Copied from $from to $to")
 
   }
 
@@ -52,7 +53,7 @@ object ResCopy {
     val newFile = new File(dir, f.getName)
     new FileOutputStream(newFile).getChannel
       .transferFrom(new FileInputStream(f).getChannel, 0, Long.MaxValue)
-    println("copied %s to %s" format (f, dir))
+    // println("copied %s to %s" format (f, dir))
   }
 
   def leftIsYounger(left: File, right: File): Boolean = {
