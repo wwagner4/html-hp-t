@@ -1,6 +1,7 @@
 package net.entelijan.tf
 
 import net.entelijan.tf.imgutil.*
+import net.entelijan.tf.util.*
 import mainargs.{main, arg, Parser, Flag}
 
 // Docu mainargs can be found in https://github.com/com-lihaoyi/mainargs
@@ -20,6 +21,14 @@ object Main {
   @main(name = "overview", doc = "Creates an overview of the current images")
   def overviewImages() = {
     ImgOverview.main()
+  }
+
+  @main(
+    name = "tryout",
+    doc = "Tryout something. To be used during development"
+  )
+  def tryout() = {
+    tryoutMain()
   }
 
   def main(args: Array[String]): Unit =
