@@ -8,6 +8,25 @@ import scala.jdk.CollectionConverters._
 import scala.util.control.NonFatal
 import os.call
 
+case class TfFileName(
+    origin: Int,
+    nr: Int
+)
+
+def parseTfFilename(name: String): TfFileName = {
+
+  val filenamePattern = """.+-(\d+)-(\d+)\.(jpg|JPG|jpeg|JPEG|png|PNG)""".r
+
+  name match {
+    case filenamePattern(origin, nr, _) => TfFileName(origin.toInt, nr.toInt)
+    case _                              =>
+      throw IllegalArgumentException(
+        s"Filename '$name' does not fulfill naming convention. E.g 'tf-0-002.jpg' would be valid"
+      )
+  }
+
+}
+
 enum Origin:
   case New
   case Old
@@ -15,26 +34,31 @@ enum Origin:
 case class Img(path: String, origin: Origin, nr: Int, imgName: String)
 
 case class Config(
-    val outDir: Path = Paths.get("target", "overview"),
-    val ncol: Int = 10,
+    // For base path from within the project use Paths.get(s"src/main/web/common/images"
     val baseInPath: Path =
       Path.of(System.getProperty("user.home"), "tmp", "tf", "out"),
+    val outDir: Path = Paths.get("target", "overview"),
+    val ncol: Int = 10,
     val prefix: String = "taschenfahrrad_2026",
     val shrink: ShrinkConfig =
-      ShrinkConfig(size = 300, threshold = 50_000, qualityPerc = 50)
+      ShrinkConfig(size = 300, threshold = 50_000, qualityPerc = 80)
 )
 
 object ImgOverview {
 
   def main(): Unit = {
-    val config0 = Config()
-    val config1 = Config(baseInPath = Paths.get(s"src/main/web/common/images"))
-    val config = config0
+    println("--> Oveview")
+    val config = Config()
 
     if (Files.notExists(config.outDir)) Files.createDirectory(config.outDir)
     os.call(cmd = ("sh", "-c", s"rm -rf ${config.outDir}/*"))
 
     Data.pages.foreach(n => page(n.id, config))
+
+    println()
+    println(s"--- In folder: ${config.baseInPath}")
+    println(s"--- Out folder: ${config.outDir.toAbsolutePath()}")
+    println("<-- Oveview")
   }
 
   def betterName(name: String): String = {
@@ -58,20 +82,19 @@ object ImgOverview {
 
     def toImg(index: Int, path: Path): Img = {
       val fname = path.getFileName.toString
-      val splited = fname.split("-")
-      val origin = splited(1) match {
-        case "0" => Origin.New
-        case "1" => Origin.Old
+      val fn = parseTfFilename(fname)
+      val origin = fn.origin match {
+        case 0   => Origin.New
+        case 1   => Origin.Old
         case any =>
           throw IllegalStateException(
             s"Unknown origin '$any'. Must be '0' or '1"
           )
       }
-      val nr = splited(2).split("\\.")(0).toInt
-
-      val spath = s"$name/$fname"
+      val nr = fn.nr
+      val spath = s"$path"
       Img(
-        path = spath,
+        path = s"$name/$fname",
         nr = nr,
         imgName = fname,
         origin = origin
@@ -119,6 +142,21 @@ object ImgOverview {
         """.stripMargin)
 
       println(s"Wrote overview to $outPath")
+
+      val htmlPath = outPath.getFileName().toString()
+      val pdfPath = s"${config.prefix}_${betterName(name)}.pdf"
+      println(s"Writing pdf to $pdfPath from $htmlPath")
+      val cmd = List(
+        "wkhtmltopdf",
+        "-q",
+        "--enable-local-file-access",
+        htmlPath,
+        pdfPath
+      )
+      val outFolder = config.outDir.toAbsolutePath().toString()
+      println(s"Creating pdf from '${cmd.mkString(" ")}' in $outFolder")
+      os.call(cmd = cmd, cwd = os.Path(outFolder))
+
     }
 
     def row(imgs: Seq[Img]): String = {
@@ -134,7 +172,7 @@ object ImgOverview {
       val marker = if img.nr < 16 then "#" else ""
       s"""
          |<td class="imov_txt">
-         |<img class="imov_img" src="./${img.path}" width="150"></br>
+         |<img class="imov_img" src="${img.path}" width="150"></br>
          |${img.origin} ${img.nr} $marker
          |</td>
        """.stripMargin

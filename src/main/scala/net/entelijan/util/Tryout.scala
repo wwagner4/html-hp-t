@@ -5,6 +5,10 @@ import net.entelijan.tf.imgutil as iu
 
 def tryoutMain(): Unit = {
   println("tryout.....")
-  val inDir = os.home / "tmp" / "tf" / "tour"
-  iu.shrinkAll(inDir, iu.ShrinkConfig())
+
+  val testDir = os.home / "tmp" / "tf" / "out" / "index"
+  for file <- os.list(testDir).take(10) do
+    println(file.last)
+    println(file.baseName)
+
 }

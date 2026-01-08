@@ -26,7 +26,9 @@ def createAllThumbnails(imgDir: os.Path): Unit = {
 
 private def shrink(file: Path, config: ShrinkConfig): Unit = {
   if !os.isFile(file) then println(s"shrink. Not a file $file")
-  else if os.size(file) >= config.threshold then
+  else if os.size(file) < config.threshold then
+    println(s"## WARNING not shrinking $file")
+  else
     val cmd = (
       "mogrify",
       "-auto-orient",

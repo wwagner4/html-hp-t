@@ -8,19 +8,28 @@ object ImgPrepare {
   def main(): Unit = {
     println(s"--> Prepare images")
 
+    val homeDir = os.home
+
+    val newBaseDir = homeDir / "tmp" / "tf" / "new"
+    assert(os.exists(newBaseDir), s"New base dir must exist. $newBaseDir")
+
+    val oldBaseDir =
+      homeDir / "prj" / "html-hp-t" / "src" / "main" / "web" / "common" / "images"
+    assert(os.exists(oldBaseDir), s"Old base dir must exist. $oldBaseDir")
+
+    val outBaseDir = homeDir / "tmp" / "tf" / "out"
+
     for page <- Data.pages do
       println(page.id)
-      val homeDir = os.home
       val newDir = homeDir / "tmp" / "tf" / "new" / page.id
       if !os.exists(newDir) then
         throw IllegalStateException(f"New dir $newDir does not exist")
-      val oldDir =
-        homeDir / "prj" / "html-hp-t" / "src" / "main" / "web" / "common" / "images" / page.id
+      val oldDir = oldBaseDir / page.id
       if !os.exists(oldDir) then
         throw IllegalStateException(f"Old dir $oldDir does not exist")
       println(s"-- in dirs exist $oldDir $newDir")
 
-      val outDir = homeDir / "tmp" / "tf" / "out" / page.id
+      val outDir = outBaseDir / page.id
       if !os.exists(outDir) then
         os.makeDir.all(outDir)
         println(s"-- Created out dir $outDir")
@@ -42,7 +51,10 @@ object ImgPrepare {
         ImageTransform.shrinkImage(nio.Path.of(s"$image"))
       println(s"-- shrinked images in $outDir")
 
-    println("<-- Prepare images")
+    println(s" -- Prepared images from:")
+    println(s" -- new: $newBaseDir")
+    println(s" -- old: $oldBaseDir")
+    println(s"<-- to: $outBaseDir")
   }
 
   def copyRename(
