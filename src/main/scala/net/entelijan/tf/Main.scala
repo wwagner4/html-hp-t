@@ -24,6 +24,15 @@ object Main {
   }
 
   @main(
+    name = "finalize",
+    doc =
+      "Create the final image directories based on the results from overview"
+  )
+  def _finalize() = {
+    finalizeMain()
+  }
+
+  @main(
     name = "tryout",
     doc = "Tryout something. To be used during development"
   )
