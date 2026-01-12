@@ -7,7 +7,10 @@ import java.nio.file.attribute.BasicFileAttributes
 object ResCopy {
 
   def copyDir(fromDir: Path, toParentDir: Path): Unit = {
-    require(Files.exists(fromDir) && Files.isDirectory(fromDir), s"$fromDir must exist and must be a directory")
+    require(
+      Files.exists(fromDir) && Files.isDirectory(fromDir),
+      s"$fromDir must exist and must be a directory"
+    )
     if (!Files.exists(toParentDir)) {
       Files.createDirectories(toParentDir)
     }
@@ -34,11 +37,13 @@ object ResCopy {
         }
       } else {
         findFile(fromFile.getName, toFiles) match {
-          case None => copyFile(fromFile, to)
-          case Some(toFile) => if (leftIsYounger(fromFile, toFile)) copyFile(fromFile, to)
+          case None         => copyFile(fromFile, to)
+          case Some(toFile) =>
+            if (leftIsYounger(fromFile, toFile)) copyFile(fromFile, to)
         }
       }
     }
+    println(s"res copy: Copied from $from to $to")
 
   }
 
@@ -46,9 +51,9 @@ object ResCopy {
     import java.io.{File, FileInputStream, FileOutputStream}
     require(dir.isDirectory, "%s is not a directory" format dir)
     val newFile = new File(dir, f.getName)
-    new FileOutputStream(newFile).getChannel.transferFrom(
-      new FileInputStream(f).getChannel, 0, Long.MaxValue)
-    println("copied %s to %s" format(f, dir))
+    new FileOutputStream(newFile).getChannel
+      .transferFrom(new FileInputStream(f).getChannel, 0, Long.MaxValue)
+    // println("copied %s to %s" format (f, dir))
   }
 
   def leftIsYounger(left: File, right: File): Boolean = {
@@ -64,9 +69,10 @@ object ResCopy {
   @scala.annotation.tailrec
   def findFile(name: String, files: List[File]): Option[File] = {
     files match {
-      case Nil => None
-      case f :: rest => if (f.getName == name) Option(f)
-      else findFile(name, rest)
+      case Nil       => None
+      case f :: rest =>
+        if (f.getName == name) Option(f)
+        else findFile(name, rest)
     }
   }
 

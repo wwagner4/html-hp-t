@@ -3,7 +3,6 @@ package net.entelijan.tf.imgutil
 import java.nio.file.{Files, Path}
 import scala.sys.process._
 
-
 object ImageTransform {
 
   private val size = 400
@@ -15,6 +14,7 @@ object ImageTransform {
   }
 
   def shrinkAll(imgDir: Path): Unit = {
+    println(s"## Shrink all ${imgDir}")
     createAll(imgDir, shrinkImage)
   }
 
@@ -25,25 +25,32 @@ object ImageTransform {
       val nam = img.getFileName
       val tnPath = outDir.resolve(nam)
       if (Files.notExists(tnPath)) {
-        val cmd = s"convert -auto-orient ${img.toAbsolutePath} -thumbnail ${size}x$size^ -quality $quality% -gravity center -extent ${size}x$size ${tnPath.toAbsolutePath}"
+        val cmd =
+          s"convert -auto-orient ${img.toAbsolutePath} -thumbnail ${size}x$size^ -quality $quality% -gravity center -extent ${size}x$size ${tnPath.toAbsolutePath}"
         println(s"creating thumbnail running imagemagick: '$cmd'")
         cmd.!!
       }
     }
   }
 
-  private def shrinkImage(img: Path): Unit = {
+  def shrinkImage(img: Path): Unit = {
     if (Files.isRegularFile(img) && Files.size(img) > 1.0e6) {
       println(s"Shrinking image $img size: ${Files.size(img)}")
-      val cmd = s"mogrify -auto-orient -resize $shrinkSize> ${img.toAbsolutePath}"
+      val cmd =
+        s"mogrify -auto-orient -resize $shrinkSize> -quality 80% ${img.toAbsolutePath}"
       println(s"shrinking image running imagemagick: '$cmd'")
       cmd.!!
+    } else {
+      println(s"Not shrinking image: '$img'")
     }
   }
 
   private def createAll(imgDir: Path, f: Path => Unit): Unit = {
 
-    if (Files.notExists(imgDir)) throw new IllegalStateException(s"Image directory ${imgDir.toAbsolutePath} does not exist")
+    if (Files.notExists(imgDir))
+      throw new IllegalStateException(
+        s"Image directory ${imgDir.toAbsolutePath} does not exist"
+      )
 
     def createThumbnails(dir: Path): Unit = {
 

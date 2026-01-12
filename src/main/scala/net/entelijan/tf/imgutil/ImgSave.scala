@@ -21,22 +21,24 @@ case object ImgFormat_PNG extends ImgFormat {
   override def ext: String = "png"
 }
 
-
 case class ImgAttr(
-                    name: String, // Name without extention
-                    format: ImgFormat,
-                    compressionQuality: Double, // 0 - lowest quality, 1 - highest quality
-                  )
+    name: String, // Name without extention
+    format: ImgFormat,
+    compressionQuality: Double // 0 - lowest quality, 1 - highest quality
+)
 
 object ImgSave {
 
-  /**
-    * Saves an image according to the attributes
+  /** Saves an image according to the attributes
     *
-    * @param image   Java representation of the image
-    * @param imgAttr Attributes of how to save the image
-    * @param outDir  Output directory. Gets created if not exist.
-    * @return Absolute path to the saved file
+    * @param image
+    *   Java representation of the image
+    * @param imgAttr
+    *   Attributes of how to save the image
+    * @param outDir
+    *   Output directory. Gets created if not exist.
+    * @return
+    *   Absolute path to the saved file
     */
   def save(image: RenderedImage, imgAttr: ImgAttr, outDir: Path): Path = {
     if (!Files.exists(outDir)) Files.createDirectories(outDir)

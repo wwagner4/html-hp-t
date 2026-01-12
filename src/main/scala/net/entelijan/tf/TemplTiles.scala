@@ -135,10 +135,15 @@ class TemplTiles extends Templ {
 
   }
 
-
   class HtmlPageMain extends HtmlPage {
 
-    case class CssParameters(contentWidth: Double, leftPercentage: Double, tilesPadding: Double, rows: Int, columns: Int) {
+    case class CssParameters(
+        contentWidth: Double,
+        leftPercentage: Double,
+        tilesPadding: Double,
+        rows: Int,
+        columns: Int
+    ) {
 
       def tilesSize: Double = {
         val rightWidth = contentWidth * (rightPercentage / 100.0)
@@ -151,14 +156,17 @@ class TemplTiles extends Templ {
       }
     }
 
-    def fmt(value: Double, unit: String): String = "%.3f%s".formatLocal(Locale.ENGLISH, value, unit)
+    def fmt(value: Double, unit: String): String =
+      "%.3f%s".formatLocal(Locale.ENGLISH, value, unit)
 
     def params(p: Page): CssParameters = {
       val contentWidth = 75 // em
       val tilesPadding = 0.3 // em
       p.layout match {
-        case Layout_Default => CssParameters(contentWidth, 30, tilesPadding, 4, 4)
-        case Layout_Middle => CssParameters(contentWidth, 37, tilesPadding, 4, 3)
+        case Layout_Default =>
+          CssParameters(contentWidth, 30, tilesPadding, 4, 4)
+        case Layout_Middle =>
+          CssParameters(contentWidth, 37, tilesPadding, 4, 3)
         case Layout_Wide => CssParameters(contentWidth, 45, tilesPadding, 3, 2)
       }
     }
@@ -247,7 +255,10 @@ class TemplTiles extends Templ {
          |
          |.rTableCell {
          |    display: table-cell;
-         |    padding: 0 ${fmt(par.tilesPadding, "em")} ${fmt(par.tilesPadding, "em")} 0;
+         |    padding: 0 ${fmt(par.tilesPadding, "em")} ${fmt(
+          par.tilesPadding,
+          "em"
+        )} 0;
          |}
          |h1 {
          |	margin: 0 0 5px;
@@ -314,7 +325,13 @@ class TemplTiles extends Templ {
 
     private def htmlTable(p: Page, par: CssParameters): String = {
       val baseDir = Paths.get("src/main/web/common")
-      TableUtil.htmlTable(p.id, baseDir, s"images/${p.id}", par.rows, par.columns)
+      TableUtil.htmlTable(
+        p.id,
+        baseDir,
+        s"images/${p.id}",
+        par.rows,
+        par.columns
+      )
     }
 
     private def htmlContent(p: Page, par: CssParameters): String =
@@ -328,7 +345,6 @@ class TemplTiles extends Templ {
          |</div>
          |</div>
          |""".stripMargin
-
 
     def html(p: Page): String = {
 
@@ -357,4 +373,3 @@ class TemplTiles extends Templ {
   }
 
 }
-

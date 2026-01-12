@@ -13,7 +13,7 @@ object TilesTryout {
       "jobs",
       "producer",
       "service",
-      "0223",
+      "0223"
     ),
     indirBase = "src/main/web/images",
     outdirBase = "target/tiles"
@@ -37,7 +37,16 @@ object TilesTryout {
       val indir = Paths.get(s"${cfg.indirBase}/$nam")
       val outdir = Paths.get(cfg.outdirBase)
       val name = s"tiles$nam"
-      TilesFromDirectory.squaredTiles(name, cfg.cols, cfg.size, cfg.borderSize, cfg.imgType, 0.9, indir, outdir)
+      TilesFromDirectory.squaredTiles(
+        name,
+        cfg.cols,
+        cfg.size,
+        cfg.borderSize,
+        cfg.imgType,
+        0.9,
+        indir,
+        outdir
+      )
       println(s"Wrote $name to ${outdir.toAbsolutePath}")
     }
 
@@ -45,12 +54,12 @@ object TilesTryout {
 
 }
 
-
-case class TilesConf(cols: Int = 4,
-                     size: Int = 300,
-                     borderSize: Int = 5,
-                     imgType: ImgFormat = ImgFormat_PNG,
-                     indirs: Seq[String],
-                     indirBase: String,
-                     outdirBase: String,
-                    )
+case class TilesConf(
+    cols: Int = 4,
+    size: Int = 300,
+    borderSize: Int = 5,
+    imgType: ImgFormat = ImgFormat_PNG,
+    indirs: Seq[String],
+    indirBase: String,
+    outdirBase: String
+)
