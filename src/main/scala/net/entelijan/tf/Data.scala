@@ -29,6 +29,8 @@ object Data {
          |liegt teils am fahrrad, teils nicht.<p>
          |
          |<p class="sepa4" />
+         |<p class="p2">wegen einer Fahrradtour vorübergehend geschlossen, bis 27.3. wieder offen am Samstag 28.3. 9-15</p>
+         |<p class="sepa2" />
          |<p class="p2">Öffnungszeiten sa  9-15  oder Beratungstermin nach Vereinbarung</p>
          |
          |<p><a target="_blank" href="https://www.instagram.com/taschenfahrrad/">instagram...</a></p>
@@ -86,7 +88,9 @@ object Data {
           |
           |<p>
           |Surly legacy framesets, Größen und Farben auf Anfrage<br>
-          |Straggler 699€<br>
+          |<a target="_blank" href="https://surlybikes.com/products/midnight_special_2018" >Midnight special 899€</a><br>
+          |Straggler 2.0 899€<br>
+          |Legacy Straggler 699€<br>
           |<a target="_blank" href="https://surlybikes.com/bikes/legacy/cross_check_2000" >CrossCeck 629€..</a><br>
           |PackRat 599€<br>
           |LongHaulTrucker 579€<br>
