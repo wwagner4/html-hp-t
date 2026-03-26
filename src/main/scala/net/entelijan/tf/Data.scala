@@ -29,8 +29,6 @@ object Data {
          |liegt teils am fahrrad, teils nicht.<p>
          |
          |<p class="sepa4" />
-         |<p class="p2">wegen einer Fahrradtour vorübergehend geschlossen, bis 27.3. wieder offen am Samstag 28.3. 9-15</p>
-         |<p class="sepa2" />
          |<p class="p2">Öffnungszeiten sa  9-15  oder Beratungstermin nach Vereinbarung</p>
          |
          |<p><a target="_blank" href="https://www.instagram.com/taschenfahrrad/">instagram...</a></p>
