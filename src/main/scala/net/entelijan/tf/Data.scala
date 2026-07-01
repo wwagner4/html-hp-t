@@ -79,6 +79,7 @@ object Data {
           |<a target="_blank" href="https://surlybikes.com/bikes/karate_monkey" >KarateMonkey 999€..</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/krampus" >Krampus 999€..</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/ogre" >Ogre 899€..</a><br>
+          |<a target="_blank" href="https://surlybikes.com/collections/grappler" >Grappler 799€..</a><br>
           |<a target="_blank" href="https://surlybikes.com/collections/bridge-club" >BridgeClub 749€..</a><br>
           |<a target="_blank" href="https://surlybikes.com/bikes/preamble" >Preamble 599€..</a><br>
           |<a target="_blank" href="https://surlybikes.com/collections/new-straggler" >Straggler 2.0 949€...</a><br>
