@@ -27,7 +27,7 @@ object Data {
          |<h1>das taschenfahrrad</h1>
          |<p>ob eine fahrradtour packbar oder unpackbar ist,
          |liegt teils am fahrrad, teils nicht.<p>
-         |
+         |<h1>urlaub samstag 12.9. und 19.9. samstag 26.9. wieder offen</h1>
          |<p class="sepa4" />
          |<p class="p2">Öffnungszeiten sa  9-15  oder Beratungstermin nach Vereinbarung</p>
          |
